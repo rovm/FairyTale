@@ -1,0 +1,220 @@
+
+  #img {
+    border: 0;
+    width: 400px;
+    height: 200px;
+    background-image: url("../img/monsterTriple.png");
+  }
+
+  #logo {
+    margin-top: -7px;
+    margin-left: 0px;
+    margin-right: 8px;
+    width: 178px;
+    height: 36px;
+    line-height: 36px;
+  }
+
+  #box {
+    border: 0px;
+    width: 980px;
+    height: 150px;
+    margin: 40px auto;
+    position: relative;
+  }
+
+  #select_sort{
+    float: right;
+    margin-top: -50px;
+  }
+
+  #select_sort > select {
+    width: 250px;
+    height: 40px;
+  }
+
+  .standard-collection{
+    width: 980px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .standard-collection > h1{
+    font-weight: bold;
+    color: gray;
+    text-align: left;
+  }
+
+  #menual-Name {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 300%;
+    font-weight: bold;
+    color: white;
+    margin-right: 18px;
+  }
+  .flip-3d{
+    width: 375px;
+    height: 365px;
+  }
+
+  #container {
+    padding: 15px;
+    margin-top: 0;
+    width: 100%;
+    height: 230px;
+    background-color:  rgb(255, 132, 18);
+
+  }
+
+  .form {
+    height: 24px;
+    margin: 0 auto;
+    width: 950px;
+    position: relative;
+  }
+
+  .menu {
+    width: 80px;
+    top: 15px;
+    height: 24px;
+    margin-left: 4px;
+    float: left;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  }
+
+  .page {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    float: left;
+  }
+
+
+  .toTop{
+    margin-left: 90%;
+    font-weight: bold;
+    color: gray;
+  }
+
+
+  .footer_container {
+    width: 100%;
+    border-top: solid 1px gray;
+    margin: auto;
+  }
+  .footer_domain-form{
+    width: 980px;
+    margin: 10px auto;
+    height: 80px;
+    text-align: center;
+  }
+
+ .footer_use{
+   font-size: 17px;
+ }
+ .footer_menu {
+   margin-left: 20px;
+ }
+
+
+
+body{
+  background-color: ivory;
+}
+img{
+  border: 1px solid black;
+  width: 300px;
+  height: 200px;
+}
+
+.column {
+  width: 980px;
+  height: auto;
+	margin: 0px auto;
+	padding: 0;
+}
+.column:last-child {
+	padding-bottom: 60px;
+}
+.column::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+.column div {
+	position: relative;
+	float: left;
+	width: 300px;
+	height: 200px;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+.column div:first-child {
+	margin-left: 0;
+}
+.column div span {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	color: #444;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 0;
+}
+
+figure {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: black;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+a{
+  color: white;
+}
+a:hover {
+  text-decoration: none;
+}
+
+h3{
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Zoom In #1 */
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.book-list{
+  color: black;
+}
+
+/*div{
+  border: 1px solid black;
+}*/

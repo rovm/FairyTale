@@ -1,0 +1,220 @@
+
+  #img {
+    border: 0;
+    width: 400px;
+    height: 200px;
+    background-image: url("../img/monsterDouble.png");
+  }
+
+  #logo {
+    margin-top: -7px;
+    margin-left: 0px;
+    margin-right: 8px;
+    width: 178px;
+    height: 36px;
+    line-height: 36px;
+  }
+
+  #box {
+    border: 0px;
+    width: 980px;
+    height: 150px;
+    margin: 40px auto;
+    position: relative;
+  }
+
+  .standard-collection{
+    width: 980px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .standard-collection > h1{
+    font-weight: bold;
+    color: gray;
+    text-align: left;
+  }
+
+  #menual-Name {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 300%;
+    font-weight: bold;
+    color: white;
+    margin-right: 18px;
+  }
+  .flip-3d{
+    width: 375px;
+    height: 365px;
+  }
+
+  #container {
+    padding: 15px;
+    margin-top: 0;
+    width: 100%;
+    height: 230px;
+    /*background-color: rgb(255, 227, 102);*/
+    background-color: hotpink;
+  }
+
+  .form {
+    height: 24px;
+    margin: 0 auto;
+    width: 950px;
+    position: relative;
+  }
+
+  .menu {
+    width: 80px;
+    top: 15px;
+    height: 24px;
+    margin-left: 4px;
+    float: left;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  }
+
+  .page {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    float: left;
+  }
+
+
+  .toTop{
+    margin-left: 90%;
+    font-weight: bold;
+    color: gray;
+  }
+
+
+  .footer_container {
+    width: 100%;
+    border-top: solid 1px gray;
+    margin: auto;
+  }
+  .footer_domain-form{
+    width: 980px;
+    margin: 10px auto;
+    height: 80px;
+    text-align: center;
+  }
+
+ .footer_use{
+   font-size: 17px;
+ }
+ .footer_menu {
+   margin-left: 20px;
+ }
+
+
+a{
+  color: white;
+}
+a:hover {
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+body {
+  background: url(https://f.cl.ly/items/2u1z0Y0I1U061j410F08/debut_light.png);
+}
+section {
+  max-width: 1000px;
+  margin: 2.6em auto;
+  padding: 0 4%;
+}
+
+h1 {
+  font: normal 1.8em/1.3 Capita, Georgia, serif;
+  margin: 0 0 1.2em;
+  color: #8ab300;
+}
+.photo-stack-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.photo-stack-grid:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.photo-stack-grid li {
+  width: 46%;
+  float: left;
+  margin: 0 8% 2.8em 0;
+}
+.photo-stack-grid li:nth-child(2n) {
+  margin-right: 0;
+}
+
+/* remember to clear first item in each row */
+.photo-stack-grid li:nth-child(2n + 1) {
+  clear: left;
+}
+
+.photo-stack-grid a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font: 600 0.8em/1.3 "Open Sans", sans-serif;
+
+}
+a > span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  font-size: 140%;
+}
+
+.photo-stack {
+	position: relative;
+	margin: 0 4% 2em;
+  display: block;
+}
+.photo-stack:before,
+.photo-stack:after,
+.photo-stack img {
+	display: block;
+	background: #ccc;
+	border: 5px solid #fff;
+  border-radius: 3px;
+	padding: 1px;
+
+}
+.photo-stack:before,
+.photo-stack:after {
+  content: '';
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background: #969289;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  transform: rotate(6deg);
+}
+.photo-stack:after {
+	transform: rotate(10deg);
+  z-index: -1;
+}
+.photo-stack img {
+	transform: rotate(0deg);
+	width: 100%;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2),
+              0 14px 18px -12px rgba(0, 0, 0, 0.9);
+}
+.ie8 .photo-stack:before,
+.ie8 .photo-stack:after {
+	display: none;
+}

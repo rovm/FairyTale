@@ -1,0 +1,113 @@
+.Header_container {
+    height: 500px;
+    width: 100%;
+    z-index: 1001;
+    position: absolute;
+  }
+.Header_form {
+    border: 0px black solid;
+    height: 24px;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    /*position: relative;*/
+    padding-left: 25%;
+    padding-right: 25%;
+    position: absolute;
+    z-index: 1002;
+  }
+.Header_animal{
+    position: relative;
+    height: 550px;
+  }
+.Header_menu {
+    width: 80px;
+    top: 15px;
+    height: 30px;
+    margin-left: 1px;
+    float: left;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+  }
+.container{
+    width: 1200px;
+    margin: auto auto;
+    text-align: center;
+  }
+
+.book-form{
+    margin-top: 100px;
+    height: 400px;
+  }
+.menual-form{
+    margin: auto auto;
+    height: 400px;
+  }
+.btn {
+    float: right;
+    margin: 0 0 0 5px;
+  }
+.book {
+    display: inherit;
+    font-size: 33px;
+    text-align: left;
+    font-weight: bold;
+    color: gray;
+  }
+.notic {
+    display: inherit;
+    font-size: 33px;
+    text-align: left;
+    font-weight: bold;
+    color: gray
+  }
+.menual {
+    display: inherit;
+    font-size: 33px;
+    text-align: left;
+    font-weight: bold;
+    color: gray
+  }
+.left-form{
+  margin: auto auto;
+  width: 50%;
+  float: left;
+  }
+.right-form{
+  margin: auto auto;
+  width: 50%;
+  float: left;
+  }
+#book-btn{
+  margin-right: 10px;
+  }
+#notic-btn{
+  margin-right: 30px;
+  }
+#notic-board{
+  width: 90%;
+  font-size: 20px;
+  margin: auto;
+}
+.footer_container {
+  margin-top: 100px;
+  width: auto;
+  border-top: solid 1px gray;
+}
+.footer_domain-form{
+  margin: 10px auto;
+  height: 80px;
+  text-align: center;
+}
+.footer_use{
+  font-size: 17px;
+}
+.footer_menu {
+  margin-left: 20px;
+  font-size: 17px;
+}
+h1 {
+  color: gray;
+  float :left;
+}

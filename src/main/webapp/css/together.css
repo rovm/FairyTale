@@ -1,0 +1,292 @@
+
+body {
+  padding: 0;
+  background-color: ivory;
+  /*border: solid 2px black;*/
+  height: auto;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a{
+  color: white;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/*헤더시작*/
+
+
+#img {
+
+  border: 0;
+  width: 180px;
+  height: 180px;
+  background-image: url("../img/monster123.png");
+}
+#logo {
+  margin-top: -7px;
+  margin-left: 0px;
+  margin-right: 8px;
+  width: 178px;
+  height: 36px;
+  line-height: 36px;
+}
+
+#box {
+  border: 0px;
+  width: 980px;
+  height: 150px;
+  margin: 40px auto;
+  position: relative;
+}
+
+#menual-Name {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 300%;
+  font-weight: bold;
+  color: white;
+  margin-right: 18px;
+}
+
+
+#container {
+  padding: 15px;
+  margin-top: 0;
+  width: 100%;
+  height: 230px;
+  background-color: rgb(189, 209, 33);
+}
+
+
+.form {
+  height: 24px;
+  margin: 0 auto;
+  width: 950px;
+  position: relative;
+}
+
+.menu {
+  width: 80px;
+  top: 15px;
+  height: 24px;
+  margin-left: 4px;
+  float: left;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.page {
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  float: left;
+}
+
+/*헤더 끝*/
+
+/*푸터시작*/
+.footer_container {
+  width: 100%;
+  border-top: solid 1px gray;
+  margin: auto;
+}
+.footer_domain-form{
+  width: 980px;
+  margin: 10px auto;
+  height: 80px;
+  text-align: center;
+}
+.footer_use{
+  font-size: 17px;
+}
+.footer_menu {
+  margin-left: 20px;
+}
+/*푸터 끝*/
+
+
+.com-somenu {
+  width: 90px;
+  height: 90px;
+  float: right;
+  margin: 2px 3px 0 10px;
+  border-radius: 50px;
+}
+
+.fa {
+  font-size: 50px;
+}
+
+.fa-optin-monster {
+  margin-top: 4px;
+  color: red;
+}
+
+.fa-reddit-alien {
+  margin-top: 4px;
+  color: orange;
+}
+
+.fa-linux {
+  margin-top: 4px;
+  color: darkblue;
+}
+
+.com-font {
+  color: black;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.video {
+  height: 200px;
+  width: 700px;
+  box-shadow: 10px 10px 20px grey;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 250, 255);
+  /*border: black 0.5px solid;*/
+  padding-top: 10px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.video > div > img {
+  margin-left: 10px;
+  float: left;
+  width: 200px;
+  height: 180px;
+  border: 1px black solid
+}
+
+.video:hover {
+  background-color: rgb(189, 209, 33);
+}
+
+.vid-text {
+  position: absolute;
+  left: 230px;
+  width: 410px;
+  height: 158px;
+  margin-left: 10px;
+  /*border: 1px red solid*/
+}
+
+.vid-date {
+  margin-left: 567px;
+  bottom: 10px;
+  position: absolute;
+  text-align: right;
+
+  /*border: 1px green solid*/
+}
+.vid-date > div {
+  text-align: left;
+}
+
+.bord-button {
+  margin-bottom: 20px;
+}
+.top-input{
+  margin-right: 5px;
+  height: 40px;
+  float: right;
+}
+
+.bottom-button-box {
+  text-align: center;
+  /*border: 1px black solid;*/
+  width: 120px;
+  margin: 40px auto -5px auto
+}
+
+.bottom-button-box > a {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 150%;
+  line-height: 25px;
+  color: black
+}
+
+#next {
+  float: right;
+}
+
+#prev {
+  float: left;
+}
+
+#bord-btn{
+  height: 40px;
+  margin-bottom: 4px;
+  float: right;
+}
+
+#com-somenu {
+  margin: 5px auto;
+  width: 970px;
+  height: 95px;
+  text-align: center;
+}
+
+#kingmon {
+  font-size: 50px;
+}
+
+#togemon {
+  font-size: 50px;
+}
+
+#bordermon {
+  font-size: 50px;
+}
+
+#com-together {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 54px;
+
+  width: 980px;
+  height: auto;
+  border-radius: 30px;
+  border: 1px darkgrey solid;
+  /*box-shadow: 10px 10px 20px grey;*/
+  background-color: antiquewhite;
+}
+
+#video-box {
+  margin-bottom: 30px;
+  /*border: 1px black solid;*/
+}
+
+
+#vid-first {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+#vid-last {
+  margin-top: -23px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+#vid-serch {
+  text-align: right;
+  /*border: 1px black solid;*/
+  margin: 0 auto 20px auto;
+}
