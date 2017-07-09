@@ -258,12 +258,13 @@ th, td {
     vertical-align: middle;
     border-top: 1px solid #ddd;
 }
-/*�ㅻ������*/
+
+
 #img {
   border: 0;
   width: 200px;
   height: 150px;
-  background-image: url("../img/monster01.png");
+  background-image: url("../img/img1.png");
 }
 
 #logo {
@@ -275,9 +276,10 @@ th, td {
   line-height: 36px;
 }
 
+
 #box {
   border: 0px;
-  width: 980px;
+  width: 975px;
   height: 150px;
   margin: 40px auto;
   position: relative;
@@ -449,41 +451,6 @@ th, td {
   width: 220px;
   height: 250px;
 }
-
-
-#img {
-  border: 0;
-  width: 200px;
-  height: 150px;
-  background-image: url("../img/img1.png");
-}
-
-#logo {
-  margin-top: -7px;
-  margin-left: 0px;
-  margin-right: 8px;
-  width: 178px;
-  height: 36px;
-  line-height: 36px;
-}
-
-#menuName {
-  position: absolute;
-  bottom: 0px;
-  right: 13px;
-  width: auto;
-  height: auto;
-  color: white;
-}
-
-#box {
-  border: 0px;
-  width: 975px;
-  height: 150px;
-  margin: 40px auto;
-  position: relative;
-}
-
 
 #com-somenu {
   margin: 5px auto;
