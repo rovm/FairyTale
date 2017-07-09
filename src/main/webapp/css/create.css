@@ -1,0 +1,272 @@
+
+body {
+  padding: 0;
+  background-color: ivory;
+  height: auto;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a{
+  color: white;
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+<!-- 헤더 시작-->
+#img {
+  border: 0;
+  width: 200px;
+  height: 150px;
+  background-image: url("../img/monster01.png");
+}
+
+#logo {
+  margin-top: -7px;
+  margin-left: 0px;
+  margin-right: 8px;
+  width: 178px;
+  height: 36px;
+  line-height: 36px;
+}
+
+#box {
+  border: 0px;
+  width: 980px;
+  height: 150px;
+  margin: 40px auto;
+  position: relative;
+}
+
+#menual-Name {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 300%;
+  font-weight: bold;
+  color: white;
+  margin-right: 18px;
+}
+
+
+#container {
+  padding: 15px;
+  margin-top: 0;
+  width: 100%;
+  height: 230px;
+  background-color: skyblue;
+}
+
+
+.form {
+  height: 24px;
+  margin: 0 auto;
+  width: 950px;
+  position: relative;
+}
+
+.menu {
+  width: 80px;
+  top: 15px;
+  height: 24px;
+  margin-left: 4px;
+  float: left;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+<!-- 헤더 끝-->
+
+.footer_container {
+  width: 100%;
+  border-top: solid 1px gray;
+  margin: auto;
+}
+.footer_domain-form{
+  width: 980px;
+  margin: 10px auto;
+  height: 80px;
+  text-align: center;
+}
+.footer_use{
+  font-size: 17px;
+}
+.footer_menu {
+  margin-left: 20px;
+}
+
+.com-somenu {
+  width: 90px;
+  height: 90px;
+  float: right;
+  margin: 2px 3px 0 10px;
+  border-radius: 50px;
+}
+
+.fa {
+  font-size: 50px;
+}
+
+.fa-optin-monster {
+  margin-top: 4px;
+  color: red;
+}
+
+.fa-reddit-alien {
+  margin-top: 4px;
+  color: orange;
+}
+
+.fa-linux {
+  margin-top: 4px;
+  color: darkblue;
+}
+
+.com-font {
+  color: black;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.com-oldbest-box {
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  text-align: right;
+  background-color: bisque;
+  height: auto;
+  width: 100%;
+  /*border: 1px green solid;*/
+}
+.com-oldbest {
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -300px;
+  float: right;
+
+  width: 800px;
+  height: 300px;
+}
+
+.com-oldbest-standard {
+  height: auto;
+  width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.com-titl-box {
+
+  color: grey;
+  font-weight: bold;
+  font-size: 200%;
+
+  /*border-right: 1px black solid;*/
+  width: 150px;
+  height: 300px;
+}
+
+.drop {
+  text-align: right;
+  line-height: 170px;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 975px;
+}
+.drop>select {
+  margin-right: 0;
+}
+.best>a {
+  color: white;
+}
+.best {
+  text-align: center;
+  margin-left: 34px;
+  width: 220px;
+  height: 300px;
+  /*border: 1px solid red;*/
+  float: left;
+}
+
+.old-best {
+
+  width: 220px;
+  height: 250px;
+}
+
+
+#img {
+  border: 0;
+  width: 200px;
+  height: 150px;
+  background-image: url("../img/img1.png");
+}
+
+#logo {
+  margin-top: -7px;
+  margin-left: 0px;
+  margin-right: 8px;
+  width: 178px;
+  height: 36px;
+  line-height: 36px;
+}
+
+#menuName {
+  position: absolute;
+  bottom: 0px;
+  right: 13px;
+  width: auto;
+  height: auto;
+  color: white;
+}
+
+#box {
+  border: 0px;
+  width: 975px;
+  height: 150px;
+  margin: 40px auto;
+  position: relative;
+}
+
+
+#com-somenu {
+  margin: 5px auto;
+  width: 970px;
+  height: 95px;
+  text-align: center;
+}
+
+
+#com-titl-best {
+  margin: 10px auto 0 auto;
+  width: 300px;
+  height: 80px;
+  color: white;
+}
+
+/*div {
+  border: 1px red solid;
+}*/
+
+#kingmon {
+  font-size: 50px;
+}
+
+#togemon {
+  font-size: 50px;
+}
+
+#bordermon {
+  font-size: 50px;
+}
