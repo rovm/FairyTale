@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-	<wb-module deploy-name="Donghwa">
-		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="2.0">
+	<wb-module deploy-name="FairyTale">
+		<property name="context-root" value="FairyTale"/>
 		<wb-resource deploy-path="/" source-path="src/main/webapp"/>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/bitcamp/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/139535a69a4239db087de9bab0bee568bf8e0b70/slf4j-api-1.7.21.jar">
 			<dependency-type>uses</dependency-type>
@@ -68,6 +69,5 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/bitcamp/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-        <property name="context-root" value="Donghwa"/>
 	</wb-module>
 </project-modules>
