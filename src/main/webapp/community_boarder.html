@@ -68,16 +68,19 @@
 
   <div class="bord-container">
     <div id="com-titl-bord" class="bord-top">
-
-
         <div class="bord-button">
           <strong>자유롭게 이야기를 나누어요</strong>
-          <input class="top-input"type="text" placeholder="검색" id="bord-top-input"></input>
-          <button class="btn btn-danger" id="bord-btn">+새로운게시글</button>
+        <div id="board-position">
+          <div class="board_search">
+            <input type="search" placeholder="검색">
+          </div>
+          <div class="board_button">
+            <button class="btn btn-danger" id="bord-btn">+새로운게시글</button>
+          </div>
         </div>
-
-      </div>
+        </div>
     </div>
+  </div>
 
       <div class="table-box">
         <table id="tbl" class="table table-bordered">
@@ -168,5 +171,3 @@
 <script src='node_modules/jquery/dist/jquery.min.js'></script>
 <script src="js/community.js"></script>
 </html>
-
-
