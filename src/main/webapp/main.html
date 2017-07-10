@@ -9,9 +9,9 @@
 
     <script type="text/javascript" src="Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/responsiveCarousel.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
     <title>main</title>
 
   </head>
@@ -325,9 +325,9 @@
             <button type="button" id="book-btn"class="btn btn-info">더보기</button>
           </span><br><br><br>
         <div>
-          <img src="img/thumb02.jpg" width="270px" height="200px">
-          <img src="img/thumb01.jpg" width="270px" height="200px">
-          <img src="img/thumb05.jpg" width="270px" height="200px">
+          <img src="img/thumb02.jpg" width="270px" height="200px" style="cursor:pointer">
+          <img src="img/thumb01.jpg" width="270px" height="200px" style="cursor:pointer">
+          <img src="img/thumb05.jpg" width="270px" height="200px" style="cursor:pointer">
         </div>
       </div>
       <br><br>
@@ -388,7 +388,7 @@
       </span>
       <br>
       <br>
-      <img src="img/video.JPG" width="500px" height="270px">
+      <img src="img/video.JPG" width="500px" height="270px" style="cursor:pointer">
       <!-- <video width="320" height="240" controls>
     <source src="movie.mp4" type="video/mp4">
     <source src="movie.ogg" type="video/ogg">
@@ -421,6 +421,20 @@
     <span class="footer_use"><font color="gray" face="serif">Copyright © FTBook Corp. All Rights Reserved. ©Olivestudio Ltd., EBS, Dream search C&amp;C. All Rights Reserved.</font></span>
   </div>
   </div>
+  
+  <!-- 모달폼 -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <script type="text/javascript">
     $(function(){
@@ -438,6 +452,8 @@
 
 
     </script>
+    
+    
   <form>
   </form>
   </body>
