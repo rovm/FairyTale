@@ -125,6 +125,7 @@ th, td {
   margin-left: 20px;
 }
 
+/*여기부터 상세보기*/
 #titl {
   width: 580px;
   float: left;
@@ -143,14 +144,15 @@ th, td {
 #user {
 	line-height:40px;
 	
-	float: right;
+	float: left;
 	height: 40px;
-	margin-right: 10px;
+	margin-left: 20px;
 }
 
 #cont {
-	margin: 30px auto;
-  height: 600px;
+	margin: 10px auto;
+	margin-left:20px;
+  height: auto;
   width: 700px;	
 }
 .bord {
@@ -163,6 +165,14 @@ th, td {
 	margin: 0 auto;
 	width: 950px;
 	height: auto;
+	padding-bottom:30px;
+}
+.comment>button {
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+	height: 60px;
+	width: 100px;
 }
 h1 {
 	margin-top:30px;
@@ -171,6 +181,9 @@ hr {
 	border: solid 1px gray;
 }
 
+p {
+	color:gray;
+}
 .top_bar {
 	height: 40px;
 	background-color: gainsboro;
@@ -178,8 +191,10 @@ hr {
 	border-bottom: 2px black solid;
 }
 
-div {
-	border: 1px solid black
+.comment {
+	background-color: ivory;
 }
+
+
 
 
