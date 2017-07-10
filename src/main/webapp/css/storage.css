@@ -285,7 +285,9 @@ body{
   overflow:auto;
   width:50%;
   text-align:left;
+  height: 800px;
 }
+
 .box h3{
   font-family: 'Leckerli One', cursive;
   color:#F88484;
