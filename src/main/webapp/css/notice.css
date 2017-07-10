@@ -38,7 +38,7 @@ input[type=search] {
 input[type=search]:focus {
 	width: 130px;
 	background-color: #fff;
-	border-color: gold;
+	border-color: yellowgreen;
 
 	/*-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
@@ -127,7 +127,7 @@ th, td {
 	margin-top: 0;
 	width: 100%;
 	height: 230px;
-	background-color: gold;
+	background-color: yellowgreen;
 }
 
 .form {
@@ -167,7 +167,7 @@ th, td {
 }
 
 .top-table-color {
-	background-color: gold;
+	background-color: yellowgreen;
 }
 
 .bord-button {
@@ -216,11 +216,11 @@ th, td {
 }
 
 .active2>td>a:hover {
-	color: gold;
+	color: yellowgreen;
 }
 
 .active2>td {
-	color: gold;
+	color: yellowgreen;
 }
 
 .fa {

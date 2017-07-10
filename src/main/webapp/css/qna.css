@@ -15,14 +15,14 @@ form {
   border-bottom: 5px solid #fcd700;*/
 	width: 700px;
 	margin: 0px auto;
-	color: #2F363A;
+	color: yellowgreen;
 }
 
 fieldset {
 	margin: 0px auto;
 	background: #fdfdfd;
 	width: 60%;
-	border: 1px solid #e5e5e5;
+	border: 1px solid yellowgreen;
 	/*border-top: 0px solid #e5e5e5;*/
 	padding: 50px;
 }
@@ -52,11 +52,11 @@ form input, form select {
 }
 
 form input:hover, form select:hover, form textarea:hover {
-	border: 1px solid #dbb300;
+	border: 1px solid yellowgreen;
 }
 
 form input:focus, form select:focus, form textarea:focus {
-	border-color: #d1d1d1;
+	border-color: yellowgreen;
 	outline: none;
 }
 
@@ -69,7 +69,7 @@ form select {
 }
 
 form textarea {
-	color: #ce1819;
+	color: #2f363a;
 	background: #fdfdfd;
 	width: 310px;
 	height: 90px;
@@ -82,7 +82,7 @@ form textarea {
 form input.submit {
 	float: left;
 	color: #fff;
-	background: #fcd700;
+	background: yellowgreen;
 	margin-top: 20px;
 	width: 100%;
 	height: 50px;
@@ -91,7 +91,7 @@ form input.submit {
 }
 
 form input.submit:hover {
-	background: #dbb300;
+	background: olivedrab;
 }
 
 form p {
@@ -100,15 +100,15 @@ form p {
 }
 
 form p a:link {
-	color: #fcd700;
+	color: yellowgreen;
 }
 
 form p a:hover {
-	color: #fcd700;
+	color: yellowgreen;
 }
 
 form p a:visited {
-	color: #fcd700;
+	color: yellowgreen;
 }
 
 /*hearder*/
@@ -164,7 +164,7 @@ a:hover {
 	margin-top: 0;
 	width: 100%;
 	height: 230px;
-	background-color: gold;
+	background-color: yellowgreen;
 }
 
 .form {

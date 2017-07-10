@@ -115,7 +115,7 @@ audio { margin:0 15px 0 14px; width:670px; }
 #tracks { position:relative; text-align:center; }
 #nowPlay { display:inline; }
 #npTitle { margin:0; padding:21px; text-align:right; }
-#npAction { padding:21px; position:absolute; }
+#npAction {margin-top: 10px; padding:21px; position:absolute; }
 #plList { margin:0; }
 #plList li { background-color:#231F20; cursor:pointer; display:block; margin:0; padding:21px 0; }
 #plList li:hover { background-color:#262223; }
