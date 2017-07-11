@@ -1,3 +1,266 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons|Roboto';
+
+
+
+
+
+.longText{
+  width: 275px;
+  height: 400px;
+  margin: auto;
+  margin-bottom: 2em;
+  background-color: #fff;
+  border-radius: 2px;
+	border: 1px solid orange;
+  text-align: justify;
+	font-weight: bold;
+	font-size: 150%;
+}
+#NOThidingScrollBar{
+  overflow-y: scroll;
+}
+/*------THE TRICK------*/
+#hidingScrollBar{
+  overflow: hidden;
+}
+.hideScrollBar{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin-right: 14px;
+  padding-right: 28px; /*This would hide the scroll bar of the right. To be sure we hide the scrollbar on every browser, increase this value*/
+  padding-bottom: 15px; /*This would hide the scroll bar of the bottom if there is one*/
+}
+
+/*---------------------*/
+
+/*p{
+  padding: 1em;
+  color: #444444;
+}*/
+.column-6of12{
+  float: left;
+  min-height: 1px;
+   width: 50%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+/*@media (max-width: 796px) {
+  .column-6of12{
+    width: 100%;
+  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+header
+{
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 25px;
+}
+
+#info
+{
+	font-size: 18px;
+	color: #555;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+a{
+	color: #074E8C;
+}
+
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+#wrapper
+{
+	text-align: center;
+	width: 500px;
+	margin: auto;
+}
+
+/*
+ *  STYLE 1
+ */
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+
+
+
+
+body {
+  background: #fff;
+  font-family: 'Roboto Light';
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    outline: none;
+}
+
+.recorder_wrapper {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.recorder {
+    display: inline-block;
+    text-align: center;
+    width: 500px;
+    max-width: 100%;
+}
+
+.record_btn {
+    width: 100px;
+    height: 100px;
+    font-family: 'Material Icons';
+    font-size: 48px;
+    color: #e74c3c;
+    background: none;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.15s linear;
+}
+
+.record_btn:hover {
+    transition: 0.15s linear;
+    transform: scale( 1.05 );
+}
+
+.record_btn:active {
+    background: #f5f5f5;
+}
+
+.record_btn:after {
+    content: '\E029';
+}
+
+.record_btn[disabled] {
+    border: 2px solid #ccc;
+}
+
+.record_btn[disabled]:after {
+    content: '\E02B';
+    color: #ccc;
+}
+
+.record_btn[disabled]:hover {
+    transition: 0.15s linear;
+    transform: none;
+}
+
+.record_btn[disabled]:active {
+    background: none;
+}
+
+.recording {
+    animation: recording 2s infinite ease-in-out;
+    position: relative;
+}
+
+.recording:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    border-radius: 50%;
+    background: rgba( 0, 0, 0, 0.05 );
+    animation: recording_before 2s infinite ease-in-out;
+}
+
+@keyframes recording {
+    from {
+        transform: scale( 1.1 );
+    }
+
+    50% {
+        transform: none;
+    }
+
+    to {
+        transform: scale( 1.1 );
+    }
+}
+
+@keyframes recording_before {
+    80% {
+        width: 200px;
+        height: 200px;
+        margin: -100px;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.record_canvas {
+    width: 60px;
+    height: 100px;
+    display: inline-block;
+
+}
+
+.txt_btn {
+    color: #000;
+    text-decoration: none;
+    transition: 0.15s linear;
+    animation: text_btn 0.3s ease-in-out;
+}
+
+
 
 /* Font Family
 ================================================== */
@@ -202,6 +465,20 @@ html[data-useragent*="OS 9"] #plList li:hover { background-color:#eee; }
 html[data-useragent*="OS 9"] .plSel,
 html[data-useragent*="OS 9"] .plSel:hover { background-color:#eee!important; }
 
+
+/* IOS 10 */
+html[data-useragent*="OS 10"] body { color:#373837; }
+html[data-useragent*="OS 10"] audio { margin-left:6px; width:694px; }
+html[data-useragent*="OS 10"] #audiowrap { background-color:#d5d5d5; }
+html[data-useragent*="OS 10"] a[id^="btn"] { background-color:#d5d5d5; color:#373837; }
+html[data-useragent*="OS 10"] a[id^="btn"]:hover { background-color:#eee; }
+html[data-useragent*="OS 10"] #plList li { background-color:#d5d5d5; }
+html[data-useragent*="OS 10"] #plList li:hover { background-color:#eee; }
+html[data-useragent*="OS 10"] .plSel,
+html[data-useragent*="OS 10"] .plSel:hover { background-color:#eee!important; }
+
+
+
 /* Chrome */
 html[data-useragent*="Chrome"] body { color:#5a5a5a; }
 html[data-useragent*="Chrome"] audio { margin-left:9px; width:677px; }
@@ -280,9 +557,9 @@ a:hover{color:#1bc1a3;}
 body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
 #text-box {
 	padding-left: 10px;
-  border:2px solid black;
+  /*border:2px solid black;*/
   height:400px;
-  width:250px;
+  width:280px;
   float:right;
   background-color: white;
   color: black;

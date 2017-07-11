@@ -53,13 +53,27 @@
 
 <!-- 여기부터 슬라이더 -->
 <div id="wrapper">
-      <div id="text-box">
+					<!-- <div class="force-overflow"></div>
         토끼가 말했다.<br>
         "집에 가고싶다!"<br><br>
         거북이도 말했다.<br>
         "주말에 나오기 싫다!!"<br><br>
-        응 안돼 나와
-      </div>
+        응 안돼 나와 -->
+
+			<div id="text-box">
+			<div class="column-6of12">
+		    <div class="longText"  id="NOThidingScrollBar">
+					<br>
+					<h1>토끼와 거북이</h1><br>
+					&nbsp;&nbsp;토끼가 말했다.<br>
+	        &nbsp;&nbsp;"집에 가고싶다!"<br><br>
+	        &nbsp;&nbsp;거북이도 말했다.<br>
+	        &nbsp;&nbsp;"주말에 나오기 싫다!!"<br><br>
+	        &nbsp;&nbsp;응 안돼 나와
+		    </div>
+		  </div>
+		</div>
+
    	  <div id="slider-wrap">
 
       	  <ul id="slider" >
@@ -109,7 +123,6 @@
            <!--controls-->
           <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
           <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
-          <div id="counter"></div>
 
           <div id="pagination-wrap">
             <ul>
@@ -127,7 +140,7 @@
 	 		<div class="column add-bottom">
 	 				<div id="mainwrap">
 	 						<div id="nowPlay">
-	 								<span class="left" id="npAction">Paused...</span>
+	 								<span class="left" id="npAction">정지</span>
 	 								<span class="right" id="npTitle"></span>
 	 						</div>
 	 						<div id="audiowrap">
@@ -135,8 +148,19 @@
 	 										<audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
 	 								</div>
 	 								<div id="tracks">
-	 										<a id="btnPrev">&laquo;</a>
-	 										<a id="btnNext">&raquo;</a>
+
+
+<!-- 녹음버튼 -->
+										<div class="recorder_wrapper">
+        <div class="recorder">
+            <button class="record_btn" id="button"></button>
+            <p id="msg_box"></p>
+        </div>
+    </div>
+
+<!-- 녹음버튼끝 -->
+
+
 	 								</div>
 	 						</div>
 	 						<div id="plwrap">
