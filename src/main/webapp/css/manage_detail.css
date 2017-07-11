@@ -152,7 +152,7 @@ th, td {
 #cont {
 	margin: 10px auto;
 	margin-left:20px;
-  height: auto;
+  min-height: 300px;
   width: 700px;	
 }
 .bord {
