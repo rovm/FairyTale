@@ -1,5 +1,22 @@
+table {
+  width: 100%;
+}
+tr > td {
+  padding-left: 20px;
+  font-size: 350%;
+}
+hr {
+  border: solid 1px darkgray;
+}
 div {
-  border: solid 1px red;
+  /*border: solid 1px red;*/
+}
+thead{
+  font-size: 103%;
+}
+tbody {
+  font-size: 85%;
+
 }
 #container {
   width: 100%;
@@ -9,31 +26,43 @@ div {
   width: 100%;
 }
 .top-menubar {
+  width: 100%;
   height: 150px;
   text-align: center;
-  font-size: 45px;
-  padding-top: 42px;
+  font-size: 450%;
+  padding-top: 25px;
+  color: white;
+  background-color: darkslateblue;
 }
 .select-form {
   height: 150px;
-  padding-top: 15px;
+  padding: 20px 0;
+  border: solid 1px #545454;
 
 }
 .select-bar {
-  height: 120px;
+  height: 110px;
   width: 67%;
   position: absolute;
-  font-size: 60px;
+  font-size: 400%;
   margin: 15px 8 0 15px;
   margin-left: 15px;
 }
 .write-btn {
   color: white;
-  height: 120px;
+  height: 110px;
   width: 28%;
-  font-size: 60px;
+  font-size: 400%;
   background-color: tomato;
   float: right;
   margin-right: 15px;
   margin-left: 8px;
+}
+.info{
+  padding-top: 15px;
+  background-color: lightyellow;
+}
+.footer {
+  height: 200px;
+  width: 100%;
 }
