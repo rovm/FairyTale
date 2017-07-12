@@ -137,13 +137,12 @@ color: black;
 
 #menual-btn{
 float: right;
-width: 500px;
+width: 400px;
 height: 62px;
 margin-right: 0px;
 }
 
 button{
-height: 60px;
 text-align: center;
 margin-left: 5px;
 }
