@@ -4,6 +4,8 @@
 	.container{
 	min-wdth:320px;
 	max-width:375px;
+	position: absolute;
+	z-index: 1000;
 	padding:0;}
 }
 
@@ -83,6 +85,11 @@ h1, h2, h3, h4, h5, h6{
   overflow:auto;
 }
 
+/*.mobile-nav {
+	position: absolute;
+	z-index: 1000;
+}*/
+
 .mobile-nav h2{
   padding: 25px 20px;
 }
@@ -96,7 +103,7 @@ h1, h2, h3, h4, h5, h6{
 .mobile-one .mobile-nav li a:hover{
   background-color: hotpink;
   color: #fff;
-  
+
 }
 
 #main-text{
@@ -112,5 +119,3 @@ h1, h2, h3, h4, h5, h6{
 #service-center-btn{
 	display: none;
 }
-
-
