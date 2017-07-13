@@ -1,121 +1,101 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,700';
-
-@media (min-device-width:320px) and (max-device-width:414px){
-	.container{
-	min-wdth:320px;
-	max-width:375px;
-	position: absolute;
-	z-index: 1000;
-	padding:0;}
+html body{
+	padding: 0px;
+	margin: 0px;
 }
 
-@media (min-device-width:415px) and (max-device-width:767px){
-  .container{
-  min-wdth:415px;
-  max-width:767px;
-  padding:0;}
+ul{
+  list-style:none;
+  padding: 0px;
+  margin: 0px;
 }
 
-
-.mobile-wrapper{
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* ALL MOBILES */
-
-body{
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #eee;
-}
-
-a{
+a {
   text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6{
-  color: #fff;
-  font-weight: 200;
-  margin: 0;
-  padding: 10px 0;
-}
-
-.mobile{
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  display: inline-block;
-}
-
-.mobile .header{
-  background-color: pink;
-  color: #fff;
-  padding: 10px;
-}
-
-.line{
-  width: 30px;
-  height: 2px;
-  margin: 10px 0;
-  background-color: #fff;
-}
-
-.menu-toggle:hover{
-  cursor: pointer;
-}
-
-.mobile-nav ul{
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-/* MOBILE ONE */
-
-.mobile-one .mobile-nav{
-  background-color: pink;
-  max-width: 200px;
-  width: 100%;
-  height: 100%;
-  transform: translate(-100%, 0);
-  overflow:auto;
-}
-
-/*.mobile-nav {
-	position: absolute;
-	z-index: 1000;
-}*/
-
-.mobile-nav h2{
-  padding: 25px 20px;
-}
-
-.mobile-one .mobile-nav li a{
   color: white;
-  display: block;
-  padding: 15px 20px;
+  padding-left: 15px;
 }
 
-.mobile-one .mobile-nav li a:hover{
+#menubar ul li{
+  margin: 0px;
+  padding: 15px;
+}
+
+#menubar ul li a:hover{
+  text-decoration: none;  
+  background-color: pink;
+  color: white !important;
+}
+
+#menubar ul li:hover {
+  background: hotpink;
+  color: #fff;
+  }
+
+#header_menu{
+	width: 100%;
+	height: 50px;
+	background-color: pink;
+	position: relative;
+}
+
+#menubar{
+	width: 200px;
+	height: auto;
+	background-color: pink;  
+	color: white;
+	display: none;
+	overflow: visible;  
+	position: absolute;
+}
+
+#menubar > p {
+  font-size: 140%;
+  padding-left: 13px;
+}
+
+#menubar{
+   margin: 0px;
+   padding: 0px;
+   margin-top: -20px;
+}
+
+#menubar ul li a:hover{
   background-color: hotpink;
   color: #fff;
-
+ 
 }
 
-#main-text{
-	padding-top: 55px;
-	overflow:auto;
-	height: 600px;
+#menubar ul li ul li:hover{
+  background-color: gray;
+  color: #fff;
 }
 
-#community-btn{
-	display: none;
+#menubar ul li ul li a:hover{
+	background-color: gray;
+  color: #fff;
 }
 
-#service-center-btn{
-	display: none;
+#menubar ul li ul li{
+	width:170px;
 }
+
+#menubar ul li ul{
+	padding-left: 20;
+	margin-left: -15px;
+	width: 200px;
+	margin-top: 15px;
+}
+
+#communityBtn{
+  display: none;
+  width:200px;
+}
+
+#serviceBtn{
+  display: none;
+}
+
+#menuList{
+	font-size: 200%;
+}
+
