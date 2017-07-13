@@ -46,6 +46,7 @@ a {
 	display: none;
 	overflow: visible;  
 	position: absolute;
+	z-index: 5000;
 }
 
 #menubar > p {
@@ -76,7 +77,7 @@ a {
 }
 
 #menubar ul li ul li{
-	width:170px;
+	width:200px;
 }
 
 #menubar ul li ul{

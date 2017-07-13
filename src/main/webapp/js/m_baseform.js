@@ -15,6 +15,7 @@ $(".mobile-one .menu-toggle, .mobile-three .menu-toggle").click(function() {
 });
 
 function headerBtn() {
+	menu_reset()
     var menu_btn= document.getElementById('menubar');
     if (menu_btn.style.display == 'none') {
     	menu_btn.style.display = 'block';
