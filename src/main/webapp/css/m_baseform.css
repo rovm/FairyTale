@@ -21,7 +21,7 @@ a {
 }
 
 #menubar ul li a:hover{
-  text-decoration: none;  
+  text-decoration: none;
   background-color: pink;
   color: white !important;
 }
@@ -41,10 +41,10 @@ a {
 #menubar{
 	width: 200px;
 	height: auto;
-	background-color: pink;  
+	background-color: pink;
 	color: white;
 	display: none;
-	overflow: visible;  
+	overflow: visible;
 	position: absolute;
 	z-index: 5000;
 }
@@ -63,7 +63,7 @@ a {
 #menubar ul li a:hover{
   background-color: hotpink;
   color: #fff;
- 
+
 }
 
 #menubar ul li ul li:hover{
@@ -99,4 +99,17 @@ a {
 #menuList{
 	font-size: 200%;
 }
+.top-menubar {
+  width: 100%;
+  height: 46px;
+  font-size: 167%;
+  padding-top: 4px;
 
+  color: white;
+  background-color: pink;
+	font-weight: bolder;
+}
+#top-menufont{
+	margin-right: 5%;
+	float: right;
+}
