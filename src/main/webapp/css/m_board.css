@@ -1,68 +1,294 @@
+
+html body{
+	padding: 0px;
+	margin: 0px;
+}
+
+ul{
+  list-style:none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding-left: 15px;
+}
+
+#menubar ul li{
+  margin: 0px;
+  padding: 15px;
+}
+
+#menubar ul li a:hover{
+  text-decoration: none;
+  background-color: pink;
+  color: white !important;
+}
+
+#menubar ul li:hover {
+  background: hotpink;
+  color: #fff;
+  }
+
+#header_menu{
+	width: 100%;
+	height: 50px;
+	background-color: pink;
+	position: relative;
+}
+
+#menubar{
+	width: 200px;
+	height: auto;
+	background-color: pink;
+	color: white;
+	display: none;
+	overflow: visible;
+	position: absolute;
+	z-index: 100;
+}
+
+#menubar > p {
+  font-size: 140%;
+  padding-left: 13px;
+}
+
+#menubar{
+   margin: 0px;
+   padding: 0px;
+   margin-top: -20px;
+}
+
+#menubar ul li a:hover{
+  background-color: hotpink;
+  color: #fff;
+
+}
+
+#menubar ul li ul li:hover{
+  background-color: gray;
+  color: #fff;
+}
+
+#menubar ul li ul li a:hover{
+	background-color: gray;
+  color: #fff;
+}
+
+#menubar ul li ul li{
+	width:170px;
+}
+
+#menubar ul li ul{
+	padding-left: 20;
+	margin-left: -15px;
+	width: 200px;
+	margin-top: 15px;
+}
+
+#communityBtn{
+  display: none;
+  width:200px;
+}
+
+#serviceBtn{
+  display: none;
+}
+
+#menuList{
+	font-size: 200%;
+}
+
+
+
+.mobile-wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ALL MOBILES */
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  color: #fff;
+  font-weight: 200;
+  margin: 0;
+  padding: 10px 0;
+}
+.btn {
+	height: 46px;
+  width: 30%;
+  font-size: 160%;
+  float: right;
+  margin-right: 3%;
+  margin-left: 1%;
+  border-radius: 12px;
+  text-align: center;
+	font-weight: bold;
+
+}
+.mobile{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  display: inline-block;
+}
+
+.mobile .header{
+  background-color: pink;
+  color: #fff;
+  padding: 10px;
+}
+
+.line{
+  width: 30px;
+  height: 2px;
+  margin: 10px 0;
+  background-color: #fff;
+}
+
+.menu-toggle:hover{
+  cursor: pointer;
+}
+
+.mobile-nav ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* MOBILE ONE */
+
+.mobile-one .mobile-nav{
+  background-color: pink;
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  transform: translate(-100%, 0);
+  overflow:auto;
+}
+
+.mobile-nav h2{
+  padding: 25px 20px;
+}
+
+.mobile-one .mobile-nav li a{
+  color: white;
+  display: block;
+  padding: 15px 20px;
+}
+
+.mobile-one .mobile-nav li a:hover{
+  background-color: hotpink;
+  color: #fff;
+
+}
+
+#main-text{
+	padding-top: 55px;
+	overflow:auto;
+	height: 600px;
+}
+
+#community-btn{
+	display: none;
+}
+
+#service-center-btn{
+	display: none;
+}
+
+  #container{
+    position: relative;
+    min-width:320px;
+    max-width:414px;
+    padding: 0;
+		z-index: 1;
+  }
+}
+
 table {
   width: 100%;
+  padding-bottom: 5px;
 }
 tr > td {
   padding-left: 20px;
-  font-size: 350%;
-}
-hr {
-  border: solid 1px darkgray;
+  font-size: 100%;
 }
 div {
   /*border: solid 1px red;*/
 }
-thead{
-  font-size: 103%;
+#head-table{
+
+  font-size: 150%;
 }
-tbody {
-  font-size: 85%;
+#body-table {
+  font-size: 100%;
 
 }
-#container {
-  width: 100%;
-}
+
 .header {
-  height: 200px;
+  height: 47px;
   width: 100%;
 }
 .top-menubar {
   width: 100%;
-  height: 150px;
+  height: 46px;
   text-align: center;
-  font-size: 450%;
-  padding-top: 25px;
+  font-size: 167%;
+  padding-top: 4px;
   color: white;
   background-color: darkslateblue;
+	font-weight: bolder;
 }
 .select-form {
-  height: 150px;
+  height: 84px;
   padding: 20px 0;
   border: solid 1px #545454;
+  position: relative;
 
 }
 .select-bar {
-  height: 110px;
-  width: 67%;
-  position: absolute;
-  font-size: 400%;
-  margin: 15px 8 0 15px;
-  margin-left: 15px;
+  height: 46px;
+  width: 60%;
+  position: relative;
+  font-size: 160%;
+  /*margin-top: 3%;*/
+  margin-left: 3%;
+  border-radius: 12px;
+	font-weight: bolder;
 }
+
 .write-btn {
+
+  background-color: lightpink;
   color: white;
-  height: 110px;
-  width: 28%;
-  font-size: 400%;
-  background-color: tomato;
-  float: right;
-  margin-right: 15px;
-  margin-left: 8px;
 }
 .info{
-  padding-top: 15px;
+  padding-top: 10px;
   background-color: lightyellow;
 }
-.footer {
-  height: 200px;
-  width: 100%;
+
+.footer_domain-form {
+	width: 100%;
+	border-top: solid 1px gray;
+	bottom: 0;
+	text-align: center;
+	font-size: 14px;
+
+	/*position: absolute;*/
+	padding: 15px 0;
 }
