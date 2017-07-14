@@ -1,23 +1,50 @@
-<!-- AJAX 사용법 -->
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>m_create</title>
-<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/m_create.css">
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/m_create.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>header1</title>
+  <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/m_create.css">
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/m_baseform.js"></script>
+	<script type="text/javascript" src="js/m_create.js"></script>
+
 
 </head>
-<body>
-	<div id="container">
-		<div class="header">
 
-		</div>
+  <body>
 
+<div id="header_menu">
+  <a href="#" onclick="headerBtn()" id="menuList">=</a>
+</div>
+<div id="menubar"><br>
+ <p>동화와만나요</p>
+ <ul>
+   <li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
+   <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+    <ul id="communityBtn">
+      <li><a href="#">명예의전당</a></li>
+      <li><a href="#">같이보기</a></li>
+      <li><a href="#">자유게시판</a></li>
+    </ul>
+   </li>
+   <li><a href="#" onclick="menu_reset()">동화만들기</a></li>
+   <li><a href="#" onclick="menu_reset()">작품보관함</a></li>
+   <li><a href="#" onclick="menu_reset()">내글관리</a></li>
+   <li><a href="#" onclick="menu_reset()">사진첩</a></li>
+   <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
+    <ul id="serviceBtn" >
+      <li><a href="#">공지사항</a></li>
+      <li><a href="#">자주하는질문</a></li>
+      <li><a href="#">문의하기</a></li>
+    </ul>
+   </li>
+ </ul>
+</div>
+<div id="main-text">
 	<div id="create_container">
 		<div id="next" alt="Next" title="Next">
 				<div class="arrow-right"></div>
@@ -75,17 +102,15 @@
 			</div>
 </div>
 </div>
-<i class="fa fa-microphone fa-1x">
 			<div class="record_container">
-				<button class="btn btn-sm btn-info" type="submit">녹음하기</i></button>
+				<button class="btn btn-sm btn-info" type="submit"><i class="fa fa-microphone fa-1x"></i></button>
 					<audio controls>
 		<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
 		<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
 		<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
 	</audio>
-			</div>
-
-
-
+			</div></div>
+<div>footer요</div>
 </body>
+
 </html>

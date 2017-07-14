@@ -1,0 +1,104 @@
+/*@media (min-device-width: 320px) and (max-device-width: 414px) {
+  html {
+    font-size: 10px;
+  }
+  .container {
+    min-width: 320px;
+    max-width: 414px;
+    padding: 0;
+  }
+}*/
+/*iphone plus*/
+/*@media (min-device-width: 415px) and (max-device-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    min-width: 415px;
+    max-width: 767px;
+    padding: 0;
+  }
+}*/
+/*ipad*/
+/*@media (min-device-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 768px;
+    padding: 0;
+  }
+}*/
+
+.faq_container {
+	width: 100%;
+	margin: 0px auto;
+	font-family: "helvetica neue", helvetica, sans-serif;
+	background-color: #ffffff !important;
+	overflow-y: hidden;
+}
+
+.faq_section {
+	margin: 60px auto;
+}
+
+.FaQ_Each {
+	padding-bottom: 10px;
+}
+
+.box {
+	margin: 0px auto;
+	color: #666666;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	font-size: 13px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: 1px solid #d9d9d9;
+	width: 95%;
+}
+
+.draw {
+	margin: 0px auto;
+	display: none;
+	background: #ffffff;
+	padding: 20px;
+	border-bottom: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+	color: #000000;
+	padding-left: 30px;
+	width: 95%;
+}
+
+#other {
+	display: none;
+}
+
+.faq_select {
+	outline-color: pink;
+	background-color: #fff;
+	margin-right: 10px;
+	float: right;
+	margin-top: -50px;
+	color: #666666;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 13px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: 1px solid #d9d9d9;
+}
+
+
+
+a {
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+}

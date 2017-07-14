@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>login</title>
+  <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
+	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/m_login.css">
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/m_baseform.js"></script>
+
+
+</head>
+
+  <body>
+
+<div id="header_menu">
+  <a href="#" onclick="headerBtn()" id="menuList">=</a>
+</div>
+<div id="menubar"><br>
+ <p>동화와만나요</p>
+ <ul>
+   <li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
+   <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+    <ul id="communityBtn">
+      <li><a href="#">명예의전당</a></li>
+      <li><a href="#">같이보기</a></li>
+      <li><a href="#">자유게시판</a></li>
+    </ul>
+   </li>
+   <li><a href="#" onclick="menu_reset()">동화만들기</a></li>
+   <li><a href="#" onclick="menu_reset()">작품보관함</a></li>
+   <li><a href="#" onclick="menu_reset()">내글관리</a></li>
+   <li><a href="#" onclick="menu_reset()">사진첩</a></li>
+   <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
+    <ul id="serviceBtn" >
+      <li><a href="#">공지사항</a></li>
+      <li><a href="#">자주하는질문</a></li>
+      <li><a href="#">문의하기</a></li>
+    </ul>
+   </li>
+ </ul>
+</div>
+<div id="main-text">
+  <div class="top-menubar">
+      <span id="top-menufont">로그인</span>
+  </div>
+	<div class="login_container">
+
+
+		<div class="omb_login">
+				<div id="btn_container">
+          <button type="button" class="btn f-btn">Facebook</button>
+          <button type="button" class="btn g-btn">Google+</button>
+					<button type="button" class="btn k-btn">Kakao</button>
+			</div>
+
+			<hr id="pilot-wire">
+			<div class="login-formBox">
+				<div class="login-formBox">
+					<form class="omb_loginForm" action="" autocomplete="off"
+						method="POST">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input type="text" class="form-control input-input"
+								name="username" placeholder="email address">
+						</div>
+						<span class="help-block"></span>
+
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+							<input type="password" class="form-control input-input"
+								name="password" placeholder="Password">
+						</div>
+						<br>
+						<button class="btn btn-lg btn-primary btn-block btnn"
+							type="submit">Login</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div>footer요</div>
+</body>
+
+</html>
