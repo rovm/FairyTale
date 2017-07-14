@@ -75,12 +75,41 @@ $(document).ready(function(){
 	  $("#myModal").mosssdal();  
 	});
 	
-	 $(".video").click(function(){
+	 $(".v1").click(function(){
 		  console.log("하하")
-	  var t = $("img").attr("src");
+	  var t = $("#i1").attr("src");
+	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+	  $("#myModal").modal();
+	});
+	 
+	 $(".v2").click(function(){
+		  console.log("하하")
+	  var t = $("#i2").attr("src");
+	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+	  $("#myModal").modal();
+	});
+	 
+	 $(".v3").click(function(){
+		  console.log("하하")
+	  var t = $("#i3").attr("src");
+	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+	  $("#myModal").modal();
+	});
+	 
+	 $(".v4").click(function(){
+		  console.log("하하")
+	  var t = $("#i4").attr("src");
+	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+	  $("#myModal").modal();
+	});
+	 
+	 $(".v5").click(function(){
+		  console.log("하하")
+	  var t = $("#i5").attr("src");
 	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
 	  $("#myModal").modal();
 	});
 
 	});//EOF Document.ready
 	
+

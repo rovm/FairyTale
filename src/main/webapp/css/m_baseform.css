@@ -38,16 +38,19 @@ a {
 	position: relative;
 }
 
-#menubar{
+#menubar {
 	width: 200px;
 	height: auto;
 	background-color: pink;
 	color: white;
-	display: none;
 	overflow: visible;
 	position: absolute;
 	z-index: 5000;
+	left: -200px;
+	transition: .5s;
 }
+
+
 
 #menubar > p {
   font-size: 140%;

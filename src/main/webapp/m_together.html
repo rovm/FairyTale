@@ -3,17 +3,55 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>together</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>m_together</title>
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/m_together.css">
-  <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Karla'
+	  rel='stylesheet' type='text/css'>	
+  <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
 
+  
 </head>
 <body>
+<!-- 상단 시작 -->
+<div id="header_menu">
+  <a href="#" id="menuList">=</a>
+</div>
+<div id="menubar"><br>
+ <p>동화와만나요</p>
+ <ul>
+   <li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
+   <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+    <ul id="communityBtn">
+      <li><a href="#">명예의전당</a></li>
+      <li><a href="#">같이보기</a></li>
+      <li><a href="#">자유게시판</a></li>
+    </ul>
+   </li>
+   <li><a href="#" onclick="menu_reset()">동화만들기</a></li>
+   <li><a href="#" onclick="menu_reset()">작품보관함</a></li>
+   <li><a href="#" onclick="menu_reset()">내글관리</a></li>
+   <li><a href="#" onclick="menu_reset()">사진첩</a></li>
+   <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
+    <ul id="serviceBtn" >
+      <li><a href="#">공지사항</a></li>
+      <li><a href="#">자주하는질문</a></li>
+      <li><a href="#">문의하기</a></li>
+    </ul>
+   </li>
+ </ul>
+</div>
+<div id="main-text">
+  <div class="top-menubar">
+      <span id="top-menufont">함께보기</span>
+  </div>
+</div>
+<!-- 상단 끝 -->
 
 
-  <div id="com-together">
+   <div id="com-together">
     <div id="com-titl-bord" class="bord-top">
       <div class="bord-button clearfix">
         <button class="btn btn-danger" id="bord-btn">+새로운게시글</button>
@@ -22,9 +60,9 @@
       </div>
     </div>
     <div id="video-box">
-      <div id="vid-first" class="video">
+      <div id="vid-first" class="video v1">
         <div>
-        <img src="img/thumb01.jpg" style="cursor:pointer"></img>
+        <img id="i1" src="img/thumb01.jpg" style="cursor:pointer"></img>
         </div>
         <div class="vid-text">
           <h1>토끼와 거북이</h1>
@@ -35,9 +73,9 @@
           2017-07-07
         </div>
       </div>
-      <div id="" class="video">
+      <div id="" class="video v2">
         <div>
-        <img src="img/video.JPG" style="cursor:pointer"></img>
+        <img id="i2" src="img/video.JPG" style="cursor:pointer"></img>
         </div>
         <div class="vid-text">
           <h1>토끼와 거북이</h1>
@@ -48,9 +86,9 @@
           2017-07-07
         </div>
       </div>
-      <div id="" class="video">
+      <div id="" class="video v3">
         <div>
-        <img src="img/video.JPG" style="cursor:pointer"></img>
+        <img id="i3" src="img/video.JPG" style="cursor:pointer"></img>
         </div>
         <div class="vid-text">
           <h1>토끼와 거북이</h1>
@@ -61,9 +99,9 @@
           2017-07-07
         </div>
       </div>
-      <div id="" class="video">
+      <div id="" class="video v4">
         <div>
-        <img src="img/video.JPG" style="cursor:pointer"></img>
+        <img id="i4" src="img/video.JPG" style="cursor:pointer"></img>
         </div>
         <div class="vid-text">
           <h1>토끼와 거북이</h1>
@@ -75,9 +113,9 @@
         </div>
       </div>
     </div>
-      <div id="vid-last" class="video">
+      <div id="vid-last" class="video v5">
         <div>
-        <img src="img/video.JPG" style="cursor:pointer"></img>
+        <img id="i5" src="img/video.JPG" style="cursor:pointer"></img>
         </div>
         <div class="vid-text">
           <h1>토끼와 거북이</h1>
@@ -99,10 +137,10 @@
 
   
 <!-- 모달폼 -->
-<div id="myModal" class="modal fade" role="dialog">
+ <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+
     <div class="modal-content">
       <div class="modal-body">
         <p>Some text in the modal.</p>
@@ -112,17 +150,18 @@
   </div>
 </div>
 
-  <div class="footer_container">
+ <div class="footer_container">
   <div class="footer_domain-form">
-    <span class="footer_use"><font color="gray" face="serif" style="font-size: 30px;">Copyright © FTBook Corp. All Rights Reserved.</font></span>
+    <span class="footer_use"><font color="gray" face="serif">Copyright © FTBook Corp. All Rights Reserved.</font></span>
   </div>
 
-  </div>
+ </div>
   
 </body>
 <script src='node_modules/jquery/dist/jquery.min.js'></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="js/m_together.js"></script>
+<script src="js/together.js"></script>
+<script type="text/javascript" src="js/m_baseform.js"></script>
 </html>
 
 

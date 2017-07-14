@@ -12,7 +12,21 @@ $(".mobile-one .menu-toggle, .mobile-three .menu-toggle").click(function() {
     }
 });
 
+var first = true;
+$("#menuList").click(function() {
+    if (first == true) {
+      console.log("하하")
+      $("#menubar").css("left", "0")
+                   .css("opacity", "1")
+      first = false
+      return;
+    }     
+    $("#menubar").css("left", "-200px")
+                 .css("opacity", "0")
+    first = true;
+})
 });
+
 
 function headerBtn() {
 	menu_reset()
