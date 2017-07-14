@@ -1,181 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>header1</title>
-  <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css"> 
-  <link rel="stylesheet" href="css/m_photozip.css">
-  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="js/m_baseform.js"></script>
-  <script type="text/javascript" src="js/storage.js"></script>
-  
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>header1</title>
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/m_photozip.css">
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="js/m_baseform.js"></script>
+
 </head>
 
-  <body>
-
-<div id="header_menu">
-  <a href="#" onclick="headerBtn()" id="menuList">=</a>
-</div>
-<div id="menubar"><br>
- <p>동화와만나요</p>
- <ul>
-   <li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
-   <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
-    <ul id="communityBtn">
-      <li><a href="#">명예의전당</a></li>
-      <li><a href="#">같이보기</a></li>
-      <li><a href="#">자유게시판</a></li>
-    </ul>
-   </li>
-   <li><a href="#" onclick="menu_reset()">동화만들기</a></li>
-   <li><a href="#" onclick="menu_reset()">작품보관함</a></li>
-   <li><a href="#" onclick="menu_reset()">내글관리</a></li>
-   <li><a href="#" onclick="menu_reset()">사진첩</a></li>
-   <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
-    <ul id="serviceBtn" >
-      <li><a href="#">공지사항</a></li>
-      <li><a href="#">자주하는질문</a></li>
-      <li><a href="#">문의하기</a></li>
-    </ul>
-   </li>
- </ul>
-</div>
-<div id="main-text">
-
-<link href='https://fonts.googleapis.com/css?family=Leckerli+One|Metrophobic' rel='stylesheet' type='text/css'>
-  
-<div class="wrapper">
-  <div class="wrapper_inner">
-    <!-- Gallery -->
-    <section class="gallery">
-      <!-- Gallery  item -->
-      <div class="gallery_item">
-        <!-- Gallery  item preview -->
-        <span class="gallery_item_preview">
-          <a href="#" data-js="1">
-            <img src="img/thumb01.jpg" alt="" /><span>
-            <h3>Title</h3>
-            <p>늑대가 바람을 후우 불었습니다.</p>
-
-            </span></a>
-
-        </span>
-        <!-- Gallery  item full -->
-        <div data-lk="1" class="gallery_item_full">
-          <div class="box">
-            <img src="img/thumb01.jpg" alt="" />
-            <h3>아기돼지 삼형제</h3>
-            <p>늑대가 바람을 후우 불었습니다.</p>
-          </div>
+<body>
+	<div class="container">
+		<div id="header_menu">
+			<a href="#" id="menuList">=</a>
+		</div>
+		<div id="menubar">
+			<br>
+			<p>동화와만나요</p>
+			<ul>
+				<li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
+				<li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+					<ul id="communityBtn">
+						<li><a href="#">명예의전당</a></li>
+						<li><a href="#">같이보기</a></li>
+						<li><a href="#">자유게시판</a></li>
+					</ul></li>
+				<li><a href="#" onclick="menu_reset()">동화만들기</a></li>
+				<li><a href="#" onclick="menu_reset()">작품보관함</a></li>
+				<li><a href="#" onclick="menu_reset()">내글관리</a></li>
+				<li><a href="#" onclick="menu_reset()">사진첩</a></li>
+				<li><a href="#" onclick="menu_reset()">회원가입</a></li>
+				<li><a href="#" onclick="menu_reset()">로그인</a></li>
+				<li><a class="first_menu" href="#" onclick="serviceBtn()">고객센터</a>
+					<ul id="serviceBtn">
+						<li><a href="#">공지사항</a></li>
+						<li><a href="#">자주하는질문</a></li>
+						<li><a href="#">문의하기</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<div id="main-text">
+      <div class="top-menubar">
+        <span id="top-menufont">사진보관함</span>
+      </div>
+      
+      <div class="basic-form">
+        <div class="img-form">
+          <img src="img/thumb03.jpg">
+        </div>
+        <div class="t-form">
+          <div class="tilt-form">토끼 깡패들</div>
+          <div class="text-form">토끼한테 뚜까 맞음<br>조심하세요</div>
         </div>
       </div>
-
-
-
-      <!-- Gallery  item -->
-      <div class="gallery_item">
-        <!-- Gallery  item preview -->
-        <span class="gallery_item_preview">
-          <a href="#" data-js="2">
-            <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" /><span>
-            <h3>Exmaple Video</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.</p>
-
-            </span></a>
-        </span>
-        <!-- Gallery  item full -->
-        <div data-lk="2" class="gallery_item_full">
-          <div class="box">
-
-            <div class="video">
-              <iframe src="https://www.youtube.com/embed/gLg6qxkQ94A"></iframe>
-            </div>
-
-            <h3>Example Youtube video</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
-          </div>
+      
+      <div class="basic-form">
+        <div class="img-form">
+          <img src="img/thumb03.jpg">
+        </div>
+        <div class="t-form">
+          <div class="tilt-form">토끼 깡패들</div>
+          <div class="text-form">토끼한테 뚜까 맞음<br>조심하세요</div>
         </div>
       </div>
-
-      <!-- Gallery  item -->
-      <div class="gallery_item">
-        <!-- Gallery  item preview -->
-        <span class="gallery_item_preview">
-          <a href="#" data-js="3">
-            <img src="https://24.media.tumblr.com/5c73892a883adf41e9b8b7fe807e19b8/tumblr_n2k10foRBd1st5lhmo1_1280.jpg" alt="" /><span>
-            <h3>Exmaple Video 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.</p>
-
-            </span></a>
-        </span>
-        <!-- Gallery  item full -->
-        <div data-lk="3" class="gallery_item_full">
-          <div class="box">
-            <div class="video">
-              <iframe src=""></iframe>    
-            </div>
-            <h3>Example Vimeo video</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
-          </div>
+      
+      <div class="basic-form">
+        <div class="img-form">
+          <img src="img/thumb03.jpg">
+        </div>
+        <div class="t-form">
+          <div class="tilt-form">토끼 깡패들</div>
+          <div class="text-form">토끼한테 뚜까 맞음<br>조심하세요</div>
         </div>
       </div>
-
-
-      <!-- Gallery  item -->
-      <div class="gallery_item">
-        <!-- Gallery  item preview -->
-        <span class="gallery_item_preview">
-          <a href="#" data-js="4">
-            <img src="https://25.media.tumblr.com/72ff371588fd911cf7725394740c62a0/tumblr_n2k15mq4xy1st5lhmo1_1280.jpg" alt="" /><span>
-            <h3>Exmaple photo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.</p>
-
-            </span></a>
-        </span>
-        <!-- Gallery  item full -->
-        <div data-lk="4" class="gallery_item_full">
-          <div class="box">
-            <img src="https://25.media.tumblr.com/72ff371588fd911cf7725394740c62a0/tumblr_n2k15mq4xy1st5lhmo1_1280.jpg" alt="" />
-            <h3>Example image</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
-          </div>
+      
+      <div class="basic-form">
+        <div class="img-form">
+          <img src="img/thumb03.jpg">
         </div>
-      </div>      
-
-
-      <!-- Gallery  item -->
-      <div class="gallery_item">
-        <!-- Gallery  item preview -->
-        <span class="gallery_item_preview">
-          <a href="#" data-js="5">
-            <img src="https://25.media.tumblr.com/e615708905cc9df81f901c06ae4afe1e/tumblr_n21ltnVLtz1st5lhmo1_1280.jpg" alt="" /><span>
-            <h3>Exmaple photo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.</p>
-
-            </span></a>
-
-        </span>
-        <!-- Gallery  item full -->
-        <div data-lk="5" class="gallery_item_full">
-          <div class="box">
-            <img src="https://25.media.tumblr.com/e615708905cc9df81f901c06ae4afe1e/tumblr_n21ltnVLtz1st5lhmo1_1280.jpg" alt="" />
-            <h3>Example image</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
-          </div>
+        <div class="t-form">
+          <div class="tilt-form">토끼 깡패들</div>
+          <div class="text-form">토끼한테 뚜까 맞음<br>조심하세요</div>
         </div>
       </div>
-    </section>
+      
+      <div class="basic-form">
+        <div class="img-form">
+          <img src="img/thumb03.jpg">
+        </div>
+        <div class="t-form">
+          <div class="tilt-form">토끼 깡패들</div>
+          <div class="text-form">토끼한테 뚜까 맞음<br>조심하세요</div>
+        </div>
+      </div>
+      
+  <div class="standard-collection">
+    <button type="button" name="button" class="btn btn-success">이전</button>
+    &nbsp;1&nbsp;
+    <button type="button" name="button" class="btn btn-success">다음</button>
   </div>
-</div>
-</div>
-aa
-<div>footer요</div>
+		</div>
+  <br>
+		<div class="footer_container">
+      <div class="footer_domain-form">
+        <span class="footer_use"><font color="gray" face="serif">Copyright
+            © FTBook Corp.<br> CopyrightAll Rights Reserved.
+        </font></span>
+      </div>
+    </div>
+
+	</div>
 </body>
 
 </html>

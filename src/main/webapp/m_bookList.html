@@ -1,123 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>header1</title>
-  <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css"> 
-  <link rel="stylesheet" type="text/css" media="all" href="css/m_bookList.css"> 
-  <script src="./node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="js/m_baseform.js"></script>
-  
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>header1</title>
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/m_bookList.css">
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="js/m_baseform.js"></script>
+
+
 </head>
 
-  <body>
+<body>
+	<div class="container">
+		<div id="header_menu">
+			<a href="#" onclick="headerBtn()" id="menuList">=</a>
+		</div>
+		<div id="menubar" style="display: none">
+			<br>
+			<p>동화와만나요</p>
+			<ul>
+				<li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
+				<li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+					<ul id="communityBtn">
+						<li><a href="#">명예의전당</a></li>
+						<li><a href="#">같이보기</a></li>
+						<li><a href="#">자유게시판</a></li>
+					</ul></li>
+				<li><a href="#" onclick="menu_reset()">동화만들기</a></li>
+				<li><a href="#" onclick="menu_reset()">작품보관함</a></li>
+				<li><a href="#" onclick="menu_reset()">내글관리</a></li>
+				<li><a href="#" onclick="menu_reset()">사진첩</a></li>
+				<li><a href="#" onclick="menu_reset()">회원가입</a></li>
+				<li><a href="#" onclick="menu_reset()">로그인</a></li>
+				<li><a class="first_menu" href="#" onclick="serviceBtn()">고객센터</a>
+					<ul id="serviceBtn">
+						<li><a href="#">공지사항</a></li>
+						<li><a href="#">자주하는질문</a></li>
+						<li><a href="#">문의하기</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<div id="main-text">
+			<div class="top-menubar">
+				<span id="top-menufont">책목록</span>
+			</div>
+			<br>
+			<div id="select_sort">
+				<select class="selectpicker">
+					<option value="volvo">정렬방식</option>
+					<option value="saab">인기순</option>
+					<option value="mercedes">최신순</option>
+					<option value="audi">제목순</option>
+				</select>
+			</div>
+			<section>
+				<ul class="photo-stack-grid">
+					<li><a href="#d">
+							<figure class="photo-stack">
+								<img src="./img/thumb01.jpg" alt="picture" />
+							</figure> <span>아기돼지 삼형제</span>
+					</a></li>
+					<li><a href="#d">
+							<figure class="photo-stack">
+								<img src="./img/thumb02.jpg" alt="picture" />
+							</figure> <span>아기돼지 삼형제</span>
+					</a></li>
+					<li><a href="#d">
+							<figure class="photo-stack">
+								<img src="./img/thumb03.jpg" alt="picture" />
+							</figure> <span>토끼들</span>
+					</a></li>
+					<li><a href="#d">
+							<figure class="photo-stack">
+								<img src="./img/thumb04.jpg" alt="picture" />
+							</figure> <span>참새들</span>
+					</a></li>
+					<li><a href="#d">
+							<figure class="photo-stack">
+								<img src="./img/thumb05.jpg" alt="picture" />
+							</figure> <span>감따러가세</span>
+					</a></li>
 
-<div id="header_menu">
-  <a href="#" onclick="headerBtn()" id="menuList">=</a>
-</div>
-<div id="menubar" style="display: none"><br>
- <p>동화와만나요</p>
- <ul>
-   <li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
-   <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
-    <ul id="communityBtn">
-      <li><a href="#">명예의전당</a></li>
-      <li><a href="#">같이보기</a></li>
-      <li><a href="#">자유게시판</a></li>
-    </ul>
-   </li>
-   <li><a href="#" onclick="menu_reset()">동화만들기</a></li>
-   <li><a href="#" onclick="menu_reset()">작품보관함</a></li>
-   <li><a href="#" onclick="menu_reset()">내글관리</a></li>
-   <li><a href="#" onclick="menu_reset()">사진첩</a></li>
-   <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
-    <ul id="serviceBtn" >
-      <li><a href="#">공지사항</a></li>
-      <li><a href="#">자주하는질문</a></li>
-      <li><a href="#">문의하기</a></li>
-    </ul>
-   </li>
- </ul>
-</div>
-<div id="main-text">
+					<div class="standard-collection">
+						<button type="button" name="button" class="btn btn-warning">이전</button>
+						&nbsp;1&nbsp;
+						<button type="button" name="button" class="btn btn-warning">다음</button>
+					</div>
+			</section>
+		</div>
 
-  <h1 id="bookList">책목록</h1>
-  <div id="select_sort">
-    <select>
-      <option value="volvo">정렬방식</option>
-      <option value="saab">인기순</option>
-      <option value="mercedes">최신순</option>
-      <option value="audi">제목순</option>
-    </select>
-  </div>
-  <section>
-<ul class="photo-stack-grid">
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="./img/thumb01.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="./img/thumb02.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="./img/thumb03.jpg" alt="picture" />
-      </figure>
-      <span>토끼들</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="./img/thumb04.jpg" alt="picture" />
-      </figure>
-      <span>참새들</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="./img/thumb05.jpg" alt="picture" />
-      </figure>
-      <span>감따러가세</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="./img/thumb05.jpg" alt="picture" />
-      </figure>
-      <span>감따러가세</span>
-    </a>
-  </li>
-  
-  <div class="standard-collection">
-  <button type="button" name="button" class="btn btn-warning">이전</button>&nbsp;1&nbsp;
-  <button type="button" name="button" class="btn btn-warning">다음</button>
-  </div>
-  </section>
-</div>
+		<div class="footer_container">
+			<div class="footer_domain-form">
+				<span class="footer_use"><font color="gray" face="serif">Copyright
+						© FTBook Corp.<br> CopyrightAll Rights Reserved.
+				</font></span>
+			</div>
+		</div>
 
-
-
-<div class="footer_container">
-  <div class="footer_domain-form">
-    <span class="footer_use"><font color="gray" face="serif">Copyright © FTBook Corp.<br>
-                          CopyrightAll Rights Reserved. </font></span>
-  </div>
-</div>
+	</div>
 </body>
 
 </html>
