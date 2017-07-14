@@ -3,7 +3,10 @@ html body{
 	padding: 0px;
 	margin: 0px;
 }
-
+hr {
+	margin-top: 13px;
+	margin-bottom: 13px
+}
 ul{
   list-style:none;
   padding: 0px;
@@ -102,7 +105,62 @@ a {
 }
 
 
+.board_search {
+	height: 50px;
+	width: 100%;
+	margin-right: 2%;
+	margin-top: 10px;
+}
 
+input {
+	outline: none;
+}
+
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+
+input::-webkit-search-decoration, input::-webkit-search-cancel-button {
+	display: none;
+}
+
+input[type=search] {
+	background: #ededed
+		url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png)
+		no-repeat 9px center;
+		border: solid 1px #ccc;
+	  padding: 3px 47px 3px 31px;
+	  width: 38px;
+		margin-left: 2%;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+	background-color: #fff;
+}
+
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: darkblue;
+
+	/*-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);*/
+}
+
+input:-moz-placeholder {
+	color: #999;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
 .mobile-wrapper{
   width: 100%;
   margin: 0 auto;
@@ -126,17 +184,20 @@ h1, h2, h3, h4, h5, h6{
   margin: 0;
   padding: 10px 0;
 }
+.btn-outline-danger{
+	float: right;
+}
 .btn {
-	height: 46px;
-  width: 30%;
-  font-size: 160%;
-  float: right;
-  margin-right: 3%;
-  margin-left: 1%;
-  border-radius: 12px;
-  text-align: center;
-	font-weight: bold;
-
+	margin-top: 1px;
+	height: 39px;
+	width: 30%;
+	font-size: 130%;
+	margin-left: 4%;
+	margin-right: 4%;
+	border-radius: 8px;
+	text-align: center;
+	padding: 0;
+	box-shadow: none;
 }
 .mobile{
   max-width: 100%;
@@ -229,6 +290,7 @@ tr > td {
   font-size: 100%;
 }
 div {
+	box-shadow: none;
   /*border: solid 1px red;*/
 }
 #head-table{
@@ -247,18 +309,22 @@ div {
 .top-menubar {
   width: 100%;
   height: 46px;
-  text-align: center;
   font-size: 167%;
   padding-top: 4px;
+
   color: white;
-  background-color: darkslateblue;
+  background-color: pink;
 	font-weight: bolder;
 }
+#top-menufont{
+	margin-right: 5%;
+	float: right;
+}
 .select-form {
-  height: 84px;
-  padding: 20px 0;
-  border: solid 1px #545454;
-  position: relative;
+	height: 70px;
+	padding: 3px 0;
+	/*border: solid 1px #545454;*/
+	position: relative;
 
 }
 .select-bar {
@@ -281,7 +347,23 @@ div {
   padding-top: 10px;
   background-color: lightyellow;
 }
+.button-form {
+	height: 50px;
+	text-align: center;
+}
+.btn btn-default {
+	float:left;
 
+}
+.btn-default {
+	height: 28px;
+	width: 24%;
+	background-color:thistle;
+}
+.btn-outline-danger {
+    border: 1px solid pink;
+		color: pink!important;
+	}
 .footer_domain-form {
 	width: 100%;
 	border-top: solid 1px gray;

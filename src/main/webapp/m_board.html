@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/m_board.css">
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
       <script type="text/javascript" src="js/m_baseform.js"></script>
@@ -43,16 +44,15 @@
 
     <div id="container">
       <div class="top-menubar">
-          커뮤니티
+        <span id="top-menufont">자유게시판</span>
       </div>
       <div>
         <div class="select-form">
-          <select name="boardmenu" class="select-bar">
-            <option value="board">자유게시판</option>
-            <option value="best">명예의전당</option>
-            <option value="together">같이보기</option>
-          </select>
-            <button type="button" class="btn btn-danger">글쓰기</button>
+          <div class="board_search">
+            <input type="search" placeholder="검색">
+            <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">글쓰기</button>
+
+          </div>
         </div>
       </div>
       <div class="info">
@@ -182,6 +182,11 @@
             </tr>
         </table>
         <hr>
+      </div>
+      <div class="button-form">
+        <a class="btn btn-default"><i class="fa fa-magic left"></i> 이전</a>
+        1
+        <a class="btn btn-default">다음 <i class="fa fa-magic right"></i></a>
       </div>
 
     </div>
