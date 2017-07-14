@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6{
 .btn {
 	margin-top: 1px;
 	height: 39px;
-	width: 30%;
+	width: 110px;
 	font-size: 130%;
 	margin-left: 4%;
 	margin-right: 4%;
@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6{
   #container{
     position: relative;
     min-width:320px;
-    max-width:414px;
+    max-width:767px;
     padding: 0;
 		z-index: 1;
   }
@@ -273,7 +273,7 @@ div {
 }
 .btn-default {
 	height: 28px;
-	width: 24%;
+	width: 80px;
 	background-color:thistle;
 }
 .btn-outline-danger {

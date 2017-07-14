@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .btn-default {
 	height: 28px;
-	width: 24%;
+	width: 80px;
 	background-color:thistle;
 	color: white;
 }
