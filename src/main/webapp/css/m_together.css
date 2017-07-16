@@ -159,7 +159,7 @@ a{
 	position: absolute;
 	text-align: right;
 	font-size: 75%;
-	/*border: 1px green solid*/
+/* 	border: 1px green solid */
 }
 .vid-date > div {
   text-align: left;
@@ -168,6 +168,7 @@ a{
 .bord-button {
   margin-bottom: 10px;
   margin-top: 5px;
+  
 }
 
 
@@ -225,7 +226,7 @@ a{
   border-bottom-right-radius: 12px;
   font-size: 87%;
   font-weight: bold;
-  padding-left: 3px;
+  text-align: center;
   line-height: 1px;
 }
 
@@ -263,11 +264,66 @@ a{
   margin: 0 auto 10px auto;
 }
 
-@media (min-width:600px){
+@media (min-width:568px){
+  #prev {
+    width:34%
+  }
+  #next {
+    width:34%
+  }
+  .bottom-button-box{
+    width: 23%
+  }
   .video {
-    height: 136px;
+    height: 170px;
   }
   .video > div > img {
-    height: 128px;
+    height: 162px;
   }
+  .vid-date {
+    right: 0;
+    margin-right: 8%;
+  }
+  
+  #bord-btn {
+    width: 14%
+  }
+  
+  .top-input {
+    width: 84%
+  }
+  .modal-content {
+    margin-top: 19%;
+    margin-left: -168%;
+    margin-right: -64%;
+  }
+  
+  .modal-img {
+    height: 270px;
+  }
+}
+
+@media (min-width:600px){
+	.modal-content {
+	  margin-top: 30%;
+	}
+	
+	.bottom-button-box {
+	  width: 21%;
+	}
+}
+
+@media (min-width:732px){
+	.modal-img {      height: 300px;   
+    }
+}
+
+@media (max-width:320px){
+	.bottom-button-box {
+	  width: 35%
+	}
+	
+	.modal-content {
+	  margin-left: -150px;
+	}
 }
