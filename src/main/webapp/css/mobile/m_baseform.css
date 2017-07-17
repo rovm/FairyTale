@@ -1,0 +1,147 @@
+html body{
+	padding: 0px;
+	margin: 0px;
+}
+
+ul{
+  list-style:none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding-left: 15px;
+}
+
+#menubar ul li{
+  margin: 0px;
+  padding: 15px;
+}
+
+#menubar ul li a:hover{
+  text-decoration: none;
+  background-color: pink;
+  color: white !important;
+}
+
+#menubar ul li:hover {
+  background: hotpink;
+  color: #fff;
+  }
+
+#header_menu{
+	width: 100%;
+	height: 50px;
+	background-color: pink;
+	position: relative;
+}
+
+#menubar {
+	width: 200px;
+	height: auto;
+	background-color: pink;
+	color: white;
+	overflow: visible;
+	position: absolute;
+	z-index: 5000;
+	left: -200px;
+	transition: .5s;
+}
+
+#menubar > p {
+  font-size: 140%;
+  padding-left: 13px;
+}
+
+#menubar{
+   margin: 0px;
+   padding: 0px;
+   margin-top: 46px;
+}
+
+#menubar ul li a:hover{
+  background-color: hotpink;
+  color: #fff;
+
+}
+
+#menubar ul li ul li:hover{
+  background-color: gray;
+  color: #fff;
+}
+
+#menubar ul li ul li a:hover{
+	background-color: gray;
+  color: #fff;
+}
+
+#menubar ul li ul li{
+	width:200px;
+}
+
+#menubar ul li ul{
+	padding-left: 20;
+	margin-left: -15px;
+	width: 200px;
+	margin-top: 15px;
+}
+
+#communityBtn{
+  display: none;
+  width:200px;
+}
+
+#serviceBtn{
+  display: none;
+}
+
+#menuList{
+	font-size: 200%;
+	text-decoration: none;
+}
+#menuList:hover{
+	color:white;
+}
+.top-menubar {
+  width: 100%;
+  height: 46px;
+  font-size: 167%;
+  padding-top: 4px;
+
+  color: white;
+  background-color: pink;
+	font-weight: bolder;
+}
+#top-menufont{
+	margin-right: 5%;
+	float: right;
+}
+
+#main_logo{
+	width: 50%;
+	height: 50px;
+	margin: 0px auto;
+	float: right;
+}
+
+/*****************************************************************************/
+.footer_container {
+    width: 100%;
+    border-top: solid 1px darkgray;
+    margin: auto;
+  }
+  .footer_domain-form{
+    width: 100%;
+    margin: 10px auto;
+    height: auto;
+    text-align: center;
+  }
+
+ .footer_use{
+   font-size: 70%;
+ }
+ .footer_menu {
+   margin-left: 20px;
+ }

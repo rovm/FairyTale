@@ -1,0 +1,65 @@
+.join_container{
+  width: 100%;
+}
+
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+button {
+ float: right;
+ margin: 15px 0px 0px 10px;
+}
+
+
+.main-center{
+ 	margin-top: 1px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+  padding: 40px 40px;
+
+}
+
+
+/* join_container */
+.join_container {
+  width: 100%;
+  height: 100%;
+background-repeat: no-repeat;
+font-family: 'Oxygen', sans-serif;
+}
+
+
+
+
+
+
+
+h1{
+  font-weight: bold;
+  color: gray;
+}
+
+a{
+  color: white;
+}
+a:hover {
+  text-decoration: none;
+}
