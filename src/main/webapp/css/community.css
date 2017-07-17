@@ -1,4 +1,4 @@
-/*�ш린遺��� 紐⑤�� */
+/*모달 시작*/
 
 #gallery{
   -webkit-column-count:4;
@@ -36,7 +36,7 @@
   -webkit-column-count:1;
   -moz-column-count:1;
   column-count:1;
-}  
+  }  
 }
 
 .modal-img,.model-vid{
@@ -47,13 +47,13 @@
   padding:0px;
 }
 
-/*���ㅻ�� ��移� 議곗��*/
+/*모달위치*/
 .modal-content {
 	margin-top: 40%;
 	margin-left: -70px;
 }
 
-/*�ш린源�吏�  紐⑤��*/
+/*모달 끝*/
 
 
 @keyframes heartbeat {
@@ -540,4 +540,8 @@ div {
 
 #bordermon {
   font-size: 50px;
+}
+
+@media (max-width:568px){
+  
 }

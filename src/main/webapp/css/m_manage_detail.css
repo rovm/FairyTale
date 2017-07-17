@@ -95,7 +95,6 @@ th, td {
 	width: 22%;
 }
 hr {
-	border: solid 1px gray;
 	margin-top: 4%;
 }
 
@@ -110,14 +109,12 @@ p {
 	width: 60%
 }
 .top_bar {
-	height: 40px;
-	background-color: gainsboro;
-	border-top: 2px black solid;
-	border-bottom: 2px black solid;
+  height: 40px;
+  background-color: #FFF0FF;
 }
 
 .comment {
-	background-color: ivory;
+	background-color: #FFF0FF;
 }
 
 
