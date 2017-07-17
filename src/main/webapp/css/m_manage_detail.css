@@ -84,7 +84,7 @@ th, td {
 .main_box {
 	margin-top: 10%;
 	width: 100%;
-	padding-bottom:10%;
+	padding-bottom:3%;
 }
 .comment>button {
 	float: right;
@@ -118,5 +118,30 @@ p {
 }
 
 
+.cc-box {
+	width:100%;
+}
 
+#comment-id {
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+
+#comment-cont {
+	margin-left:10px;
+	float:left;
+}
+
+#comment-date {
+  float: right;	
+  margin-right:3%;
+  font-size:75%;
+  line-height: 2;
+  color: gray;
+}
+.loc-box hr{
+	margin-bottom: 5px;
+  margin-top: 5px;
+}
 
