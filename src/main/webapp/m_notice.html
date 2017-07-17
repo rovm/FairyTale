@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/m_board.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/m_notice.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
       <script type="text/javascript" src="js/m_baseform.js"></script>
 
-
-    <title>board</title>
+    <title>info</title>
   </head>
   <body>
     <div id="header_menu">
-      <a href="#" id="menuList">=</a>
+      <a href="#" onclick="headerBtn()" id="menuList">=</a>
     </div>
-    <div id="menubar"><br>
+    <div id="menubar" style="display: none"><br>
      <p>동화와만나요</p>
      <ul>
        <li><a href="#" onclick="menu_reset()">메뉴얼</a></li>
@@ -46,17 +45,13 @@
      </ul>
     </div>
     <div class="top-menubar">
-      <span id="top-menufont">자유게시판</span>
+      <span id="top-menufont">공지사항</span>
     </div>
 
     <div id="container">
       <div>
-        <div class="select-form">
-          <div class="board_search">
-            <input type="search" placeholder="검색">
-            <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">글쓰기</button>
-
-          </div>
+        <div class="board_search">
+          <input type="search" placeholder="검색">
         </div>
       </div>
       <div class="info">
@@ -192,7 +187,6 @@
         1
         <a class="btn btn-default">다음 <i class="fa fa-magic right"></i></a>
       </div>
-
     </div>
     <div class="footer_domain-form">
       <span class="footer_use"><font color="gray" face="serif">Copyright © FTBook Corp.<br> All Rights Reserved. </font></span>
