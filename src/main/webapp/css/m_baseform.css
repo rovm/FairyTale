@@ -50,8 +50,6 @@ a {
 	transition: .5s;
 }
 
-
-
 #menubar > p {
   font-size: 140%;
   padding-left: 13px;
@@ -60,7 +58,7 @@ a {
 #menubar{
    margin: 0px;
    padding: 0px;
-   margin-top: -20px;
+   margin-top: 50px;
 }
 
 #menubar ul li a:hover{
@@ -116,3 +114,34 @@ a {
 	margin-right: 5%;
 	float: right;
 }
+
+#main_logo{
+	width: 50%;
+	height: 50px;
+	margin: 0px auto;
+	float: right;
+}
+
+/*****************************************************************************/
+.footer_container {
+    width: 100%;
+    border-top: solid 1px darkgray;
+    margin: auto;
+  }
+  .footer_domain-form{
+    width: 100%;
+    margin: 10px auto;
+    height: auto;
+    text-align: center;
+  }
+
+ .footer_use{
+   font-size: 70%;
+ }
+ .footer_menu {
+   margin-left: 20px;
+ }
+
+ /*div{
+	 border: 1px solid black;
+ }*/
