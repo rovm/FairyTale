@@ -11,18 +11,19 @@ a{
 
 
 
+
 fieldset {
 	margin: 0px auto;
-	width: 100%;
+	width: 311px;
 	/*border: 1px solid yellowgreen;*/
 	/*border-top: 0px solid #e5e5e5;*/
-	padding: 32px;
+	/*padding: 32px;*/
 }
 
 form label {
 	float: left;
 	color: #2f363a;
-	width: 160px;
+	width: 100%;
 	font-size: 1em;
 	line-height: 40px;
 }
@@ -36,7 +37,7 @@ form input, form select {
 	font-size: 1em;
 	font-weight: 400;
 	padding: 10px;
-	width: 300px;
+	width: 311px;
 }
 
 form input:hover, form select:hover, form textarea:hover {
@@ -53,13 +54,13 @@ form select {
 	border-radius: 0;
 	appearance: none;
 	margin-bottom: 20px;
-	width: 100%;
+	width: 311px;
 }
 
 form textarea {
 	color: #2f363a;
 	background: #fff;
-	width: 300px;
+	width: 311px;
 	height: 90px;
 	padding: 10px;
 	margin-top: 2%;
@@ -72,7 +73,7 @@ form input.submit {
 	color: #fff;
 	background: pink;
 	margin-top: 20px;
-	width: 300px;
+	width: 311px;
 	height: 50px;
 	border: none;
 	font-weight: bold;
