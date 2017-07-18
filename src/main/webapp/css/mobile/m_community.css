@@ -109,6 +109,7 @@ scale
 
 
 }
+
 }
 .slider-container {
 	margin-top: 5px;
@@ -378,6 +379,7 @@ a {
 h1 {
 	margin-top: 0;
 	font-weight: bold;
+	color: white;
 }
 
 p {

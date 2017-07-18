@@ -4,17 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content= "width=device-width,initial-scale=1">
     <meta name="author" content="Jake Rocheleau">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/m_main001.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/test.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/mobile/m_main001.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/styles.css">
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/test.css"> -->
+    <link rel="stylesheet" type="text/css" media="all" href="../css/mobile/m_baseform.css">
 
-    <script type="text/javascript" src="Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/m_main001.js"></script>
-    <script type="text/javascript" src="js/m_baseform.js"></script>
+    <script type="text/javascript" src="../Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/m_main001.js"></script>
+    <script type="text/javascript" src="../js/m_baseform.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/m_slider.js"></script>
+
     <title>m_main</title>
 
   </head>
@@ -248,77 +252,34 @@
 </div>
 <div class="around-form">
 </div>
-<div class="middle-container">
-  <div class="slider-container">
-    <div id="com-titl-best" class="">
-      <br>
-      <h1 style="margin-top: -2%">
-        2017<br>제3회 명예의전당
-      </h1>
-    </div>
-    <div class="slider-content">
-
-      <div class="slider-single">
-        <img class="slider-single-image" style="cursor:pointer"
-        src="img/video.JPG"	alt="1"/>
-        <h1 class="slider-single-title">
-          토끼와 거북이
-        </h1>
-      </div>
-
-      <div class="slider-single">
-        <img class="slider-single-image" style="cursor:pointer"
-          src="img/thumb01.jpg" alt="2"/>
-        <h1 class="slider-single-title">
-          Through the Mountains
-        </h1>
-      </div>
-
-      <div class="slider-single">
-        <img class="slider-single-image" style="cursor:pointer"
-          src="img/thumb02.jpg" alt="3"/>
-        <h1 class="slider-single-title">
-          Through the Mountains
-        </h1>
-      </div>
-
-
-      <div class="slider-single">
-        <img class="slider-single-image" style="cursor:pointer"
-          src="img/thumb03.jpg" alt="4" />
-        <h1 class="slider-single-title">
-          Through the Mountains
-        </h1>
-
-      </div>
-
-
-
-    </div>
-  </div>
+<div class="around-form">
 </div>
 
+<div class="middle-container">
+
+  <p>명예의 전당</p>
+  <div class="s-box">
+    <div class="s-img" id="fst">
+      <img src="../img/thumb02.jpg" alt=""><div class="s-textbox">로미오와 줄리엣</div>
+    </div>
+    <div class="s-img" id="sec">
+      <img src="../img/thumb01.jpg" alt=""><div class="s-textbox">브램웰 음악단</div>
+    </div>
+    <div class="s-img" id="thr">
+      <img src="../img/video.JPG" alt=""><div class="s-textbox">오즈의 마법사</div>
+    </div>
+  </div>
+  <i class="fa fa-arrow-left prevbtn" aria-hidden="true"></i>
+  <i class="fa fa-arrow-right nextbtn" aria-hidden="true"></i>
 
 
+</div>
 
+<div class="around-form">
+</div>
+<div class="around-form">
+</div>
 
-
-    <script type="text/javascript">
-    $(function(){
-      $('.crsl-items').carousel({
-        visible: 3,
-        itemMinWidth: 180,
-        itemEqualHeight: 370,
-        itemMargin: 9,
-      });
-
-      $("a[href=#]").on('click', function(e) {
-        e.preventDefault();
-      });
-    });
-
-
-    </script>
 
 
   <form>
