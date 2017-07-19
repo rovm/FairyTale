@@ -1,0 +1,136 @@
+
+a:hover {
+  /*text-decoration: none;*/
+
+}
+a{
+  color: white;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+
+
+th, td {
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+}
+
+/*detail form*/
+.btn-primary.active {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.main_box h1 {
+  font-weight: bold;
+  font-size: 135%;
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+#titl {
+  width: 92%;
+  float: left;
+  margin-left: 4%;
+  height: 100%;
+}
+
+#date {
+	line-height:30px;
+	font-size:80%;
+  float: right;
+  height: 20px;
+  margin-left: 2.5%;
+  margin-right: 1%;
+
+}
+
+#user {
+	line-height:30px;
+	font-size:80%;
+	float: right;
+	height: 20px;
+}
+
+#cont {
+	margin: 1% auto;
+	margin-left:5%;
+  width: 90%;
+}
+.bord {
+	width: 100%;
+	margin: 0px auto;
+	margin-top: -18px;
+	background-color: white;
+  min-height: 460px;
+}
+.main_box {
+	margin-top: 10%;
+	width: 100%;
+	padding-bottom:3%;
+}
+.comment>button {
+	float: right;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 45px;
+	width: 22%;
+}
+hr {
+	margin-top: 4%;
+}
+
+.main_box p {
+	color:gray;
+	margin: 0 0 1% 1%;
+}
+
+.comment textarea {
+	resize: none;
+	overflow: auto;
+	width: 60%
+}
+.top_bar {
+  height: 40px;
+  background-color: #FFF0FF;
+}
+
+.comment {
+	background-color: #FFF0FF;
+}
+
+
+.cc-box {
+	width:100%;
+}
+
+#comment-id {
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+
+#comment-cont {
+	margin-left:10px;
+	float:left;
+}
+
+#comment-date {
+  float: right;
+  margin-right:3%;
+  font-size:75%;
+  line-height: 2;
+  color: gray;
+}
+.loc-box hr{
+	margin-bottom: 5px;
+  margin-top: 5px;
+}
