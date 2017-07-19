@@ -1,4 +1,12 @@
  /*ggggggggggg*/
+ body {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-size: 62.5%;
+   line-height: 1;
+   /*padding: 25px 0;*/
+   /*background: #e5e5e5 url('../img/brushed.png'); /*http://subtlepatterns.com/white-brushed/ */*/
+ }
+ 
 #gallery{
   -webkit-column-count:4;
   -moz-column-count:4;

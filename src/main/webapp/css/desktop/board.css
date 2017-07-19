@@ -205,12 +205,15 @@ th, td {
 }
 
 .com-somenu {
-  width: 90px;
-  height: 90px;
-  float: right;
-  margin: 2px 3px 0 10px;
-  border-radius: 50px;
+    width: 90px;
+    padding-top: 10px;
+    padding-left: 2px;
+    height: 100px;
+    float: right;
+    margin: 2px 3px 0 10px;
+    border-radius: 55px;
 }
+
 .standard-collection {
   font-weight: bold;
   color: gray;
@@ -303,16 +306,4 @@ th, td {
   width: 300px;
   height: 80px;
   color: white;
-}
-
-#kingmon {
-  font-size: 50px;
-}
-
-#togemon {
-  font-size: 50px;
-}
-
-#bordermon {
-  font-size: 50px;
 }

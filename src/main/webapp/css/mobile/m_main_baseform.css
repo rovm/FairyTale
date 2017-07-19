@@ -36,6 +36,7 @@ a {
 	height: 50px;
 	background-color: pink;
 	position: relative;
+	z-index: 8000;
 }
 
 #menubar {
@@ -50,7 +51,6 @@ a {
 	transition: .5s;
 	margin: 0px;
 	padding: 0px;
-	margin-top: 46px;
 }
 
 #menubar > p {

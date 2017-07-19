@@ -2,9 +2,9 @@
 var first = true;
 var sec = true;
 
-hoverClass(".fa-optin-monster", "#com-font", "red", "#com-king-s")
-hoverClass(".fa-reddit-alien", "#com-font2", "orange", "#com-together-s")
-hoverClass(".fa-linux", "#com-font3", "darkblue", "#com-bord-s")
+hoverClass("", "#com-font", "orange", "#com-king-s")
+hoverClass("", "#com-font2", "orange", "#com-together-s")
+hoverClass("", "#com-font3", "orange", "#com-bord-s")
 
 
 function hoverClass(fa, font, col, did) {
@@ -72,7 +72,6 @@ $(document).ready(function(){
 	  var v = $("video > source");
 	  var t = v.attr("src");
 	  $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
-	  $("#myModal").mosssdal();  
+	  $("#myModal").mosssdal();
 	});
 	});//EOF Document.ready
-	
