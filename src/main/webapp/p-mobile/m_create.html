@@ -2,128 +2,126 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=decive-width, initial-scale=1">
-  <title>header1</title>
-	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" media="all" href="css/m_baseform.css">
-	<link rel="stylesheet" href="css/m_create.css">
-	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="js/m_baseform.js"></script>
-	<script type="text/javascript" src="js/m_create.js"></script>
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>create</title>
+  <link rel="stylesheet" type="text/css" media="all" href="../css/mobile/m_baseform.css">
+	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/mobile/m_create.css">
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../js/m_baseform.js"></script>
+	<script type="text/javascript" src="../js/m_create_1.js"></script>
+  <script type="text/javascript" src="../js/m_create_2.js"></script>
 
 
 </head>
 
   <body>
-<div class="container">
-<div class="mobile-wrapper">
-    <div class="mobile mobile-one">
-      <div class="header">
-        <div class="menu-toggle">
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-      </div>
-      <div class="mobile-nav">
-        <h2>동화와 만나요</h2>
-        <ul class="menu">
-          <li><a href="#">메뉴얼</a></li>
-          <li><a onclick="communityBtn()">커뮤니티</a>
-            <ul class="sub-menu" id="community-btn">
-              <li><a href="#">&nbsp;&nbsp;·&nbsp;명예의전당</a></li>
-              <li><a href="#">&nbsp;&nbsp;·&nbsp;같이보기</a></li>
-              <li><a href="#">&nbsp;&nbsp;·&nbsp;자유게시판</a></li>
-            </ul>
-          </li>
-          <li><a href="#">동화만들기</a></li>
-          <li><a href="#">작품보관함</a></li>
-          <li><a href="#">내글관리</a></li>
-          <li><a href="#">사진첩</a></li>
-          <li><a onclick="serviceBtn()">고객센터</a>
-            <ul class="sub-menu" id="service-center-btn">
-              <li><a href="#">&nbsp;&nbsp;·&nbsp;공지사항</a></li>
-              <li><a href="#">&nbsp;&nbsp;·&nbsp;FAQ</a></li>
-              <li><a href="#">&nbsp;&nbsp;·&nbsp;문의하기</a></li>
-            </ul></li>
-            <br><br><br>
-        </ul>
-      </div>
-    </div>
- </div>
 
+<div id="header_menu">
+  <a href="#" id="menuList">=</a>
+</div>
+<div id="menubar"><br>
+ <p>동화와만나요</p>
+ <ul>
+	 <li><a href="m_menual.html" onclick="menu_reset()">메뉴얼</a></li>
+	 <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+		<ul id="communityBtn">
+			<li><a href="m_community_best.html">명예의전당</a></li>
+			<li><a href="m_together.html">같이보기</a></li>
+			<li><a href="m_board.html">자유게시판</a></li>
+		</ul>
+	 </li>
+	 <li><a href="m_create.html" onclick="menu_reset()">동화만들기</a></li>
+	 <li><a href="m_storage.html" onclick="menu_reset()">작품보관함</a></li>
+	 <li><a href="m_manage_board.html" onclick="menu_reset()">내글관리</a></li>
+	 <li><a href="m_photozip.html" onclick="menu_reset()">사진첩</a></li>
+	 <li><a href="m_join.html" onclick="menu_reset()">회원가입</a></li>
+	 <li><a href="m_login.html" onclick="menu_reset()">로그인</a></li>
+	 <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
+		<ul id="serviceBtn" >
+			<li><a href="m_notice.html">공지사항</a></li>
+			<li><a href="m_faq.html">자주하는질문</a></li>
+			<li><a href="m_qna.html">문의하기</a></li>
+		</ul>
+	 </li>
+ </ul>
 </div>
 <div id="main-text">
-<div id="create_container">
-	<div id="next" alt="Next" title="Next">
-			<div class="arrow-right"></div>
-		</div>
-		<div id="prev" alt="Prev" title="Prev">
-			<div class="arrow-left"></div>
-		</div>
-		<div id="slider">
-			<div class="slide">
-				<div class="slide-copy" style="overflow:auto">
-					<h4>1</h4>
-					<p>토끼랑 거북이랑 만났습니다. "야 내기하자" </p>
 
-				</div>
-				<div class="img1">
-					<img src="img/thumb01.jpg" /></div>
-			</div>
+  <div class="top-menubar">
+      <span id="top-menufont">동화만들기</span>
+  </div>
+    <div class="phone-screen">
 
-			<div class="slide" >
-				<div class="slide-copy" style="overflow:auto">
-					<h4>2</h4>
-					<p>"싫은데;;"<br>
-					"ㅠㅠ"<br>
-				"인생은 내기다"<br>
-			"뭐랴"</p>
-				</div>
-				<div class="img2">
-<img src="img/thumb01.jpg" />
-				</div>
-			</div>
-
-			<div class="slide">
-				<div class="slide-copy" style="overflow:auto">
-					<h2>Slide Three</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo sem. Integer eros nibh, molestie congue elementum quis, mattis nec tortor. Vivamus sed hendrerit sed vitae orci convallis.</p>
-				</div>
-				<div class="img3"></div>
-			</div>
-
-			<div class="slide">
-				<div class="slide-copy" style="overflow:auto">
-					<h2>Slide Four</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo sem. Integer eros nibh, molestie congue elementum quis, mattis nec tortor. Vivamus sed hendrerit sed vitae orci convallis.</p>
-				</div>
-				<div class="img4"></div>
-			</div>
-
-			<div class="slide">
-				<div class="slide-copy" style="overflow:auto">
-					<h2>Slide Five</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo sem. Integer eros nibh, molestie congue elementum quis, mattis nec tortor. Vivamus sed hendrerit sed vitae orci convallis.</p>
-				</div>
-				<div class="img5"></div>
-			</div>
-		</div>
-
-		<div class="record_container">
-			<span class="input-group-addon"><i class="fa fa-microphone"></i></span>
-		</div>
+      <div class="app-book">
 
 
+      </div>
+      <div class="app">
+        <div class="app-header">
+          <div class="app-caption">동화책제목</div>
+        </div>
+        <div class="photo-container">
 
+          <div class="photo photo-4" number="4" ph-index="4">
+            <div class="photo-caption">London5</div>
+            <br>
+            <div class="photo-counter"></div>
+          </div>
+          <div class="photo photo-3" number="3" ph-index="3">
+            <div class="photo-caption">Tokyo4</div>
+            <br>
+            <div class="photo-counter"></div>
+          </div>
+          <div class="photo photo-2" number="2" ph-index="2">
+            <div class="photo-caption">Beijing3</div>
+            <br>
+            <div class="photo-counter"></div>
+          </div>
+          <div class="photo photo-1" number="1" ph-index="1">
+            <div class="photo-caption">  아기돼지삼형제가 살고있었습니다.2<br>
+              "배고파"<br>
+              "나도"<br></div><br>
+            <div class="photo-counter"></div>
+          </div>
+          <div class="photo photo-0" number="0" ph-index="0">
+            <div class="photo-caption">
+              아기돼지삼형제가 살고있었습니다.1<br>
+              "배고파"<br>
+              "나도"<br>
+              갑자기 늑대가 나타났습니다.<br>
+              "꺄아앙ㄱ"<br>
+              죽지마
+          </div><br>
+            <div class="photo-counter"></div>
+          </div>
+        </div>
+
+        <div class="play-btn">
+          <button id="recode" onclick="recodeChange()"><span class="fa fa-microphone"/><span class="btn-word">녹음하기</span></button>
+          <button id="recode-stop" onclick="recodeChange2()"><span class="fa fa-pause"/><span class="btn-word">일시정지</span></button>
+          <button id="recode-play" onclick="playChange()"><span  class="fa fa-play"/><span class="btn-word">녹음재생</span></button>
+          <button id="play-stop" onclick="playChange2()"><span class="fa fa-pause"/><span class="btn-word">일시정지</span></button>
+          <button id="basic-play" onclick="basicChange()"><span class="fa fa-play"/><span class="btn-word">기본재생</span></button>
+          <button id="basic-stop" onclick="basicChange2()"><span class="fa fa-pause"/><span class="btn-word">일시정지</span></button>
+          <button id="stop" onclick="resetBtn()"><span class="fa fa-stop"/><span class="btn-word">정지</span></button>
+        </div>
+        <div class="direction-btn">
+          <div id="left-btn" class="fa fa-chevron-left"></div>
+          <div id="right-btn" onclick="a()" class="fa fa-chevron-right"></div>
+        </div>
+      </div>
+    </div>
 
 	</div>
-
-<div>footer요</div>
+  <div class="footer_container">
+    <div class="footer_domain-form">
+      <span class="footer_use"><font color="gray" face="serif">Copyright
+          © FTBook Corp.<br> CopyrightAll Rights Reserved.
+      </font></span>
+    </div>
+  </div>
 </body>
 
 </html>
