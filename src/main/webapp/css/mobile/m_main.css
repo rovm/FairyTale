@@ -344,7 +344,7 @@
 
 .middle-container p {
 	text-align: center;
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: bold;
 	color: brown;
 	line-height: 46px;
@@ -418,9 +418,10 @@
 	opacity: 0.9;
 }
 /********************menual*********************/
-/*.menual-form {
-  border: 1px red solid;
-}*/
+.menual-form {
+  height: 420px;
+  /*border: 1px red solid;*/
+}
 .m-top {
   height: 50px;
   /*border: 1px red solid;*/
