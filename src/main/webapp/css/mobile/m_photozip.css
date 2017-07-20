@@ -37,6 +37,8 @@ text-rendering: optimizelegibility;
 background:url("http://keirabui.com/photo-gallery/beige.png") repeat;
 }
 
+
+
 img{
   width: 100%;
   border: 1px solid gray;
@@ -54,6 +56,6 @@ img{
   height: 115px;
   display: inline-block;
 }
-/*div{
+div{
   border: 1px solid black;
-}*/
+}

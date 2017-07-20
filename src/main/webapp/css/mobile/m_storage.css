@@ -173,3 +173,52 @@ div#all {
 .standard-collection{
 	text-align: center;
 }
+
+#shared-option{
+  padding: 10px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+#shared-option  a{
+  font-size: 150%;
+  color:  gray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 4px 6px;
+  width: 32px;
+  height: 30px;
+  margin-left: 4px;
+}
+
+a:hover{
+  text-decoration:none;
+}
+
+#U-tube:hover{
+  color: white;
+  background-color: #E62B24;
+}
+
+#faceBook:hover{
+  color: white;
+  background-color: #41A4D5;
+}
+
+#shared:hover{
+  color: white;
+  background-color: #00bd39;
+}
+
+.del_btn{
+  margin-top: 3px;
+  float: right;
+  border: none;
+  background-color: inherit;
+  color: gray;
+}
+
+button:hover{
+  outline: none;
+  
+}
