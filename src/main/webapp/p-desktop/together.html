@@ -74,86 +74,27 @@
     </div>
 
   <div id="com-together">
-    <div id="com-titl-bord" class="bord-top">
+   
+     <div id="com-titl-bord" class="bord-top">
       <div class="bord-button clearfix">
         <button class="btn btn-danger" id="bord-btn">+새로운게시글</button>
 
         <input class="top-input"type="text" placeholder="검색" id="bord-top-input"></input>
       </div>
     </div>
+    
     <div id="video-box">
-      <div id="vid-first" class="video v1">
-        <div>
-        <img id="i1" src="../img/thumb01.jpg" style="cursor:pointer"></img>
-        </div>
-        <div class="vid-text">
-          <h1>토끼와 거북이</h1>
-          "토끼는 거북이를 이깁니다 앵간해선 지지않죠"<br>
-        </div>
-        <div class="vid-date">
-          2017-07-07
-        </div>
-      </div>
-      <div id="" class="video v2">
-        <div>
-        <img id="i2" src="../img/video.JPG" style="cursor:pointer"></img>
-        </div>
-        <div class="vid-text">
-          <h1>토끼와 거북이</h1>
-          "토끼는 거북이를 이깁니다 앵간해선 지지않죠"<br>
-        </div>
-        <div class="vid-date">
-          <div>작성자:</div>
-          2017-07-07
-        </div>
-      </div>
-      <div id="" class="video v3">
-        <div>
-        <img id="i3" src="../img/video.JPG" style="cursor:pointer"></img>
-        </div>
-        <div class="vid-text">
-          <h1>토끼와 거북이</h1>
-          "토끼는 거북이를 이깁니다 앵간해선 지지않죠"<br>
-        </div>
-        <div class="vid-date">
-          2017-07-07
-        </div>
-      </div>
-      <div id="" class="video v4">
-        <div>
-        <img id="i4" src="../img/video.JPG" style="cursor:pointer"></img>
-        </div>
-        <div class="vid-text">
-          <h1>토끼와 거북이</h1>
-          "토끼는 거북이를 이깁니다 앵간해선 지지않죠"<br>
-        </div>
-        <div class="vid-date">
-          2017-07-07
-        </div>
-      </div>
     </div>
-      <div id="vid-last" class="video v5">
-        <div>
-        <img id="i5" src="../img/video.JPG" style="cursor:pointer"></img>
-        </div>
-        <div class="vid-text">
-          <h1>토끼와 거북이</h1>
-          "토끼는 거북이를 이깁니다 앵간해선 지지않죠"<br>
-        </div>
-        <div class="vid-date">
-          2017-07-07
-        </div>
-    </div>
-
-    <div id="" class="bottom-button-box clearfix">
-      <button type="button" name="button" id="prev" class="btn-info prev">이전</button>
-        <a>1</a>
-      <button type="button" name="button" id="next" class="btn-info">다음</button>
-    </div>
+      <div id="" class="bottom-button-box clearfix">
+        <button type="button" name="button" id="prev-btn" class="btn-info prev">이전</button>
+          <a id="d">1</a>
+        <button type="button" name="button" id="next-btn" class="btn-info">다음</button>
+      </div>
   </div>
 
 
   <div class="footer_container">
+
   <div class="footer_domain-form">
 
     <span id="footer_a" class="menu">도움말
@@ -194,12 +135,33 @@
 </div>
 
 </body>
+
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script id="template" type="text/x-handlebars-template">
+    {{#each div}}  
+        <div class="video" onClick= "modalImg('#{{imgId}}')">
+          <div>
+            <img id={{imgId}} src={{srcImg}} style="cursor:pointer" ></img>
+          </div>
+          <div class="vid-text">
+            <h1>{{title}}</h1>
+            {{content}}<br>
+          </div>
+          <div class="vid-date">
+            {{date}}
+          </div>
+        </div>
+    {{/each}}
+</script>
 <script src="../js/together.js"></script>
+
 </html>
 
 
 
 
-<!-- -->
+
+
+

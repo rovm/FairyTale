@@ -233,18 +233,18 @@ a{
 }
 
 .bottom-button-box > a {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 6px;
+  margin-right: 6px;
   font-size: 150%;
   line-height: 25px;
-  color: black
+  color: black;
 }
 
-#next {
+#next-btn {
   float: right;
 }
 
-#prev {
+#prev-btn {
   float: left;
 }
 
@@ -318,17 +318,6 @@ a{
   /*border: 1px black solid;*/
 }
 
-
-#vid-first {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
-#vid-last {
-  margin-top: -23px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
 
 #vid-serch {
   text-align: right;

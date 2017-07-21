@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+ 
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+</head>
+<body>
+ 
+    <ul id="testData">
+    </ul>
+
+    <script id="template" type="text/x-handlebars-template">
+    {{#each div}}  
+        <div class="video" onClick= "modalImg('#{{img-id}}')">
+          <div>
+            <img id={{img-id}} src={{src-img}} style="cursor:pointer" ></img>
+          </div>
+
+          <div class="vid-text">
+            <h1>{{title}}</h1>
+            {{content}}<br>
+          </div>
+
+          <div class="vid-date">
+            {{date}}
+          </div>
+        </div>
+    {{/each}}
+    </script>
+ 
+    <script type="text/javascript">
+ 
+        // json객체 반복문 출력 
+    var testData = {
+            div : [ 
+            	{ 
+           		  imgId : data.div.imgId, 
+                  srcImg : data.div.srcImg, 
+                  title : data.div.title, 
+                  content : data.div.content,
+                  date : data.div.date
+                }
+            ]
+        }
+ 
+        var template = Handlebars.compile($('#template').html());
+        var html = template(testData);
+        $("#video-box").append(html);
+ 
+        console.log(template);
+        console.log(html);
+ 
+    </script>
+</body>
+</html>
