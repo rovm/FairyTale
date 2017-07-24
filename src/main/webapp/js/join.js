@@ -4,6 +4,7 @@ var fiNo = $('#fi-no'),
     fiPassword = $('#password');
 
 $('#join-btn').on('click',function() {	
+	console.log('fgaf');
     $.post('join.json', {
       'email': fiEmail.val(),
       'phone': fiTel.val(),

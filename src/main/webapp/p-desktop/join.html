@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/join.css">
     <title>join</title>
   </head>
@@ -81,7 +80,7 @@
             <div class="cols-sm-3">
               <div class="input-group">
                 <input type="text" class="form-control" name="email-auth" id="email-auth"  placeholder="인증번호" required>
-                <button class="email">인증</button>
+                <button >인증</button>
               </input>
               </div>
             </div>
@@ -140,7 +139,7 @@
 
 
           <div>
-            <button type="submit" class="btn btn-primary btn join-button">회원가입</button>
+            <button type="submit" class="btn btn-primary btn join-button" id="join-btn">회원가입</button>
           </div>
 
         </form>
@@ -180,4 +179,6 @@
 
       </div>
   </body>
+  <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+  <script type="text/javascript" src="../js/join.js"></script>
 </html>
