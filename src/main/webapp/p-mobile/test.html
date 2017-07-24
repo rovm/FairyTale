@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax 파일 업로드</title>
+<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"> -->
+<!-- <link rel="stylesheet" href="../node_modules/jquery/dist/jquery.min.js"> -->
+</head>
+<body>
+  <video id="vid1" autoplay></video>
+  <br>
+  <button id="btn1">Start</button>
+
+</body>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script>
+$(document).ready(function() {
+  var vid1 = $("#vid1")[0];
+  var btn1 = $("#btn1")[0];
+
+  $(btn1).click(start);
+
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.oGetUserMedia || navigator.msGetUserMedia;
+  URL = window.URL || window.webkitURL || window.mozURL || window.oURL || window.msURL;
+
+  function start() {
+    $(btn1).attr('disabled', true);
+    navigator.getUserMedia({audio:true, video:true}, gotStream,
+                            function(err) {console.log(err);}
+  );}
+
+  function gotStream(stream){
+    vid1.src = URL.createObjectURL(stream);
+  }
+});
+</script>
+</html>

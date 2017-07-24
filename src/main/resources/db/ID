@@ -1,0 +1,17 @@
+/***********************FAIRYTALE*************************/
+CREATE USER 'FAIRYTALE'@'localhost' IDENTIFIED BY '1111';
+
+CREATE DATABASE FAIRYTALEDB
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+GRANT ALL ON FAIRYTALEDB.* TO 'FAIRYTALE'@'localhost';
+
+/*************************Test**************************/
+CREATE USER 'test'@'localhost' IDENTIFIED BY '1111';
+
+CREATE DATABASE TESTDB
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+GRANT ALL ON TESTDB.* TO 'TEST'@'localhost';

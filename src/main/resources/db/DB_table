@@ -1,0 +1,466 @@
+-- 1대1문의
+CREATE TABLE `QNA` (
+  `QNO`   INTEGER     NOT NULL COMMENT '문의번호', -- 문의번호
+  `Q_DIV` VARCHAR(50) NOT NULL COMMENT '문의분류', -- 문의분류
+  `BNO`   INTEGER     NULL     COMMENT '게시판분류번호', -- 게시판분류번호
+  `BWNO`  INTEGER     NULL     COMMENT '게시글번호' -- 게시글번호
+)
+COMMENT '1대1문의';
+
+-- 1대1문의
+ALTER TABLE `QNA`
+  ADD CONSTRAINT `PK_QNA` -- 1대1문의 기본키
+    PRIMARY KEY (
+      `QNO` -- 문의번호
+    );
+
+ALTER TABLE `QNA`
+  MODIFY COLUMN `QNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '문의번호';
+
+-- 자주묻는질문
+CREATE TABLE `FAQ` (
+  `FAQNO`   INTEGER      NOT NULL COMMENT '질문번호', -- 질문번호
+  `ANS_CON` VARCHAR(255) NOT NULL COMMENT '답변내용', -- 답변내용
+  `BNO`     INTEGER      NOT NULL COMMENT '게시판분류번호', -- 게시판분류번호
+  `BWNO`    INTEGER      NOT NULL COMMENT '게시글번호' -- 게시글번호
+)
+COMMENT '자주묻는질문';
+
+-- 자주묻는질문
+ALTER TABLE `FAQ`
+  ADD CONSTRAINT `PK_FAQ` -- 자주묻는질문 기본키
+    PRIMARY KEY (
+      `FAQNO` -- 질문번호
+    );
+
+ALTER TABLE `FAQ`
+  MODIFY COLUMN `FAQNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '질문번호';
+
+
+-- 명예의전당
+CREATE TABLE `HoF` (
+  `HNO`    INTEGER NOT NULL COMMENT '번호', -- 번호
+  `RANK`   INTEGER NULL     COMMENT '순위', -- 순위
+  `PERIOD` DATE    NULL     COMMENT '기간', -- 기간
+  `BNO`    INTEGER NOT NULL COMMENT '게시판분류번호', -- 게시판분류번호
+  `BWNO`   INTEGER NOT NULL COMMENT '게시글번호', -- 게시글번호
+  `WVNO`   INTEGER NULL     COMMENT '같이보기번호' -- 같이보기번호
+)
+COMMENT '명예의전당';
+
+-- 명예의전당
+ALTER TABLE `HoF`
+  ADD CONSTRAINT `PK_HoF` -- 명예의전당 기본키
+    PRIMARY KEY (
+      `HNO` -- 번호
+    );
+
+-- 같이보기
+CREATE TABLE `WITHVIEW` (
+  `WVNO` INTEGER NOT NULL COMMENT '같이보기번호', -- 같이보기번호
+  `RMND` INTEGER NULL     COMMENT '추천수', -- 추천수
+  `BNO`  INTEGER NOT NULL COMMENT '게시판분류번호', -- 게시판분류번호
+  `BWNO` INTEGER NOT NULL COMMENT '게시글번호' -- 게시글번호
+)
+COMMENT '같이보기';
+
+-- 같이보기
+ALTER TABLE `WITHVIEW`
+  ADD CONSTRAINT `PK_WITHVIEW` -- 같이보기 기본키
+    PRIMARY KEY (
+      `WVNO` -- 같이보기번호
+    );
+
+ALTER TABLE `WITHVIEW`
+  MODIFY COLUMN `WVNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '같이보기번호';
+
+
+
+-- 녹음파일
+CREATE TABLE `RECORD` (
+  `RECNO`   INTEGER      NOT NULL COMMENT '녹음파일번호', -- 녹음파일번호
+  `RECFILE` VARBINARY    NOT NULL COMMENT '녹음파일', -- 녹음파일
+  `RECDATE` DATE         NOT NULL COMMENT '날짜', -- 날짜
+  `RECPATH` VARCHAR(255) NOT NULL COMMENT '경로' -- 경로
+)
+COMMENT '녹음파일';
+
+-- 녹음파일
+ALTER TABLE `RECORD`
+  ADD CONSTRAINT `PK_RECORD` -- 녹음파일 기본키
+    PRIMARY KEY (
+      `RECNO` -- 녹음파일번호
+    );
+
+ALTER TABLE `RECORD`
+  MODIFY COLUMN `RECNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '녹음파일번호';
+
+-- 보관함
+CREATE TABLE `STORAGE` (
+  `MNO`   INTEGER      NOT NULL COMMENT '회원번호', -- 회원번호
+  `STITL` VARCHAR(40)  NOT NULL COMMENT '제목', -- 제목
+  `SCONT` VARCHAR(255) NOT NULL COMMENT '내용', -- 내용
+  `SDATE` DATE         NOT NULL COMMENT '날짜', -- 날짜
+  `SDIV`  VARCHAR(50)  NOT NULL COMMENT '분류' -- 분류
+)
+COMMENT '보관함';
+
+-- 보관함
+ALTER TABLE `STORAGE`
+  ADD CONSTRAINT `PK_STORAGE` -- 보관함 기본키
+    PRIMARY KEY (
+      `MNO` -- 회원번호
+    );
+
+ALTER TABLE `STORAGE`
+  MODIFY COLUMN `MNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원번호';
+
+-- 동화책
+CREATE TABLE `FTBOOK` (
+  `FTNO`   INTEGER      NOT NULL COMMENT '동화책번호', -- 동화책번호
+  `FTTITL` VARCHAR(40)  NOT NULL COMMENT '제목', -- 제목
+  `FTCONT` VARCHAR(255) NOT NULL COMMENT '내용', -- 내용
+  `FTPAGE` INTEGER      NULL     COMMENT '페이지', -- 페이지
+  `FTBDIV` VARCHAR(50)  NOT NULL COMMENT '분류', -- 분류
+  `PNO`    INTEGER      NOT NULL COMMENT '사진파일번호', -- 사진파일번호
+  `RECNO`  INTEGER      NOT NULL COMMENT '녹음파일번호' -- 녹음파일번호
+)
+COMMENT '동화책';
+
+-- 동화책
+ALTER TABLE `FTBOOK`
+  ADD CONSTRAINT `PK_FTBOOK` -- 동화책 기본키
+    PRIMARY KEY (
+      `FTNO` -- 동화책번호
+    );
+
+-- 동화책 유니크 인덱스
+CREATE UNIQUE INDEX `UIX_FTBOOK`
+  ON `FTBOOK` ( -- 동화책
+  );
+
+-- 동화책 인덱스
+CREATE INDEX `IX_FTBOOK`
+  ON `FTBOOK`( -- 동화책
+    `FTTITL` ASC -- 제목
+  );
+
+ALTER TABLE `FTBOOK`
+  MODIFY COLUMN `FTNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '동화책번호';
+
+-- 사진파일
+CREATE TABLE `PHOTOFILE` (
+  `PNO`     INTEGER      NOT NULL COMMENT '사진파일번호', -- 사진파일번호
+  `MNO`     INTEGER      NOT NULL COMMENT '회원번호', -- 회원번호
+  `IMGFILE` VARBINARY    NOT NULL COMMENT '이미지파일', -- 이미지파일
+  `PTITL`   VARCHAR(40)  NOT NULL COMMENT '제목', -- 제목
+  `PDATE`   DATE         NOT NULL COMMENT '날짜', -- 날짜
+  `PPATH`   VARCHAR(255) NOT NULL COMMENT '경로' -- 경로
+)
+COMMENT '사진파일';
+
+-- 사진파일
+ALTER TABLE `PHOTOFILE`
+  ADD CONSTRAINT `PK_PHOTOFILE` -- 사진파일 기본키
+    PRIMARY KEY (
+      `PNO` -- 사진파일번호
+    );
+
+ALTER TABLE `PHOTOFILE`
+  MODIFY COLUMN `PNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '사진파일번호';
+
+-- 회원
+CREATE TABLE `MEMBER` (
+  `MNO`   INTEGER     NOT NULL COMMENT '회원번호', -- 회원번호
+  `EMAIL` VARCHAR(40) NOT NULL COMMENT '이메일', -- 이메일
+  `NAME`  VARCHAR(50) NULL     COMMENT '이름', -- 이름
+  `PASS`  VARCHAR(50) NOT NULL COMMENT '비밀번호', -- 비밀번호
+  `TEL`   VARCHAR(30) NOT NULL COMMENT '휴대폰', -- 휴대폰
+  `POSI`  VARCHAR(50) NOT NULL COMMENT '사용자' -- 사용자
+)
+COMMENT '회원';
+
+-- 회원
+ALTER TABLE `MEMBER`
+  ADD CONSTRAINT `PK_MEMBER` -- 회원 기본키
+    PRIMARY KEY (
+      `MNO` -- 회원번호
+    );
+
+-- 회원 유니크 인덱스
+CREATE UNIQUE INDEX `UIX_MEMBER`
+  ON `MEMBER` ( -- 회원
+    `TEL` ASC,   -- 휴대폰
+    `EMAIL` ASC  -- 이메일
+  );
+
+ALTER TABLE `MEMBER`
+  MODIFY COLUMN `MNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원번호';
+
+-- 게시판
+CREATE TABLE `BOARD` (
+  `BNO`  INTEGER NOT NULL COMMENT '게시판분류번호', -- 게시판분류번호
+  `BWNO` INTEGER NOT NULL COMMENT '게시글번호' -- 게시글번호
+)
+COMMENT '게시판';
+
+-- 게시판
+ALTER TABLE `BOARD`
+  ADD CONSTRAINT `PK_BOARD` -- 게시판 기본키
+    PRIMARY KEY (
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    );
+
+-- 제작동화책
+CREATE TABLE `PROBOOK` (
+  `MNO`  INTEGER NOT NULL COMMENT '회원번호', -- 회원번호
+  `FTNO` INTEGER NOT NULL COMMENT '동화책번호' -- 동화책번호
+)
+COMMENT '제작동화책';
+
+-- 제작동화책
+ALTER TABLE `PROBOOK`
+  ADD CONSTRAINT `PK_PROBOOK` -- 제작동화책 기본키
+    PRIMARY KEY (
+      `MNO`,  -- 회원번호
+      `FTNO`  -- 동화책번호
+    );
+
+ALTER TABLE `PROBOOK`
+  MODIFY COLUMN `MNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원번호';
+
+-- 게시글
+CREATE TABLE `BOARDWRITE` (
+  `BWNO`    INTEGER      NOT NULL COMMENT '게시글번호', -- 게시글번호
+  `BW_NAME` VARCHAR(50)  NOT NULL COMMENT '게시글이름', -- 게시글이름
+  `BW_CON`  VARCHAR(255) NOT NULL COMMENT '게시글내용', -- 게시글내용
+  `BW_WDT`  DATE         NOT NULL COMMENT '등록일자', -- 등록일자
+  `BW_EDT`  DATE         NULL     COMMENT '수정일자', -- 수정일자
+  `BW_HITS` INTEGER      NULL     COMMENT '조회수', -- 조회수
+  `MNO`     INTEGER      NOT NULL COMMENT '회원번호' -- 회원번호
+)
+COMMENT '게시글';
+
+-- 게시글
+ALTER TABLE `BOARDWRITE`
+  ADD CONSTRAINT `PK_BOARDWRITE` -- 게시글 기본키
+    PRIMARY KEY (
+      `BWNO` -- 게시글번호
+    );
+
+-- 게시글 인덱스
+CREATE INDEX `IX_BOARDWRITE`
+  ON `BOARDWRITE`( -- 게시글
+    `BW_NAME` ASC -- 게시글이름
+  );
+
+ALTER TABLE `BOARDWRITE`
+  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시글번호';
+
+-- 게시판 첨부 파일
+CREATE TABLE `BOARDFILE` (
+  `BFNO`     INTEGER      NOT NULL COMMENT '파일번호', -- 파일번호
+  `FILEPATH` VARCHAR(255) NOT NULL COMMENT '파일경로', -- 파일경로
+  `FILENAME` VARCHAR(50)  NOT NULL COMMENT '파일이름', -- 파일이름
+  `BWNO`     INTEGER      NOT NULL COMMENT '게시글번호' -- 게시글번호
+)
+COMMENT '게시판 첨부 파일';
+
+-- 게시판 첨부 파일
+ALTER TABLE `BOARDFILE`
+  ADD CONSTRAINT `PK_BOARDFILE` -- 게시판 첨부 파일 기본키
+    PRIMARY KEY (
+      `BFNO` -- 파일번호
+    );
+
+ALTER TABLE `BOARDFILE`
+  MODIFY COLUMN `BFNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '파일번호';
+
+-- 코멘트
+CREATE TABLE `COMMENT` (
+  `CNO`   INTEGER      NOT NULL COMMENT '코멘트번호', -- 코멘트번호
+  `MNO`   INTEGER      NOT NULL COMMENT '회원번호', -- 회원번호
+  `BWNO`  INTEGER      NOT NULL COMMENT '게시글번호', -- 게시글번호
+  `C_WDT` DATE         NOT NULL COMMENT '등록날짜', -- 등록날짜
+  `C_CON` VARCHAR(255) NOT NULL COMMENT '코멘트내용' -- 코멘트내용
+)
+COMMENT '코멘트';
+
+-- 코멘트
+ALTER TABLE `COMMENT`
+  ADD CONSTRAINT `PK_COMMENT` -- 코멘트 기본키
+    PRIMARY KEY (
+      `CNO` -- 코멘트번호
+    );
+
+ALTER TABLE `COMMENT`
+  MODIFY COLUMN `CNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '코멘트번호';
+
+-- 1대1문의
+ALTER TABLE `QNA`
+  ADD CONSTRAINT `FK_BOARD_TO_QNA` -- 게시판 -> 1대1문의
+    FOREIGN KEY (
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    )
+    REFERENCES `BOARD` ( -- 게시판
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    );
+
+-- 자주묻는질문
+ALTER TABLE `FAQ`
+  ADD CONSTRAINT `FK_BOARD_TO_FAQ` -- 게시판 -> 자주묻는질문
+    FOREIGN KEY (
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    )
+    REFERENCES `BOARD` ( -- 게시판
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    );
+
+-- 명예의전당
+ALTER TABLE `HoF`
+  ADD CONSTRAINT `FK_BOARD_TO_HoF` -- 게시판 -> 명예의전당
+    FOREIGN KEY (
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    )
+    REFERENCES `BOARD` ( -- 게시판
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    );
+
+-- 명예의전당
+ALTER TABLE `HoF`
+  ADD CONSTRAINT `FK_WITHVIEW_TO_HoF` -- 같이보기 -> 명예의전당
+    FOREIGN KEY (
+      `WVNO` -- 같이보기번호
+    )
+    REFERENCES `WITHVIEW` ( -- 같이보기
+      `WVNO` -- 같이보기번호
+    );
+
+-- 같이보기
+ALTER TABLE `WITHVIEW`
+  ADD CONSTRAINT `FK_BOARD_TO_WITHVIEW` -- 게시판 -> 같이보기
+    FOREIGN KEY (
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    )
+    REFERENCES `BOARD` ( -- 게시판
+      `BNO`,  -- 게시판분류번호
+      `BWNO`  -- 게시글번호
+    );
+
+-- 보관함
+ALTER TABLE `STORAGE`
+  ADD CONSTRAINT `FK_MEMBER_TO_STORAGE` -- 회원 -> 보관함
+    FOREIGN KEY (
+      `MNO` -- 회원번호
+    )
+    REFERENCES `MEMBER` ( -- 회원
+      `MNO` -- 회원번호
+    );
+
+-- 동화책
+ALTER TABLE `FTBOOK`
+  ADD CONSTRAINT `FK_PHOTOFILE_TO_FTBOOK` -- 사진파일 -> 동화책
+    FOREIGN KEY (
+      `PNO` -- 사진파일번호
+    )
+    REFERENCES `PHOTOFILE` ( -- 사진파일
+      `PNO` -- 사진파일번호
+    );
+
+-- 동화책
+ALTER TABLE `FTBOOK`
+  ADD CONSTRAINT `FK_RECORD_TO_FTBOOK` -- 녹음파일 -> 동화책
+    FOREIGN KEY (
+      `RECNO` -- 녹음파일번호
+    )
+    REFERENCES `RECORD` ( -- 녹음파일
+      `RECNO` -- 녹음파일번호
+    );
+
+-- 사진파일
+ALTER TABLE `PHOTOFILE`
+  ADD CONSTRAINT `FK_MEMBER_TO_PHOTOFILE` -- 회원 -> 사진파일
+    FOREIGN KEY (
+      `MNO` -- 회원번호
+    )
+    REFERENCES `MEMBER` ( -- 회원
+      `MNO` -- 회원번호
+    );
+
+-- 게시판
+ALTER TABLE `BOARD`
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_BOARD` -- 게시글 -> 게시판
+    FOREIGN KEY (
+      `BWNO` -- 게시글번호
+    )
+    REFERENCES `BOARDWRITE` ( -- 게시글
+      `BWNO` -- 게시글번호
+    );
+
+-- 제작동화책
+ALTER TABLE `PROBOOK`
+  ADD CONSTRAINT `FK_STORAGE_TO_PROBOOK` -- 보관함 -> 제작동화책
+    FOREIGN KEY (
+      `MNO` -- 회원번호
+    )
+    REFERENCES `STORAGE` ( -- 보관함
+      `MNO` -- 회원번호
+    );
+
+-- 제작동화책
+ALTER TABLE `PROBOOK`
+  ADD CONSTRAINT `FK_FTBOOK_TO_PROBOOK` -- 동화책 -> 제작동화책
+    FOREIGN KEY (
+      `FTNO` -- 동화책번호
+    )
+    REFERENCES `FTBOOK` ( -- 동화책
+      `FTNO` -- 동화책번호
+    );
+
+-- 게시글
+ALTER TABLE `BOARDWRITE`
+  ADD CONSTRAINT `FK_MEMBER_TO_BOARDWRITE` -- 회원 -> 게시글
+    FOREIGN KEY (
+      `MNO` -- 회원번호
+    )
+    REFERENCES `MEMBER` ( -- 회원
+      `MNO` -- 회원번호
+    );
+
+-- 게시판 첨부 파일
+ALTER TABLE `BOARDFILE`
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_BOARDFILE` -- 게시글 -> 게시판 첨부 파일
+    FOREIGN KEY (
+      `BWNO` -- 게시글번호
+    )
+    REFERENCES `BOARDWRITE` ( -- 게시글
+      `BWNO` -- 게시글번호
+    );
+
+-- 코멘트
+ALTER TABLE `COMMENT`
+  ADD CONSTRAINT `FK_MEMBER_TO_COMMENT` -- 회원 -> 코멘트
+    FOREIGN KEY (
+      `MNO` -- 회원번호
+    )
+    REFERENCES `MEMBER` ( -- 회원
+      `MNO` -- 회원번호
+    );
+
+-- 코멘트
+ALTER TABLE `COMMENT`
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_COMMENT` -- 게시글 -> 코멘트
+    FOREIGN KEY (
+      `BWNO` -- 게시글번호
+    )
+    REFERENCES `BOARDWRITE` ( -- 게시글
+      `BWNO` -- 게시글번호
+    );

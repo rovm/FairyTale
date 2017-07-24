@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="동화와만나요">
+<meta property="og:url" content="www.facebook.com">
+<meta property="og:description" content="따뜻한 이야기">
+<meta property="og:image" content="../img/img2.png">
 <title>header1</title>
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="../css/mobile/m_baseform.css">
@@ -54,7 +58,7 @@
 		<a class="fa fa-facebook-official" id="faceBook" aria-hidden="true"></a>
 		<a class="fa fa-share-alt-square" id="shared" aria-hidden="true"></a>
 	</div>
-<link href='https://fonts.googleapis.com/css?family=Raleway:40												0,700|Merriweather' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700|Merriweather' rel='stylesheet' type='text/css'>
   <div class="view view-tenth">
     <img src="../img/thumb01.jpg" />
     <div class="mask">
@@ -119,6 +123,11 @@
     </div>
 
 	</div>
+	<script type="text/javascript" src="../js/test.js"></script>
 </body>
-
+<script>
+	$("#faceBook").on('click',function() {
+		window.open('http://www.faceBook.com/sharer/sharer.php?u=http://192.168.0.29:8080/FairyTale/p-mobile/m_storage.html')
+	})
+</script>
 </html>

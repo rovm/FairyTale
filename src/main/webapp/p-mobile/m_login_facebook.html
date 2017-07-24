@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>login</title>
+  <link rel="stylesheet" type="text/css" media="all" href="../css/mobile/m_baseform.css">
+	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../css/mobile/m_login.css">
+  <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="../js/m_baseform.js"></script>
+
+
+</head>
+
+  <body>
+    <!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '826146367542206',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  }
+</script>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10&appId=826146367542206";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<div id="header_menu">
+  <a href="#" id="menuList">=</a>
+</div>
+<div id="menubar"><br>
+ <p>동화와만나요</p>
+ <ul>
+   <li><a href="m_menual.html" onclick="menu_reset()">메뉴얼</a></li>
+   <li><a class="first_menu" href="#" onclick="communityBtn()">커뮤니티</a>
+    <ul id="communityBtn">
+      <li><a href="m_community_best.html">명예의전당</a></li>
+      <li><a href="m_together.html">같이보기</a></li>
+      <li><a href="m_board.html">자유게시판</a></li>
+    </ul>
+   </li>
+   <li><a href="m_create.html" onclick="menu_reset()">동화만들기</a></li>
+   <li><a href="m_storage.html" onclick="menu_reset()">작품보관함</a></li>
+   <li><a href="m_manage_board.html" onclick="menu_reset()">내글관리</a></li>
+   <li><a href="m_photozip.html" onclick="menu_reset()">사진첩</a></li>
+   <li><a href="m_join.html" onclick="menu_reset()">회원가입</a></li>
+   <li><a href="m_login.html" onclick="menu_reset()">로그인</a></li>
+   <li><a class="first_menu" href="#"  onclick="serviceBtn()">고객센터</a>
+    <ul id="serviceBtn" >
+      <li><a href="m_notice.html">공지사항</a></li>
+      <li><a href="m_faq.html">자주하는질문</a></li>
+      <li><a href="m_qna.html">문의하기</a></li>
+    </ul>
+   </li>
+ </ul>
+</div>
+<div id="main-text">
+  <div class="top-menubar">
+      <span id="top-menufont">로그인</span>
+  </div>
+	<div class="login_container">
+
+
+		<div class="omb_login">
+				<div id="btn_container">
+          <button type="button" onclick="facebooklogin()" class="btn f-btn">Facebook</button>
+          <button type="button" class="btn g-btn">Google+</button>
+					<button type="button" class="btn k-btn">Kakao</button>
+			</div>
+
+			<hr id="pilot-wire">
+			<div class="login-formBox">
+				<div class="login-formBox">
+					<form class="omb_loginForm" action="" autocomplete="off"
+						method="POST">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input type="text" class="form-control input-input"
+								name="username" placeholder="email address">
+						</div>
+						<span class="help-block"></span>
+
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+							<input type="password" class="form-control input-input"
+								name="password" placeholder="Password">
+						</div>
+						<br>
+						<button class="btn btn-lg btn-primary btn-block btnn"
+							type="submit">Login</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="footer_container">
+   <div class="footer_domain-form">
+     <span class="footer_use"><font color="gray" face="serif">Copyright
+         © FTBook Corp.<br> All Rights Reserved.</font></span>
+   </div>
+</div>
+<script type="text/javascript" src="../js/test.js"></script>
+
+
+<script>
+
+window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '826146367542206',
+                  xfbml      : true,
+                  version    : 'v2.10'
+                });
+                FB.AppEvents.logPageView();
+              };
+
+              (function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/ko_KR/sdk.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+function facebooklogin() {
+
+//페이스북 로그인 버튼을 눌렀을 때의 루틴.
+FB.login(function(response) {
+  console.log(response)
+}, {scope: 'email,public_profile'});
+
+}
+
+
+
+
+
+
+
+
+
+
+// $(window).on("load", function() {
+//   FB.getLoginStatus(function(response) {
+//   });
+// })
+
+//
+// $("#facebookBtn").on('click', function (){
+//   FB.login(function(response) {
+//     // handle the response
+//     location.href="m_main.html"
+//   }, {scope: 'public_profile,email'});
+// })
+
+</script>
+</body>
+
+</html>
