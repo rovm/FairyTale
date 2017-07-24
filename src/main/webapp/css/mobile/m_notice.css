@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6{
 	margin-top: 1px;
 	height: 39px;
 	width: 30%;
-	font-size: 130%;
+	font-size: 105%;
 	margin-left: 4%;
 	margin-right: 4%;
 	border-radius: 8px;
@@ -129,12 +129,13 @@ h1, h2, h3, h4, h5, h6{
 	box-shadow: none;
 }
 .btn-default {
-	height: 28px;
-	width: 80px;
+	height: 25px;
+	width: 63px;;
 	background-color:thistle;
 	color: white;
 }
 .button-form {
+	margin-top: 30px;
 	height: 50px;
 	text-align: center;
 
@@ -156,22 +157,73 @@ h1, h2, h3, h4, h5, h6{
   #container{
     position: relative;
     min-width:320px;
-    max-width:414px;
+    max-width:767px;
     padding: 0;
 		z-index: 1;
   }
 }
+/*********************notice-form******************/
+.notice-form {
+	width: 100%;
+  /*border: 1px red solid;*/
+  margin-bottom: 20px;
+}
+.n-top {
+	margin-top: 10px;
+  height: 50px;
+  /*border: 1px red solid;*/
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  color: white;
+}
+.n-top img {
+  float: right;
+  position: absolute;
+  height: 65px;
+  right: 5px;
+  margin-top: -15px;
+}
+.n-middle div {
+  border-bottom: 1px darkgray solid;
+  height: 60px;
+  position: relative;
+}
+.n-middle div span {
+  height: 50px;
+  line-height: 60px;
+}
 
-table {
-  width: 100%;
-  padding-bottom: 5px;
+.n-middle div div{
+  height: 15px;
+  width: 20%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: gray;
+  font-size: 80%;
+  border-bottom: 1px solid white;
 }
-tr > td {
-  padding-left: 20px;
-  font-size: 100%;
+.deco {
+  height:20px;
+  width:20px;
+  position:absolute;
+  top:0;
+  left:0;
+  border-top: solid 20px #0098ff;
+  border-right: solid 20px white;
 }
-div {
-  /*border: solid 1px red;*/
+.n-middle div a {
+  color: black;
+  /*border: 1px red solid;*/
+}
+.n-middle div span i {
+	float: right;
+	position: absolute;
+  line-height: 60px;
+  left: 80%;
+  color: dimgray;
 }
 #head-table{
 

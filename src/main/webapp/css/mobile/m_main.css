@@ -354,7 +354,7 @@
 .b-top img {
   position: absolute;
   height: 70px;
-  left: -2px;
+  left: 10px;
   margin-top: -20px;
 }
 /*.middle-container p {
@@ -450,11 +450,24 @@
   color: white;
 }
 .n-top img {
-  float: right;
   position: absolute;
   height: 65px;
-  right: 5px;
+  left: 5px;
   margin-top: -15px;
+}
+.n-bottom {
+  margin-top: 20px;
+  height: 50px;
+  /*border: 1px red solid;*/
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  background-color: yellowgreen;
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
 }
 .n-middle div {
   border-bottom: 1px darkgray solid;
@@ -489,6 +502,7 @@
   color: black;
   /*border: 1px red solid;*/
 }
+
 /********************menual*********************/
 .menual-form {
   height: 420px;
@@ -507,7 +521,7 @@
 .m-top img {
   position: absolute;
   height: 75px;
-  left: 5px;
+  right: 5px;
   margin-top: -20px;
 }
 .m-middle {
@@ -589,8 +603,9 @@ a > span {
 
 .photo-stack {
   position: relative;
-  margin: 0 4% 2em;
+  margin: 0 auto 15px;
   display: block;
+  width: 70%;
 }
 .photo-stack:before,
 .photo-stack:after,

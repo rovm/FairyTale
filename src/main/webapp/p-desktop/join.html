@@ -54,31 +54,65 @@
     <div class="row main">
       <div class="main-login main-center">
         <form class="form-horizontal" method="post" action="#">
+
           <div class="form-group">
             <label for="name" class="cols-sm-3 control-label">이름</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="name" id="name"  placeholder="Name"/>
+                <input type="text" class="form-control" name="name" id="name"  placeholder="이름" required/>
               </div>
             </div>
           </div>
+
           <div class="form-group">
             <label for="email" class="cols-sm-3 control-label">이메일</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="email" id="email"  placeholder="Email"/>
+                <input type="text" class="form-control" name="email" id="email"  placeholder="이메일" required/>
               </div>
             </div>
           </div>
+
+
+          <div class="form-group">
+            <label for="email" class="cols-sm-3 control-label">이메일 확인</label>
+            <div class="cols-sm-3">
+              <div class="input-group">
+                <input type="text" class="form-control" name="email-auth" id="email-auth"  placeholder="인증번호" required>
+                <button class="email">인증</button>
+              </input>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+      <div class="box btn">
+          <button type="submit" class="btn join">
+              <i class="fa fa-envelope"></i>
+              이메일 전송
+          </button>
+      </div>
+
+
+
+
+
+          <div>
+            <label for="email" class="cols-sm-3 control-label">이메일 확인</label>
+          </div>
+
 
           <div class="form-group">
             <label for="password" class="cols-sm-3 control-label">비밀번호</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password"  placeholder="Password"/>
+                <input type="password" class="form-control" name="password" id="password"  placeholder="비밀번호" required/>
               </div>
             </div>
           </div>
@@ -88,33 +122,25 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Password"/>
+                <input type="password" class="form-control" name="password-auth" id="password-auth"  placeholder="비밀번호확인" required/>
               </div>
             </div>
           </div>
+
 
           <div class="form-group">
             <label for="tel" class="cols-sm-2 control-label">휴대폰번호</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="tel" id="tel"  placeholder="Tel"/>
+                <input type="text" class="form-control" name="tel" id="tel"  placeholder="휴대폰번호" required/>
               </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="tel" class="cols-sm-2 control-label">인증번호입력</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="tel" id="tel"  placeholder="Tel"/>
-              </div>
-            </div>
-          </div>
-          <div class="form-group ">
-            <button type="button" class="btn btn-primary btn login-button">회원가입</button>
-            <button type="button" class="btn btn-warning btn login-button">인증하기</button>
+
+          <div>
+            <button type="submit" class="btn btn-primary btn join-button">회원가입</button>
           </div>
 
         </form>
