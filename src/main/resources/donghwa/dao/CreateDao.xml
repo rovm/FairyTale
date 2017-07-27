@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.CreateDao">
+
+  <resultMap type="create" id="CreateMap">
+    <id column="bno" property="bno"/>
+    <result column="bw_name" property="titl"/>
+    <result column="bw_con" property="content"/>
+    <result column="filename" property="file"/>
+  </resultMap>
+
+  <insert id="insert" parameterType="create">
+    insert into board(bno), boardfile(filename), boardwrite(bw_name, bw_con) 
+    values(#{bno}, #{file}, #{content}, #{titl})
+  </insert>
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,11 +3,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>together</title>
+  <title>board_detail</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/desktop/together.css">
-  <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/desktop/board_detail.css">
+  
 
 </head>
 <body>
@@ -45,11 +45,10 @@
       </div>
     </div>
     <div id="box">
-      <div id="img"></div><div id="menual-Name">함께보기</div>
+      <div id="img"></div><div id="menual-Name">자유게시판</div>
       </div>
-    </div>
-
-
+    </div><br>
+    
     <div id="com-somenu">
 
       <div id="com-bord-s" class="com-somenu">
@@ -65,7 +64,7 @@
         </a>
       </div>
       <div id="com-king-s" class="com-somenu">
-        <a href="best.html" id="com-font"	class="com-font">
+        <a href="best.html" id="com-font" class="com-font">
           <img src="../img/cow.png" alt="">
           <br>명예의전당
         </a>
@@ -73,30 +72,47 @@
 
     </div>
 
-  <div id="com-together">
-   
-     <div id="com-titl-bord" class="bord-top">
-      <div class="bord-button clearfix">
-        <a href="together_create.html"><button class="btn btn-danger" id="bord-btn">+추가하기</button></a>
 
-        <input class="top-input"type="text" placeholder="검색" id="bord-top-input"></input>
-      </div>
-    </div>
-    
-    <div id="video-box">
-    </div>
-      <div id="" class="bottom-button-box clearfix">
-        <button type="button" name="button" id="prev-btn" class="btn-info prev">이전</button>
-          <a id="d">1</a>
-        <button type="button" name="button" id="next-btn" class="btn-info">다음</button>
-      </div>
-  </div>
+		<div class="main_box clearfix">
+			<hr>
+			<div class="box-form" style="color: white">
+				<div class="top_bar">
+          <div id="titl" style="line-height: 40px; font-weight: bold; margin-left:45px; text-align: center;"><span id="bw_name" ></span></div>
+          <div id="date">
+            <div style="float: left; font-weight: bold;">작성일</div>
+            <div id="" style="float: left; margin-left: 20px;"><span id="bw_wdt" ></span></div>
+          </div>
+          <div id="user">
+            <div style="float: left; font-weight: bold;">작성자</div>
+            <div id= "" style="float: right; margin-left: 20px;"><span id="name" ></span></div>
+          </div>
+        </div>
+        <div style="height: 50px;"></div>
+        <div id=""  style="margin-left: 30px; color:black"><span id="bw_con" ></span></div>
+        <div style="height: 30px;"></div>
+			</div>
+		  <hr>
+
+		  <div class="clearfix"><button id="board-list" class="btn btn-primary" style="float:right;margin-right:5px;">목록</button>
+		  <button id="board-delete" class="btn btn-primary" style="float:right; margin-right:5px;">삭제</button>
+		  <button id="board-update" class="btn btn-primary" style="float:right; margin-right:5px;">수정</button></div>
+
+		                                                                                                                                
+      
+		  <div style="height:10px;"></div><br>
+		  <p>※ 덧글은 최대 250자 입력이 가능합니다.</p>
+		  <div class="comment clearfix" style="border-top:1px solid black; border-bottom:1px solid black;">
+		    <textarea style="margin:20px 0 20px 20px; float:left;" cols="110" rows="3"
+		              placeholder="덧글 쓰기...."></textarea>
+		    <button class="btn btn-primary btn-lg active">작성</button>
+		  </div>
+		  
+
+	</div>
 
 
   <div class="footer_container">
-
   <div class="footer_domain-form">
-
     <span id="footer_a" class="menu">도움말
     </span>
     <span id="footer_b" class="footer_menu">이용약관
@@ -116,52 +132,18 @@
     <span class="footer_use"><font color="gray" face="serif">본 콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
     <span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © FTBook Corp. All Rights Reserved.</font></span>
   </div>
-
   </div>
+  
+  
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="../js/board_detail.js"></script>
 
-
-<!-- 모달폼 -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 </body>
-
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-<script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script id="template" type="text/x-handlebars-template">
-    {{#each div}}  
-        <div class="video" onClick= "modalImg('#{{imgId}}')">
-          <div>
-            <img id={{imgId}} src={{srcImg}} style="cursor:pointer" ></img>
-          </div>
-          <div class="vid-text">
-            <h1>{{title}}</h1>
-            {{content}}<br>
-          </div>
-          <div class="vid-date">
-            {{date}}
-          </div>
-        </div>
-    {{/each}}
-</script>
-<script src="../js/together.js"></script>
 
 </html>
 
 
 
 
-
-
-
+<!-- -->

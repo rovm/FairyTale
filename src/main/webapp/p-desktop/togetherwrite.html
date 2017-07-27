@@ -6,7 +6,7 @@
   <title>together_create</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/desktop/together_create.css">
+  <link rel="stylesheet" href="../css/desktop/togetherwrite.css">
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
 </head>
@@ -20,7 +20,7 @@
         <a href="menual.html">메뉴얼</a>
       </div>
       <div id="community" class="menu">
-        <a href="community_best.html">커뮤니티</a>
+        <a href="best.html">커뮤니티</a>
       </div>
       <div id="create" class="menu">
         <a href="create.html">동화만들기</a>
@@ -49,8 +49,7 @@
       </div>
     </div>
 
-
-    <div id="com-somenu">
+	<div id="com-somenu">
 
       <div id="com-bord-s" class="com-somenu">
         <a href="community_boarder.html" id="com-font3" class="com-font">
@@ -65,7 +64,7 @@
         </a>
       </div>
       <div id="com-king-s" class="com-somenu">
-        <a href="community_best.html" id="com-font"	class="com-font">
+        <a href="best.html" id="com-font"	class="com-font">
           <img src="../img/cow.png" alt="">
           <br>명예의전당
         </a>
@@ -74,10 +73,23 @@
     </div>
 
 	<div class="create-box">
-		<div id="titl">제목 <input></input></div>
-		<div>내용<textarea></textarea></div>
-		<div><button>파일 첨부</button></div>
+		<div class="write-title">
+		  <div class="title-input">
+		  <input name="titl" id="bw_name" >
+		  <div id="title-box">&nbsp;&nbsp;제 목</div>
+		  </div>
+		
+		  <div class="cont-input"><textarea name="content" id="bw_con" placeholder="내용을 입력하세요...."></textarea>
+		  </div>
+	    
+	    <div class="btn-box clearfix">
+	      <button id="updatebtn">변경</button>
+	      <button id="addbtn" style="margin-right: 10px;">올리기</button>
+        <input type="file">
+	    </div>
+    </div>
 	</div>
+
 
 
 	<div class="footer_container">
@@ -105,7 +117,7 @@
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../js/together.js"></script>
+<script src="../js/togetherwrite.js"></script>
 
 </html>
 
