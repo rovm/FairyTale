@@ -1,4 +1,18 @@
-
+.btn-danger {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}
+.btn-danger:active {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}
 input {
 	outline: none;
 }
@@ -34,7 +48,7 @@ input[type=search] {
 input[type=search]:focus {
 	width: 130px;
 	background-color: #fff;
-	border-color: lightpink;
+	border-color: blueviolet;
 
 	/*-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
@@ -50,7 +64,6 @@ input::-webkit-input-placeholder {
 }
 body {
   padding: 0;
-  background-color: ivory;
   /*border: solid 2px black;*/
   height: auto;
 }
@@ -58,7 +71,7 @@ strong{
   font-size: 35px;
   font-weight: bold;
   margin-right: 221px;
-  color: lightcoral;
+  color: #7665d6;
 }
 div {
   /*border: solid 1px red;*/
@@ -81,16 +94,19 @@ th, td {
   text-align: center;
   vertical-align: middle;
   height: 30px;
-}
-
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    padding: 6px;
-    line-height: 1.42857143;
-    vertical-align: middle;
-    border-top: 1px solid #ddd;
+  
 }
 
 
+#top {
+    background-color: #7665d6;
+    border: 1px solid #7665d6;
+    color: white;
+}
+
+#top > th {
+  border: none;
+}
 
 
 #img {
@@ -182,6 +198,14 @@ th, td {
   margin-right: 111px;
 
 }
+.board {
+	height: 40px;
+	color: blueviolet;
+}
+.board:hover {
+	color: tomato;
+	opacity: 0.4;
+}
 .bord-button{
   margin: 30px 0 14px 0px;
   float: left;
@@ -225,19 +249,9 @@ th, td {
   margin-bottom: 100px;
 
 }
-#top:hover{
-  background-color: black;
+#page-no {
+	width: 20px;
 }
-.active2 > td > a {
-  color: black;
-}
-.active2 > td > a:hover{
-  color: tomato;
-}
-.active2 > td {
-  color: tomato;
-}
-
 .fa {
   font-size: 50px;
 }

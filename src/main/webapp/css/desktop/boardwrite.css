@@ -1,7 +1,6 @@
 
 body {
   padding: 0;
-  background-color: ivory;
   /*border: solid 2px black;*/
   height: auto;
 }
@@ -24,12 +23,12 @@ a{
 
 
 #img {
-
   border: 0;
-  width: 180px;
-  height: 180px;
-  background-image: url("../../img/monster123.png");
+  width: 200px;
+  height: 150px;
+  background-image: url("../../img/456.png");
 }
+
 #logo {
   margin-top: -7px;
   margin-left: 0px;
@@ -63,7 +62,7 @@ a{
   margin-top: 0;
   width: 100%;
   height: 230px;
-  background-color: rgb(189, 209, 33);
+  background-color: rgb(150 , 119 , 237 );
 }
 
 
@@ -91,7 +90,82 @@ a{
   margin: 3px;
   float: left;
 }
+/*******************************/
+.write-title {
+	position: relative;
+  padding-top: 20px;
+  background-color: lavender;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	margin-bottom: 80px;
+	border-radius: 10px;
+}
+ .title-input {
+  margin-left: 26px;
+	width:60px;
+	border:none;
+	
+} 
+.title-input input {
+	padding-left:60px;
+	border:none;
+	outline:none;
+	height: 30px;
+	border-radius: 5px;
+}
+ #bw_name {
+  float: left;
+  border-left: none;
+  width: 928px;
+} 
+.cont-input {
+	margin-top:35px;
+  margin-left:5px;
 
+}
+
+#title-box {
+	  background-color: white;
+    float: left;
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+}
+#bw_con {
+    margin-left: 21px;
+    width: 928px;
+    height: 360px;
+    resize:none;
+    outline: none;
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.btn-box {
+	margin-left: 26px;
+	width:930px;
+}
+.btn-box button {
+	padding: 5px 10px;
+	background-color:#7665d6;
+	color:white;
+	border-radius:10px;
+	float: right;
+	font-size:15px;
+	font-weight:bold;
+}
+.btn-box input {
+	float: left;
+}
+button {
+    border-width: 0px;
+}
+
+
+
+/*******************************/
 
 .footer_container {
   width: 100%;
@@ -172,7 +246,6 @@ a{
 }
 
 div {
-	border: 1px red solid;
 }
 #titl {
 	
