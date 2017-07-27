@@ -7,8 +7,8 @@ lang = {
     'recording': '녹음중', //Запись
     'play': '시작', //Воспроизвести
     'stop': '정지', //Остановить
-    'download': 'Download', //Скачать
-    'use_https': 'This application in not working over insecure connection. Try to use HTTPS'
+    'download': 'Download' //Скачать
+    // 'use_https': 'This application in not working over insecure connection. Try to use HTTPS'
 },
 time;
 
@@ -101,8 +101,8 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 
         } ).catch( function ( error ) {
-            if ( location.protocol != 'https:' ) {
-              msg_box.innerHTML = lang.mic_error + '<br>'  + lang.use_https;
+            if ( location.protocol != 'http:' ) {
+              msg_box.innerHTML = lang.mic_error;
             } else {
               msg_box.innerHTML = lang.mic_error;
             }
@@ -167,8 +167,8 @@ if ( navigator.mediaDevices.getUserMedia ) {
     }
 
 } else {
-    if ( location.protocol != 'https:' ) {
-      msg_box.innerHTML = lang.mic_error + '<br>'  + lang.use_https;
+    if ( location.protocol != 'http:' ) {
+      msg_box.innerHTML = lang.mic_error;
     } else {
       msg_box.innerHTML = lang.mic_error;
     }

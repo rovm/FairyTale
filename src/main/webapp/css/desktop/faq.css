@@ -61,6 +61,26 @@
 	border: 1px solid #d9d9d9;
 }
 
+.page-btn {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.btnForm {
+	background-color: #fff;
+	border: 1px solid #c1c1c1;
+	width: 60px;
+	height: 40px;
+}
+
+#plus-btn{
+	float: right;
+	width: 40px;
+	height: 40px;
+
+}
+
+/*헤더*/
 h1 {
 	font-weight: bold;
 	color: gray;

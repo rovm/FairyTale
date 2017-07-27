@@ -1,12 +1,9 @@
 package donghwa.control.json;
 
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,42 +11,40 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import donghwa.domain.Member;
-import donghwa.service.TeacherService;
-
-
+import donghwa.service.MemberService;
 
 @RestController
-@RequestMapping("/auth/")
+@RequestMapping("/p-desktop/")
 @SessionAttributes({"loginMember"})
 public class AuthControl {
   @Autowired
-  TeacherService teacherService;
-
-  @RequestMapping(path="login", method=RequestMethod.POST)
-  public JsonResult login(String userType, String email, String password, String saveEmail, 
-      Model model, HttpServletResponse response) throws Exception {
-
+  MemberService memberService;
+  
+  @RequestMapping(path="login2", method=RequestMethod.POST)
+  public JsonResult login(String email, String password, String saveEmail, 
+       HttpSession session) throws Exception {
     Member member = null;
-    if (userType.equals("teacher")) {
-      member = teacherService.getByEmailPassword(email, password);
-    }
+
+    member = memberService.getByEmailPassword(email, password);
+    System.out.println(member);
     
     if (member != null) { 
-      model.addAttribute("loginMember", member);
+      session.setAttribute("loginMember", member);
       
-      if (saveEmail != null) {
-        Cookie cookie2 = new Cookie("email", email);
-        cookie2.setMaxAge(60 * 60 * 24 * 7); 
-        response.addCookie(cookie2);
-      } else {
-        Cookie cookie2 = new Cookie("email", "");
-        cookie2.setMaxAge(0);
-        response.addCookie(cookie2);
-      }
+//      if (saveEmail != null) {
+//          Cookie cookie2 = new Cookie("email", email);
+//          cookie2.setMaxAge(60 * 60 * 24 * 7); 
+//          response.addCookie(cookie2);
+//        } else {
+//          Cookie cookie2 = new Cookie("email", "");
+//          cookie2.setMaxAge(0);
+//          response.addCookie(cookie2);
+//        }
       
       return new JsonResult(JsonResult.SUCCESS, "ok");
       
     } else {
+    	System.out.println("실패...");
       return new JsonResult(JsonResult.FAIL, "fail");
     }
   }

@@ -1,17 +1,25 @@
 var fiNo = $('#fi-no'),
+	fiName = $('#name'),
     fiEmail = $('#email'),
-    fiTel = $('#tel'),
-    fiPassword = $('#password');
+    fiPassword = $('#password'),
+    fiTel = $('#tel');
 
-$('#join-btn').on('click',function() {	
-	console.log('fgaf');
-    $.post('join.json', {
+$('#join-btn').on('click',function(e) {
+	console.log('sss');
+    $.post('add2.json', {
+      'name' : fiName.val(),
       'email': fiEmail.val(),
-      'phone': fiTel.val(),
       'password': fiPassword.val(),
+      'tel': fiTel.val()
     }, function(result) {
+      if(result.status=="success")
+      {console.log(result);
       location.href = 'main.html'
+      // e.preventDefault();
+    } else {
+      console.log(result.data)
+    }
     }, 'json')
-    console.log(fiEmail.val(), fiTel.val(), fiPassword.val())
+    console.log('www');
+    // e.preventDefault();
   })
-  

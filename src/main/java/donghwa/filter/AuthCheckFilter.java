@@ -16,11 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.fabric.xmlrpc.base.Member;
 
-@WebFilter({"/member/*", "/classroom/*", "/lecture/*"})
+@WebFilter({"/p-desktop/"})
 public class AuthCheckFilter implements Filter {
 
   @Override
-  public void init(FilterConfig filterConfig) throws ServletException {}
+  public void init(FilterConfig filterConfig) throws ServletException {
+  }
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -29,11 +30,12 @@ public class AuthCheckFilter implements Filter {
     HttpServletResponse httpResponse = (HttpServletResponse) response;
     
     Member loginMember = (Member)httpRequest.getSession().getAttribute("loginMember");
-    if (loginMember == null) { // 쿠키에 세션ID가 없다면 로그인 화면으로 보낸다.
-      httpResponse.sendRedirect("../auth/login.do");
-      return;
-    }
-    
+    System.out.println("loginMember: " + loginMember);
+//    if (loginMember == null) { // 쿠키에 세션ID가 없다면 로그인 화면으로 보낸다.
+//      httpResponse.sendRedirect("/p-desktop/login.json");
+//      return;
+//    }
+//    
     // 다음 필터 또는 서블릿을 실행해야 한다.
     chain.doFilter(request, response);
   }

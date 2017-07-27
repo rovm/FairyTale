@@ -2,17 +2,11 @@ package donghwa.domain;
 
 public class Board {
 	int no;
-<<<<<<< HEAD
-=======
-	int mno;
-	String name;
->>>>>>> origin/master
 	String bw_name;
 	String bw_con;
 	String bw_wdt;
 	String bw_edt;
 	String bw_hits;
-<<<<<<< HEAD
 	int mno;
 	
 	
@@ -24,34 +18,12 @@ public class Board {
 	
 	
 	
-=======
-	@Override
-	public String toString() {
-		return "Board [no=" + no + ", mno=" + mno + ", name=" + name + ", bw_name=" + bw_name + ", bw_con=" + bw_con
-				+ ", bw_wdt=" + bw_wdt + ", bw_edt=" + bw_edt + ", bw_hits=" + bw_hits + "]";
-	}
->>>>>>> origin/master
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-<<<<<<< HEAD
-=======
-	public int getMno() {
-		return mno;
-	}
-	public void setMno(int mno) {
-		this.mno = mno;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
->>>>>>> origin/master
 	public String getBw_name() {
 		return bw_name;
 	}
@@ -82,7 +54,6 @@ public class Board {
 	public void setBw_hits(String bw_hits) {
 		this.bw_hits = bw_hits;
 	}
-<<<<<<< HEAD
 	public int getMno() {
 		return mno;
 	}
@@ -92,10 +63,3 @@ public class Board {
 	
 	
 }
-=======
-	
-	
-
-}
-	
->>>>>>> origin/master

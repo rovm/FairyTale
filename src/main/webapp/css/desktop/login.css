@@ -26,7 +26,7 @@
 }
 
 .omb_login .omb_socialButtons a:hover {
-	color: white;
+
 	opacity: 1;
 }
 
@@ -36,6 +36,8 @@
 
 .omb_login .omb_socialButtons .omb_btn-kakao {
 	background: #fadd02;
+	color: #2F1716;
+
 }
 
 .omb_login .omb_socialButtons .omb_btn-google {
@@ -208,4 +210,43 @@ a {
 
 a:hover {
 	text-decoration: none;
+	color: #2F1716;
+}
+
+
+
+/*****************************************/
+.ddd{
+margin: 0px auto;
+
+}
+
+.login-btn {
+	height: 50px;
+
+}
+
+.sns-btn {
+	width: 100px;
+	height: 50px;
+	border: 1px solid;
+	border-radius: 10px;
+}
+
+
+.save-find-form{
+	width: 100%;
+	text-align: left;
+	margin-left: 39%;
+	margin-bottom: 170px;
+}
+
+.id-pass-find{
+	/*margin-left: 14%;*/
+	margin-left: 273px;
+	margin-top: -30px;
+}
+
+.checkbox{
+	width: 100px;
 }

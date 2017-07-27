@@ -17,12 +17,6 @@ html {
     outline: none;
 }
 
-body {
-  padding: 0;
-  background-color: ivory;
-  height: auto;
-}
-
 a:hover {
   text-decoration: none;
 }
@@ -41,9 +35,23 @@ h1 {
   clear: both;
 }
 
+/*목록으로*/
+.btn_box{
+  margin: 30px auto 20px auto;
+  width: 980px;
+}
+
+#pre_btn {
+  width: 100px;
+  height: 40px;
+  background-color: orange;
+  float: right;
+  font-size: 17px;
+}
+
+
+
 /******************************/
-
-
 
 
 #img {
@@ -87,7 +95,7 @@ h1 {
     margin-top: 0;
     width: 100%;
     height: 230px;
-    background-color:  rgb(255, 132, 18);
+    background-color:  orange;
 
   }
   .form {
@@ -136,27 +144,33 @@ h1 {
 }
 
 .recorder_wrapper {
-    width: 100%;
+
+  /*text-align: right;*/
+    width: 68%;
+    height: 250px;
+    margin: 0px auto;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    /*align-items: center;*/
+    padding-left: 50%;
+    /*justify-content: ;*/
+
 }
 
-/* record */
+/******** record ********/
 .recorder {
     display: inline-block;
     text-align: center;
-    width: 500px;
+    width: 100px;
     max-width: 100%;
+    margin-bottom: 100px;
 }
 
 .record_btn {
+  margin-top: 20px;
     width: 100px;
     height: 100px;
     font-family: 'Material Icons';
@@ -203,12 +217,12 @@ h1 {
 .recording {
     animation: recording 2s infinite ease-in-out;
     position: relative;
+    /*margin-top: 10px;*/
 }
 
 .recording:before {
     content: '';
     display: inline-block;
-    position: absolute;
     top: 50%;
     left: 50%;
     width: 0px;
@@ -250,7 +264,6 @@ h1 {
     width: 60px;
     height: 100px;
     display: inline-block;
-
 }
 
 .txt_btn {
@@ -268,83 +281,54 @@ h1 {
   padding: 0;
   -webkit-tap-highlight-color: transparent; }
 
-a{
-  color: white;
-}
-
-html {
-  font-size: 16px;
- }
-
-/*div{
-  border: 1px solid red;
+/*#msg_box {
+  width: 93px;
 }*/
 
 
-
-#recode-play, #play-stop{
-  margin-left: 83px;
+/*==================play======================*/
+.recorder_wrapper > .play > .play_btn > i {
+  font-size: 300%;
+  margin-left: 10px;
 }
 
-#basic-play, #basic-stop {
-  margin-left: 166px;
+.play {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    max-width: 100%;
+    margin-bottom: 100px;
+    margin-top: 20px;
 }
 
-#stop{
-  margin-left: 249px;
-  width: 50px;
+
+.play_btn {
+  width: 100px;
+  height: 100px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 50px;
+  border: 2px solid;
+  background-color: #FFF;
 }
 
-#basic-stop{
-  display: none;
-}
-#recode-stop{
-  display: none;
-}
-#play-stop{
-  display: none;
-}
+/*.play_btn {
+  margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    font-family: 'Material Icons';
+    font-size: 48px;
+    color: #e74c3c;
+    background: none;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.15s linear;
+}*/
 
-.direction-btn{
-  margin-top: 10%;
-}
-
-#left-btn{
-  float: left;
-  font-size: 250%;
-  padding-left: 10%;
-}
-
-#right-btn{
-  float: right;
-  font-size: 250%;
-  padding-right: 10%;
-}
-
-.btn-word{
-  font-size: 70%;
-  padding: 4px;
-}
-
-.play-btn {
-  margin: -50px 10%;
-  position: absolute;
-  z-index: 4999;
-}
-
-.play-btn button {
-  font-size: 120%;
-  width: 80px;
-  background: rgba(255, 0, 0, 0);
-  height: 33px;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  border-radius: 5px;
-  /*background-color: skyblue;*/
-  border: 1px solid darkgray;
-  color: black;
-  padding: 3px;
-  position: absolute;
+.play_btn:hover {
+    transition: 0.15s linear;
+    transform: scale( 1.05 );
 }
 
 
@@ -356,40 +340,19 @@ html {
 
 .all{
   width: 960px;
-  height: 500px;
+  height: 600px;
   margin: 10px auto 0px;
-
 }
 
 .content_box{
-width: 70%;
-height: 500px;
-
+  width: 100%;
+  height: 600px;
 }
 
 .content_box img {
   width: 100%;
   height: 100%;
-
-
 }
-
-.text_box{
-  /*border: 2px solid blue;*/
-  width: 29%;
-  height: 500px;
-  float: right;
-  color: black;
-  background-color: white;
-
-
-
-}
-
-/*div{
-  border: 1px solid red;
-}*/
-
 
 #slider {
   position: relative;
@@ -413,8 +376,9 @@ height: 500px;
   margin: 0;
   padding: 0;
   width: 980px;
-  height: 520px;
-  background-color: orange;
+  height: 620px;
+  background-color: lightgray;
+  /*border: 3px solid gray;*/
   text-align: center;
   line-height: 300px;
 }

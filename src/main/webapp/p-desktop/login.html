@@ -54,20 +54,23 @@
 	<div class="login_container">
 
 
+
+
+
 		<div class="omb_login">
 			<div class="row omb_row-sm-offset-3 omb_socialButtons" style="width:100%">
 				<div class="col-xs-4 col-sm-1 log_btn">
-					<a href="#" class="btn btn-lg btn-block omb_btn-facebook"> <span
+					<a href="" class="btn btn-lg btn-block omb_btn-facebook"> <span
 						class="hidden-xs">Facebook</span>
 					</a>
 				</div>
 				<div class="col-xs-4 col-sm-1 log_btn">
-					<a href="#" class="btn btn-lg btn-block omb_btn-google"> <span
+					<a href="" class="btn btn-lg btn-block omb_btn-google"> <span
 						class="hidden-xs">Google+</span>
 					</a>
 				</div>
 				<div class="col-xs-4 col-sm-1 log_btn">
-					<a href="#" class="btn btn-lg btn-block omb_btn-kakao"> <span
+					<a href="" class="btn btn-lg btn-block omb_btn-kakao"> <span
 						class="hidden-xs">Kakao</span>
 					</a>
 				</div>
@@ -81,34 +84,41 @@
 
 			<div class="row omb_row-sm-offset-3" style="width:100%">
 				<div class="col-xs-12 col-sm-3">
-					<form class="omb_loginForm" action="" autocomplete="off"
-						method="POST">
+					<form class="omb_loginForm" action="" autocomplete="off">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user"></i></span>
-							<input type="text" class="form-control input-input"
+							<input type="text" id="login-email" class="form-control input-input"
 								name="username" placeholder="email address">
 						</div>
 						<span class="help-block"></span>
 
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-							<input type="password" class="form-control input-input"
+							<input type="password" id="login-password" class="form-control input-input"
 								name="password" placeholder="Password">
 						</div>
 						<br>
-						<button class="btn btn-lg btn-primary btn-block btnn"
-							type="submit">Login</button>
+						<button id="login-btn" class="btn btn-lg btn-primary btn-block btnn"
+							type="button">Login</button>
 					</form>
 				</div>
 			</div>
-			<div class="row omb_row-sm-offset-3" style="width:100%">
+
+			<div class="save-find-form">
+				<label class="checkbox"> <input type="checkbox"
+					value="remember-me">저장하기
+				</label>
+				<div class="id-pass-find">아이디/비밀번호 찾기</div>
+			</div>
+
+
+
+
+			<!-- <div class="row omb_row-sm-offset-3" style="width:100%">
 				<div class="col-xs-12 col-sm-3">
-					<label class="checkbox"> <input type="checkbox"
-						value="remember-me">저장하기
-					</label>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 
 
@@ -137,4 +147,7 @@
 
 	</div>
 </body>
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="../js/login.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </html>
