@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.BoardDao">
+
+  <resultMap type="board" id="boardMap">
+    <id column="bwno" property="no"/>
+    <id column="mno" property="mno"/>
+    <result column="bw_name" property="bw_name"/>
+    <result column="bw_con" property="bw_con"/>
+    <result column="bw_wdt" property="bw_wdt"/>
+    <result column="bw_edt" property="bw_edt"/>
+    <result column="bw_hits" property="bw_hits"/>
+  </resultMap>
+
+
+  <insert id="insert" parameterType="board">
+    insert into boardwrite(bwno, mno, bw_name, bw_con, bw_wdt) 
+    values(#{no}, 1, #{bw_name}, #{bw_con}, #{bw_wdt})
+  </insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
