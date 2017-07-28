@@ -1,6 +1,5 @@
 var Titl = $('#bw_titl'),
     Con = $('#bw_con'),
-    Wdt = $('#bw_wdt')
     Div = "board";
 
 
@@ -11,7 +10,6 @@ $('#addbtn').on('click',function() {
     $.post('add.json', {
       'bw_titl': Titl.val(),
       'bw_con': Con.val(),
-      'bw_wdt': Wdt.val(),
       'bw_div': Div
     }, function(result) {
       location.href = 'community_boarder.html'

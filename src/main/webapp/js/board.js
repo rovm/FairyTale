@@ -39,6 +39,7 @@ function displayList(pageNo){
 	// 서버에서 강사 목록 데이터를 받아 온다.
   $.getJSON('list.json', {'pageNo':pageNo, 'pageSize':pageSize}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
   var totalCount = result.data.totalCount
+  console.log(result.data)
   var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1: 0)
 
   var templateFn = Handlebars.compile($('#tbody-template').text())

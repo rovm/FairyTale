@@ -3,6 +3,7 @@ package donghwa.domain;
 public class Board {
 	int no;
 	int mno;
+	int cno;
 	String name;
 	String bw_titl;
 	String bw_con;
@@ -10,13 +11,35 @@ public class Board {
 	String bw_edt;
 	String bw_hits;
 	String bw_div;
+	String c_con;
+	String c_wdt;
+	
 	@Override
 	public String toString() {
-		return "Board [no=" + no + ", mno=" + mno + ", name=" + name + ", bw_titl=" + bw_titl + ", bw_con=" + bw_con
-				+ ", bw_wdt=" + bw_wdt + ", bw_edt=" + bw_edt + ", bw_hits=" + bw_hits + ", bw_div=" + bw_div + "]";
+		return "Board [no=" + no + ", mno=" + mno + ", cno=" + cno + ", name=" + name + ", bw_titl=" + bw_titl
+				+ ", bw_con=" + bw_con + ", bw_wdt=" + bw_wdt + ", bw_edt=" + bw_edt + ", bw_hits=" + bw_hits
+				+ ", bw_div=" + bw_div + ", c_con=" + c_con + ", c_wdt=" + c_wdt + "]";
 	}
 	public int getNo() {
 		return no;
+	}
+	public int getCno() {
+		return cno;
+	}
+	public void setCno(int cno) {
+		this.cno = cno;
+	}
+	public String getC_con() {
+		return c_con;
+	}
+	public void setC_con(String c_con) {
+		this.c_con = c_con;
+	}
+	public String getC_wdt() {
+		return c_wdt;
+	}
+	public void setC_wdt(String c_wdt) {
+		this.c_wdt = c_wdt;
 	}
 	public void setNo(int no) {
 		this.no = no;

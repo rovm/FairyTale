@@ -21,6 +21,10 @@ public class BoardServiceImpl implements BoardService {
     boardDao.insert(board);
   }
   
+  public void comAdd(Board board) throws Exception {
+	    boardDao.commentInsert(board);
+	  }
+  
   public List<Board> list(int pageNo, int pageSize) throws Exception {
 	    HashMap<String,Object> valueMap = new HashMap<>();
 	    valueMap.put("startIndex", (pageNo - 1) * pageSize);
@@ -29,8 +33,23 @@ public class BoardServiceImpl implements BoardService {
 	    return boardDao.selectList(valueMap);
 	  }
   
+  public List<Board> comList(int pageNo, int pageSize) throws Exception {
+	    HashMap<String,Object> valueMap = new HashMap<>();
+	    valueMap.put("startIndex", (pageNo - 1) * pageSize);
+	    valueMap.put("pageSize", pageSize);
+	    
+	    return boardDao.comSelectList(valueMap);
+	  }
+  
+
+  
   @Override
   public int getSize() throws Exception {
+    return boardDao.countAll();
+  }
+  
+  @Override
+  public int comGetSize() throws Exception {
     return boardDao.countAll();
   }
   

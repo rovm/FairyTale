@@ -7,6 +7,7 @@
   <resultMap type="board" id="boardMap">
     <id column="bwno" property="no"/>
     <id column="mno" property="mno"/>
+    <id column="cno" property="cno"/>
     <result column="name" property="name"/>
     <result column="bw_titl" property="bw_titl"/>
     <result column="bw_con" property="bw_con"/>
@@ -14,6 +15,8 @@
     <result column="bw_edt" property="bw_edt"/>
     <result column="bw_hits" property="bw_hits"/>
     <result column="bw_div" property="bw_div"/>
+    <result column="c_con" property="c_con"/>
+    <result column="c_wdt" property="c_wdt"/>
   </resultMap>
 
   
@@ -23,11 +26,24 @@
     values(#{no}, 1, #{bw_titl}, #{bw_con}, curdate(), 'board')
   </insert>
   
+  <insert id="commentInsert" parameterType="board">
+    insert into comment(bwno, mno, c_con, c_wdt) 
+    values(#{no}, 1, #{c_con}, curdate())
+  </insert>
+  
    <select id="selectList" resultMap="boardMap" parameterType="map">
     select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
     from boardwrite bw inner join member m on bw.mno = m.mno
     limit #{startIndex}, #{pageSize}
   </select>
+  
+   <select id="comSelectList" resultMap="boardMap" parameterType="map">
+    select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name , c.c_con, c.c_wdt
+    from boardwrite bw left join member m on bw.mno = m.mno 
+         join comment c on bw.mno = c.mno
+    
+  </select>
+  
   
   <select id="countAll" resultType="int">
     select count(*)

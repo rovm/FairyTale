@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import donghwa.domain.Board;
-import donghwa.domain.Teacher;
 import donghwa.service.BoardService;
 
 @RestController
@@ -26,6 +25,12 @@ public class BoardControl {
     return new JsonResult(JsonResult.SUCCESS, "ok");
   }
   
+  @RequestMapping("comAdd")
+  public JsonResult comAdd(Board board) throws Exception {
+    boardService.comAdd(board);
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
+  
   @RequestMapping("list")
   public JsonResult list(
       @RequestParam(defaultValue="1") int pageNo, 
@@ -37,6 +42,20 @@ public class BoardControl {
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
+  
+  @RequestMapping("comList")
+  public JsonResult comList(
+      @RequestParam(defaultValue="1") int pageNo, 
+      @RequestParam(defaultValue="5") int pageSize) throws Exception {
+    
+    HashMap<String,Object> dataMap = new HashMap<>();
+    dataMap.put("comList", boardService.comList(pageNo, pageSize));
+    dataMap.put("totalCount", boardService.comGetSize());
+    
+    return new JsonResult(JsonResult.SUCCESS, dataMap);
+  }
+  
+  
   @RequestMapping("detail")
   public JsonResult detail(int no) throws Exception {
     Board board = boardService.get(no);

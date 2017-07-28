@@ -230,3 +230,16 @@ p {
   height: 95px;
   text-align: center;
 }
+
+/******************comment*********/
+#comment {
+	margin-top: 20px;
+	border: red 1px solid;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#name {
+	width: 100px;
+}
