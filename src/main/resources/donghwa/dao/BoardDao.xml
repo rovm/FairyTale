@@ -7,23 +7,51 @@
   <resultMap type="board" id="boardMap">
     <id column="bwno" property="no"/>
     <id column="mno" property="mno"/>
-    <result column="bw_name" property="bw_name"/>
+    <result column="name" property="name"/>
+    <result column="bw_titl" property="bw_titl"/>
     <result column="bw_con" property="bw_con"/>
     <result column="bw_wdt" property="bw_wdt"/>
     <result column="bw_edt" property="bw_edt"/>
     <result column="bw_hits" property="bw_hits"/>
+    <result column="bw_div" property="bw_div"/>
   </resultMap>
 
-
+  
+  
   <insert id="insert" parameterType="board">
-    insert into boardwrite(bwno, mno, bw_name, bw_con, bw_wdt) 
-    values(#{no}, 1, #{bw_name}, #{bw_con}, #{bw_wdt})
+    insert into boardwrite(bwno, mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(#{no}, 1, #{bw_titl}, #{bw_con}, curdate(), 'board')
   </insert>
+  
+   <select id="selectList" resultMap="boardMap" parameterType="map">
+    select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    limit #{startIndex}, #{pageSize}
+  </select>
+  
+  <select id="countAll" resultType="int">
+    select count(*)
+    from boardwrite
+  </select>
 
+  <select id="selectOne" resultMap="boardMap" parameterType="int">
+    select  m.name, bw.bw_titl, bw.bw_con, bw.bw_wdt, bw.bwno
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    where bwno= #{no}
+  </select>
+  
+  <delete id="delete" parameterType="int">
+    delete from boardwrite where bwno=#{no}
+  </delete>
+  
+  <update id="update" parameterType="board">
+    update boardwrite set 
+      bw_titl=#{bw_titl}, 
+      bw_con=#{bw_con}, 
+      bw_edt=curdate()
+      where bwno = #{no}
+  </update>
 </mapper>
-
-
-
 
 
 

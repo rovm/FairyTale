@@ -20,7 +20,7 @@
         <a href="menual.html">메뉴얼</a>
       </div>
       <div id="community" class="menu">
-        <a href="community_best.html">커뮤니티</a>
+        <a href="best.html">커뮤니티</a>
       </div>
       <div id="create" class="menu">
         <a href="create.html">동화만들기</a>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div id="box">
-      <div id="img"></div><div id="menual-Name">함께보기</div>
+      <div id="img"></div><div id="menual-Name">자유게시판</div>
       </div>
     </div>
 
@@ -65,7 +65,7 @@
         </a>
       </div>
       <div id="com-king-s" class="com-somenu">
-        <a href="community_best.html" id="com-font"	class="com-font">
+        <a href="community_best.html" id="com-font" class="com-font">
           <img src="../img/cow.png" alt="">
           <br>명예의전당
         </a>
@@ -73,37 +73,46 @@
 
     </div>
 
-	<div class="create-box">
-		<div>제목 <input id="bw_name"></input></div>
-		<div>내용<input id="bw_con"></input></div>
-		<div>날짜<input id="bw_wdt"></input></div>
-    <div><button id="addbtn">올리기</button>
-	</div>
+  <div class="create-box">
+    <div class="write-title">
+      <div class="title-input">
+      <input name="titl" id="bw_titl" >
+      <div id="title-box">&nbsp;&nbsp;제 목</div>
+      </div>
+    
+      <div class="cont-input"><textarea name="content" id="bw_con" placeholder="내용을 입력하세요...."></textarea>
+      </div>
+      
+      <div class="btn-box clearfix">
+        <button id="updatebtn">변경</button>
+        <button id="addbtn" style="margin-right: 10px;">올리기</button>
+        <input type="file">
+      </div>
+    </div>
+  </div>
 
+  <div class="footer_container">
 
-	<div class="footer_container">
+    <div class="footer_domain-form">
 
-		<div class="footer_domain-form">
+      <span id="footer_a" class="menu">도움말 </span> <span id="footer_b"
+        class="footer_menu">이용약관 </span> <span id="footer_c"
+        class="footer_menu">운영원칙 </span> <span id="footer_d"
+        class="footer_menu">개인정보 처리방침 </span> <span id="footer_e"
+        class="footer_menu">책임의 한계와 법적고지 </span> <span id="footer_f"
+        class="footer_menu">고객센터 </span> <span id="footer_g"
+        class="footer_menu">제휴제안 </span> <span id="footer_h"
+        class="footer_menu">정보보호인증사이트 </span><br> <span
+        class="footer_use"><font color="gray" face="serif">본
+          콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
+      <span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
+          © FTBook Corp. All Rights Reserved.</font></span>
+    </div>
 
-			<span id="footer_a" class="menu">도움말 </span> <span id="footer_b"
-				class="footer_menu">이용약관 </span> <span id="footer_c"
-				class="footer_menu">운영원칙 </span> <span id="footer_d"
-				class="footer_menu">개인정보 처리방침 </span> <span id="footer_e"
-				class="footer_menu">책임의 한계와 법적고지 </span> <span id="footer_f"
-				class="footer_menu">고객센터 </span> <span id="footer_g"
-				class="footer_menu">제휴제안 </span> <span id="footer_h"
-				class="footer_menu">정보보호인증사이트 </span><br> <span
-				class="footer_use"><font color="gray" face="serif">본
-					콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
-			<span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
-					© FTBook Corp. All Rights Reserved.</font></span>
-		</div>
-
-	</div>
+  </div>
 
 </body>
 
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../js/boardwrite.js"></script>
