@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.AddTheBtn {
+	width: 870px;
+	margin: 0px auto 20px;
+	text-align: right;
+}
+
+#manager-addbtn {
+	padding: 10px;
+	width: 870px;
+	height: 500px;
+	margin: 0px auto 20px;
+	border: 1px solid darkgray;
+	background: gray;
+}
+
+div {
+	border: 1px solid darkgray;
+}
+
+#manager-addbtn-wrapper {
+	background: gray;
+	height: auto;
+}
+
+.context{
+  width: 200px;
+  height: 150px;
+}
+
+.page{
+  width: 50px;
+  height: 30px;
+}
+
+#book{
+  background: yellow;
+}
+
+</style>
+<meta charset="utf-8">
+<title>관리자 입력폼</title>
+</head>
+<body>
+	<div class="AddTheBtn">
+		<button type="button" id="add-pic" class="btn btn-warning">추가하기</button>
+	</div>
+	<!---------------------------------------------------------------------->
+	<div id="manager-addbtn">
+		<div id="manager-addbtn-wrapper">
+			사진: <input id="fileupload" type="file" name="files" multiple>
+			<br>
+			<button id='upload-btn' type='button'>등록</button>
+			<div id='book'>
+			 <div id='images-div'></div>
+			 <div id='book-text'></div>
+			 <div id='page'></div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!---------------------------------------------------------------------->
+</body>
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script
+	src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script
+	src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+
+<script>
+	"use strict"
+
+	$('#fileupload').fileupload(
+			{
+				url : '/control/bookList/upload.json', // 서버에 요청할 URL
+				dataType : 'json', // 서버가 보낸 응답이 JSON임을 지정하기
+				sequentialUploads : true, // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
+				singleFileUploads : false, // 한 요청에 여러 개의 파일을 전송시키기.
+				autoUpload : false, // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
+				disableImageResize : /Android(?!.*Chrome)|Opera/
+						.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+				previewMaxWidth : 100, // 미리보기 이미지 너비
+				previewMaxHeight : 100, // 미리보기 이미지 높이
+				previewCrop : true, // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+				processalways : function(e, data) {
+					console.log('fileuploadprocessalways()...');
+					console.log(data.files);
+					
+					var imagesDiv = $('#images-div'),
+					    bookText = $('#book-text'),
+					    page = $('#page');
+					imagesDiv.html("");
+					for (var i = 0; i < data.files.length; i++) {
+						try {
+							if (data.files[i].preview.toDataURL) {
+								$("<img>").attr('src',data.files[i].preview.toDataURL())
+								          .css('width', '150px').appendTo(imagesDiv);
+								$("<textarea class='context'' placeholder='내용'>").appendTo(imagesDiv);
+								$("<input class='page' placeholder='"+i+"'>").appendTo(imagesDiv);
+								$("<br>").appendTo(imagesDiv);
+							}
+						} catch (err) {
+						}
+					}
+					$('#upload-btn').unbind("click");
+					$('#upload-btn').click(function() {
+						data.submit();
+					});
+				},
+				
+				
+				submit : function(e, data) { // 서버에 전송하기 직전에 호출된다.
+					console.log('submit()...');
+					data.formData = {
+						name : $('#name').val(),
+					
+					};
+				},
+				
+				
+				done : function(e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
+					console.log('done()...');
+					console.log(data.result);
+					var file = data.result.fileList[0];
+					$('<p/>').text("name : " + data.result.name).appendTo(
+							document.body);
+					$.each(data.result.fileList, function(index, file) {
+						$('<p/>').text(file.filename + " : " + file.filesize)
+								.appendTo(document.body);
+					});
+				}
+			});
+</script>
+
+
+</html>

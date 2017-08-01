@@ -188,7 +188,7 @@ body{
 }
 
 .wrapper {
-  margin: 5% auto;
+  margin: 30px auto 50px;
   display: block;
   width: 980px;
   height: auto;
@@ -415,3 +415,45 @@ body{
   .cl{top: 0;right: 0.5em;}
   .gallery_item_list{width:100% !important;}
 }
+
+#photo-upload-form{
+	width: 980px;
+	margin: 30px auto 0px;
+	height: 30px;
+	padding-right:20px;
+	text-align: right;
+}
+
+
+  #mask {  
+    position:absolute;  
+    z-index:9000;  
+    background-color:#000;  
+    display:none;  
+    left:0;
+    top:0;
+  }
+  .window{
+    display: none;
+    position:absolute;  
+    left:100px;
+    top:100px;
+    z-index:10000;
+  }
+  
+  .uploadform{
+    magin-left: 50%;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  #upload-titl{
+    margin: 20px;
+  }
+  
+  #upload-btn{
+    margin-top: 320px;
+  }

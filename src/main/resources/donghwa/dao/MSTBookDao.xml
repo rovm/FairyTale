@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.MSTBookDao">
+
+  <resultMap type="MSTBook" id="MSTBookMap">
+    <id column="mbkno" property="no"/>
+    <result column="mbk_titl" property="MBK_titl"/>
+    <result column="mbk_cont" property="MBK_cont"/>
+    <result column="mbk_page" property="MBK_page"/>
+    <result column="mbk_div" property="MBK_div"/>
+    <result column="bk_page" property="BK_page"/>
+    <result column="bk_cont" property="BK_cont"/>
+    <result column="bk_img" property="BK_IMG"/>
+    <result column="bk_path" property="BK_REC"/>
+  </resultMap>
+
+  <select id="selectList" resultMap="MSTBookMap" parameterType="map">
+    select  mst.mbkno, mbk_titl, mbk_cont, mbk_page, mbk_div, bk_img
+    from bkpage bk inner join mstbook mst on mst.mbkno= bk.mbkno 
+    <where>
+      bk_page = 1
+      <choose>
+        <when test="selectform == 'volvo'"></when>
+        <when test="selectform == '전래동화'">and mbk_div = "전래동화"</when>
+        <when test="selectform == '인기동화'">and mbk_div = "인기동화"</when>
+        <when test="selectform == '생활동화'">and mbk_div = "생활동화"</when>
+        <when test="selectform == '명작동화'">and mbk_div = "명작동화"</when>
+        <when test="selectform == '전래동화'">and mbk_div = "전래동화"</when>
+        <when test="selectform == '이솝우화'">and mbk_div = "이솝우화"</when>
+        <when test="selectform == '창작동화'">and mbk_div = "창작동화"</when>
+        <when test="selectform == '학습동화'">and mbk_div = "학습동화"</when>
+        <when test="selectform == '영어동화'">and mbk_div = "영어동화"</when>
+      </choose>
+    </where>
+    limit #{startIndex}, #{pageSize}
+  </select>
+  
+  <select id="countAll" resultType="int">
+    select count(*)
+    from mstbook mst inner join bkpage bk on mst.mbkno=bk.mbkno
+    where bk_page = 1
+  </select>
+  
+   <select id="selectOne" resultMap="MSTBookMap" parameterType="int">
+    select *
+    from bkpage bk inner join mstbook mst on mst.mbkno= bk.mbkno 
+    where bk.mbkno = #{memberNo};
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

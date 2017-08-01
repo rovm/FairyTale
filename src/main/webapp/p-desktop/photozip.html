@@ -4,8 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>photozip</title>
-<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/desktop/photozip.css">
 </head>
 <body>
@@ -48,7 +50,30 @@
 			<div id="menual-Name">사진첩</div>
 		</div>
 	</div>
+	<div id="photo-upload-form">
+		<button type="button" name="button" class="btn btn-success" id="photo-upload">사진올리기</button>
+	</div>
+  
+    <div id="mask"></div>
+    <div class="window">
+      <input type="button" href="#" class="close" value="X" />
 
+      <div class="uploadform">
+        <div id="manager-addbtn">
+          <div id="manager-addbtn-wrapper">
+                         제목 <input id="upload-titl"><br>
+                         설명 <input id="upload-description"><br>
+                         사진 <input id="fileupload" type="file" name="files" multiple>
+            <br>
+            <div id="images-div"></div>
+            <button id="upload-btn" type='button'>등록</button>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+  
 	<link
 		href='https://fonts.googleapis.com/css?family=Leckerli+One|Metrophobic'
 		rel='stylesheet' type='text/css'>
@@ -431,4 +456,19 @@
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script type="text/javascript" src="../js/storage.js"></script>
+<script
+  src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script
+  src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script
+  src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script
+  src="../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script
+  src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script
+  src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script
+  src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+<script type="text/javascript" src="../js/photozip.js"></script>
 </html>

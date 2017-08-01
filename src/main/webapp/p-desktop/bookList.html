@@ -2,190 +2,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>동화와만나요</title>
-  <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/desktop/bookList.css">
-  <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<meta charset="UTF-8">
+<title>동화와만나요</title>
+<link rel="stylesheet"
+	href="../font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/desktop/bookList.css">
 
 </head>
 <body>
 
-<div id="container">
-  <div class="form">
-    <div id="logo" class="menu">
-      <a>동화와만나요</a>
-    </div>
-    <div id="menual" class="menu">
-      <a>메뉴얼</a>
-    </div>
-    <div id="community" class="menu">
-      <a>커뮤니티</a>
-    </div>
-    <div id="create" class="menu">
-      <a>동화만들기</a>
-    </div>
-    <div id="storeage" class="menu">
-      <a>작품보관함</a>
-    </div>
-    <div id="myWright" class="menu">
-      <a>내글관리</a>
-    </div>
-    <div id="camera" class="menu">
-      <a>사진첩</a>
-    </div>
-    <div id="login" class="menu">
-      <a>로그인</a>
-    </div>
-    <div id="sign" class="menu">
-      <a>회원가입</a>
-    </div>
-    <div id="qna" class="menu">
-      <a>고객센터</a>
-    </div>
-  </div>
-  <div id="box">
-    <div id="img"></div><div id="menual-Name">동화만들기</div>
-  </div>
-</div><br>
+	<div id="container">
+		<div class="form">
+			<div id="logo" class="menu">
+				<a>동화와만나요</a>
+			</div>
+			<div id="menual" class="menu">
+				<a>메뉴얼</a>
+			</div>
+			<div id="community" class="menu">
+				<a>커뮤니티</a>
+			</div>
+			<div id="create" class="menu">
+				<a>동화만들기</a>
+			</div>
+			<div id="storeage" class="menu">
+				<a>작품보관함</a>
+			</div>
+			<div id="myWright" class="menu">
+				<a>내글관리</a>
+			</div>
+			<div id="camera" class="menu">
+				<a>사진첩</a>
+			</div>
+			<div id="login" class="menu">
+				<a>로그인</a>
+			</div>
+			<div id="sign" class="menu">
+				<a>회원가입</a>
+			</div>
+			<div id="qna" class="menu">
+				<a>고객센터</a>
+			</div>
+		</div>
+		<div id="box">
+			<div id="img"></div>
+			<div id="menual-Name">동화만들기</div>
+		</div>
+	</div>
+	<br>
 
-<div class="standard-collection"><br><br>
-  <h1>책목록</h1>
-  <div id="select_sort">
-    <select>
-      <option value="volvo">정렬방식</option>
-      <option value="saab">인기순</option>
-      <option value="mercedes">최신순</option>
-      <option value="audi">제목순</option>
-    </select>
-  </div>
-</div>
-<br><br>
+	<div class="standard-collection">
+		<br> <br>
+		<h1>책목록</h1>
+		<div id="select_sort">
+			<select id="select_sort_form">
+				<option value="volvo">정렬방식</option>
+				<option value="인기동화">인기동화</option>
+				<option value="생활동화">생활동화</option>
+				<option value="명작동화">명작동화</option>
+				<option value="전래동화">전래동화</option>
+				<option value="이솝우화">이솝우화</option>
+				<option value="창작동화">창작동화</option>
+				<option value="학습동화">학습동화</option>
+				<option value="영어동화">영어동화</option>
+			</select>
+		</div>
+	</div>
+	<br>
+	<br>
+  
+	<section>
+		<ul class="photo-stack-grid">			
+		</ul>
 
-<section>
-<ul class="photo-stack-grid">
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb01.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb02.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb03.jpg" alt="picture" />
-      </figure>
-      <span>토끼들</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb04.jpg" alt="picture" />
-      </figure>
-      <span>참새들</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb05.jpg" alt="picture" />
-      </figure>
-      <span>감따러가세</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/video.JPG" alt="picture" />
-      </figure>
-      <span>불량토끼</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb01.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb02.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-   <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb01.jpg" alt="picture" />
-      </figure>
-      <span>아기돼지 삼형제</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb04.jpg" alt="picture" />
-      </figure>
-      <span>참새들</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/thumb05.jpg" alt="picture" />
-      </figure>
-      <span>감따러가세</span>
-    </a>
-  </li>
-  <li>
-    <a href="#d">
-      <figure class="photo-stack">
-        <img src="../img/video.JPG" alt="picture" />
-      </figure>
-      <span>불량토끼</span>
-    </a>
-  </li>
-</ul>
+	</section>
 
-</section>
+	<div class="standard-collection">
+		<button type="button" id="prev-btn" name="button" class="btn btn-warning">이전</button>
+		<span id="page-no">1</span>
+		<button type="button" id="next-btn" name="button" class="btn btn-warning">다음</button>
+	</div>
 
-<div class="standard-collection">
-  <button type="button" name="button" class="btn btn-warning">이전</button>&nbsp;1&nbsp;
-  <button type="button" name="button" class="btn btn-warning">다음</button>
-</div>
-<br><br><br>
+	<br>
+	<br>
+	<br>
 
-<div class="footer_container">
-  <div class="footer_domain-form">
-    <span id="footer_b" class="footer_menu">이용약관</span>
-    <span id="footer_a" class="menu">도움말</span>
-    <span id="footer_c" class="footer_menu">운영원칙</span>
-    <span id="footer_d" class="footer_menu">개인정보 처리방침</span>
-    <span id="footer_e" class="footer_menu">책임의 한계와 법적고지</span>
-    <span id="footer_f" class="footer_menu">고객센터</span>
-    <span id="footer_g" class="footer_menu">제휴제안</span>
-    <span id="footer_h" class="footer_menu">정보보호인증사이트</span><br>
-    <span class="footer_use"><font color="gray" face="serif">본 콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
-    <span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © FTBook Corp. All Rights Reserved. </font></span>
-  </div>
-</div>
-
+	<div class="footer_container">
+		<div class="footer_domain-form">
+			<span id="footer_b" class="footer_menu">이용약관</span> <span
+				id="footer_a" class="menu">도움말</span> <span id="footer_c"
+				class="footer_menu">운영원칙</span> <span id="footer_d"
+				class="footer_menu">개인정보 처리방침</span> <span id="footer_e"
+				class="footer_menu">책임의 한계와 법적고지</span> <span id="footer_f"
+				class="footer_menu">고객센터</span> <span id="footer_g"
+				class="footer_menu">제휴제안</span> <span id="footer_h"
+				class="footer_menu">정보보호인증사이트</span><br> <span
+				class="footer_use"><font color="gray" face="serif">본
+					콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
+			<span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
+					© FTBook Corp. All Rights Reserved. </font></span>
+		</div>
+	</div>
 </body>
-
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script type="text/javascript" src="../js/bookList.js"></script>
+<script id="BookList-template" type="text/x-handlebars-template">
+        {{#each list}}
+          <li><a href="#d">
+            <figure class="photo-stack">
+            <img src="{{BK_IMG}}" alt="picture" />
+            </figure> <span>{{MBK_titl}}</span>
+          </a></li>
+        {{/each}}
+      </script>
 </html>
