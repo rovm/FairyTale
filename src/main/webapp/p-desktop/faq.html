@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/faq.css">
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/faq.js"></script>
+
 
 </head>
 <body>
@@ -68,56 +67,32 @@
 		<div class="container faq_section">
 			<div>
 				<select class="faq_select">
-					<option value="category">분류</option>
-					<option value="make">사용방법</option>
-					<option value="user">회원가입</option>
-					<option value="ect">기타</option>
+					<option value="분류">분류</option>
+					<option value="사용방법">사용방법</option>
+					<option value="회원가입">회원가입</option>
+					<option value="기타">기타</option>
 				</select>
 			</div>
 			<br>
-			<div class="FaQ_Each">
+
+
+
+			<div class="FaQ_Each" id="faqForm">
 				<section class="box">
 					<span> <i class="fa fa-plus" aria-hidden="true"></i> <i
 						class="fa fa-minus" id="other" aria-hidden="true"></i>
-					</span> &nbsp;&nbsp;<span>질문1</span>
+					</span> &nbsp;&nbsp;<span class="aaa"></span>
 				</section>
-				<section class="draw">답변1</section>
+
+				<section class="draw"><span class="aaa"></span></section>
 			</div>
-			<div class="FaQ_Each">
-				<section class="box">
-					<span> <i class="fa fa-plus" aria-hidden="true"></i> <i
-						class="fa fa-minus" id="other" aria-hidden="true"></i>
-					</span> &nbsp;&nbsp;<span>질문2</span>
-				</section>
-				<section class="draw">답변2</section>
-			</div>
-			<div class="FaQ_Each">
-				<section class="box">
-					<span> <i class="fa fa-plus" aria-hidden="true"></i> <i
-						class="fa fa-minus" id="other" aria-hidden="true"></i>
-					</span> &nbsp;&nbsp;<span>질문3</span>
-				</section>
-				<section class="draw">답변3</section>
-			</div>
-			<div class="FaQ_Each">
-				<section class="box">
-					<span> <i class="fa fa-plus" aria-hidden="true"></i> <i
-						class="fa fa-minus" id="other" aria-hidden="true"></i>
-					</span> &nbsp;&nbsp;<span>질문4</span>
-				</section>
-				<section class="draw">답변4</section>
-			</div>
-			<div class="FaQ_Each">
-				<section class="box">
-					<span> <i class="fa fa-plus" aria-hidden="true"></i> <i
-						class="fa fa-minus" id="other" aria-hidden="true"></i>
-					</span> &nbsp;&nbsp;<span>질문5</span>
-				</section>
-				<section class="draw">답변5</section>
-			</div>
+
+
+
+
 			<div class="page-btn">
 				<button type="button" class="btnForm" id="pre-btn">이전</button>
-				&nbsp;1&nbsp;
+				<span id="page-no">1</span>
 				<button type="button" class="btnForm" id="next-btn">다음</button>
 				<!-- <button type="button" class="btnForm" id="plus-btn">
 					<i class="fa fa-plus" aria-hidden="true"></i>
@@ -140,7 +115,7 @@
 				class="footer_menu">개인정보 처리방침 </span> <span id="footer_e"
 				class="footer_menu">책임의 한계와 법적고지 </span> <span id="footer_f"
 				class="footer_menu">고객센터 </span> <span id="footer_g"
-				class="footer_menu">제휴제안 </span> <span id="footer_h"
+				class="oter_menu">제휴제안 </span> <span id="footer_h"
 				class="footer_menu">정보보호인증사이트 </span><br> <span
 				class="footer_use"><font color="gray" face="serif">본
 					콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.<font></span><br>
@@ -148,7 +123,26 @@
 					© FTBook Corp. All Rights Reserved. <font></span>
 		</div>
 
-	</div>
+	</div>s
 
 </body>
+
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script type="text/javascript" src="../js/faq.js"></script>
+
+<script id="faqForm-template" type="text/x-handlebars-template">
+
+	{{#each list}}
+
+	<section class="box">
+		<span> <i class="fa fa-plus" aria-hidden="true"></i> <i
+			class="fa fa-minus" id="other" aria-hidden="true"></i>
+		</span> &nbsp;&nbsp;<span>{{quest}}</span>
+	</section>
+
+	<section class="draw"><span>{{answer}}</span></section>
+	{{/each}}
+
+</script>
 </html>

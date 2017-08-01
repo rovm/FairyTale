@@ -14,7 +14,7 @@ $('#join-btn').on('click',function(e) {
     }, function(result) {
       if(result.status=="success")
       {console.log(result);
-      location.href = 'main.html'
+      location.href = 'login.html'
       // e.preventDefault();
     } else {
       console.log(result.data)

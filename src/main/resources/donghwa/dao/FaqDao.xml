@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.FaqDao">
+
+  <resultMap type="faq" id="faqMap">
+    <id column="bwno" property="no"/>
+    <result column="bw_titl" property="quest"/>
+    <result column="bw_con" property="answer"/>
+    <result column="bw_wdt" property="bw_wdt"/>
+    <result column="bw_div" property="bw_div"/>
+  </resultMap>
+
+
+
+
+<select id="selectList" resultMap="faqMap" parameterType="map">
+  select bw_titl, bw_con
+    from boardwrite, faq
+    <where>
+    bw_div="faq" and faq.bwno = boardwrite.bwno
+      <choose>
+        <when test="selectBtn == '분류'"></when>
+        <when test="selectBtn == '사용방법'">and ans_con="사용방법"</when>
+        <when test="selectBtn == '회원가입'">and ans_con="회원가입"</when>
+        <when test="selectBtn == '기타'">and ans_con="기타"</when>
+      </choose>
+    </where>
+   order by bw_wdt asc 
+    limit #{startIndex}, #{pageSize} 
+</select>
+
+ 
+ 
+ 
+<select id="countAll" resultType="int" parameterType="map">
+    select count(*)
+    from faq f inner join boardwrite bw on f.bwno=bw.bwno
+    <!-- where ans_con = #{selectBtn} -->
+    <if test="#{selectBtn} == '분류'">
+      where ans_con = #{selectBtn}
+    <choose>
+        <when test="selectBtn == '사용방법'">and ans_con="사용방법"</when>
+        <when test="selectBtn == '회원가입'">and ans_con="회원가입"</when>
+        <when test="selectBtn == '기타'">and ans_con="기타"</when>
+     </choose>
+    </if>
+  </select>
+  
+  
+ 
+  
+</mapper>
+
+
+
+
+

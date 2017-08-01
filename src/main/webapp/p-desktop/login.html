@@ -59,21 +59,19 @@
 
 		<div class="omb_login">
 			<div class="row omb_row-sm-offset-3 omb_socialButtons" style="width:100%">
-				<div class="col-xs-4 col-sm-1 log_btn">
+				<div class="col-xs-4 col-sm-1 log_btn f-btn" onclick="facebooklogin()">
 					<a href="" class="btn btn-lg btn-block omb_btn-facebook"> <span
-						class="hidden-xs">Facebook</span>
+						class="hidden-xs">페이스북</span>
 					</a>
 				</div>
 				<div class="col-xs-4 col-sm-1 log_btn">
 					<a href="" class="btn btn-lg btn-block omb_btn-google"> <span
-						class="hidden-xs">Google+</span>
+						class="hidden-xs">구글+</span>
 					</a>
 				</div>
 				<div class="col-xs-4 col-sm-1 log_btn">
-					<a href="" class="btn btn-lg btn-block omb_btn-kakao"> <span
-						class="hidden-xs">Kakao</span>
-					</a>
-				</div>
+					<button type="button" id="kakaobtn" class="btn btn-lg btn-block omb_btn-kakao">kakaoTalk</button>
+					</div>
 			</div>
 
 			<div class="row omb_row-sm-offset-3 omb_loginOr" style="width:100%">
@@ -88,18 +86,18 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user"></i></span>
 							<input type="text" id="login-email" class="form-control input-input"
-								name="username" placeholder="email address">
+								name="username" placeholder="이메일">
 						</div>
 						<span class="help-block"></span>
 
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
 							<input type="password" id="login-password" class="form-control input-input"
-								name="password" placeholder="Password">
+								name="password" placeholder="비밀번호">
 						</div>
 						<br>
 						<button id="login-btn" class="btn btn-lg btn-primary btn-block btnn"
-							type="button">Login</button>
+							type="button">로그인</button>
 					</form>
 				</div>
 			</div>
@@ -149,5 +147,99 @@
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../js/login.js"></script>
+<script src="../js/login_fbk.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+
+<script>
+
+window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '826146367542206',
+                  xfbml      : true,
+                  version    : 'v2.10'
+                });
+                FB.AppEvents.logPageView();
+              };
+
+              (function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/ko_KR/sdk.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+function facebooklogin() {
+
+//페이스북 로그인 버튼을 눌렀을 때의 루틴.
+FB.login(function(response) {
+  console.log(response)
+}, {scope: 'email,public_profile'});
+
+}
+
+//<![CDATA[
+		// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		Kakao.init('eaeddfa1ade8ed3a16075bd54bb6f4b6');
+		function loginWithKakao() {
+			// 로그인 창을 띄웁니다.
+			Kakao.Auth.login({
+				success: function(authObj) {
+					alert(JSON.stringify(authObj));
+				},
+				fail: function(err) {
+					alert(JSON.stringify(err));
+				}
+			});
+		};
+	//]]>
+
+
+
+$( document ).ready(function() {
+Kakao.init('eaeddfa1ade8ed3a16075bd54bb6f4b6');
+});
+
+$("#kakaobtn").on('click',function(){
+
+Kakao.Auth.login({
+			success: function(authObj) {
+				console.log("로그인했다")
+			},
+			fail: function(err) {
+					console.log("로그인 못했다")
+			}
+})
+
+})
+
+
+
+
+
+
+
+
+// $(window).on("load", function() {
+//   FB.getLoginStatus(function(response) {
+//   });
+// })
+
+//
+// $("#facebookBtn").on('click', function (){
+//   FB.login(function(response) {
+//     // handle the response
+//     location.href="m_main.html"
+//   }, {scope: 'public_profile,email'});
+// })
+
+</script>
+
+
+
+
 </html>

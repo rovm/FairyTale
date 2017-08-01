@@ -1,6 +1,3 @@
-$.getJSON("../js/list.json", function (data) {
-  console.log(data);
-})
 
 window.fbAsyncInit = function() {
                 FB.init({
