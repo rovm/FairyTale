@@ -1,6 +1,7 @@
 package donghwa.control.json;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 
@@ -42,7 +43,19 @@ public class BoardControl {
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
-  
+//  /*************************************************/
+  @RequestMapping("suchList")
+  public JsonResult suchList(
+      @RequestParam Map<String, String> keyword) throws Exception {
+    
+    HashMap<String,Object> dataMap = new HashMap<>();
+    dataMap.put("suchList", boardService.suchList(keyword));
+    dataMap.put("totalCount", boardService.suchGetSize(keyword));
+    
+    
+    return new JsonResult(JsonResult.SUCCESS, dataMap);
+  }
+//  /*************************************************/
   @RequestMapping("comList")
   public JsonResult comList(
       @RequestParam(defaultValue="1") int pageNo, 

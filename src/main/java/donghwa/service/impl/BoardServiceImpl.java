@@ -2,13 +2,13 @@ package donghwa.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import donghwa.dao.BoardDao;
 import donghwa.domain.Board;
-import donghwa.domain.Teacher;
 import donghwa.service.BoardService;
 
 
@@ -41,6 +41,11 @@ public class BoardServiceImpl implements BoardService {
 	    return boardDao.comSelectList(valueMap);
 	  }
   
+  @Override
+  public List<Board> suchList(Map<String, String> keyword) throws Exception {
+	    return boardDao.selectListByTitle(keyword);
+  }
+  
 
   
   @Override
@@ -51,6 +56,11 @@ public class BoardServiceImpl implements BoardService {
   @Override
   public int comGetSize() throws Exception {
     return boardDao.countAll();
+  }
+  
+  @Override
+  public int suchGetSize(Map<String, String> keyword) throws Exception {
+  	return boardDao.suchCountAll(keyword);
   }
   
   public Board get(int no) throws Exception {
@@ -79,6 +89,10 @@ public class BoardServiceImpl implements BoardService {
 	    }
 	    
 	  }
+
+
+
+
 }
 
 

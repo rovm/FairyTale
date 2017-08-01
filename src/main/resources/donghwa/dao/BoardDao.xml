@@ -34,20 +34,33 @@
    <select id="selectList" resultMap="boardMap" parameterType="map">
     select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
     from boardwrite bw inner join member m on bw.mno = m.mno
+    where bw_div = 'board'
     limit #{startIndex}, #{pageSize}
   </select>
   
-   <select id="comSelectList" resultMap="boardMap" parameterType="map">
+<!--    <select id="comSelectList" resultMap="boardMap" parameterType="map">
     select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name , c.c_con, c.c_wdt
     from boardwrite bw left join member m on bw.mno = m.mno 
          join comment c on bw.mno = c.mno
     
-  </select>
+  </select> -->
   
-  
+   <select id="selectListByTitle" resultMap="boardMap" parameterType="map">
+    select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    where bw_titl like '%${keyword}%' and bw_div = 'board'
+    <!-- ORDER BY bwno DESC; -->
+   </select>
+   
   <select id="countAll" resultType="int">
     select count(*)
     from boardwrite
+  </select>
+  
+  <select id="suchCountAll" resultType="int" parameterType="map">
+    select count(*)
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    where bw_titl like '%${keyword}%' 
   </select>
 
   <select id="selectOne" resultMap="boardMap" parameterType="int">
