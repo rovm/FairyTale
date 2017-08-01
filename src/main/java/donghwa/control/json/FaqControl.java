@@ -1,7 +1,6 @@
 package donghwa.control.json;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletContext;
 
@@ -21,19 +20,19 @@ public class FaqControl {
   
   @RequestMapping("FAQ_list")
   public JsonResult list(
-      @RequestParam Map<String, String> selectBtn,
+      @RequestParam String selectBtn,
       @RequestParam(defaultValue="1") int pageNo, 
       @RequestParam(defaultValue="5") int pageSize) throws Exception {
     
     HashMap<String,Object> dataMap = new HashMap<>();
     dataMap.put("list", faqService.list(pageNo, pageSize, selectBtn));
-    dataMap.put("totalCount", faqService.getSize(selectBtn));
+    dataMap.put("totalCount", faqService.getSize());
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
   
   
-/*@RequestMapping("selectList")
+/*  @RequestMapping("selectList")
   public JsonResult selectList(
       @RequestParam Map<String, String> selectBtn) throws Exception {
     

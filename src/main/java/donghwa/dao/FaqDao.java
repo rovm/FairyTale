@@ -7,6 +7,6 @@ import donghwa.domain.Faq;
 
 public interface FaqDao {
   List<Faq> selectList(Map<String,Object> valueMap);
-  int countAll(Map<String, String> selectBtn);
+  int countAll();
 
 }

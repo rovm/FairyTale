@@ -2,7 +2,6 @@ package donghwa.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ public class FaqServiceImpl implements FaqService {
   @Autowired
   FaqDao faqDao;
   
-  public List<Faq> list(int pageNo, int pageSize, Map<String, String> selectBtn) throws Exception {
+  public List<Faq> list(int pageNo, int pageSize, String selectBtn) throws Exception {
     HashMap<String,Object> valueMap = new HashMap<>();
     valueMap.put("startIndex", (pageNo - 1) * pageSize);
     valueMap.put("pageSize", pageSize);
@@ -30,8 +29,8 @@ public class FaqServiceImpl implements FaqService {
   }
   
   @Override
-  public int getSize(Map<String, String> selectBtn) throws Exception {
-    return faqDao.countAll(selectBtn);
+  public int getSize() throws Exception {
+    return faqDao.countAll();
   }
   
 
