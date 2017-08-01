@@ -10,7 +10,7 @@ public class Faq extends Board {
 
 @Override
 public String toString() {
-	return "Faq [quest=" + quest + ", answer=" + answer + ", no=" + no + ", bw_name=" + bw_name + ", bw_con=" + bw_con
+	return "Faq [quest=" + quest + ", answer=" + answer + ", no=" + no + ", bw_name=" + name + ", bw_con=" + bw_con
 			+ ", bw_wdt=" + bw_wdt + ", bw_edt=" + bw_edt + ", bw_hits=" + bw_hits + ", mno=" + mno + "]";
 }
 public String getQuest() {

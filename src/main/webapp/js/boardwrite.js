@@ -42,7 +42,6 @@ $('#addbtn').on('click',function() {
 		  $.post('update.json', {
 			  'bw_titl': Titl.val(),
 			  'bw_con': Con.val(),
-			  'bw_wdt': Wdt.val(),
 			  'no': no
 		  }, function(result) {
 			  location.href = 'community_boarder.html'

@@ -31,14 +31,14 @@ public class MSTBookControl {
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
 
-  @RequestMapping("detail")
-  public JsonResult detail(int no) throws Exception {
-    MSTBook mstBook = mstBookService.get(no);
-    if (mstBook == null) {
-      return new JsonResult(JsonResult.FAIL, no + "번 책이 없습니다.");
-    }
-    return new JsonResult(JsonResult.SUCCESS, mstBook);
-  }
+//  @RequestMapping("detail")
+//  public JsonResult detail(int no) throws Exception {
+//    MSTBook mstBook = mstBookService.get(no);
+//    if (mstBook == null) {
+//      return new JsonResult(JsonResult.FAIL, no + "번 책이 없습니다.");
+//    }
+//    return new JsonResult(JsonResult.SUCCESS, mstBook);
+//  }
 }
 
 
