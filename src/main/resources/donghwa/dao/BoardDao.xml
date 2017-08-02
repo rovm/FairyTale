@@ -35,6 +35,7 @@
     select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
     from boardwrite bw inner join member m on bw.mno = m.mno
     where bw_div = 'board'
+    order by bwno desc
     limit #{startIndex}, #{pageSize}
   </select>
   
@@ -49,7 +50,7 @@
     select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
     from boardwrite bw inner join member m on bw.mno = m.mno
     where bw_titl like '%${keyword}%' and bw_div = 'board'
-    <!-- ORDER BY bwno DESC; -->
+    ORDER BY bwno DESC
    </select>
    
   <select id="countAll" resultType="int">

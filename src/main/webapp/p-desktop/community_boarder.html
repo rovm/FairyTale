@@ -131,6 +131,14 @@
     <span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © FTBook Corp. All Rights Reserved.</font></span>
   </div>
   </div>
+
+
+
+
+</body>
+
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script type="text/javascript" src="../js/board.js"></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script id="tbody-template" type="text/x-handlebars-template">
   {{#each list}}
@@ -141,13 +149,14 @@
      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{bw_wdt}}</td>
    </tr>
   {{/each}}
+{{#each suchList}}
+   <tr class="board" data-no ={{no}} style="border:0;">
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{no}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{bw_titl}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{name}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{bw_wdt}}</td>
+   </tr>
+  {{/each}}
 </script>
 
-
-
-
-</body>
-
-<script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<script type="text/javascript" src="../js/board.js"></script>
 </html>
