@@ -33,11 +33,11 @@ public class BoardServiceImpl implements BoardService {
 	    return boardDao.selectList(valueMap);
 	  }
   
-  public List<Board> comList(int pageNo, int pageSize) throws Exception {
+  public List<Board> comList(int pageNo, int pageSize, int bwnoNo) throws Exception {
 	    HashMap<String,Object> valueMap = new HashMap<>();
 	    valueMap.put("startIndex", (pageNo - 1) * pageSize);
 	    valueMap.put("pageSize", pageSize);
-	    
+	    valueMap.put("bwnoNo", bwnoNo);
 	    return boardDao.comSelectList(valueMap);
 	  }
   
@@ -54,8 +54,8 @@ public class BoardServiceImpl implements BoardService {
   }
   
   @Override
-  public int comGetSize() throws Exception {
-    return boardDao.countAll();
+  public int comGetSize(int bwnoNo) throws Exception {
+    return boardDao.comCountAll(bwnoNo);
   }
   
   @Override
@@ -76,6 +76,17 @@ public class BoardServiceImpl implements BoardService {
 	      count = boardDao.delete(no);
 	    } catch (Exception e) {}
 	  }
+  
+  public void comRemove(int no) throws Exception {
+	    int count = boardDao.comDelete(no);
+	    if (count < 1) {
+	      throw new Exception(no + "번 테이블을 찾을 수 없습니다.");
+	    }
+	    
+	    try {
+	      count = boardDao.comDelete(no);
+	    } catch (Exception e) {}
+	}
   
   public void update(Board board) throws Exception {
 	    int count = boardDao.update(board);

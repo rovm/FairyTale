@@ -39,12 +39,13 @@
     limit #{startIndex}, #{pageSize}
   </select>
   
-<!--    <select id="comSelectList" resultMap="boardMap" parameterType="map">
-    select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name , c.c_con, c.c_wdt
-    from boardwrite bw left join member m on bw.mno = m.mno 
-         join comment c on bw.mno = c.mno
-    
-  </select> -->
+  <select id="comSelectList" resultMap="boardMap" parameterType="map">
+    select bw.bwno,m.name,c.mno,c.cno, c.c_con, c.c_wdt
+    from boardwrite bw inner join comment c on bw.bwno = c.bwno
+    join member m on c.mno = m.mno
+    where bw.bwno = #{bwnoNo}
+    limit #{startIndex}, #{pageSize}
+  </select>
   
    <select id="selectListByTitle" resultMap="boardMap" parameterType="map">
     select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
@@ -56,6 +57,13 @@
   <select id="countAll" resultType="int">
     select count(*)
     from boardwrite
+  </select>
+  
+  <select id="comCountAll" resultType="int">
+    select count(*)
+    from boardwrite bw inner join comment c on bw.bwno = c.bwno
+    join member m on c.mno = m.mno
+    where bw.bwno = #{no}
   </select>
   
   <select id="suchCountAll" resultType="int" parameterType="map">
@@ -72,6 +80,11 @@
   
   <delete id="delete" parameterType="int">
     delete from boardwrite where bwno=#{no}
+  </delete>
+  
+  <delete id="comDelete" parameterType="int">
+    delete from comment 
+    where cno = #{no}
   </delete>
   
   <update id="update" parameterType="board">

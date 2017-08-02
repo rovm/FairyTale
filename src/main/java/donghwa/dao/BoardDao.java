@@ -12,8 +12,10 @@ public interface BoardDao {
   int insert(Board board);
   int commentInsert(Board board);
   int countAll();
+  int comCountAll(int bwnoNo);
   int suchCountAll(Map<String, String> keyword);
   Board selectOne(int no);
   int delete(int no);
+  int comDelete(int no);
   int update(Board board);
 }

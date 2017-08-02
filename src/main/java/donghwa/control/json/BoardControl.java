@@ -58,13 +58,14 @@ public class BoardControl {
 //  /*************************************************/
   @RequestMapping("comList")
   public JsonResult comList(
-      @RequestParam(defaultValue="1") int pageNo, 
-      @RequestParam(defaultValue="5") int pageSize) throws Exception {
-    
+      @RequestParam(defaultValue="1") int pageNo,
+      @RequestParam(defaultValue="5") int pageSize,
+      @RequestParam(defaultValue="1") int bwnoNo) throws Exception {
+
     HashMap<String,Object> dataMap = new HashMap<>();
-    dataMap.put("comList", boardService.comList(pageNo, pageSize));
-    dataMap.put("totalCount", boardService.comGetSize());
-    
+    dataMap.put("comList", boardService.comList(pageNo, pageSize,bwnoNo));
+    dataMap.put("totalCount", boardService.comGetSize(bwnoNo));
+
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
   
@@ -82,6 +83,12 @@ public class BoardControl {
     boardService.remove(no);
     return new JsonResult(JsonResult.SUCCESS, "ok");
   } 
+  
+  @RequestMapping("comDelete")
+  public JsonResult comDelete(int no) throws Exception {
+    boardService.comRemove(no);
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
   
   @RequestMapping("update")
   public JsonResult update(Board board) throws Exception {

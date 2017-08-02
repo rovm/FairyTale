@@ -234,12 +234,38 @@ p {
 /******************comment*********/
 #comment {
 	margin-top: 20px;
-	border: red 1px solid;
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+	width: 960px;
+}
+
+td {
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+#comment tr {
+	width: 980px;
 }
 
 #name {
 	width: 100px;
+}
+
+.standard-collection {
+	display: none;
+	text-align:center;
+	margin: 0 auto;
+	width: 200px;
+}
+
+#comCount {
+	  margin-top: 30px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: -31px;
+    color: darkgrey;
+    background-color: lavender;
 }

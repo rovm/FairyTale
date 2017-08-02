@@ -96,16 +96,15 @@
       <div class="clearfix"><button id="board-list" class="btn btn-primary" style="float:right;margin-right:5px;">목록</button>
       <button id="board-delete" class="btn btn-primary" style="float:right; margin-right:5px;">삭제</button>
       <button id="board-update" class="btn btn-primary" style="float:right; margin-right:5px;">수정</button></div>
-
-                                                                                                                                    
+      
+      <pre id="comCount">댓글목록(0)</pre>
       <div id = "comment">
-       <table id="" class="table table-bordered" style="border:0;">
-        <thead>
-          <tr id="top" bgcolor="darkgray">
-           <th width="100">번호</th><th width="600">제목</th><th width="100">작성자</th><th width="100">작성일</th>
-         </tr>
-         </thead>
-         <tbody></tbody>
+       <table id="com-board" class="table table-bordered" style="border:0;">
+        
+         <tbody>
+         
+         </tbody>
+       
         </table>
       </div>
       
@@ -117,7 +116,6 @@
         <button id="c-addbtn" class="btn btn-primary btn-lg active">작성</button>
       </div>
       
-
   </div>
 
 
@@ -144,19 +142,24 @@
   </div>
   </div>
   
-  
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-<script id="comment-template" type="text/x-handlebars-template">
-  {{#each comList}}  
-    <tr class="board" data-no ={{cno}} style="border:0;">
-      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{name}}</td>
-      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{c_con}}</td>
-      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{c_wdt}}</td>
-    </tr>
-  {{/each}}
-</script>
+ 
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../js/board_detail.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script id="comment-template" type="text/x-handlebars-template">
+  {{#each comList}}
+
+    <tr style="border:0;">
+      <td style="border:0;border-top: 1px solid lightgray;width:100px;">{{name}}</td>
+      <td style="border:0;border-top: 1px solid lightgray;width:610px;">{{c_con}}</td>
+      <td style="border:0;border-top: 1px solid lightgray;width:160;color:lightgray">{{c_wdt}}</td>
+      <td style="border:0;border-top: 1px solid lightgray;width:50px;color:darkgray" data-no={{cno}} onclick="comDel({{cno}})">삭제</td>
+    </tr>
+
+  {{/each}}
+</script>
+
+
 
 </body>
 
