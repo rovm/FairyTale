@@ -6,7 +6,7 @@ import donghwa.domain.Faq;
 
 public interface FaqService {
   List<Faq> list(int pageNo, int pageSize, String selectBtn) throws Exception;
-  int getSize() throws Exception;
+  int getSize(String selectBtn) throws Exception;
 
 }
 

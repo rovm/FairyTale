@@ -440,20 +440,40 @@ body{
     top:100px;
     z-index:10000;
   }
-  
+
+/********************modal**************************/
   .uploadform{
     magin-left: 50%;
     width: 400px;
-    height: 500px;
+    height: auto;
     background-color: white;
     border-radius: 10px;
+  }
+  
+/*   div{
+    border: 1px solid red;
+  } */
+  
+  #mask-handler{
+    height: 30px;
+  }
+  
+  .manager-uploadform{
+    height: 30px;
+    margin: 20px;
+    width: 100%;
+  }
+  #manager-addbtn-photo{
+    float: left;
+  }
+  #fileupload{
+    margin-left: 40px;
+    margin-top: -20px;
+    
+  }
+  #manager-upload-btn{
     text-align: center;
   }
-  
-  #upload-titl{
-    margin: 20px;
-  }
-  
   #upload-btn{
-    margin-top: 320px;
+    margin: 10px auto;
   }

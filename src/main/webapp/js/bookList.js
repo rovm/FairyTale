@@ -7,8 +7,12 @@ var pageNoTag = $('#page-no'),
 
 var currPageNo = parseInt(pageNoTag.text())
 
+$(document.body).on('click', '.detail-link', function(event) {
+  location.href = 'create.html?no=' + $(this).attr('data-no') 
+  event.preventDefault()
+})
+
 selectform.on('change', function() {
-	console.log(selectform.val());
 	displayList(1);
 })
 
@@ -23,9 +27,11 @@ var totalCount = 1;
 function displayList(pageNo) {
   // 서버에서 강사 목록 데이터를 받아 온다.
   $.getJSON('MSTBOOK_list.json', {'pageNo':pageNo, 'pageSize': pageSize, 'selectform' : selectform.val()}, function(result) {
-    var totalCount = result.data.totalCount;
-    var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
-
+	var totalCount = result.data.totalCount;
+	if(totalCount == 0){
+		totalCount = 1;
+	}
+	var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
     // 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
     var templateFn = Handlebars.compile($('#BookList-template').text())
     var generatedHTML = templateFn(result.data)
@@ -50,17 +56,4 @@ function displayList(pageNo) {
 } // displayList()
 
 displayList(1)
-
-function wrapWindowByMask(){
-        //화면의 높이와 너비를 구한다.
-        var maskHeight = $(document).height();  
-        var maskWidth = $(window).width();  
-
-        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
-        $('#mask').css({'width':maskWidth,'height':maskHeight});  
-
-        //애니메이션 효과
-        $('#mask').fadeIn(1000);      
-        $('#mask').fadeTo("slow",0.8);    
-}
 

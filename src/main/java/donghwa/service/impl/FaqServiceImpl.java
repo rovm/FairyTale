@@ -29,8 +29,8 @@ public class FaqServiceImpl implements FaqService {
   }
   
   @Override
-  public int getSize() throws Exception {
-    return faqDao.countAll();
+  public int getSize(String selectBtn) throws Exception {
+    return faqDao.countAll(selectBtn);
   }
   
 

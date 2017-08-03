@@ -1,3 +1,5 @@
+var mno;
+
 function wrapWindowByMask(){
 	//화면의 높이와 너비를 구한다.
 	var maskHeight = $(document).height();  
@@ -13,6 +15,8 @@ function wrapWindowByMask(){
 	//윈도우 같은 거 띄운다.
 	$('.window').show();
 }
+
+
 
 $(document).ready(function(){
 	//검은 막 띄우기
@@ -36,7 +40,7 @@ $(document).ready(function(){
 });
 
 $('#fileupload').fileupload({
-	url : '/control/photozip/add.json', // 서버에 요청할 URL
+	url : '/control/photozip/upload.json', // 서버에 요청할 URL
 	dataType : 'json', // 서버가 보낸 응답이 JSON임을 지정하기
 	sequentialUploads : true, // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
 	singleFileUploads : false, // 한 요청에 여러 개의 파일을 전송시키기.
@@ -56,24 +60,28 @@ $('#fileupload').fileupload({
 			try {
 				if (data.files[i].preview.toDataURL) {
 					$("<img>").attr('src',data.files[i].preview.toDataURL())
-					.css('width', '150px').appendTo(imagesDiv);
+					.css('width', '100px').appendTo(imagesDiv);
 				}
 			} catch (err) {
 			}
 		}
 		$('#upload-btn').unbind("click");
 		$('#upload-btn').click(function() {
+			
 			data.submit();
 		});
 	},
 
 
-	submit : function(e, data) { // 서버에 전송하기 직전에 호출된다.
+	submit : function(e, data) { // 서버에 전송하기 직전에 호출된다.	
 		console.log('submit()...');
+		
 		data.formData = {
-				titl : $('#upload-titl').val(),
-				description : $('#upload-description').val()
+				bw_titl : $('#upload-titl').val(),
+				bw_con : $('#upload-description').val(),
+				mno: mno
 		};
+		
 	},
 
 
@@ -89,3 +97,14 @@ $('#fileupload').fileupload({
 		});
 	}
 });
+
+
+//$(document).ready(function(){
+//  $('#mask').draggable({ 
+//    handle: "#mask-handler"
+//  });
+//});
+
+$.getJSON('userinfo.json', function(result) {
+    mno = result.data.no;
+})

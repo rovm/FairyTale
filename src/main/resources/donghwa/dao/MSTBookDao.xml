@@ -10,7 +10,7 @@
     <result column="mbk_cont" property="MBK_cont"/>
     <result column="mbk_page" property="MBK_page"/>
     <result column="mbk_div" property="MBK_div"/>
-    <result column="bk_page" property="BK_page"/>
+    <result column="bk_page" property="BK_Page"/>
     <result column="bk_cont" property="BK_cont"/>
     <result column="bk_img" property="BK_IMG"/>
     <result column="bk_path" property="BK_REC"/>
@@ -23,30 +23,25 @@
       bk_page = 1
       <choose>
         <when test="selectform == 'volvo'"></when>
-        <when test="selectform == '전래동화'">and mbk_div = "전래동화"</when>
-        <when test="selectform == '인기동화'">and mbk_div = "인기동화"</when>
-        <when test="selectform == '생활동화'">and mbk_div = "생활동화"</when>
-        <when test="selectform == '명작동화'">and mbk_div = "명작동화"</when>
-        <when test="selectform == '전래동화'">and mbk_div = "전래동화"</when>
-        <when test="selectform == '이솝우화'">and mbk_div = "이솝우화"</when>
-        <when test="selectform == '창작동화'">and mbk_div = "창작동화"</when>
-        <when test="selectform == '학습동화'">and mbk_div = "학습동화"</when>
-        <when test="selectform == '영어동화'">and mbk_div = "영어동화"</when>
+        <otherwise>
+           and mbk_div = #{selectform}
+        </otherwise>
       </choose>
     </where>
     limit #{startIndex}, #{pageSize}
   </select>
   
-  <select id="countAll" resultType="int">
+  <select id="countAll" resultType="int" parameterType="String">
     select count(*)
     from mstbook mst inner join bkpage bk on mst.mbkno=bk.mbkno
     where bk_page = 1
+    <if test="_parameter != 'volvo'">and mbk_div = #{_parameter}</if>
   </select>
   
-   <select id="selectOne" resultMap="MSTBookMap" parameterType="int">
-    select *
-    from bkpage bk inner join mstbook mst on mst.mbkno= bk.mbkno 
-    where bk.mbkno = #{memberNo};
+  <select id="selectOne" resultMap="MSTBookMap" parameterType="int">
+    select  mstbook.mbkno, mbk_titl, mbk_cont, bk_page, bk_cont, bk_img, bk_rec
+    from mstbook inner join bkpage on mstbook.mbkno= bkpage.mbkno
+    where bkpage.mbkno = #{memberNo}
   </select>
   
 </mapper>

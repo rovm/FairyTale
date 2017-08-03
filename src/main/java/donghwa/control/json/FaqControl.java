@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import donghwa.domain.Member;
 import donghwa.service.FaqService;
 
 @RestController
@@ -26,24 +27,10 @@ public class FaqControl {
     
     HashMap<String,Object> dataMap = new HashMap<>();
     dataMap.put("list", faqService.list(pageNo, pageSize, selectBtn));
-    dataMap.put("totalCount", faqService.getSize());
+    dataMap.put("totalCount", faqService.getSize(selectBtn));
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
-  
-  
-/*  @RequestMapping("selectList")
-  public JsonResult selectList(
-      @RequestParam Map<String, String> selectBtn) throws Exception {
-    
-    HashMap<String,Object> dataMap = new HashMap<>();
-    dataMap.put("selectList", faqService.selectList(selectBtn));
-    dataMap.put("totalCount", faqService.selectGetSize(selectBtn));
-    
-    return new JsonResult(JsonResult.SUCCESS, dataMap);
-  }*/
-  
-  
   
 }
 

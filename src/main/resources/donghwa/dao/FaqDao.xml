@@ -22,34 +22,21 @@
     bw_div="faq" and faq.bwno = boardwrite.bwno
       <choose>
         <when test="selectBtn == '분류'"></when>
-        <when test="selectBtn == '사용방법'">and ans_con="사용방법"</when>
-        <when test="selectBtn == '회원가입'">and ans_con="회원가입"</when>
-        <when test="selectBtn == '기타'">and ans_con="기타"</when>
+        <otherwise>
+            and ans_con= #{selectBtn}
+        </otherwise>
       </choose>
     </where>
    order by bw_wdt asc 
     limit #{startIndex}, #{pageSize} 
 </select>
 
- 
- 
- 
-<select id="countAll" resultType="int">
+
+<select id="countAll" resultType="int" parameterType="String">
     select count(*)
     from faq f inner join boardwrite bw on f.bwno=bw.bwno
-    <!-- where ans_con = #{selectBtn} -->
-    <!-- <if test="#{selectBtn} == '분류'">
-      where ans_con = #{selectBtn}
-    <choose>
-        <when test="selectBtn == '사용방법'">and ans_con="사용방법"</when>
-        <when test="selectBtn == '회원가입'">and ans_con="회원가입"</when>
-        <when test="selectBtn == '기타'">and ans_con="기타"</when>
-     </choose>
-    </if>-->
+    <if test="_parameter != '분류'">where ans_con = #{_parameter}</if>
   </select>
-  
-  
- 
   
 </mapper>
 

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import donghwa.dao.MSTBookDao;
 import donghwa.domain.MSTBook;
-import donghwa.domain.Teacher;
 import donghwa.service.MSTBookService;
 
 @Service
@@ -26,11 +25,11 @@ public class MSTBookServiceImpl implements MSTBookService {
   }
   
   @Override
-  public int getSize() throws Exception {
-    return mstBookDao.countAll();
+  public int getSize(String selectform) throws Exception {
+     return mstBookDao.countAll(selectform);
   }
   
-  public MSTBook get(int no) throws Exception {
+  public List<MSTBook> get(int no) throws Exception {
     return mstBookDao.selectOne(no);
   }
 }

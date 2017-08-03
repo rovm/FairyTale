@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.PhotozipDao">
+
+  <resultMap type="photozip" id="photozipMap">
+    <id column="bwno" property="no"/>
+    <result column="bw_titl" property="bw_titl"/>
+    <result column="bw_con" property="bw_con"/>
+    <result column="bw_wdt" property="bw_wdt"/>
+    <result column="bw_div" property="bw_div"/>
+    <result column="filepath" property="file_Path"/>
+    <result column="filename" property="file_Name"/>
+  </resultMap>
+
+<insert id="insert" parameterType="photozip">
+    insert into boardfile(bwno, filepath, filename) 
+    values(#{bwno}, #{filePath}, #{fileName})
+  </insert>
+  
+<insert id="insert2" parameterType="photozip"
+        useGeneratedKeys="true" keyColumn="bwno" keyProperty="bwno">
+    insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
+    values(#{mno}, #{bw_titl}, #{bw_con}, curdate(), 'photozip')
+ </insert>
+
+</mapper>
+
+
+
+

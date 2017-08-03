@@ -35,10 +35,11 @@ function displayList(pageNo) {
 
 // 서버에서 강사 목록 데이터를 받아 온다.
 $.getJSON('FAQ_list.json', {'pageNo':pageNo, 'pageSize': pageSize, 'selectBtn' : selectBtn.val()}, function(result) {
-	console.log(result.data);
-	var totalCount = result.data.totalCount;
-	 var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
-
+ 	var totalCount = result.data.totalCount;
+ 	if(totalCount == 0){
+		totalCount = 1;
+	}
+	var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
 
 	// 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
 	var templateFn = Handlebars.compile($('#faqForm-template').text())

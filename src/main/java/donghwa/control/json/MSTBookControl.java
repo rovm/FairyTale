@@ -1,6 +1,7 @@
 package donghwa.control.json;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import donghwa.domain.MSTBook;
 import donghwa.service.MSTBookService;
@@ -26,19 +28,21 @@ public class MSTBookControl {
     
     HashMap<String,Object> dataMap = new HashMap<>();
     dataMap.put("list", mstBookService.list(pageNo, pageSize,selectform));
-    dataMap.put("totalCount", mstBookService.getSize());
+    dataMap.put("totalCount", mstBookService.getSize(selectform));
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
-
-//  @RequestMapping("detail")
-//  public JsonResult detail(int no) throws Exception {
-//    MSTBook mstBook = mstBookService.get(no);
-//    if (mstBook == null) {
-//      return new JsonResult(JsonResult.FAIL, no + "번 책이 없습니다.");
-//    }
-//    return new JsonResult(JsonResult.SUCCESS, mstBook);
-//  }
+  
+  @RequestMapping("MSTBOOK_detail")
+  public JsonResult detail(@RequestParam int no) throws Exception {
+    HashMap<String,Object> dataMap = new HashMap<>();
+//    List<MSTBook> mstbook = mstBookService.get(no);
+    dataMap.put("list", mstBookService.get(no));
+    if (dataMap == null) {
+      return new JsonResult(JsonResult.FAIL, no + "번 책이 없습니다.");
+    }
+    return new JsonResult(JsonResult.SUCCESS, dataMap);
+  }
 }
 
 

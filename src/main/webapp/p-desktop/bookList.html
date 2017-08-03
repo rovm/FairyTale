@@ -111,7 +111,7 @@
 <script type="text/javascript" src="../js/bookList.js"></script>
 <script id="BookList-template" type="text/x-handlebars-template">
         {{#each list}}
-          <li><a href="#d">
+          <li><a class="detail-link" href="#" data-no='{{no}}'>
             <figure class="photo-stack">
             <img src="{{BK_IMG}}" alt="picture" />
             </figure> <span>{{MBK_titl}}</span>

@@ -30,12 +30,13 @@ public class AuthCheckFilter implements Filter {
     HttpServletResponse httpResponse = (HttpServletResponse) response;
     
     Member loginMember = (Member)httpRequest.getSession().getAttribute("loginMember");
-    System.out.println("loginMember: " + loginMember);
-//    if (loginMember == null) { // 쿠키에 세션ID가 없다면 로그인 화면으로 보낸다.
-//      httpResponse.sendRedirect("/p-desktop/login.json");
-//      return;
-//    }
-//    
+    System.out.println(loginMember);
+//    System.out.println("loginMember: " + loginMember);
+    if (loginMember == null) { // 쿠키에 세션ID가 없다면 로그인 화면으로 보낸다.
+      httpResponse.sendRedirect("/p-desktop/bookList.html");
+      return;
+    }
+    
     // 다음 필터 또는 서블릿을 실행해야 한다.
     chain.doFilter(request, response);
   }

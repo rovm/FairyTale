@@ -14,4 +14,4 @@ CREATE DATABASE TESTDB
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL ON TESTDB.* TO 'TEST'@'localhost';
+GRANT ALL ON testdb.* TO 'test'@'localhost';
