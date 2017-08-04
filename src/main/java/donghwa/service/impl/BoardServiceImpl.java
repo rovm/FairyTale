@@ -25,6 +25,10 @@ public class BoardServiceImpl implements BoardService {
 	    boardDao.commentInsert(board);
 	  }
   
+  public void conAdd(Board board) throws Exception {
+	    boardDao.contextInsert(board);
+	  }
+  
   public List<Board> list(int pageNo, int pageSize) throws Exception {
 	    HashMap<String,Object> valueMap = new HashMap<>();
 	    valueMap.put("startIndex", (pageNo - 1) * pageSize);

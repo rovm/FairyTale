@@ -7,6 +7,7 @@ import donghwa.domain.Board;
 
 public interface BoardService {
   void add(Board board) throws Exception;
+  void conAdd(Board board) throws Exception;
   void comAdd(Board board) throws Exception;
   List<Board> list(int pageNo, int pageSize) throws Exception;
   List<Board> comList(int pageNo, int pageSize, int bwnoNo) throws Exception;

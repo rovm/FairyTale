@@ -17,13 +17,24 @@
     <result column="bw_div" property="bw_div"/>
     <result column="c_con" property="c_con"/>
     <result column="c_wdt" property="c_wdt"/>
+    <result column="filepath" property="file_Path"/>
+    <result column="filename" property="file_Name"/>
   </resultMap>
 
   
   
-  <insert id="insert" parameterType="board">
-    insert into boardwrite(bwno, mno, bw_titl, bw_con, bw_wdt, bw_div) 
-    values(#{no}, 1, #{bw_titl}, #{bw_con}, curdate(), 'board')
+  <insert id="insert" parameterType="board" useGeneratedKeys="true" keyColumn="bwno" keyProperty="no">
+    insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(#{mno}, #{bw_titl}, #{bw_con}, curdate(), 'board')
+  </insert>
+  <insert id="insert2" parameterType="board">
+    insert into boardfile(bwno, filepath, filename) 
+    values(#{no}, #{filePath}, #{fileName})
+  </insert>
+  
+  <insert id="contextInsert">
+    insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(#{mno}, #{bw_titl}, #{bw_con}, curdate(), 'board')
   </insert>
   
   <insert id="commentInsert" parameterType="board">

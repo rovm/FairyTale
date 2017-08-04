@@ -13,16 +13,27 @@ public class Board {
 	String bw_div;
 	String c_con;
 	String c_wdt;
+	String filePath;
+	String fileName;
 	@Override
 	public String toString() {
 		return "Board [no=" + no + ", mno=" + mno + ", cno=" + cno + ", name=" + name + ", bw_titl=" + bw_titl
 				+ ", bw_con=" + bw_con + ", bw_wdt=" + bw_wdt + ", bw_edt=" + bw_edt + ", bw_hits=" + bw_hits
-				+ ", bw_div=" + bw_div + ", c_con=" + c_con + ", c_wdt=" + c_wdt + "]";
+				+ ", bw_div=" + bw_div + ", c_con=" + c_con + ", c_wdt=" + c_wdt + ", filePath=" + filePath
+				+ ", fileName=" + fileName + "]";
 	}
-	
-	
-
-
+	public String getFilePath() {
+		return filePath;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 	public int getNo() {
 		return no;
 	}

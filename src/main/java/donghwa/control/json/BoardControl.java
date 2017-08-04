@@ -1,5 +1,6 @@
 package donghwa.control.json;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import donghwa.domain.Board;
 import donghwa.service.BoardService;
@@ -29,6 +31,12 @@ public class BoardControl {
   @RequestMapping("comAdd")
   public JsonResult comAdd(Board board) throws Exception {
     boardService.comAdd(board);
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
+  
+  @RequestMapping("conAdd")
+  public JsonResult conAdd(Board board) throws Exception {
+    boardService.conAdd(board);
     return new JsonResult(JsonResult.SUCCESS, "ok");
   }
   
@@ -95,10 +103,23 @@ public class BoardControl {
     boardService.update(board);
     return new JsonResult(JsonResult.SUCCESS, "ok");
   }
+
+
+
+@RequestMapping(path="upload1")
+public JsonResult upload1(Board board, MultipartFile[] files) throws Exception {
+	  System.out.println(files.length);
+	  System.out.println(board);
+    files[0].transferTo(new File(servletContext.getRealPath("/upload/" + files[0].getOriginalFilename())));
+    
+    board.setFilePath("/upload/" + files[0].getOriginalFilename());
+    board.setFileName(files[0].getOriginalFilename());
+   
+    boardService.add(board);
+  System.out.println(board);
+  return new JsonResult(JsonResult.SUCCESS, "ok");
 }
-
-
-
+}
 
 
 

@@ -6,15 +6,12 @@ var tbody = $('.box-form'),
 	wdt=$('#bw_wdt'),
 	Ccon=$('#c_con'),
     Ccount = $("#comCount")
-
 	console.log(Ccount.text())
-
 
 var no = 0;
 try {
 	no = location.href.split('?')[1].split('=')[1]
 } catch (err) {}
-
 
 $.getJSON('detail.json', {'no': no}, function(result) {
     var data = result.data
@@ -54,8 +51,6 @@ $('#c-addbtn').on('click',function() {
     }, 'json')
   })
   
-
-  
   var pageNoTag = $('#page-no'),  // 매번 이걸 찾으면 안좋다 찾아놓은걸 쓰자
     tbody = $('#com-board > tbody'),
     prevBtn = $('#prev-btn'),
@@ -71,7 +66,6 @@ prevBtn.click(function() {
 nextBtn.click(function() {
   displayList(currPageNo + 1)
 })
-
 
 function displayList(pageNo){
 	
@@ -113,4 +107,8 @@ function displayList(pageNo){
     
   })
 }
-displayList(1)
+
+setTimeout(() => {
+	
+	displayList(1)
+}, 10);

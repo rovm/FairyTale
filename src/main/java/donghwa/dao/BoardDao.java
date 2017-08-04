@@ -10,7 +10,9 @@ public interface BoardDao {
   List<Board> comSelectList(Map<String,Object> valueMap);
   List<Board> selectListByTitle(Map<String,String> valueMap);
   int insert(Board board);
+  int insert2(Board board);
   int commentInsert(Board board);
+  int contextInsert(Board board);
   int countAll();
   int comCountAll(int bwnoNo);
   int suchCountAll(Map<String, String> keyword);

@@ -114,8 +114,8 @@
       </div>
       <div style="height:10px;"></div><br>
       <p>※ 덧글은 최대 250자 입력이 가능합니다.</p>
-      <div class="comment clearfix" style="border-top:1px solid black; border-bottom:1px solid black;">
-        <textarea id="c_con" style="margin:20px 0 20px 20px; float:left;" cols="110" rows="3"
+      <div class="comment clearfix" style="border-top:1px solid lightgray; border-bottom:1px solid lightgray;">
+        <textarea id="c_con" style="margin:20px 0 20px 20px; float:left; resize:none;" cols="110" rows="3"
                   placeholder="덧글 쓰기...."></textarea>
         <button id="c-addbtn" class="btn btn-primary btn-lg active">작성</button>
       </div>
@@ -152,14 +152,12 @@
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script id="comment-template" type="text/x-handlebars-template">
   {{#each comList}}
-
     <tr style="border:0;">
       <td style="border:0;border-top: 1px solid lightgray;width:100px;">{{name}}</td>
       <td style="border:0;border-top: 1px solid lightgray;width:610px;">{{c_con}}</td>
-      <td style="border:0;border-top: 1px solid lightgray;width:160;color:lightgray">{{c_wdt}}</td>
+      <td style="border:0;border-top: 1px solid lightgray;width:160;color:lightgray;text-align:right">{{c_wdt}}</td>
       <td style="border:0;border-top: 1px solid lightgray;width:50px;color:darkgray" data-no={{cno}} onclick="comDel({{cno}})">삭제</td>
     </tr>
-
   {{/each}}
 </script>
 
