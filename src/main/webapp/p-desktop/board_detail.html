@@ -94,8 +94,8 @@
       <hr>
 
       <div class="clearfix"><button id="board-list" class="btn btn-primary" style="float:right;margin-right:5px;">목록</button>
-      <button id="board-delete" class="btn btn-primary" style="float:right; margin-right:5px;">삭제</button>
-      <button id="board-update" class="btn btn-primary" style="float:right; margin-right:5px;">수정</button></div>
+      <button id="board-delete" class="btn btn-primary" style="display:none;float:right; margin-right:5px;">삭제</button>
+      <button id="board-update" class="btn btn-primary" style="display:none;float:right; margin-right:5px;">수정</button></div>
       
       <pre id="comCount">댓글목록(0)</pre>
       <div id = "comment">
@@ -146,21 +146,23 @@
   </div>
   </div>
   
- 
-<script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<script src="../js/board_detail.js"></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script id="comment-template" type="text/x-handlebars-template">
   {{#each comList}}
     <tr style="border:0;">
       <td style="border:0;border-top: 1px solid lightgray;width:100px;">{{name}}</td>
       <td style="border:0;border-top: 1px solid lightgray;width:610px;">{{c_con}}</td>
-      <td style="border:0;border-top: 1px solid lightgray;width:160;color:lightgray;text-align:right">{{c_wdt}}</td>
-      <td style="border:0;border-top: 1px solid lightgray;width:50px;color:darkgray" data-no={{cno}} onclick="comDel({{cno}})">삭제</td>
+      <td id="wdt" style="border:0;border-top: 1px solid lightgray;color:lightgray;text-align:right">{{c_wdt}}</td>
+      <td class="mno{{mno}} deletetag"  data-no={{cno}} onclick="comDel({{cno}})" style="display:none;border:0;border-top: 1px solid lightgray;width:50px;color:darkgray">삭제</td>
     </tr>
   {{/each}}
 </script>
+ 
+ 
+<script src="../js/board_detail.js"></script>
 
+<!--  -->
 
 
 </body>

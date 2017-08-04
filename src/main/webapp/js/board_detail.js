@@ -1,3 +1,5 @@
+
+	
 var tbody = $('.box-form'),
 	title=$('#bw_titl'),
 	creater=$('#name'),
@@ -5,7 +7,8 @@ var tbody = $('.box-form'),
 	con=$('#bw_con'),
 	wdt=$('#bw_wdt'),
 	Ccon=$('#c_con'),
-    Ccount = $("#comCount")
+    Ccount = $("#comCount"),
+    mno;
 	console.log(Ccount.text())
 
 var no = 0;
@@ -22,15 +25,26 @@ $.getJSON('detail.json', {'no': no}, function(result) {
 })
 
 function comDel(cno) {
-	$.getJSON('comDelete.json', {'no': cno}, function(result) {
-		location.href = 'board_detail.html?no=' + no
-	})	
+	if(mno != null) {		
+    	$.getJSON('comDelete.json', {'no': cno}, function(result) {
+	    	location.href = 'board_detail.html?no=' + no
+	    })	
+	} else {
+		alert("로그인하시옵소서")
+		location.href = 'login.html'
+	}
 }
   
   $('#board-delete').click(function(){
-	  $.getJSON('delete.json', {'no': no}, function(result) {
-			location.href = 'community_boarder.html'
-		})	
+	  if (mno != null) {
+		  $.getJSON('delete.json', {'no': no}, function(result) {
+			  location.href = 'community_boarder.html'
+		  })	
+	  } else {
+		  alert("로그인하시옵소서")
+		  location.href = 'login.html'
+		 
+	  }
 })
   $('#board-update').click(function(){
 	location.href = 'boardwrite.html?no=' + no
@@ -42,13 +56,19 @@ function comDel(cno) {
 
 
 $('#c-addbtn').on('click',function() {
-	
-    $.post('comAdd.json', {
-      'no': no,
-      'c_con': Ccon.val()
-    }, function(result) {
-      location.href = 'board_detail.html?no='+no
-    }, 'json')
+	if(mno != null){
+		$.post('comAdd.json', {
+			'mno':mno,
+			'no': no,
+			'c_con': Ccon.val()
+		}, function(result) {
+			location.href = 'board_detail.html?no='+no
+		}, 'json')
+	} else {
+		alert("로그인하시옵소서")
+		location.href = 'login.html'
+		
+	}
   })
   
   var pageNoTag = $('#page-no'),  // 매번 이걸 찾으면 안좋다 찾아놓은걸 쓰자
@@ -67,48 +87,64 @@ nextBtn.click(function() {
   displayList(currPageNo + 1)
 })
 
+	displayList(1)
 function displayList(pageNo){
 	
 	// 서버에서 강사 목록 데이터를 받아 온다.
-  $.getJSON('comList.json', {'pageNo':pageNo, 'pageSize':pageSize, 'bwnoNo':no}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
-  var totalCount = result.data.totalCount
-  var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1: 0)
-  
-  console.log(result)
-  console.log(result.data.totalCount)
-  console.log(lastPageNo)
-  var templateFn = Handlebars.compile($('#comment-template').text())
-  var generatedHTML = templateFn(result.data)
-    tbody.text('')
-    tbody.html(generatedHTML)
-    
-      // 문자열 html을 리턴한다.
-    currPageNo = pageNo
-    pageNoTag.text(currPageNo)
-    if(totalCount >= 1) {
-    	Ccount.text("댓글목록(" + totalCount + ")")
-    }
-    
-    if(currPageNo == 1){
-      prevBtn.prop('disabled', true)
-    } else {
-      prevBtn.prop('disabled', false)
-    }
-    if(lastPageNo <= 1) {
-    	disableBtn.css("display", 'none')
-    } else {
-    	disableBtn.css("display", 'block')
-    }
-    if(currPageNo == lastPageNo){
-      nextBtn.prop('disabled', true)
-    } else {
-      nextBtn.prop('disabled', false)
-    }
-    
-  })
+	$(document).ready(function() {
+		$.getJSON('comList.json', {'pageNo':pageNo, 'pageSize':pageSize, 'bwnoNo':no, 'mno':mno}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
+			var totalCount = result.data.totalCount
+			var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1: 0)
+
+			console.log(result)
+			console.log(result.data.totalCount)
+			console.log(lastPageNo)
+			var templateFn = Handlebars.compile($('#comment-template').text())
+			var generatedHTML = templateFn(result.data)
+			tbody.text('')
+			tbody.html(generatedHTML)
+			
+			userInfo()
+
+			// 문자열 html을 리턴한다.
+			currPageNo = pageNo
+			pageNoTag.text(currPageNo)
+			if(totalCount >= 1) {
+				Ccount.text("댓글목록(" + totalCount + ")")
+			}
+
+			if(currPageNo == 1){
+				prevBtn.prop('disabled', true)
+			} else {
+				prevBtn.prop('disabled', false)
+			}
+			if(lastPageNo <= 1) {
+				disableBtn.css("display", 'none')
+			} else {
+				disableBtn.css("display", 'block')
+			}
+			if(currPageNo == lastPageNo){
+				nextBtn.prop('disabled', true)
+			} else {
+				nextBtn.prop('disabled', false)
+			}
+
+		})
+		
+	})
 }
 
-setTimeout(() => {
+function userInfo() {
+	$.getJSON('userinfo.json', function(result) {
+		if(result.data != null) {
+			mno = result.data.no;
+			$('#board-update').css("display", "block")
+			$('#board-delete').css("display", "block")
+			$('#wdt').css("width", "186px")
+			$(".mno" + mno).css('display', "block")
+		}		
+	})
+}
+
 	
-	displayList(1)
-}, 10);
+

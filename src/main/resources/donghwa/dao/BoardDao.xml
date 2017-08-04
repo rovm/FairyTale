@@ -39,7 +39,7 @@
   
   <insert id="commentInsert" parameterType="board">
     insert into comment(bwno, mno, c_con, c_wdt) 
-    values(#{no}, 1, #{c_con}, curdate())
+    values(#{no}, #{mno}, #{c_con}, curdate())
   </insert>
   
    <select id="selectList" resultMap="boardMap" parameterType="map">
