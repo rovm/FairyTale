@@ -17,8 +17,8 @@
     <result column="bw_div" property="bw_div"/>
     <result column="c_con" property="c_con"/>
     <result column="c_wdt" property="c_wdt"/>
-    <result column="filepath" property="file_Path"/>
-    <result column="filename" property="file_Name"/>
+    <result column="filepath" property="filePath"/>
+    <result column="filename" property="fileName"/>
   </resultMap>
 
   
@@ -84,9 +84,10 @@
   </select>
 
   <select id="selectOne" resultMap="boardMap" parameterType="int">
-    select  m.name, bw.bw_titl, bw.bw_con, bw.bw_wdt, bw.bwno
+    select  m.name, bw.bw_titl, bw.bw_con, bw.bw_wdt, bw.bwno , bf.filepath, bf.filename, m.mno
     from boardwrite bw inner join member m on bw.mno = m.mno
-    where bwno= #{no}
+                       left outer join boardfile bf on bw.bwno = bf.bwno
+    where bw.bwno= #{no}
   </select>
   
   <delete id="delete" parameterType="int">
@@ -98,7 +99,28 @@
     where cno = #{no}
   </delete>
   
-  <update id="update" parameterType="board">
+  <update id="update" parameterType="board" useGeneratedKeys="true" keyColumn="bwno" keyProperty="no">
+    update boardwrite bw inner join boardfile bf
+      on bw.bwno = bf.bwno
+      set bw.bw_titl = #{bw_titl},
+          bw.bw_con = #{bw_con},
+          bw.bw_edt = curdate(),
+          bf.filepath = #{filePath},
+          bf.filename = #{fileName}
+          where bw.bwno = bf.bwno
+          and bw.bwno = #{no}
+  </update>
+  
+<!--   <update id="update2" parameterType="board">
+    update boardfile set
+      bwno = #{no}, 
+      filepath=#{filePath}, 
+      filename=#{fileName}
+      where bwno = #{no}
+  </update>
+   -->
+  
+  <update id="contextUpdate" parameterType="board">
     update boardwrite set 
       bw_titl=#{bw_titl}, 
       bw_con=#{bw_con}, 

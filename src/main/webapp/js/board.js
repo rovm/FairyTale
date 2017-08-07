@@ -1,5 +1,5 @@
 var word = $("#keyword");
-
+var mno;
 
   
 var pageNoTag = $('#page-no')  // 매번 이걸 찾으면 안좋다 찾아놓은걸 쓰자
@@ -54,7 +54,12 @@ function displayList2(pageNo){
 
 /*****************************************************/
 $('#bord-btn').click(function(){
-	location.href = 'boardwrite.html'
+	if (mno != null) {
+	  location.href = 'boardwrite.html'
+	} else {
+	  alert("로그인하시옵소서")
+	  location.href = 'login.html'
+	}
 })
 
 /******************************************************/
@@ -115,3 +120,10 @@ $(document.body).on('click', '.board', function(event){
 	
 //	event.preventDefault()
 })
+
+
+	$.getJSON('userinfo.json', function(result) {
+		if(result.data != null) {
+			mno = result.data.no;
+		}		
+	})

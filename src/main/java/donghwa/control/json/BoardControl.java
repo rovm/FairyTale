@@ -103,6 +103,12 @@ public class BoardControl {
     boardService.update(board);
     return new JsonResult(JsonResult.SUCCESS, "ok");
   }
+  
+  @RequestMapping("conUpdate")
+  public JsonResult conUpdate(Board board) throws Exception {
+    boardService.conUpdate(board);
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }
 
 
 
@@ -116,6 +122,21 @@ public JsonResult upload1(Board board, MultipartFile[] files) throws Exception {
     board.setFileName(files[0].getOriginalFilename());
    
     boardService.add(board);
+    
+  System.out.println(board);
+  return new JsonResult(JsonResult.SUCCESS, "ok");
+}
+
+@RequestMapping(path="upload2")
+public JsonResult upload2(Board board, MultipartFile[] files) throws Exception {
+	  System.out.println(files.length);
+	  System.out.println(board);
+    files[0].transferTo(new File(servletContext.getRealPath("/upload/" + files[0].getOriginalFilename())));
+    
+    board.setFilePath("/upload/" + files[0].getOriginalFilename());
+    board.setFileName(files[0].getOriginalFilename());
+   
+    boardService.update(board);
   System.out.println(board);
   return new JsonResult(JsonResult.SUCCESS, "ok");
 }

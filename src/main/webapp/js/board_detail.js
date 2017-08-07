@@ -8,7 +8,10 @@ var tbody = $('.box-form'),
 	wdt=$('#bw_wdt'),
 	Ccon=$('#c_con'),
     Ccount = $("#comCount"),
-    mno;
+    filePath = $('#filePath'),
+    mno,
+    boardmno;
+
 	console.log(Ccount.text())
 
 var no = 0;
@@ -22,6 +25,10 @@ $.getJSON('detail.json', {'no': no}, function(result) {
     title.text(data.bw_titl)
     con.text(data.bw_con)
     wdt.text(data.bw_wdt)
+    filePath.attr("src", data.filePath)
+    boardmno = data.mno
+    console.log("이거", data)
+    
 })
 
 function comDel(cno) {
@@ -138,10 +145,13 @@ function userInfo() {
 	$.getJSON('userinfo.json', function(result) {
 		if(result.data != null) {
 			mno = result.data.no;
+			console.log(mno,boardmno)
+			if(mno == boardmno) {
 			$('#board-update').css("display", "block")
 			$('#board-delete').css("display", "block")
 			$('#wdt').css("width", "186px")
 			$(".mno" + mno).css('display', "block")
+			}
 		}		
 	})
 }

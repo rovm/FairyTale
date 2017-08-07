@@ -19,6 +19,7 @@ public interface BoardService {
   void remove(int no) throws Exception;
   void comRemove(int no) throws Exception;
   void update(Board board) throws Exception;
+  void conUpdate(Board board) throws Exception;
 }
 
 

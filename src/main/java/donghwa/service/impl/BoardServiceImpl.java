@@ -19,6 +19,7 @@ public class BoardServiceImpl implements BoardService {
   
   public void add(Board board) throws Exception {
     boardDao.insert(board);
+    boardDao.insert2(board);
   }
   
   public void comAdd(Board board) throws Exception {
@@ -98,11 +99,19 @@ public class BoardServiceImpl implements BoardService {
 	      throw new Exception(board.getNo() + "번 강사를 찾을 수 없습니다.");
 	    }
 	    
-	    count = boardDao.update(board);
+	  /*  int count2 = boardDao.update2(board);
+	    if (count2 < 1) {
+	      throw new Exception(board.getNo() + "번 강사를 찾을 수 없습니다.");
+	    }*/
+	    
+	    
+	  }
+  
+  public void conUpdate(Board board) throws Exception {
+	    int count = boardDao.contextUpdate(board);
 	    if (count < 1) {
 	      throw new Exception(board.getNo() + "번 강사를 찾을 수 없습니다.");
 	    }
-	    
 	  }
 
 

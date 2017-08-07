@@ -20,4 +20,6 @@ public interface BoardDao {
   int delete(int no);
   int comDelete(int no);
   int update(Board board);
+  int update2(Board board);
+  int contextUpdate(Board board);
 }
