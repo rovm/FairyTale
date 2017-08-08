@@ -53,7 +53,6 @@ input::-webkit-input-placeholder {
 }
 body {
   padding: 0;
-  background-color: ivory;
   /*border: solid 2px black;*/
   height: auto;
 }
@@ -94,8 +93,14 @@ th, td {
     border-top: 1px solid #ddd;
 }
 
-
-
+.board:hover {
+  color: blue;
+  opacity: 0.4;
+}
+.board {
+  height: 40px;
+  color: #3F54B0;
+}
 
 #img {
   border: 0;

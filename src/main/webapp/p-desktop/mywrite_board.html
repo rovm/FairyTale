@@ -3,10 +3,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>community</title>
+  <title>mywrite_board</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/desktop/manage_myboard.css">
+  <link rel="stylesheet" href="../css/desktop/mywrite_board.css">
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
 </head>
@@ -29,7 +29,7 @@
         <a href="storage.html">작품보관함</a>
       </div>
       <div id="myWright" class="menu">
-        <a href="manage_myboard.html">내글관리</a>
+        <a href="mywrite_board.html">내글관리</a>
       </div>
       <div id="camera" class="menu">
         <a href="photozip.html">사진첩</a>
@@ -59,71 +59,26 @@
       <div class="middle-container">
         <strong>내가 쓴 글 보기</strong>
         <div class="board_search">
-          <input type="search" placeholder="검색">
+          <input type="search" placeholder="검색" id="keyword">
         </div>
       </div>
     </div>
         <div id="com-titl-bord" class="bord-top">
 
-      <!-- </div> -->
     </div>
-
+    
       <div class="table-box">
-        <table id="tbl" class="table table-bordered">
-
-          <tr id="top" bgcolor="darkgray" class="table-top">
-           <th width="100">번호</th><th width="600">제목</th><th width="100">작성자</th><th width="100">작성일</th>
-         </tr>
-         <tr class="active2">
-           <td><a>내용내용내용</a></td><td><a>내용내용내용내용내용내용내용내용내용</a></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td>...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td> ...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td> ...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td> ...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td> ...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td> ...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
-         <tr class="active">
-           <td> ...</td><td> </td><td> </td><td> </td>
-         </tr>
-         <tr class="activ2">
-           <td></td><td></td><td></td><td></td>
-         </tr>
+        <table id="" class="table table-bordered" style="border:0;">
+        
+         <tbody></tbody>
         </table>
       </div>
+      
+ 
       <div class="standard-collection">
-        <button type="button" name="button">이전</button>&nbsp;1&nbsp;
-        <button type="button" name="button">다음</button>
+        <button id="prev-btn" type="button" name="button">이전</button>
+        &nbsp;<span id="page-no"></span>&nbsp;
+        <button id="next-btn" type="button" name="button">다음</button>
       </div>
 </div>
 
@@ -154,7 +109,27 @@
 
 
 </body>
-<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>\
+<script type="text/javascript" src="../js/mywrite_board.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script id="tbody-template" type="text/x-handlebars-template">
+  {{#each myList}}
+   <tr id="trwidth"class="board" data-no ={{no}} style="border:0;">
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 70px;">{{no}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 589px;">{{bw_titl}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 127px;">{{name}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 194px;">{{bw_wdt}}</td>
+   </tr>
+  {{/each}}
+{{#each mySuchList}}
+   <tr class="board" data-no ={{no}} style="border:0;">
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{no}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{bw_titl}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{name}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{bw_wdt}}</td>
+   </tr>
+  {{/each}}
+</script>
 
 </html>
 
