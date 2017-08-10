@@ -29,21 +29,10 @@ $.getJSON('detail.json', {'no': no}, function(result) {
     
 })
 
-function comDel(cno) {
-	if(mno != null) {		
-    	$.getJSON('comDelete.json', {'no': cno}, function(result) {
-	    	location.href = 'board_detail.html?no=' + no
-	    })	
-	} else {
-		alert("로그인하시옵소서")
-		location.href = 'login.html'
-	}
-}
-  
   $('#board-delete').click(function(){
 	  if (mno != null) {
 		  $.getJSON('delete.json', {'no': no}, function(result) {
-			  location.href = 'community_boarder.html'
+			  location.href = 'notice.html'
 		  })	
 	  } else {
 		  alert("로그인하시옵소서")
@@ -52,11 +41,11 @@ function comDel(cno) {
 	  }
 })
   $('#board-update').click(function(){
-	location.href = 'boardwrite.html?no=' + no
+	location.href = 'noticewrite.html?no=' + no
 })
 
  $('#board-list').click(function(){
-	location.href = 'community_boarder.html'
+	location.href = 'notice.html'
 })
 
 

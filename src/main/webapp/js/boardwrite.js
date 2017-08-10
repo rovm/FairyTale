@@ -52,7 +52,8 @@ $('#conaddbtn').on('click',function() {
 	  $.post('conUpdate.json', {
 		  'bw_titl': Titl.val(),
 		  'bw_con': Con.val(),
-		  'no': no
+		  'no': no,
+		  'bw_div': Div
 	  }, function(result) {
 		  location.href = 'community_boarder.html'
 	  }, 'json')
@@ -110,7 +111,8 @@ $('#conaddbtn').on('click',function() {
 		data.formData = {
 				bw_titl : $('#bw_titl').val(),
 				bw_con : $('#bw_con').val(),
-				mno: mno
+				mno: mno,
+				bw_div: Div
 		};
 		
 		location.href = 'community_boarder.html'
@@ -184,7 +186,8 @@ $('#conaddbtn').on('click',function() {
 					bw_titl : $('#bw_titl').val(),
 					bw_con : $('#bw_con').val(),
 					mno: mno,
-					no: no
+					no: no,
+					bw_div: Div
 			};
 //			console.log(no)
 			location.href = 'community_boarder.html'

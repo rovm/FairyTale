@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.CommentDao">
+
+  <resultMap type="comment" id="commentMap">
+    <id column="cno" property="cno"/>
+    <id column="bwno" property="no"/>
+    <id column="mno" property="mno"/>
+    <result column="c_con" property="c_con"/>
+    <result column="c_wdt" property="c_wdt"/>
+  </resultMap>
+
+  
+  
+  <insert id="commentInsert" parameterType="comment">
+    insert into comment(bwno, mno, c_con, c_wdt) 
+    values(#{no}, #{mno}, #{c_con}, curdate())
+  </insert>
+  
+  
+  <select id="comSelectList" resultMap="commentMap" parameterType="map">
+    select bw.bwno,m.name,c.mno,c.cno, c.c_con, c.c_wdt
+    from boardwrite bw inner join comment c on bw.bwno = c.bwno
+    join member m on c.mno = m.mno
+    where bw.bwno = #{bwnoNo}
+    order by c.cno asc
+    limit #{startIndex}, #{pageSize}
+    
+  </select>
+  
+   
+  
+  <select id="comCountAll" resultType="int">
+    select count(*)
+    from boardwrite bw inner join comment c on bw.bwno = c.bwno
+    join member m on c.mno = m.mno
+    where bw.bwno = #{no}
+  </select>
+  
+  
+  <delete id="comDelete" parameterType="int">
+    delete from comment 
+    where cno = #{no}
+  </delete>
+  
+</mapper>
+
+
+
+
+
+
+
+
+

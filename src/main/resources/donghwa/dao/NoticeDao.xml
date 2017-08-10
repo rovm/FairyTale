@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.NoticeDao">
+
+  <resultMap type="board" id="boardMap">
+    <id column="bwno" property="no"/>
+    <id column="mno" property="mno"/>
+    <id column="cno" property="cno"/>
+    <result column="name" property="name"/>
+    <result column="bw_titl" property="bw_titl"/>
+    <result column="bw_con" property="bw_con"/>
+    <result column="bw_wdt" property="bw_wdt"/>
+    <result column="bw_edt" property="bw_edt"/>
+    <result column="bw_hits" property="bw_hits"/>
+    <result column="bw_div" property="bw_div"/>
+  </resultMap>
+
+  
+  
+   <select id="noticeSelectList" resultMap="boardMap" parameterType="map">
+    select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name,bw.bw_div
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    where bw_div = 'notice' 
+    order by bwno desc
+    limit #{startIndex}, #{pageSize}
+  </select>
+  
+  
+   <select id="SelectListByTitle" resultMap="boardMap" parameterType="map">
+    select bw.bwno, bw.bw_titl, bw.bw_con, bw.bw_wdt, m.name
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    where bw_titl like '%${keyword}%' and bw_div = 'notice'
+    ORDER BY bwno DESC
+   </select>
+   
+  <select id="countAll" resultType="int">
+    select count(*)
+    from boardwrite where bw_div = 'notice'
+  </select>
+  
+  <select id="suchCountAll" resultType="int" parameterType="map">
+    select count(*)
+    from boardwrite bw inner join member m on bw.mno = m.mno
+    where bw_titl like '%${keyword}%' and bw_div = 'notice'
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+
+
+

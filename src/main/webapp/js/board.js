@@ -109,6 +109,7 @@ function displayList(pageNo){
     console.log("어디서 안되는거야1", generatedHTML);
     
 console.log(result)
+
   })
 }
 //displayList(1)

@@ -3,10 +3,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>board_detail</title>
+  <title>notice_detail</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/desktop/board_detail.css">
+  <link rel="stylesheet" href="../css/desktop/notice_detail.css">
   
 
 </head>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div id="box">
-      <div id="img"></div><div id="menual-Name">자유게시판</div>
+      <div id="img"></div><div id="menual-Name">공지사항</div>
       </div>
     </div><br>
     
@@ -98,7 +98,6 @@
       <button id="board-delete" class="btn btn-primary" style="display:none;float:right; margin-right:5px;">삭제</button>
       <button id="board-update" class="btn btn-primary" style="display:none;float:right; margin-right:5px;">수정</button></div>
       
-      <pre id="comCount">댓글목록(0)</pre>
       <div id = "comment">
        <table id="com-board" class="table table-bordered" style="border:0;">
         
@@ -107,20 +106,7 @@
          </tbody>
        
         </table>
-      </div>
-      <div class="standard-collection">
-        <button id="prev-btn" type="button" name="button">이전</button>
-        &nbsp;<span id="page-no"></span>&nbsp;
-        <button id="next-btn" type="button" name="button">다음</button>
-      </div>
-      <div style="height:10px;"></div><br>
-      <p>※ 덧글은 최대 250자 입력이 가능합니다.</p>
-      <div class="comment clearfix" style="border-top:1px solid lightgray; border-bottom:1px solid lightgray;">
-        <textarea id="c_con" style="margin:20px 0 20px 20px; float:left; resize:none;" cols="110" rows="3"
-                  placeholder="덧글 쓰기...."></textarea>
-        <button id="c-addbtn" class="btn btn-primary btn-lg active">작성</button>
-      </div>
-      
+        </div>
   </div>
 
 
@@ -147,21 +133,10 @@
   </div>
   </div>
   
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<script id="comment-template" type="text/x-handlebars-template">
-  {{#each comList}}
-    <tr style="border:0;">
-      <td style="border:0;border-top: 1px solid lightgray;width:100px;"><img id="com-img" src="">{{name}}</td>
-      <td style="border:0;border-top: 1px solid lightgray;width:610px;">{{c_con}}</td>
-      <td id="wdt" style="width:182px;border:0;border-top: 1px solid lightgray;color:lightgray;text-align:right">{{c_wdt}}</td>
-      <td class="mno{{mno}} deletetag"  data-no={{cno}} onclick="comDel({{cno}})" style="display:none;border:0;border-top: 1px solid lightgray;width:50px;color:darkgray">삭제</td>
-    </tr>
-  {{/each}}
-</script>
  
  
-<script src="../js/board_detail.js"></script>
+<script src="../js/notice_detail.js"></script>
 
 <!--  -->
 
