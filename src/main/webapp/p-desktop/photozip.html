@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <!-- <link rel="stylesheet" href="../jquery_ui/jquery-ui.css"> -->
 <link rel="stylesheet" href="../css/desktop/photozip.css">
+
 </head>
 <body>
 
@@ -50,18 +51,18 @@
 			<div id="menual-Name">사진첩</div>
 		</div>
 	</div>
-
-<!-- modal -->
+	
+<!-- modal -->	
 	<div id="photo-upload-form">
 		<button type="button" name="button" class="btn btn-success" id="photo-upload">사진올리기</button>
 	</div>
-
+  
     <div id="mask"></div>
     <div class="window">
       <div id="mask-handler">
         <input type="button" href="#" class="close" value="X" />
       </div>
-      <div class="uploadform">
+      <div class="uploadform"> 
         <div id="manager-addbtn">
           <div id="manager-addbtn-wrapper">
             <div class="manager-uploadform" id="manager-addbtn-titl">제목 <input id="upload-titl"></div>
@@ -69,12 +70,12 @@
             <div class="manager-uploadform" id="manager-addbtn-photo">사진 <input id="fileupload" type="file" name="files" multiple></div>
             <div id="images-div"></div><br>
             <div id="manager-upload-btn"><button id="upload-btn" type='button'>등록</button></div>
-
+            
           </div>
         </div>
       </div>
     </div>
-  <!-- modal -->
+  <!-- modal -->  
 
 	<link
 		href='https://fonts.googleapis.com/css?family=Leckerli+One|Metrophobic'
@@ -84,7 +85,7 @@
 		<div class="wrapper_inner">
 			<!-- Gallery -->
 			<section class="gallery">
-
+				
 			</section>
 		</div>
 	</div>
@@ -131,7 +132,7 @@
 {{#each list}}
 <div class="gallery_item">
   <span class="gallery_item_preview"> <a href="#" data-js="{{no}}">
-    <img src="{{filePath}}" alt="" /><span>
+    <img src="{{fileName}}" alt="" /><span>
      <h3>{{bw_titl}}</h3>
      <p>{{bw_con}}</p>
     </span></a>

@@ -1,4 +1,16 @@
-var mno;
+var mno, jsNo;
+var pageNoTag = $('#page-no'),
+	prevBtn = $('#prev-btn'),
+	nextBtn = $('#next-btn'),
+	pageSize = 12,
+	currPageNo = parseInt(pageNoTag.text())
+
+$.getJSON('userinfo.json', function(result) {
+	mno = result.data.no;
+	console.log(mno)
+	displayList(1, mno)
+})
+
 
 function wrapWindowByMask(){
 	//화면의 높이와 너비를 구한다.
@@ -15,8 +27,6 @@ function wrapWindowByMask(){
 	//윈도우 같은 거 띄운다.
 	$('.window').show();
 }
-
-
 
 $(document).ready(function(){
 	//검은 막 띄우기
@@ -40,7 +50,7 @@ $(document).ready(function(){
 });
 
 $('#fileupload').fileupload({
-	url : '/control/photozip/upload.json', // 서버에 요청할 URL
+	url : '/p-desktop/upload.json', // 서버에 요청할 URL
 	dataType : 'json', // 서버가 보낸 응답이 JSON임을 지정하기
 	sequentialUploads : true, // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
 	singleFileUploads : false, // 한 요청에 여러 개의 파일을 전송시키기.
@@ -88,23 +98,123 @@ $('#fileupload').fileupload({
 	done : function(e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
 		console.log('done()...');
 		console.log(data.result);
-		var file = data.result.fileList[0];
+		var file = data.result.fileList;
 		$('<p/>').text("name : " + data.result.name).appendTo(
 				document.body);
 		$.each(data.result.fileList, function(index, file) {
 			$('<p/>').text(file.filename + " : " + file.filesize)
 			.appendTo(document.body);
 		});
+		location.href="photozip.html"
 	}
 });
 
+/****************************************************************************/
 
-//$(document).ready(function(){
-//  $('#mask').draggable({ 
-//    handle: "#mask-handler"
-//  });
-//});
-
-$.getJSON('userinfo.json', function(result) {
-    mno = result.data.no;
+prevBtn.on('click', function() {
+  displayList(currPageNo - 1, mno)
 })
+
+nextBtn.on('click', function() {
+  displayList(currPageNo + 1, mno)	
+})
+
+var totalCount;
+
+function displayList(pageNo, mno) {
+	// 서버에서 강사 목록 데이터를 받아 온다.
+  $.getJSON('photozip_list.json', {'pageNo':pageNo, 'pageSize': pageSize, 'mno': mno}, function(result) {
+	var totalCount = result.data.totalCount;
+	var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
+	console.log(result)
+    // 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
+    var templateFn = Handlebars.compile($('#Photozip-template').text())
+    var generatedHTML = templateFn(result.data)
+    $(".gallery").text('') // tbody의 기존 tr 태그들을 지우고
+    $(".gallery").html(generatedHTML) // 새 tr 태그들로 설정한다.
+
+    currPageNo = pageNo
+    pageNoTag.text(currPageNo)
+
+    if (currPageNo == 1) {
+      prevBtn.prop('disabled', true)
+    } else {
+      prevBtn.prop('disabled', false)
+    }
+
+    if (currPageNo == lastPageNo) {
+      nextBtn.prop('disabled', true)
+    } else {
+      nextBtn.prop('disabled', false)
+    }
+
+    gallery.ready_();
+    deleteBtn();
+  }) // getJSON()
+} // displayList()
+
+
+/***************************************************************************/
+var gallery = (function(){
+	  'use strict';
+	  return {
+	    // this.js(obj)
+	    js: function(e){
+	    	no = e;
+	    	return $("[data-js="+e+"]");},
+	    // this.lk(obj)
+	    lk: function(e){
+	    	no = e;
+	    	return $("[data-lk="+e+"]");},
+	    // Ready functions
+	    ready_: function(){this.events();},
+	    //  functions
+	    events:function(){
+	      var self = this;
+	      var close = $('.gallery_item_full');
+	      close.append('<a href="#" data-js="cl" class="cl">X</a>');
+	      // Get all data js and add clickOn function
+	      $('.gallery_item_preview a[data-js]').click(function() {
+	        jsNo = $(this).attr("data-js")
+	        self.fx_in($('div[data-lk=' + jsNo + ']')); 
+	        self.fx_in($('.box'));
+	      });
+	      
+	      // close on click
+	      $('.gallery_item_full a').on("click",function(){
+	        self.fx_out($('.gallery_item_full'));
+	        self.fx_out($('.box'));
+	      });
+	  
+	    },
+ 
+	    // out function
+	    fx_out: function(el){
+	      el.addClass('efOut')
+	      .delay(500)
+	      .fadeOut('fast')
+	      .removeClass('efIn');
+	      $('body').css({overflow:'auto'});
+	      return false;
+	    }, 
+	    // in function
+	    fx_in: function(el){
+	      el.removeClass('efOut')
+	      .show()
+	      .addClass('efIn');
+	      $('body').css({overflow:'hidden'});
+	      return false;
+	    }
+	  };
+	})();
+	// ready function of gallery
+
+function deleteBtn() {
+	$(".deleteBtn").on("click", function() {
+		console.log("딜리트 버튼 눌렷다!")
+		console.log(jsNo)
+		$.getJSON('photozip_delete.json', {'no': jsNo}, function(result) {
+      location.href = 'photozip.html'
+    })
+	})	
+}

@@ -10,23 +10,41 @@
     <result column="bw_con" property="bw_con"/>
     <result column="bw_wdt" property="bw_wdt"/>
     <result column="bw_div" property="bw_div"/>
-    <result column="filepath" property="file_Path"/>
-    <result column="filename" property="file_Name"/>
+    <result column="filepath" property="filePath"/>
+    <result column="filename" property="fileName"/>
   </resultMap>
 
 <insert id="insert" parameterType="photozip">
-    insert into boardfile(bwno, filepath, filename) 
-    values(#{bwno}, #{filePath}, #{fileName})
-  </insert>
+  insert into boardfile(bwno, filepath, filename) 
+  values(#{bwno}, #{filePath}, #{fileName})
+</insert>
   
 <insert id="insert2" parameterType="photozip"
-        useGeneratedKeys="true" keyColumn="bwno" keyProperty="bwno">
-    insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
-    values(#{mno}, #{bw_titl}, #{bw_con}, curdate(), 'photozip')
- </insert>
+      useGeneratedKeys="true" keyColumn="bwno" keyProperty="bwno">
+  insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
+  values(#{mno}, #{bw_titl}, #{bw_con}, curdate(), 'photozip')
+</insert>
 
+<select id="countAll" resultType="int">
+  select count(*)
+  from boardfile bf inner join boardwrite bw on bf.bwno = bw.bwno
+  where mno= #{mno}
+</select>
+
+<select id="selectList" resultMap="photozipMap" parameterType="map">
+  select bf.bwno, bw_titl, bw_con, filepath, filename
+  from boardfile bf, boardwrite bw
+  where mno= #{mno} and bf.bwno = bw.bwno
+  limit #{startIndex}, #{pageSize}
+</select>
+  
+<delete id="delete" parameterType="int">
+  delete from boardfile where bwno=#{no}
+</delete>
+  
+<delete id="delete2" parameterType="int">
+  delete from boardwrite where bwno=#{no}
+</delete>
 </mapper>
-
-
 
 
