@@ -16,6 +16,9 @@ hr{
 }
 
 
+body>.stop-scrolling > .sweet-alert > .sa-button-container > .sa-confirm-button-container > .confirm > button{
+  background-color: black;
+}
 
 label{
 	margin-bottom: 15px;

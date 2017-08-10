@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alertify.js": "^1.0.12",
     "blueimp-file-upload": "^9.18.0",
     "bootstrap": "^3.3.7",
     "handlebars": "^4.0.6",

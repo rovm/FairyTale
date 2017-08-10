@@ -56,18 +56,51 @@
 
 	<div id="main-text">
 		<div class="btn_box">
-			<button id="pre_btn" type="button" class="btn btn-warning">목록으로	
+			<a id="pre_btn" class="btn btn-warning" href="bookList.html">목록으로</a>
 		</div>
 	</div>
-	
+
 	<div id="slider">
 		<a class="control_next"><i class="fa fa-chevron-right"></i></a> <a
 			class="control_prev"><i class="fa fa-chevron-left"></i></a>
-		
+
 		<ul id="FairyTale_Content"></ul>
 	</div>
 
 	<!-- 녹음버튼 -->
+	<button type="button" id="record-btn">녹음버튼</button>
+
+
+	<audio controls="controls" id="recordControl">
+		<!--<source id="oggFile" src="" type="audio/ogg"/>-->
+	</audio>
+
+
+
+
+
+	<div id="record-addbtn">
+		<div id="record-addbtn-wrapper">
+			녹음파일: <input id="fileupload" type="file" name="files" multiple >
+			<br>
+			<button id='upload-btn' type='button'>등록</button>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<div class="recorder_wrapper">
 		<div class="play">
 			<button class="play_btn" id="button_1">
@@ -103,7 +136,16 @@
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../js/create.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script	src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script	src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script	src="../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script	src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+<script src="../js/create0.js"></script>
+
+
 <script id="FairyTaleContent-template" type="text/x-handlebars-template">
     {{#each list}}
      <li>
@@ -115,5 +157,5 @@
       </li>
     {{/each}}
 </script>
-    
+
 </html>

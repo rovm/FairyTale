@@ -18,7 +18,7 @@ form {
 	color: yellowgreen;
 }
 
-fieldset {
+#qnaField {
 	margin: 0px auto;
 	background: #fdfdfd;
 	width: 60%;

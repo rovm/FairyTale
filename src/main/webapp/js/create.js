@@ -1,4 +1,4 @@
-var no = 0;	
+var no = 0;
 try {
 	no = location.href.split('?')[1].split('=')[1]
 	console.log(no)
@@ -8,12 +8,12 @@ var msg_box = document.getElementById( 'msg_box' ),
 button = document.getElementById( 'button' ),
 canvas = document.getElementById( 'canvas' ),
 lang = {
-	'mic_error': '마이크를 설치해 주세요', //Ошибка доступа к микрофону
-	'press_to_start': '버튼을 눌러 녹음하세요!', //Нажмите для начала записи
-	'recording': '녹음중', //Запись
-	'play': '시작', //Воспроизвести
-	'stop': '정지', //Остановить
-	'download': 'Download' //Скачать
+	'mic_error': '마이크를 설치해 주세요',
+	'press_to_start': '버튼을 눌러 녹음하세요!',
+	'recording': '녹음중',
+	'play': '시작',
+	'stop': '정지',
+	'download': 'Download'
 		// 'use_https': 'This application in not working over insecure connection. Try to use HTTPS'
 },
 time;
@@ -35,7 +35,8 @@ if ( navigator.mediaDevices.getUserMedia === undefined ) {
 
 		return new Promise( function( resolve, reject ) {
 			getUserMedia.call( navigator, constrains, resolve, reject );
-		} );
+		}
+	);
 	}
 }
 
@@ -192,12 +193,12 @@ if(no != 0){
 		Slider()
 	})
 } else{
-	location.href='bookList.html' 
+	location.href='bookList.html'
 }
 
 
 //슬라이드
-function Slider(){ 
+function Slider(){
 	jQuery(document).ready(function ($) {
 
 		var slideCount = $('#slider ul li').length;
@@ -214,7 +215,7 @@ function Slider(){
 		function moveLeft() {
 			$('#slider ul').animate({
 				left: + slideWidth
-			}, 200, function () {	
+			}, 200, function () {
 				$('#slider ul li:last-child').prependTo('#slider ul');
 				$('#slider ul').css('left', '');
 			});
@@ -241,5 +242,5 @@ function Slider(){
 }
 
 $("#pre_btn").on("click", function(){
-	location.href='bookList.html' 
+	location.href='bookList.html'
 })

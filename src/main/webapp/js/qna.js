@@ -1,19 +1,20 @@
-//var email = require("emailjs");
-//
-//var server = email.server.connect({
-//	user: 'rovm92@naver.com',
-//	pass: 'qkdl7748!!',
-//    host: "smtp.naver.com",
-//    port: 465,
-//    ssl: true
-//});
-//
-//var message = {
-//	    text: "전송될 내용",
-//	    from: 'rovm92@naver.com',
-//	    to: 'chun2331@naver.com',
-//	    subject: "제목"
-//	};
-//	server.send(message, function (err, message) {
-//	    console.log(err || message);      
-//});
+var email = $("#email"),
+    phone = $("#phone"),
+    comment = $("#comment");
+
+$("#sendToMail").on('click', function(){
+   emailjs.init("user_Dt9oz4QlqMeV4GWjgVrkl");
+   emailjs.send("fairytale","template_O438q2Jn",{email: email.val(), phone: phone.val() , comment: comment.val()})
+  .then(function(response) {
+    swal({
+		  title: "전송 완료!",
+			type: "success",
+			confirmButtonColor: "#9ACD32",
+			confirmButtonText: "OK",
+			html: true
+		});
+      console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+  }, function(err) {
+      console.log("FAILED. error=", err);
+  });
+})

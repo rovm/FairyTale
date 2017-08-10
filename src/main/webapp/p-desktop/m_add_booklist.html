@@ -59,7 +59,7 @@ div {
 			 <div id='book-text'></div>
 			 <div id='page'></div>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -100,7 +100,7 @@ div {
 				processalways : function(e, data) {
 					console.log('fileuploadprocessalways()...');
 					console.log(data.files);
-					
+
 					var imagesDiv = $('#images-div'),
 					    bookText = $('#book-text'),
 					    page = $('#page');
@@ -122,17 +122,17 @@ div {
 						data.submit();
 					});
 				},
-				
-				
+
+
 				submit : function(e, data) { // 서버에 전송하기 직전에 호출된다.
 					console.log('submit()...');
 					data.formData = {
-						name : $('#name').val(),
-					
+						name : $('#name').val()
+
 					};
 				},
-				
-				
+
+
 				done : function(e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
 					console.log('done()...');
 					console.log(data.result);

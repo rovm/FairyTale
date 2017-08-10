@@ -7,12 +7,9 @@
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/main.css">
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/test.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/logout.css">
 
-    <script type="text/javascript" src="../Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
-    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/responsiveCarousel.min.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+
     <title>main</title>
 
   </head>
@@ -21,9 +18,11 @@
       <div class="Heder_fform">
       <div class="Header_form">
         <!-- <div calss= -->
+        <a id="Header_logo" class="Header_menu">로고
+        </a>
         <a id="Header_menual" class="Header_menu" href="menual.html">메뉴얼
         </a>
-        <a id="Header_community" class="Header_menu" href="best.html">커뮤니티
+        <a id="Header_community" class="Header_menu"  href="best.html">커뮤니티
         </a>
         <a id="Header_create" class="Header_menu" href="create.html">동화만들기
         </a>
@@ -33,11 +32,13 @@
         </a>
         <a id="Header_camera" class="Header_menu" href="photozip.html">사진첩
         </a>
-        <a id="Header_login" class="Header_menu" href="login.html">로그인
-        </a>
-        <a id="Header_sign" class="Header_menu" href="join.html">회원가입
-        </a>
         <a id="Header_qna" class="Header_menu" href="notice.html">고객센터
+        </a>
+        <a id="Header_login" class="Header_menu login-link" href="login.html">로그인
+        </a>
+        <a id="Header_logout" class="Header_menu logout-link">로그아웃
+        </a>
+        <a id="Header_sign" class="Header_menu sign-link" href="join.html">회원가입
         </a>
       </div>
       </div>
@@ -435,6 +436,13 @@
   </div>
 </div>
 
+<script type="text/javascript" src="../Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/responsiveCarousel.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+<script src="../js/auth.js"></script>
     <script type="text/javascript">
     $(function(){
       $('.crsl-items').carousel({

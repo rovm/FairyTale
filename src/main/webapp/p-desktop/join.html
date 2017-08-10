@@ -4,43 +4,45 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/sweetalert/dist/sweetalert.css">
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/join.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/logout.css">
     <title>join</title>
   </head>
   <body>
     <div id="container">
-      <div class="form">
-      <div id="logo" class="menu">
-        <a href="main.html">동화와만나요</a>
+  		<div class="form">
+        <div id="logo" class="menu">
+          <a href="main.html">동화와만나요</a>
+        </div>
+        <div id="menual" class="menu">
+          <a href="menual.html">메뉴얼</a>
+        </div>
+        <div id="community" class="menu">
+          <a href="best.html">커뮤니티</a>
+        </div>
+        <div id="create" class="menu">
+          <a href="create.html">동화만들기</a>
+        </div>
+        <div id="storeage" class="menu">
+          <a href="storage.html">작품보관함</a>
+        </div>
+        <div id="myWright" class="menu">
+          <a href="mywrite_board.html">내글관리</a>
+        </div>
+        <div id="camera" class="menu">
+          <a href="photozip.html">사진첩</a>
+        </div>
+        <div id="login" class="menu">
+          <a href="login.html">로그인</a>
+        </div>
+        <div id="sign" class="menu">
+          <a href="join.html">회원가입</a>
+        </div>
+        <div id="qna" class="menu">
+          <a href="notice.html">고객센터</a>
+        </div>
       </div>
-      <div id="menual" class="menu">
-        <a href="menual.html">메뉴얼</a>
-      </div>
-      <div id="community" class="menu">
-        <a href="best.html">커뮤니티</a>
-      </div>
-      <div id="create" class="menu">
-        <a href="create.html">동화만들기</a>
-      </div>
-      <div id="storeage" class="menu">
-        <a href="storage.html">작품보관함</a>
-      </div>
-      <div id="myWright" class="menu">
-        <a href="mywrite_board.html">내글관리</a>
-      </div>
-      <div id="camera" class="menu">
-        <a href="photozip.html">사진첩</a>
-      </div>
-      <div id="login" class="menu">
-        <a href="login.html">로그인</a>
-      </div>
-      <div id="sign" class="menu">
-        <a href="join.html">회원가입</a>
-      </div>
-      <div id="qna" class="menu">
-        <a href="notice.html">고객센터</a>
-      </div>
-    </div>
       <div id="box">
         <div id="img"></div><div id="menual-Name">회원가입</div>
         </div>
@@ -52,14 +54,14 @@
     <div class="join_container">
     <div class="row main">
       <div class="main-login main-center">
-        <form class="form-horizontal" method="post" action="#">
+        <form action="/p-desktop/" class="form-horizontal" method="post" action="#">
 
           <div class="form-group">
             <label for="name" class="cols-sm-3 control-label">이름</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="name" id="name"  placeholder="이름"/>
+                <input type="text" class="form-control" name="name" id="name"  placeholder="이름" />
               </div>
             </div>
           </div>
@@ -69,7 +71,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="email" id="email"  placeholder="이메일"/>
+                <input type="email" class="form-control" name="email" id="email"  placeholder="이메일" />
               </div>
               <button type="button" class="btn email-btn">
                 <i class="fa fa-envelope"></i>
@@ -82,7 +84,7 @@
           <div class="form-group">
             <div class="cols-sm-3">
               <div class="input-group">
-                <input type="text" class="form-control" name="email-auth" id="email-auth"  placeholder="인증번호"/>
+                <input type="text" class="form-control" name="email-auth" id="email-auth"  placeholder="인증번호" />
                 <button type="button" class="btn auth-btn">인증</button>
               </input>
               </div>
@@ -95,7 +97,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password"  placeholder="비밀번호"/>
+                <input type="password" class="form-control" name="password" id="password"  placeholder="비밀번호" />
               </div>
             </div>
           </div>
@@ -116,7 +118,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="tel" id="tel"  placeholder="휴대폰번호" />
+                <input type="tel" class="form-control" name="tel" id="tel"  placeholder="휴대폰번호"/>
               </div>
             </div>
           </div>
@@ -163,14 +165,9 @@
       </div>
   </body>
   <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+  <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
   <script type="text/javascript" src="../js/join.js"></script>
-  <script>
-  $('.email-btn').on('click', function () {
-    alert("전송되었습니다")
-  })
-  $('.auth-btn').on('click', function () {
-    alert("인증되었습니다")
-  })
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-  </script>
+
 </html>

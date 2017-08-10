@@ -9,36 +9,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import donghwa.domain.Member;
 import donghwa.service.FaqService;
 
 @RestController
 @RequestMapping("/p-desktop/")
 public class FaqControl {
-  
+
   @Autowired ServletContext servletContext;
   @Autowired FaqService faqService;
-  
+
   @RequestMapping("FAQ_list")
   public JsonResult list(
       @RequestParam String selectBtn,
-      @RequestParam(defaultValue="1") int pageNo, 
+      @RequestParam(defaultValue="1") int pageNo,
       @RequestParam(defaultValue="5") int pageSize) throws Exception {
-    
+
     HashMap<String,Object> dataMap = new HashMap<>();
     dataMap.put("list", faqService.list(pageNo, pageSize, selectBtn));
     dataMap.put("totalCount", faqService.getSize(selectBtn));
-    
+
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
-  
+
 }
-
-
-
-
-
-
-
-
-
