@@ -35,13 +35,6 @@ $(document).ready(function(){
 		wrapWindowByMask();
 	});
 
-	//닫기 버튼을 눌렀을 때
-	$('.window .close').click(function (e) {  
-		//링크 기본동작은 작동하지 않도록 한다.
-		e.preventDefault();  
-		$('#mask, .window').hide();  
-	});       
-
 	//검은 막을 눌렀을 때
 	$('#mask').click(function () {  
 		$(this).hide();  
@@ -57,8 +50,8 @@ $('#fileupload').fileupload({
 	autoUpload : false, // 파일을 추가할 때 자동 업로딩 하지 않도록 설정.
 	disableImageResize : /Android(?!.*Chrome)|Opera/
 	.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
-	previewMaxWidth : 100, // 미리보기 이미지 너비
-	previewMaxHeight : 100, // 미리보기 이미지 높이
+	previewMaxWidth : 360, // 미리보기 이미지 너비
+	previewMaxHeight : 250, // 미리보기 이미지 높이
 	previewCrop : true, // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
 	processalways : function(e, data) {
 		console.log('fileuploadprocessalways()...');
@@ -70,7 +63,7 @@ $('#fileupload').fileupload({
 			try {
 				if (data.files[i].preview.toDataURL) {
 					$("<img>").attr('src',data.files[i].preview.toDataURL())
-					.css('width', '100px').appendTo(imagesDiv);
+					.css('width', '360').appendTo(imagesDiv);
 				}
 			} catch (err) {
 			}
@@ -172,7 +165,6 @@ var gallery = (function(){
 	    events:function(){
 	      var self = this;
 	      var close = $('.gallery_item_full');
-	      close.append('<a href="#" data-js="cl" class="cl">X</a>');
 	      // Get all data js and add clickOn function
 	      $('.gallery_item_preview a[data-js]').click(function() {
 	        jsNo = $(this).attr("data-js")
@@ -181,7 +173,7 @@ var gallery = (function(){
 	      });
 	      
 	      // close on click
-	      $('.gallery_item_full a').on("click",function(){
+	      $('.gallery_item_full').on("click",function(){
 	        self.fx_out($('.gallery_item_full'));
 	        self.fx_out($('.box'));
 	      });
@@ -218,3 +210,4 @@ function deleteBtn() {
     })
 	})	
 }
+

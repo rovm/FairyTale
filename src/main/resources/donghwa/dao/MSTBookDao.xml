@@ -9,7 +9,6 @@
     <id column="bkno" property="bkno"/>
     <result column="mbk_titl" property="MBK_titl"/>
     <result column="mbk_cont" property="MBK_cont"/>
-    <result column="mbk_page" property="MBK_page"/>
     <result column="mbk_div" property="MBK_div"/>
     <result column="bk_page" property="BK_Page"/>
     <result column="bk_cont" property="BK_cont"/>
@@ -18,7 +17,7 @@
   </resultMap>
 
   <select id="selectList" resultMap="MSTBookMap" parameterType="map">
-    select  mst.mbkno, mbk_titl, mbk_cont, mbk_page, mbk_div, bk_img
+    select  mst.mbkno, mbk_titl, mbk_cont, mbk_div, bk_img
     from bkpage bk inner join mstbook mst on mst.mbkno= bk.mbkno 
     <where>
       bk_page = 1

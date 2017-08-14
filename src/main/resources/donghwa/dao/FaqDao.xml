@@ -23,7 +23,7 @@
       <choose>
         <when test="selectBtn == '분류'"></when>
         <otherwise>
-            and ans_con= #{selectBtn}
+            and ans_div= #{selectBtn}
         </otherwise>
       </choose>
     </where>
@@ -35,7 +35,7 @@
 <select id="countAll" resultType="int" parameterType="String">
     select count(*)
     from faq f inner join boardwrite bw on f.bwno=bw.bwno
-    <if test="_parameter != '분류'">where ans_con = #{_parameter}</if>
+    <if test="_parameter != '분류'">where ans_div = #{_parameter}</if>
   </select>
   
 </mapper>

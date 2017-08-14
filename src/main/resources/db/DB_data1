@@ -1,0 +1,199 @@
+/******************************MEMBER DB추가****************************************************/
+insert into member (mno, email, pass, posi, name, tel) values(1, "master1@test.com", password("1111"), "master", "관리자1", "1111-1111");
+insert into member (mno, email, pass, posi, name, tel) values(2, "master2@test.com", password("1111"), "master", "관리자2", "1111-2222");
+insert into member (mno, email, pass, posi, name, tel) values(3, "master3@test.com", password("1111"), "master", "관리자3", "1111-3333");
+insert into member (mno, email, pass, posi, name, tel) values(4, "master4@test.com", password("1111"), "master", "관리자4", "1111-4444");
+insert into member (mno, email, pass, posi, name, tel) values(5, "master5@test.com", password("1111"), "master", "관리자5", "1111-5555");
+insert into member (mno, email, pass, posi, name, tel) values(6, "master6@test.com", password("1111"), "master", "관리자6", "1111-6666");
+insert into member (mno, email, pass, posi, name, tel) values(7, "master7@test.com", password("1111"), "master", "관리자7", "1111-7777");
+insert into member (mno, email, pass, posi, name, tel) values(8, "master8@test.com", password("1111"), "master", "관리자8", "1111-8888");
+insert into member (mno, email, pass, posi, name, tel) values(9, "master9@test.com", password("1111"), "master", "관리자9", "1111-9999");
+insert into member (mno, email, pass, posi, name, tel) values(10, "master10@test.com", password("1111"), "master", "관리자10", "1111-0000");
+
+
+/******************************FAQ DB추가****************************************************/
+
+/*사용방법*/
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "녹음기능은 어떻게 사용하는 건가요?", "마이크 설치 후 녹음 버튼을 눌러주시면 됩니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "명예의 전당은 어떻게 올라가나요?", "일정기간동안에 가장 높은 추천수를 받은 회원이 올라가게 됩니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "동화책은 언제 추가 되나요?", "관리자 마음대로 추가됩니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "동화책은 어떻게 만드나요?", "상단 메뉴의 메뉴얼 버튼을 눌러 확인해주세요~", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "제가 만든 동화책은 어디서 확인하나요?", "로그인 후 작품보관함에서 확인 가능합니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "마이크가 필요한가요?", "네, 녹음기능을 사용하시려면 마이크가 필요합니다^^", curdate(), "faq");
+
+
+/*회원가입*/
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "녹음 기능은 회원만 사용할 수 있나요?", "네, 회원가입 후 사용 가능합니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "회원가입은 어떻게 하나요?", "상단메뉴의 회원가입을 클릭하거나, 로그인창에서 회원가입 할 수 있습니다~", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "로그인 방법은 어떻게 되나요?", "홈페이지 회원가입을통한 로그인과, 카카오톡, 페이스북, 구글계정으로 로그인 할 수 있습니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "회원가입할 때 필요한 정보는 무엇인가요?", "메일주소, 이름, 전화번호 정보만 필요로 합니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "아이디를 잃어버리면 어떻게 하나요?", "아이디/비밀번호 찾기에서 찾을 수 있습니다.", curdate(), "faq");
+
+
+
+
+/*****************FAQ 문의분류 추가********************/
+
+/*사용방법*/
+insert into faq(bwno, ans_div)
+values(1, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(2, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(3, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(4, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(5, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(6, "사용방법");
+
+
+/*회원가입*/
+insert into faq(bwno, ans_div)
+values(7, "회원가입");
+
+insert into faq(bwno, ans_div)
+values(8, "회원가입");
+
+insert into faq(bwno, ans_div)
+values(9, "회원가입");
+
+insert into faq(bwno, ans_div)
+values(10, "회원가입");
+
+insert into faq(bwno, ans_div)
+values(11, "회원가입");
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (1, '아기돼지 삼형제', '아기돼지 삼형제가 각각 다른재로를 구해 집을 짓고 늑대의 공격에 대처하는 이야기', '전래동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (2,'백설공주', '원전은 북유럽의 구전 동화. 백설공주가 왕비였으나 미모의 후처에게 쫓겨났느니, 복수의 과정이 지나치게 잔인하다느니, 근친혼 관계이니 등 여러 가지 내용이 있었으나 17세기 초, 그림형제에 의해 오늘날과 같은 형태로 정리되었다.', '명작동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (3, '인어공주', '안데르센은 서정적인 정서와 아름다운 환상의 세계, 그리고 따스한 휴머니즘이 담긴 수많은 동화를 남겼다. 그는 어려운 환경 속에서 갖은 고생 끝에 작가로서 성공을 거두었는데 그러한 그의 경험들이 그의 작품 속에 맑고 따뜻하게 녹아 있다.',  '명작동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (4, '삼년고개', '옛날에 할아버지와 할머니가 살았다. 할아버지가 나무를 해서 장에 갖다 팔아서 먹고 살았는데, 장에 가려면 삼년고개라는 고개를 넘어야 했다. 삼년고개는 그 고개에서 넘어지면 삼년 밖에 못 산다 하여 붙여진 이름이었다', '전래동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (5, '호랑이와 곶감', '먹이를 찾아 마을로 내려온 호랑이는 호랑이라는 말에는 울음을 그치지 않던 아이가 곶감이라는 소리에 울음을 뚝 그치는...', '전래동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (6, '빨간부채 파란부채', '나무꾼이 길을 가다가 빨간 부채와 파란 부채를 줍는다. 빨간 부채를 부치면 코가 길어지고, 파란 부채를 부치면 코가...', '전래동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (7,'여우와 황새', '여우가 황새를 저녁식사에 초대해서 황새를 골려줄려고 바닥이 납작한 접시에 음식을 담아주자 화가난 황새가 여우를 집으...', '이솝우화');
+ 
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (8,'토끼와 거북', '깡총깡총 잘도 뛰어 다니는 토끼와 느릿느릿 거북이가 경주를 합니다. 누가 이길까요?', '이솝우화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (9, '해와 바람', '하늘에 사는 온화한 해님이 사람들에게 사랑받자 샘이 많은 바람은 누가 더 힘이 센지 내기를 하자고 해요.', '이솝우화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (10, '잭과 콩나무', '홀어머니와 함께 사는 잭에게 유일한 수입원은 소 한 마리이다. 그러나 소가 나이가 들어 더이상 우유를 만들어 낼 수 없게 되자, 잭은 소를 팔기 위해 길을 떠난다.', '명작동화');
+
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (11,'방귀쟁이 개똥이', '마을에서 제일 가는 방귀쟁이 개똥이! 마을 사람들은 개똥이의 방귀 때문에 코를 막기 일쑤였어요. 그러던 어느날, 할머니는 개똥이의 방귀를 막을 좋은 방법을 알려주는데..', '생활동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (12, '신데렐라', '못된 계모와 계모가 데려온 언니들 틈에서 구박을 받았으나, 그 속에서도 고운 심성을 잃지 않은 신데렐라가 왕궁이 주최하는 무도회에서 왕자와 사랑에 빠져 자신의 환경을 탈출하는 내용을 담고 있다.', '명작동화');
+
+insert into mstbook(mbkno, mbk_titl, mbk_cont, mbk_div) 
+values (13, '한자구슬 찾기 수업', '땡땡땡학교의 수업 시간! 한자구슬을 찾고 있는 별똥삼형제를 위해 한자구슬 찾기 수업이 이루어지고, 꿍꿍도장으로 가르칠 교, 배울 학구슬을 찾아낸 용에게 선생님과 뚜또, 쪼롱이가 먼저 선, 날 생구슬 찾기를 도와준다.', '학습동화');
+
+
+/* 아기돼지 삼형제 */
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(1, 1, "아기돼지 삼형제 표지", "/upload/아기돼지삼형제.jpg", "/upload/record01.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(1, 2, "아기돼지 삼형제 1번파일", "/upload/아기돼지삼형제2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(1, 3, "아기돼지 삼형제 2번파일", "/upload/아기돼지삼형제3.jpg", "/upload/record03.ogg");
+
+/* 백설공주 */
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(2, 1, "백설공주 푝지2", "/upload/백설공주표지.jpg", "/upload/record01.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(2, 2, "백설공주 1번파일", "/upload/백설공주.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(2, 3, "백설공주 2번파일", "/upload/백설공주1.jpg", "/upload/record03.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(2, 4, "백설공주 3번파일", "/upload/백설공주2.jpg", "/upload/record01.ogg");
+
+/* 인어공주 */
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(3, 1, "인어공주 표지2", "/upload/인어공주표지2.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(3, 2, "인어공주 1번파일", "/upload/인어공주.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(3, 3, "인어공주 2번파일", "/upload/인어공주2.jpg", "/upload/record03.ogg");
+
+/* 삼년고개 */
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(4, 1, "삼년고개 표지", "/upload/삼년고개.jpg", "/upload/record01.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(4, 2, "삼년고개 1번파일", "/upload/삼년고개2.jpg", "/upload/record02.ogg");
+
+/* 호랑이와곶감 */
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(5, 1, "호랑이와곶감 표지", "/upload/호랑이와곶감.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(5, 2, "호랑이와곶감 1번파일", "/upload/호랑이와곶감2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(5, 3, "호랑이와곶감 2번파일", "/upload/호랑이와곶감3.jpg", "/upload/record03.ogg");
+ 
+/* 빨간부채파란부채 */
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(6, 1, "빨간부채파란부채 표지", "/upload/빨간부채파란부채.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(6, 2, "빨간부채파란부채  1번파일", "/upload/빨간부채파란부채2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(6, 3, "빨간부채파란부채  2번파일", "/upload/빨간부채파란부채3.jpg", "/upload/record03.ogg");
+
+/* 여우와 황새*/
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(7, 1, "여우와 황새 표지", "/upload/여우와 황새.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(7, 2, "여우와 황새 1번파일", "/upload/여우와 황새2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(7, 3, "여우와 황새 2번파일", "/upload/여우와 황새3.jpg", "/upload/record03.ogg");
+
+/* 토끼와 거북*/
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(8, 1, "토끼와 거북 표지", "/upload/토끼와 거북.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(8, 2, "토끼와 거북 1번파일", "/upload/토끼와 거북2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(8, 3, "토끼와 거북 2번파일", "/upload/토끼와 거북3.jpg", "/upload/record03.ogg");
+
+/* 해와 바람*/
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(9, 1, "해와 바람 표지", "/upload/해와 바람.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(9, 2, "해와 바람  1번파일", "/upload/해와 바람2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(9, 3, "해와 바람  2번파일", "/upload/해와 바람3.jpg", "/upload/record03.ogg");
+
+/* 잭과 콩나무*/
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(10, 1, "잭과 콩나무 표지", "/upload/잭과 콩나무.jpg", "/upload/record01.ogg"); 
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(10, 2, "잭과 콩나무  1번파일", "/upload/잭과 콩나무2.jpg", "/upload/record02.ogg");
+insert into bkpage(mbkno, bk_page, bk_cont, bk_img, bk_rec) values(10, 3, "잭과 콩나무  2번파일", "/upload/잭과 콩나무3.jpg", "/upload/record03.ogg");
+
+
+/* 방귀쟁이 개똥이*/
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(31, 11, 1, "방귀쟁이 개똥이 표지", "/upload/방귀쟁이 개똥이.jpg", "/upload/record01.ogg"); 
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(32, 11, 2, "방귀쟁이 개똥이  1번파일", "/upload/방귀쟁이 개똥이2.jpg", "/upload/record02.ogg");
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(33, 11, 3, "방귀쟁이 개똥이  2번파일", "/upload/방귀쟁이 개똥이3.jpg", "/upload/record03.ogg");
+
+/* 신데렐라*/
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(34, 12, 1, "신데렐라 표지", "/upload/신데렐라.jpg", "/upload/record01.ogg"); 
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(35, 12, 2, "신데렐라  1번파일", "/upload/신데렐라2.jpg", "/upload/record02.ogg");
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(36, 12, 3, "신데렐라  2번파일", "/upload/신데렐라3.jpg", "/upload/record03.ogg");
+
+/* 한자구슬 찾기 수업*/
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(37, 13, 1, "한자구슬 찾기 수업 표지", "/upload/한자구슬2.jpg", "/upload/record01.ogg"); 
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(38, 13, 2, "한자구슬 찾기 수업  1번파일", "/upload/한자구슬.jpg", "/upload/record02.ogg");
+insert into bkpage(bkno, mbkno, bk_page, bk_cont, bk_img, bk_rec) values(39, 13, 3, "한자구슬 찾기 수업  2번파일", "/upload/한자구슬3.jpg", "/upload/record03.ogg");
+

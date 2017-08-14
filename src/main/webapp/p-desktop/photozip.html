@@ -16,35 +16,35 @@
 	<div id="container">
 		<div class="form">
 			<div id="logo" class="menu">
-				<a>동화와만나요</a>
-			</div>
-			<div id="menual" class="menu">
-				<a>메뉴얼</a>
-			</div>
-			<div id="community" class="menu">
-				<a>커뮤니티</a>
-			</div>
-			<div id="create" class="menu">
-				<a>동화만들기</a>
-			</div>
-			<div id="storeage" class="menu">
-				<a>작품보관함</a>
-			</div>
-			<div id="myWright" class="menu">
-				<a>내글관리</a>
-			</div>
-			<div id="camera" class="menu">
-				<a>사진첩</a>
-			</div>
-			<div id="login" class="menu">
-				<a>로그인</a>
-			</div>
-			<div id="sign" class="menu">
-				<a>회원가입</a>
-			</div>
-			<div id="qna" class="menu">
-				<a>고객센터</a>
-			</div>
+          <a href="main.html">동화와만나요</a>
+        </div>
+        <div id="menual" class="menu">
+          <a href="menual.html">메뉴얼</a>
+        </div>
+        <div id="community" class="menu">
+          <a href="best.html">커뮤니티</a>
+        </div>
+        <div id="create" class="menu">
+          <a href="create.html">동화만들기</a>
+        </div>
+        <div id="storeage" class="menu">
+          <a href="storage.html">작품보관함</a>
+        </div>
+        <div id="myWright" class="menu">
+          <a href="mywrite_board.html">내글관리</a>
+        </div>
+        <div id="camera" class="menu">
+          <a href="photozip.html">사진첩</a>
+        </div>
+        <div id="login" class="menu">
+          <a href="login.html">로그인</a>
+        </div>
+        <div id="sign" class="menu">
+          <a href="join.html">회원가입</a>
+        </div>
+        <div id="qna" class="menu">
+          <a href="notice.html">고객센터</a>
+        </div>
 		</div>
 		<div id="box">
 			<div id="img"></div>
@@ -59,18 +59,28 @@
   
     <div id="mask"></div>
     <div class="window">
-      <div id="mask-handler">
-        <input type="button" href="#" class="close" value="X" />
-      </div>
       <div class="uploadform"> 
         <div id="manager-addbtn">
           <div id="manager-addbtn-wrapper">
-            <div class="manager-uploadform" id="manager-addbtn-titl">제목 <input id="upload-titl"></div>
-            <div class="manager-uploadform" id="manager-addbtn-cont">설명 <input id="upload-description"></div>
-            <div class="manager-uploadform" id="manager-addbtn-photo">사진 <input id="fileupload" type="file" name="files" multiple></div>
-            <div id="images-div"></div><br>
-            <div id="manager-upload-btn"><button id="upload-btn" type='button'>등록</button></div>
+          
+          <div class="input-group">
+              <span class="input-group-addon">제목</span>
+              <input type="text" id="upload-titl" class="form-control input-input">
+            </div>
+            <span class="help-block"></span>
+
+           <div class="input-group">
+             <span class="input-group-addon">내용</span>
+             <input id="upload-description" class="form-control input-input">
+           </div>
             
+            
+            <div id="manager-addbtn-photo"> 
+              <button id="file-select" class="btn btn-success"> 파일선택</button>
+              <input id="fileupload" type="file" name="files" multiple>
+            </div>
+            <div id="images-div"> 사진을 올려주세요</div><br>
+            <div id="manager-upload-btn"><button id="upload-btn" class="btn btn-success" type='button'>등록</button></div>
           </div>
         </div>
       </div>
@@ -117,7 +127,7 @@
 		</div>
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<!-- <script src='../jquery_ui/jquery-ui.js'></script> -->
+<script src='../jquery_ui/jquery-ui.js'></script>
 <script src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
 <script src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
 <script src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
@@ -147,6 +157,9 @@
   </div>
 </div>
 {{/each}}
+</script>
+<script type="text/javascript">
+    $('.uploadform').draggable();
 </script>
 
 </html>

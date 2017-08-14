@@ -426,6 +426,7 @@ body{
 	text-align: right;
 }
 
+/********************modal**************************/
 
   #mask {  
     position:absolute;  
@@ -435,60 +436,65 @@ body{
     left:0;
     top:0;
   }
+
   .window{
     display: none;
     position:absolute;  
     left:100px;
     top:100px;
     z-index:10000;
-  }
-
-/********************modal**************************/
-  .uploadform{
-    magin-left: 50%;
-    width: 400px;
-    height: auto;
-    background-color: white;
-    border-radius: 10px;
-  }
-  
-/*   div{
-    border: 1px solid red;
-  } */
-  
-  #mask-handler{
-    height: 30px;
-  }
-  
-  .manager-uploadform{
-    height: 30px;
-    margin: 20px;
-    width: 100%;
-  }
-  #manager-addbtn-photo{
-    float: left;
-  }
-  #fileupload{
-    margin-left: 40px;
-    margin-top: -20px;
-    
-  }
-  #manager-upload-btn{
     text-align: center;
   }
-  #upload-btn{
-    margin: 10px auto;
+
+  .uploadform{
+    width: 400px;
+    height: 540px;;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center; 
   }
-  
-/* div{
-  border: 1px solid red;
-  } */
-  
+
+  #manager-addbtn-photo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+
+  #manager-addbtn-wrapper{
+    padding: 15px;
+  }
+
 .gallery_item_preview a{
   border: 0.5px dotted darkgray;  
   border-radius: 3px;
 }
-  
+
+#images-div{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 270px;
+	width: 370px;
+	text-align: center;
+	line-height: 270px;
+ 	border: 1px dotted gray;
+	color: darkgray;
+}
+
+#manager-addbtn-photo{
+	position: relative;
+}
+
+#file-select{
+  margin-left: -290px; 
+	}
+
+#fileupload{
+  opacity: 0;
+  div: 1px black;
+  position: absolute;
+  margin-top: -25px;
+}
+
 .deleteBtn{
 	color: gray;
 	font-size: 300%;
