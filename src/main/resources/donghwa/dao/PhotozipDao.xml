@@ -32,9 +32,9 @@
 </select>
 
 <select id="selectList" resultMap="photozipMap" parameterType="map">
-  select bf.bwno, bw_titl, bw_con, filepath, filename
+  select bf.bwno, bw_titl, bw_con, filepath, filename ,bw_div
   from boardfile bf, boardwrite bw
-  where mno= #{mno} and bf.bwno = bw.bwno
+  where mno= #{mno} and bf.bwno = bw.bwno and bw_div='photozip'
   limit #{startIndex}, #{pageSize}
 </select>
   

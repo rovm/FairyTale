@@ -33,3 +33,23 @@ $('#login-btn').on('click',function(e) {
       $('.sign-link').css('display', 'block');
     })
   })
+  
+  
+  
+  
+//   //<![CDATA[
+//  function kakaoLogin() {
+//        // 사용할 앱의 JavaScript 키를 설정해 주세요.
+//        Kakao.init('eaeddfa1ade8ed3a16075bd54bb6f4b6');
+//        // 카카오 로그인 버튼을 생성합니다.
+//        Kakao.Auth.createLoginButton({
+//          container: '#kakao-login-btn',
+//          success: function(authObj) {
+//            alert(JSON.stringify(authObj));
+//          },
+//          fail: function(err) {
+//             alert(JSON.stringify(err));
+//          }
+//        });
+//}
+      //]]>

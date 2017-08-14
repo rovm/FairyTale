@@ -10,7 +10,8 @@ var tbody = $('.box-form'),
     Ccount = $("#comCount"),
     filePath = $('#filePath'),
     mno,
-    boardmno;
+    boardmno,
+    posi;
 
 var no = 0;
 try {
@@ -134,9 +135,12 @@ function displayList(pageNo){
 
 function userInfo() {
 	$.getJSON('userinfo.json', function(result) {
-		if(result.data != null) {
+		console.log("데이터",result)
+	    if(result.data != null) {
 			mno = result.data.no;
-			if(mno == boardmno) {
+			posi = result.data.posi;
+		
+			if(posi == 'master') {
 			$('#board-update').css("display", "block")
 			$('#board-delete').css("display", "block")
 			$('#wdt').css("width", "186px")

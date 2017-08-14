@@ -1,3 +1,11 @@
+function checkLoginState(){
+	FB.getLoginStatus(function(response) {
+		console.log("하하하하")
+		console.log(response)
+	})
+}
+
+
 
 window.fbAsyncInit = function() {
                 FB.init({
@@ -17,22 +25,33 @@ window.fbAsyncInit = function() {
                }(document, 'script', 'facebook-jssdk'));
 
                function facebooklogin() {
-
+            	   	console.log("dddddddddddddd")
   //페이스북 로그인 버튼을 눌렀을 때의 루틴.
                      FB.login(function(response) {
-                       var fbname;
-                       var accessToken = response.authResponse.accessToken;
-                       FB.api('/me', function(user) {
-                         fbname = user.name;
-                         $.post("콜백url", { "userid": user.id, "email":user.email, "username": fbname, "fbaccesstoken":accessToken},
-                         function (responsephp) {
-                           if(responsephp=="N"){
-                            location.replace('/unmember/memberrege?flag=1');
-                           }else{
-                            location.replace('/');
-                           }
-                         });
-                       });
+                    	 console.log("dddddddddddddd")
+                    	 window.close();
+                       //var fbname;
+                       //var accessToken = response.authResponse.accessToken;
+//                       FB.api('/me?fields=id,name,email', function(response) {
+//                    	   
+//                    	   console.log("dddddddddddddd")
+//                         fbname = user.name;
+//                         console.log(response);
+//                         $.post("login2.json", { 
+//                        	 console.log("dddddddddddddd")
+//                        	 "email":response.email, 
+//                        	 "password": response.email
+//                         }, function (result) {
+//                        	 
+//                        	 
+//                        	 if(result.status=="success"){
+//                        		 location.href = 'main.html'
+//                        	 }
+//                          else{
+//                            location.replace('/');
+//                           }
+//                         });
+//                       });
                      }, {scope: "user_about_me,publish_stream,read_friendlists,offline_access,email,user_birthday"});
                    }
 
