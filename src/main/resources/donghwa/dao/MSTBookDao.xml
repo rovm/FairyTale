@@ -6,6 +6,7 @@
 
   <resultMap type="MSTBook" id="MSTBookMap">
     <id column="mbkno" property="no"/>
+    <id column="bkno" property="bkno"/>
     <result column="mbk_titl" property="MBK_titl"/>
     <result column="mbk_cont" property="MBK_cont"/>
     <result column="mbk_page" property="MBK_page"/>
@@ -39,9 +40,9 @@
   </select>
   
   <select id="selectOne" resultMap="MSTBookMap" parameterType="int">
-    select  mstbook.mbkno, mbk_titl, mbk_cont, bk_page, bk_cont, bk_img, bk_rec
+    select  bkno,mstbook.mbkno, mbk_titl, mbk_cont, bk_page, bk_cont, bk_img, bk_rec
     from mstbook inner join bkpage on mstbook.mbkno= bkpage.mbkno
-    where bkpage.mbkno = #{memberNo}
+    where bkpage.mbkno = #{No}
   </select>
   
 </mapper>

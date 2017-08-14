@@ -4,19 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <title>create</title>
-<link rel="stylesheet"
-	href="../font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/desktop/create.css">
-<link href='https://fonts.googleapis.com/css?family=Karla'
-	rel='stylesheet' type='text/css'>
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../node_modules/sweetalert/dist/sweetalert.css">
+<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+
 
 </head>
 <body>
-	<div id="container">
-		<div class="form">
+  <div id="container">
+    <div class="form">
       <div id="logo" class="menu">
         <a href="main.html">동화와만나요</a>
       </div>
@@ -48,47 +46,45 @@
         <a href="notice.html">고객센터</a>
       </div>
     </div>
-		<div id="box">
-			<div id="img"></div>
-			<div id="menual-Name">동화만들기</div>
-		</div>
-	</div>
+    <div id="box">
+      <div id="img"></div>
+      <div id="menual-Name">동화만들기</div>
+    </div>
+  </div>
 
-	<div id="main-text">
-		<div class="btn_box">
-			<a id="pre_btn" class="btn btn-warning" href="bookList.html">목록으로</a>
-		</div>
-	</div>
+  <div id="main-text">
+    <div class="btn_box">
+      <a id="pre_btn" class="btn btn-warning" href="bookList.html">목록으로</a>
+    </div>
+  </div>
 
-	<div id="slider">
-		<a class="control_next"><i class="fa fa-chevron-right"></i></a> <a
-			class="control_prev"><i class="fa fa-chevron-left"></i></a>
+  <div id="slider">
+    <a class="control_next"><i class="fa fa-chevron-right"></i></a> <a
+      class="control_prev"><i class="fa fa-chevron-left"></i></a>
 
-		<ul id="FairyTale_Content"></ul>
-	</div>
+    <ul id="FairyTale_Content"></ul>
+  </div>
 
-	<!-- 녹음버튼 -->
-	<button type="button" id="record-btn">녹음버튼</button>
-
-
-	<audio controls="controls" id="recordControl">
-		<!--<source id="oggFile" src="" type="audio/ogg"/>-->
-	</audio>
+  <!-- 녹음버튼 -->
+  <button type="button" id="record-btn">녹음버튼</button>
 
 
+  <audio controls="controls" id="recordControl">
+    <!--<source id="oggFile" src="" type="audio/ogg"/>-->
+  </audio>
 
 
 
-	<div id="record-addbtn">
-		<div id="record-addbtn-wrapper">
-			녹음파일: <input id="fileupload" type="file" name="files" multiple >
-			<br>
-			<button id='upload-btn' type='button'>등록</button>
-
-		</div>
-	</div>
 
 
+  <!-- <div id="record-addbtn">
+    <div id="record-addbtn-wrapper">
+      녹음파일: <input id="fileupload" type="file" name="files" multiple >
+      <br>
+      <button id='upload-btn' type='button'>등록</button>
+
+    </div>
+  </div> -->
 
 
 
@@ -101,48 +97,52 @@
 
 
 
-	<div class="recorder_wrapper">
-		<div class="play">
-			<button class="play_btn" id="button_1">
-				<i class="fa fa-play"></i>
-			</button>
-			<p id="msg_box_1"></p>
-		</div>
-		<div class="recorder">
-			<button class="record_btn" id="button"></button>
-			<p id="msg_box"></p>
-		</div>
-	</div>
-	<!-- 녹음버튼끝 -->
 
-	<div class="footer_container">
-		<div class="footer_domain-form">
 
-			<span id="footer_a" class="menu">도움말 </span> <span id="footer_b"
-				class="footer_menu">이용약관 </span> <span id="footer_c"
-				class="footer_menu">운영원칙 </span> <span id="footer_d"
-				class="footer_menu">개인정보 처리방침 </span> <span id="footer_e"
-				class="footer_menu">책임의 한계와 법적고지 </span> <span id="footer_f"
-				class="footer_menu">고객센터 </span> <span id="footer_g"
-				class="footer_menu">제휴제안 </span> <span id="footer_h"
-				class="footer_menu">정보보호인증사이트 </span><br> <span
-				class="footer_use"><font color="gray" face="serif">본
-					콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
-			<span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
-					© FTBook Corp. All Rights Reserved.</font></span>
-		</div>
-	</div>
+  <div class="recorder_wrapper">
+    <div class="play">
+      <button class="play_btn" id="button_1">
+        <i class="fa fa-play"></i>
+      </button>
+      <p id="msg_box_1"></p>
+    </div>
+    <div class="recorder">
+      <button class="record_btn" id="button"></button>
+      <p id="msg_box"></p>
+    </div>
+  </div>
+  <!-- 녹음버튼끝 -->
+
+  <div class="footer_container">
+    <div class="footer_domain-form">
+
+      <span id="footer_a" class="menu">도움말 </span> <span id="footer_b"
+        class="footer_menu">이용약관 </span> <span id="footer_c"
+        class="footer_menu">운영원칙 </span> <span id="footer_d"
+        class="footer_menu">개인정보 처리방침 </span> <span id="footer_e"
+        class="footer_menu">책임의 한계와 법적고지 </span> <span id="footer_f"
+        class="footer_menu">고객센터 </span> <span id="footer_g"
+        class="footer_menu">제휴제안 </span> <span id="footer_h"
+        class="footer_menu">정보보호인증사이트 </span><br> <span
+        class="footer_use"><font color="gray" face="serif">본
+          콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
+      <span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
+          © FTBook Corp. All Rights Reserved.</font></span>
+    </div>
+  </div>
 
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-<script	src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
-<script	src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
-<script	src="../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-<script	src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
-<script	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-<script	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+<script src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
 <script src="../js/create0.js"></script>
 
 

@@ -1,8 +1,19 @@
-var no = 0;
+var no = 0,
+	mno,
+	StartPage,
+	MovePage,
+	EndPage;
 try {
 	no = location.href.split('?')[1].split('=')[1]
 	console.log(no)
 } catch (err) {}
+
+
+
+$.getJSON('userinfo.json', function(result) {
+	mno = result.data.no;
+	console.log(mno)
+})
 
 var msg_box = document.getElementById( 'msg_box' ),
 button = document.getElementById( 'button' ),
@@ -107,11 +118,12 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 					//파일업로드
 					$.post('upload3.json', {
-						'UrlEncode': UrlEncode
+						'UrlEncode': UrlEncode,
+						'mno' : mno,
+						'bkno': MovePage
 					}, function(result) {
 						if(result.status=="success")
 						{console.log(result);
-							location.href = 'login.html'
 							// e.preventDefault();
 						} else {
 							console.log(result)
@@ -202,7 +214,15 @@ if(no != 0){
 		var generatedHTML = templateFn(result.data)
 		$("#FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
 		$("#FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
+		console.log(data)
 		Slider()
+		StartPage = data.list[0].bkno;
+		MovePage = StartPage;
+		EndPage = StartPage + data.list.length -1;
+
+		console.log("Start " + StartPage)
+		console.log("End " + EndPage)
+		
 	})
 } else{
 	location.href='bookList.html'
@@ -218,30 +238,6 @@ function arrayBufferToBase64( buffer ) {
     }
     return window.btoa( binary );
 }
-
-
-
-
-
-
-$('#upload-btn').click(function() {
-	$.post('upload3.json', {
-		'audioSrc' : audioSrc
-	}, function(result) {
-		if(result.status=="success")
-		{console.log(result);
-			// e.preventDefault();
-		} else {
-			console.log(result.data)
-		}
-	}, 'json')
-	// e.preventDefault();
-})
-
-
-
-
-
 
 
 //슬라이드
@@ -279,10 +275,41 @@ function Slider(){
 
 		$('a.control_prev').click(function () {
 			moveLeft();
+			MovePage -= 1;
+			if(MovePage < StartPage){
+				MovePage = EndPage;
+			}
+			console.log(MovePage)
 		});
 
 		$('a.control_next').click(function () {
 			moveRight();
+			MovePage += 1;
+			
+			if(MovePage > EndPage){
+				swal({
+					  title: "저장하시겠습니까?",
+						confirmButtonColor: "#FFA500",
+						showCancelButton: true,
+						confirmButtonText: "YES",
+						html: true
+
+					}
+			, function() {
+//						if(isConfirm == true){
+//							console.log("넘어가라///")
+//						} else {
+//							MovePage = StartPage;
+//							console.log("첫페이지로..")
+//						}
+//					}
+				
+			})
+			MovePage = StartPage;
+			
+			} 
+			
+			console.log(MovePage)
 		});
 
 	});

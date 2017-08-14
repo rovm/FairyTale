@@ -35,6 +35,15 @@ h1 {
   clear: both;
 }
 
+
+/*재생바*/
+#recordControl {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+
+
 /*목록으로*/
 .btn_box{
   margin: 30px auto 20px auto;
