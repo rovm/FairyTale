@@ -10,7 +10,7 @@ GRANT ALL ON FAIRYTALEDB.* TO 'FAIRYTALE'@'localhost';
 /*************************Test**************************/
 CREATE USER 'test'@'localhost' IDENTIFIED BY '1111';
 
-CREATE DATABASE TESTDB
+CREATE DATABASE testdb
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 

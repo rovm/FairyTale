@@ -300,20 +300,20 @@ ALTER TABLE `QNA`
   ADD CONSTRAINT `FK_BOARDWRITE_TO_QNA` -- 게시글 -> 1대1문의
     FOREIGN KEY (
       `BWNO` -- 게시글번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `BOARDWRITE` ( -- 게시글
       `BWNO` -- 게시글번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 자주묻는질문
 ALTER TABLE `FAQ`
   ADD CONSTRAINT `FK_BOARDWRITE_TO_FAQ` -- 게시글 -> 자주묻는질문
     FOREIGN KEY (
       `BWNO` -- 게시글번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `BOARDWRITE` ( -- 게시글
       `BWNO` -- 게시글번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 명예의전당게시물
 ALTER TABLE `HoF`
@@ -321,118 +321,118 @@ ALTER TABLE `HoF`
     FOREIGN KEY (
       `MNO`,  -- 회원번호
       `CTNO`  -- 제작동화책일련번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `WITHVIEW` ( -- 추천게시글
       `MNO`,  -- 회원번호
       `CTNO`  -- 제작동화책일련번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 추천게시글
 ALTER TABLE `WITHVIEW`
   ADD CONSTRAINT `FK_MEMBER_TO_WITHVIEW` -- 회원 -> 추천게시글
     FOREIGN KEY (
       `MNO` -- 회원번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `MEMBER` ( -- 회원
       `MNO` -- 회원번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 추천게시글
 ALTER TABLE `WITHVIEW`
   ADD CONSTRAINT `FK_CUSTBOOK_TO_WITHVIEW` -- 제작동화책 -> 추천게시글
     FOREIGN KEY (
       `CTNO` -- 제작동화책일련번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    )
     REFERENCES `CUSTBOOK` ( -- 제작동화책
       `CTNO` -- 제작동화책일련번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 사용자정의페이지
 ALTER TABLE `CUSTPAGE`
   ADD CONSTRAINT `FK_BKPAGE_TO_CUSTPAGE` -- 기본페이지 -> 사용자정의페이지
     FOREIGN KEY (
       `BKNO` -- 페이지 고유번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `BKPAGE` ( -- 기본페이지
       `BKNO` -- 페이지 고유번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 사용자정의페이지
 ALTER TABLE `CUSTPAGE`
   ADD CONSTRAINT `FK_CUSTBOOK_TO_CUSTPAGE` -- 제작동화책 -> 사용자정의페이지
     FOREIGN KEY (
       `CTNO` -- 제작동화책일련번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `CUSTBOOK` ( -- 제작동화책
       `CTNO` -- 제작동화책일련번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 게시글
 ALTER TABLE `BOARDWRITE`
   ADD CONSTRAINT `FK_MEMBER_TO_BOARDWRITE` -- 회원 -> 게시글
     FOREIGN KEY (
       `MNO` -- 회원번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    )
     REFERENCES `MEMBER` ( -- 회원
       `MNO` -- 회원번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 게시판 첨부 파일
 ALTER TABLE `BOARDFILE`
   ADD CONSTRAINT `FK_BOARDWRITE_TO_BOARDFILE` -- 게시글 -> 게시판 첨부 파일
     FOREIGN KEY (
       `BWNO` -- 게시글번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    )
     REFERENCES `BOARDWRITE` ( -- 게시글
       `BWNO` -- 게시글번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 코멘트
 ALTER TABLE `COMMENT`
   ADD CONSTRAINT `FK_MEMBER_TO_COMMENT` -- 회원 -> 코멘트
     FOREIGN KEY (
       `MNO` -- 회원번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    )
     REFERENCES `MEMBER` ( -- 회원
       `MNO` -- 회원번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 코멘트
 ALTER TABLE `COMMENT`
   ADD CONSTRAINT `FK_BOARDWRITE_TO_COMMENT` -- 게시글 -> 코멘트
     FOREIGN KEY (
       `BWNO` -- 게시글번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `BOARDWRITE` ( -- 게시글
       `BWNO` -- 게시글번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 기본페이지
 ALTER TABLE `BKPAGE`
   ADD CONSTRAINT `FK_MSTBOOK_TO_BKPAGE` -- 동화책 -> 기본페이지
     FOREIGN KEY (
       `MBKNO` -- 동화책번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `MSTBOOK` ( -- 동화책
       `MBKNO` -- 동화책번호
-    );
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 제작동화책
 ALTER TABLE `CUSTBOOK`
   ADD CONSTRAINT `FK_MSTBOOK_TO_CUSTBOOK` -- 동화책 -> 제작동화책
     FOREIGN KEY (
       `MBKNO` -- 동화책번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    )
     REFERENCES `MSTBOOK` ( -- 동화책
       `MBKNO` -- 동화책번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- 제작동화책
 ALTER TABLE `CUSTBOOK`
   ADD CONSTRAINT `FK_MEMBER_TO_CUSTBOOK` -- 회원 -> 제작동화책
     FOREIGN KEY (
       `MNO` -- 회원번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) 
     REFERENCES `MEMBER` ( -- 회원
       `MNO` -- 회원번호
-    );
+    ) ON DELETE CASCADE ON UPDATE CASCADE;
