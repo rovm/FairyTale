@@ -33,7 +33,6 @@ function displayList2(pageNo){
     currPageNo = pageNo
     pageNoTag.text(currPageNo)
     console.log(result)
-    
     if(currPageNo == 1){
       prevBtn.prop('disabled', true)
     } else {
@@ -45,7 +44,6 @@ function displayList2(pageNo){
     } else {
       nextBtn.prop('disabled', false)
     }
-    console.log("어디서 안되는거야2", templateFn);
     
   })
 }

@@ -48,6 +48,8 @@
       <div id="img"></div><div id="menual-Name">함께보기</div>
       </div>
     </div>
+    
+    
 
 
     <div id="com-somenu">
@@ -73,11 +75,38 @@
 
     </div>
 
-	<div class="create-box">
-		<div id="titl">제목 <input></input></div>
-		<div>내용<textarea></textarea></div>
-		<div><button>파일 첨부</button></div>
-	</div>
+	  <div class="create-box">
+    <div class="write-title">
+      <div class="title-input">
+      <input name="titl" id="bw_titl" >
+      <div id="title-box">&nbsp;&nbsp;제 목</div>
+      </div>
+    
+      <div class="cont-input"><textarea name="content" id="bw_con" placeholder="내용을 입력하세요...."></textarea>
+      </div>
+      
+      <div class="btn-box clearfix">
+        <button id="updatebtn">변경</button>
+        <button id="conupdatebtn">변경</button>
+        <button id="addbtn" style="margin-right: 10px;">올리기</button>
+        <button id="conaddbtn" style="margin-right: 10px;">올리기</button>
+        <div id="images-div"></div>
+        <div id="select-btn"> + 작품 선택</div>
+      </div>
+    </div>
+  </div>
+	
+	<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
 	<div class="footer_container">
@@ -105,7 +134,8 @@
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../js/together.js"></script>
+<script src="../js/together_create.js"></script>
+<script src="../js/login.js"></script>
 
 </html>
 
