@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="donghwa.dao.CustbookDao">
+
+  <resultMap type="custbook" id="custbookMap">
+    <id column="ctno" property="no"/>
+    <result column="mbkno" property="mbkno"/>
+    <result column="mno" property="mno"/>
+    <result column="ct_dscp" property="ct_dscp"/>
+    <result column="ct_date" property="ct_date"/>
+    <result column="ct_public" property="ct_public"/>
+  </resultMap>
+
+
+
+
+<insert id="insert" parameterType="custbook" useGeneratedKeys="true" keyColumn="ctno" keyProperty="no">
+  insert into custbook(mno, mbkno, ct_dscp, ct_date, ct_public) 
+  values(#{mno}, #{mbkno}, "설명", curdate(), "no")
+</insert>
+
+
+  <update id="update" parameterType="custbook" useGeneratedKeys="true" keyColumn="ctno" keyProperty="no">
+    update custbook set 
+      ct_dscp = #{ct_dscp},
+      ct_date = curdate()
+    where ctno=#{no}
+  </update>
+  
+</mapper>
+
+
+
+

@@ -1,4 +1,4 @@
-var naver_id_login = new naver_id_login("QlviNYhWZzZOo_bIq3IR", "http://192.168.0.4/p-desktop/main.html");
+var naver_id_login = new naver_id_login("QlviNYhWZzZOo_bIq3IR", "http://192.168.0.18/p-desktop/main.html");
   // 접근 토큰 값 출력
   alert(naver_id_login.oauthParams.access_token);
   // 네이버 사용자 프로필 조회
@@ -8,8 +8,8 @@ var naver_id_login = new naver_id_login("QlviNYhWZzZOo_bIq3IR", "http://192.168.
     alert(naver_id_login.getProfileData('email'));
     alert(naver_id_login.getProfileData('nickname'));
     alert(naver_id_login.getProfileData('name'));
-    
-    
+
+
     /* window.close(); */
     $.post('add2.json', {
       'name' : naver_id_login.getProfileData('name'),
@@ -35,7 +35,7 @@ var naver_id_login = new naver_id_login("QlviNYhWZzZOo_bIq3IR", "http://192.168.
 	          console.log(result.data)
 	        }
 	        }, 'json')
-      
+
         // e.preventDefault();
       } else {
         console.log(result.data)

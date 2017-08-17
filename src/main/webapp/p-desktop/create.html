@@ -66,12 +66,12 @@
   </div>
 
   <!-- 녹음버튼 -->
-  <button type="button" id="record-btn">녹음버튼</button>
+  <!-- <button type="button" id="record-btn">녹음버튼</button> -->
 
 
-  <audio controls="controls" id="recordControl">
-    <!--<source id="oggFile" src="" type="audio/ogg"/>-->
-  </audio>
+  <!-- <audio controls="controls" id="recordControl">
+
+  </audio> -->
 
 
 
@@ -99,10 +99,20 @@
 
 
 
+
+
+
+
+
+
+
   <div class="recorder_wrapper">
     <div class="play">
-      <button class="play_btn" id="button_1">
+      <button class="play_btn" id="basic_play" >
         <i class="fa fa-play"></i>
+      </button>
+      <button class="play_btn" id="basic_stop" >
+        <i class="fa fa-stop"></i>
       </button>
       <p id="msg_box_1"></p>
     </div>
@@ -112,6 +122,30 @@
     </div>
   </div>
   <!-- 녹음버튼끝 -->
+
+
+
+
+  <!-- 모달폼 -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" id="yes">만들기</button>
+          <button type="button" id="no">둘러보기</button>
+          <button type="button" id="close">X</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
 
   <div class="footer_container">
     <div class="footer_domain-form">
@@ -131,6 +165,12 @@
     </div>
   </div>
 
+
+
+
+
+
+
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -145,13 +185,16 @@
 <script src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
 <script src="../js/create0.js"></script>
 
-
+<!--  <img src="{{BK_IMG}}">-->
 <script id="FairyTaleContent-template" type="text/x-handlebars-template">
     {{#each list}}
      <li>
         <div class="all">
           <div class="content_box">
-            <img src="{{BK_IMG}}">
+
+            <audio controls="controls" class="record{{bkno}}">
+              <source src="{{BK_REC}}" type="audio/ogg" >
+            </audio>
           </div>
         </div>
       </li>

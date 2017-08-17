@@ -13,7 +13,7 @@
     <result column="bk_page" property="BK_Page"/>
     <result column="bk_cont" property="BK_cont"/>
     <result column="bk_img" property="BK_IMG"/>
-    <result column="bk_path" property="BK_REC"/>
+    <result column="bk_rec" property="BK_REC"/>
   </resultMap>
 
   <select id="selectList" resultMap="MSTBookMap" parameterType="map">

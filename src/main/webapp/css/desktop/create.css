@@ -5,6 +5,14 @@ body {
   font-family: 'Roboto Light';
 }
 
+#savetext{
+	width: 400px;
+	height: 80px;
+	padding: 5px 10px;
+
+}
+
+
 body,
 html {
     width: 100%;
@@ -301,17 +309,19 @@ h1 {
   margin-left: 10px;
 }
 
-.play {
+/*.play {
     display: inline-block;
     text-align: center;
     width: 200px;
     max-width: 100%;
     margin-bottom: 100px;
     margin-top: 20px;
-}
+}*/
 
 
 .play_btn {
+  margin-top: 20px;
+  margin-right: 20px;
   width: 100px;
   height: 100px;
   bottom: 0px;
@@ -321,19 +331,7 @@ h1 {
   background-color: #FFF;
 }
 
-/*.play_btn {
-  margin-top: 20px;
-    width: 100px;
-    height: 100px;
-    font-family: 'Material Icons';
-    font-size: 48px;
-    color: #e74c3c;
-    background: none;
-    border: 2px solid #e74c3c;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.15s linear;
-}*/
+
 
 .play_btn:hover {
     transition: 0.15s linear;

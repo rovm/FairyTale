@@ -1,8 +1,97 @@
 var no = 0,
 	mno,
+	mbkno,
 	StartPage,
 	MovePage,
-	EndPage;
+	EndPage,
+	CreateBook,
+	ctno;
+
+
+	var basic_play = $('#basic_play'),
+			basic_stop = $("#basic_stop");
+
+
+// function basic_btn() {
+// 	if(basic_play.click()){
+// 		$(".record" + MovePage)[0].play();
+// 		basic_play.css("display", "none")
+// 		basic_stop.css("display", "block")
+// 		if(basic_stop.click()){
+// 			$(".record" + MovePage)[0].pause();
+// 			basic_play.css("display", "block")
+// 			basic_stop.css("display", "none")
+// 		}
+// 	}
+// }
+
+
+
+
+
+
+
+$(document).ready(function() {
+	$(".record_btn").css("display", "none");
+	$("#recordControl").css("display", "none");
+	$("#basic_play").css("display", "none");
+	$("#basic_stop").css("display", "none");
+  $("#myModal").modal();
+
+
+$('#yes').on('click', function(){
+	CreateBook = 1;
+	console.log("yes누르고 모달창닫습니다..")
+	$('#myModal').modal('hide');
+
+	$.post('addCustbook.json', {
+		'mno': mno,
+		'mbkno': no
+
+	}, function(result) {
+		ctno = result.data
+	 if(result.status=="success")
+	 {console.log("ctno"+result.data);
+		 // e.preventDefault();
+	 } else {
+		 console.log(result.data)
+	 }
+	}, 'json')
+	$(".record_btn").css("display", "block");
+	$("#recordControl").css("display", "block");
+	$("#basic_play").css("display", "block");
+	$("#basic_stop").css("display", "none");
+	$('#basic_play').on('click', function() {
+		$("#basic_stop").css("display", "block");
+		$("#basic_play").css("display", "none");
+	})
+	$('#basic_stop').on('click', function() {
+		$(".record" + MovePage)[0].pause();
+		$("#basic_play").css("display", "block");
+		$("#basic_stop").css("display", "none");
+	})
+})
+
+$('#no').on('click', function(){
+	CreateBook = 0;
+	console.log("no누르고 모달창닫습니다..")
+	$('#myModal').modal('hide');
+	$(".record_btn").css("display", "none");
+	$("#recordControl").css("display", "none");
+	$("#basic_play").css("display", "none");
+	$("#basic_stop").css("display", "none");
+
+})
+ });//ready
+
+
+
+
+
+
+
+
+
 try {
 	no = location.href.split('?')[1].split('=')[1]
 	console.log(no)
@@ -66,7 +155,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 	analys,
 	recodeFile;
 
-	$('#record-btn').click(function () {
+	$('.record_btn').click(function () {
 		if ( btn_status == 'inactive' ) {
 			start();
 		} else if ( btn_status == 'recording' ) {
@@ -212,6 +301,8 @@ if(no != 0){
 		var data = result.data
 		var templateFn = Handlebars.compile($('#FairyTaleContent-template').text())
 		var generatedHTML = templateFn(result.data)
+
+
 		$("#FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
 		$("#FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
 		console.log(data)
@@ -222,7 +313,7 @@ if(no != 0){
 
 		console.log("Start " + StartPage)
 		console.log("End " + EndPage)
-		
+
 	})
 } else{
 	location.href='bookList.html'
@@ -238,6 +329,10 @@ function arrayBufferToBase64( buffer ) {
     }
     return window.btoa( binary );
 }
+
+
+
+
 
 
 //슬라이드
@@ -285,34 +380,44 @@ function Slider(){
 		$('a.control_next').click(function () {
 			moveRight();
 			MovePage += 1;
-			
+
 			if(MovePage > EndPage){
+				if(CreateBook == 1) {
 				swal({
 					  title: "저장하시겠습니까?",
+					  text: "<textarea id='savetext' style='resize:none;' placeholder='동화책에 대한 설명을 적어주세요~'></textarea>",
 						confirmButtonColor: "#FFA500",
 						showCancelButton: true,
-						confirmButtonText: "YES",
+						confirmButtonText: "Yes",
 						html: true
 
+					}, function(isConfirm) {
+						if(isConfirm == true){
+							console.log($('#savetext').val());
+							$.post('updateCustbook.json', {
+								'no': ctno,
+							 'ct_dscp': $('#savetext').val()
+						 }, function(result) {
+							 location.href = 'storage.html'
+						 }, 'json')
+							$("#myModal").modal();
+						}
+					})
+				}
+					MovePage = StartPage;
+					if(CreateBook == 0) {
+						$("#myModal").modal();
+
 					}
-			, function() {
-//						if(isConfirm == true){
-//							console.log("넘어가라///")
-//						} else {
-//							MovePage = StartPage;
-//							console.log("첫페이지로..")
-//						}
-//					}
-				
-			})
-			MovePage = StartPage;
-			
-			} 
-			
+			}
+
 			console.log(MovePage)
 		});
 
 	});
+	$("#basic_play").on('click', function () {
+		$(".record" + MovePage)[0].play();
+	})
 }
 
 $("#pre_btn").on("click", function(){
