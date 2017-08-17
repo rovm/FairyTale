@@ -22,7 +22,6 @@ function displayList2(pageNo){
 	// 서버에서 강사 목록 데이터를 받아 온다.
   $.getJSON('suchList.json', {'pageNo':pageNo, 'pageSize':pageSize , 'keyword':word.val()}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
   var totalCount = result.data.totalCount
-  console.log("이거",result.data)
   var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1: 0)
 
   var templateFn = Handlebars.compile($('#tbody-template').text())
@@ -32,17 +31,20 @@ function displayList2(pageNo){
     
     currPageNo = pageNo
     pageNoTag.text(currPageNo)
-    console.log(result)
     if(currPageNo == 1){
       prevBtn.prop('disabled', true)
+      prevBtn.addClass("disable")
     } else {
       prevBtn.prop('disabled', false)
+      prevBtn.removeClass("disable")
     }
 
     if(currPageNo == lastPageNo){
       nextBtn.prop('disabled', true)
+      nextBtn.addClass("disable")
     } else {
       nextBtn.prop('disabled', false)
+      nextBtn.removeClass("disable")
     }
     
   })
@@ -95,19 +97,20 @@ function displayList(pageNo){
     pageNoTag.text(currPageNo)
     if(currPageNo == 1){
       prevBtn.prop('disabled', true)
+      prevBtn.addClass("disable")
     } else {
       prevBtn.prop('disabled', false)
+      prevBtn.removeClass("disable")
     }
 
     if(currPageNo == lastPageNo){
       nextBtn.prop('disabled', true)
+      nextBtn.addClass("disable")
     } else {
       nextBtn.prop('disabled', false)
+      nextBtn.removeClass("disable")
     }
-    console.log("어디서 안되는거야1", generatedHTML);
     
-console.log(result)
-
   })
 }
 //displayList(1)
@@ -122,7 +125,9 @@ $(document.body).on('click', '.board', function(event){
 
 
 	$.getJSON('userinfo.json', function(result) {
+		
 		if(result.data != null) {
 			mno = result.data.no;
 		}		
+		
 	})
