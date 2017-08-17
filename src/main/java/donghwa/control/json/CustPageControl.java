@@ -3,38 +3,42 @@
  */
 package donghwa.control.json;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import donghwa.domain.Photozip;
-import donghwa.service.PhotozipService;
+import donghwa.domain.CustPage;
+import donghwa.service.CustPageService;
 
 @RestController
 @RequestMapping("/p-desktop/") 
 public class CustPageControl {
-//
-//  @Autowired CustPageService custpageService;
-//  @Autowired ServletContext ctx;
-//
-//  @RequestMapping(path="recUpload")
-//  public JsonResult recUpload(Record record, MultipartFile[] files) throws Exception {
-//
-//      files[0].transferTo(new File(ctx.getRealPath("/recUpload/" + files[0].getOriginalFilename())));
-//      
-//      record.setFilePath("/recUpload/" + files[0].getOriginalFilename());
-//      record.setFileName(files[0].getOriginalFilename());
-//     
-//      custpageService.add(record);
-//    System.out.println(record);
-//    return new JsonResult(JsonResult.SUCCESS, "ok");
-//  }
-
+  
+  @Autowired ServletContext servletContext;
+  @Autowired CustPageService custPageService;
+  
+  @RequestMapping("CustPage_list")
+  public JsonResult list(
+      @RequestParam(defaultValue="1") int pageNo, 
+      @RequestParam(defaultValue="12") int pageSize,@RequestParam int mno) throws Exception {
+    
+    HashMap<String,Object> dataMap = new HashMap<>();
+    dataMap.put("list", custPageService.list(pageNo, pageSize, mno));
+    dataMap.put("totalCount", custPageService.getSize(mno));
+    
+    return new JsonResult(JsonResult.SUCCESS, dataMap);
+  }
+  
+  @RequestMapping("storage-detail")
+  public JsonResult detail(int ctno) throws Exception {
+    HashMap<String,Object> dataMap = new HashMap<>();
+    dataMap.put("list", custPageService.get(ctno));
+  
+    return new JsonResult(JsonResult.SUCCESS, dataMap);
+}
 }

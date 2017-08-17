@@ -118,15 +118,6 @@ ALTER TABLE `CUSTPAGE`
       `BKNO`  -- 페이지 고유번호
     );
 
--- 사용자정의페이지 유니크 인덱스
-CREATE UNIQUE INDEX `UIX_CUSTPAGE`
-  ON `CUSTPAGE` ( -- 사용자정의페이지
-    `BKNO` ASC -- 페이지 고유번호
-  );
-
-ALTER TABLE `CUSTPAGE`
-  MODIFY COLUMN `CTNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '제작동화책일련번호';
-
 -- 회원
 CREATE TABLE `MEMBER` (
   `MNO`   INTEGER     NOT NULL COMMENT '회원번호', -- 회원번호

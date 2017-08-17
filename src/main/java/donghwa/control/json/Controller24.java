@@ -33,7 +33,7 @@ public class Controller24 {
 		
 		custPage.setCust_REC("/upload/" + newFilename + ".ogg");
 		
-		custPageService.add(custPage);
+//		custPageService.add(custPage);
 		
 		return new JsonResult(JsonResult.SUCCESS, "ok");
 	}

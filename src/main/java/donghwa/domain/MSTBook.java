@@ -6,6 +6,7 @@ public class MSTBook extends BKPage{
   String MBK_cont;
   String MBK_div;
   
+  
   @Override
   public String toString() {
     return "MSTBook [no=" + no + ", MBK_titl=" + MBK_titl + ", MBK_cont=" + MBK_cont + ", MBK_div=" + MBK_div + "]";

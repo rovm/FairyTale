@@ -5,17 +5,65 @@
 <mapper namespace="donghwa.dao.CustPageDao">
 
   <resultMap type="custPage" id="custPageMap">
-    <id column="mno" property="mno"/>
+    <id column="ctno" property="ctno"/>
     <id column="bkno" property="bkno"/>
+    <id column="MBKno" property="MBKno"/>
+    <id column="BK_Page" property="BK_Page"/>
+    <id column="mno" property="mno"/>
     <result column="Cust_IMG" property="Cust_IMG"/>
     <result column="Cust_REC" property="Cust_REC"/>
+    <result column="BK_cont" property="BK_cont"/>
+    <result column="BK_IMG" property="BK_IMG"/>
+    <result column="BK_REC" property="BK_REC"/>
+    <result column="Ct_Dscp" property="Ct_Dscp"/>
+    <result column="Ct_Date" property="Ct_Date"/>
+    <result column="Ct_public" property="Ct_public"/>
+    <result column="MBK_Cont" property="MBK_Cont"/>
+    <result column="MBK_Titl" property="MBK_Titl"/>
   </resultMap>
+  
+<!--   <resultMap type="BKPage" id="BKPageMap">
+    <id column="MBKno" property="MBKno"/>
+    <id column="BK_Page" property="BK_Page"/>
+    <result column="BK_cont" property="BK_cont"/>
+    <result column="BK_IMG" property="BK_IMG"/>
+    <result column="BK_REC" property="BK_REC"/>
+  </resultMap>
+  
+  <resultMap type="CustBook" id="CustBookMap">
+    <id column="mno" property="mno"/>
+    <result column="Ct_Dscp" property="Ct_Dscp"/>
+    <result column="Ct_Date" property="Ct_Date"/>
+    <result column="Ct_public" property="Ct_public"/>
+  </resultMap> -->
 
-<insert id="insert" parameterType="custPage">
-  insert into custpage(mno, bkno, cust_img, cust_rec) 
-  values(#{mno}, #{bkno}, #{Cust_IMG}, #{Cust_REC})
-</insert>
- 
+   <select id="selectList" resultMap="custPageMap" parameterType="map">
+    select cp.ctno, cp.bkno, cp.cust_img, cp.cust_rec,
+           bp.mbkno, bp.bk_page, bp.bk_cont, bp.bk_img, bp.bk_rec,
+           cb.mno, cb.ct_dscp, cb.ct_date, cb.ct_public,
+           mb.mbk_titl, mb.mbk_cont
+    from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
+                     inner join custbook cb on cp.ctno = cb.ctno
+                     left outer join mstbook mb on mb.mbkno = bp.mbkno
+    where mno = #{mno} and cp.bkno= 1
+    limit #{startIndex}, #{pageSize}
+  </select>
+  
+  <select id="countAll" resultType="int" parameterType="int">
+    select count(*)
+    from custbook
+    where mno = #{mno}
+  </select>
+  
+  <select id="selectOne" resultMap="custPageMap" parameterType="int">
+    select cp.ctno, cp.bkno, cp.cust_img, cp.cust_rec,
+       bp.bk_page, bp.bk_cont, bp.bk_img, bp.bk_rec,
+       cb.ct_dscp, mb.mbk_titl
+    from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
+                 inner join custbook cb on cp.ctno = cb.ctno
+                 left outer join mstbook mb on mb.mbkno = bp.mbkno
+    where cp.ctno = 1
+  </select>
 </mapper>
 
 
