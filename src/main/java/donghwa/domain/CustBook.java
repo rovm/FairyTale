@@ -1,39 +1,67 @@
 package donghwa.domain;
 
-public class CustBook{
+public class Custbook{
+  int no;
   int mno;
-  String Ct_Dscp;
-  String Ct_Date;
+  int mbkno;
+  String Ct_dscp;
+  String Ct_date;
   String Ct_public;
-  
-  @Override
-  public String toString() {
-    return "CustBook [mno=" + mno + ", Ct_Dscp=" + Ct_Dscp + ", Ct_Date=" + Ct_Date + ", Ct_public=" + Ct_public + "]";
-  }
-  
-  public int getMno() {
-    return mno;
-  }
-  public void setMno(int mno) {
-    this.mno = mno;
-  }
-  public String getCt_Dscp() {
-    return Ct_Dscp;
-  }
-  public void setCt_Dscp(String ct_Dscp) {
-    Ct_Dscp = ct_Dscp;
-  }
-  public String getCt_Date() {
-    return Ct_Date;
-  }
-  public void setCt_Date(String ct_Date) {
-    Ct_Date = ct_Date;
-  }
-  public String getCt_public() {
-    return Ct_public;
-  }
-  public void setCt_public(String ct_public) {
-    Ct_public = ct_public;
-  }
-  
+
+
+
+
+
+
+@Override
+public String toString() {
+	return "Custbook [no=" + no + ", mno=" + mno + ", mbkno=" + mbkno + ", Ct_dscp=" + Ct_dscp + ", Ct_date=" + Ct_date
+			+ ", Ct_public=" + Ct_public + "]";
+}
+
+
+public int getNo() {
+	return no;
+}
+public void setNo(int no) {
+	this.no = no;
+}
+public int getMno() {
+	return mno;
+}
+public void setMno(int mno) {
+	this.mno = mno;
+}
+public int getMbkno() {
+	return mbkno;
+}
+public void setMbkno(int mbkno) {
+	this.mbkno = mbkno;
+}
+public String getCt_dscp() {
+	return Ct_dscp;
+}
+public void setCt_dscp(String ct_dscp) {
+	Ct_dscp = ct_dscp;
+}
+public String getCt_date() {
+	return Ct_date;
+}
+public void setCt_date(String ct_date) {
+	Ct_date = ct_date;
+}
+public String getCt_public() {
+	return Ct_public;
+}
+public void setCt_public(String ct_public) {
+	Ct_public = ct_public;
+}
+
+
+
+
+
+
+
+
 }
