@@ -199,3 +199,7 @@ function json2() {
 		$("#video-box").append(html);
 	})	
 }
+
+function href(url) {
+	location.href = url
+}

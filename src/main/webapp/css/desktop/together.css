@@ -313,7 +313,7 @@ a{
   border-radius: 30px;
   border: 1px darkgrey solid;
   /*box-shadow: 10px 10px 20px grey;*/
-  background-color: antiquewhite;
+  background-color: rgb(205, 245, 195);
 }
 
 #video-box {

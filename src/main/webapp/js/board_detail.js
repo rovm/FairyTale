@@ -124,8 +124,10 @@ function displayList(pageNo){
 
 			if(currPageNo == 1){
 				prevBtn.prop('disabled', true)
+				prevBtn.addClass("disable")
 			} else {
 				prevBtn.prop('disabled', false)
+				prevBtn.removeClass("disable")
 			}
 			if(lastPageNo <= 1) {
 				disableBtn.css("display", 'none')
@@ -134,8 +136,10 @@ function displayList(pageNo){
 			}
 			if(currPageNo == lastPageNo){
 				nextBtn.prop('disabled', true)
+				nextBtn.addClass("disable")
 			} else {
 				nextBtn.prop('disabled', false)
+				nextBtn.removeClass("disable")
 			}
 
 		})

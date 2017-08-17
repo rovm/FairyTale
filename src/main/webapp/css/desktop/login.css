@@ -1,17 +1,12 @@
-@media ( min-width : 768px) {
+ @media ( min-width : 100px) {
 	.omb_row-sm-offset-3 div:first-child[class*="col-"] {
 		margin-left: 38%;
 	}
 }
 
-
-
-
-
-
 .omb_login {
 	margin: 0 auto;
-	width: 100%
+	width: 980px;
 }
 
 .omb_login .omb_authTitle {
@@ -37,13 +32,39 @@
 
 .omb_login .omb_socialButtons .omb_btn-facebook {
 	background: #3b5998;
+	position: absolute;
+	width: 120px;
+	height: 46px;
+	font-weight: bold;
 }
+
 
 .omb_login .omb_socialButtons .omb_btn-kakao {
 	background: #fadd02;
 	color: #2F1716;
-
+	margin-left: -150px;
+  position: absolute;
+  width: 120px;
+  font-weight: bold;
 }
+
+.omb_login .omb_socialButtons .omb_btn-naver {
+	  background: #1ec700;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    left: -133px;
+    width: 120px;
+    height: 46px;
+    z-index: 0;
+}
+#naver_id_login {
+	position: absolute;
+	opacity: 0;
+	z-index: 1;
+}
+
 
 .omb_login .omb_socialButtons .omb_btn-google {
 	background: #c32f10;
@@ -63,8 +84,9 @@
 	width: 420px;
 	background-color: #cdcdcd;
 	height: 1px;
-	margin-top: 0px !important;
+	margin-top: 21px !important;
 	margin-bottom: 0px !important;
+	position: absolute;
 }
 
 .omb_login .omb_loginOr .omb_spanOr {
@@ -253,4 +275,5 @@ margin: 0px auto;
 
 .checkbox{
 	width: 100px;
+	margin-left: 10px;
 }

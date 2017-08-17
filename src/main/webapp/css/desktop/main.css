@@ -392,10 +392,10 @@ body {
         height: 550px;
       }
     .Header_menu {
-        width: 80px;
+        width: 90px;
         top: 15px;
         height: 30px;
-        margin-left: 1px;
+        margin-left: 0%;
         float: left;
         font-size: 15px;
         color: white;

@@ -1,0 +1,44 @@
+/* 기존꺼 변경 */
+
+a:hover {
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+
+.menu {
+  top: 15px;
+  height: 24px;
+  margin-left: 30px;
+  float: left;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+/*추가된 항목 - ps.색깔 게시판에따라 바꿀것*/
+/*ps2.로그인 로그아웃 회원가입 3개를 고객센터 뒤로 위치변경해주세요*/
+
+#com-bord-s>a:hover{
+	transition: 0.25s;
+	color:rgb(150 , 119 , 237 );
+}
+#com-together-s>a:hover{
+	transition: 0.25s;
+	color:rgb(150 , 119 , 237 );
+}
+#com-king-s>a:hover{
+	transition: 0.25s;
+	color:rgb(150 , 119 , 237 );
+}
+
+#menual {
+	margin-left: 0;
+}
+
+#logout {
+	margin-left: 100px;
+	display: none;
+}
