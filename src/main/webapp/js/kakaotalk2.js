@@ -1,4 +1,3 @@
-    
     function loginWithKakao() {
     	Kakao.init('eaeddfa1ade8ed3a16075bd54bb6f4b6');
       // 로그인 창을 띄웁니다.
@@ -48,3 +47,13 @@
         }
       })
     }
+
+
+    $('#Header_logout').on("click", function(){
+    function logoutWithKakao(){
+    Kakao.Auth.logout();
+	alert('카카오 로그아웃 완료!');
+	deleteCookie( "kakao_login" );
+	createLoginKakao();
+    }
+    });
