@@ -119,13 +119,6 @@ ALTER TABLE `CUSTPAGE`
     );
 
 <<<<<<< HEAD
-=======
--- 사용자정의페이지 유니크 인덱스
-CREATE UNIQUE INDEX `UIX_CUSTPAGE`
-  ON `CUSTPAGE` ( -- 사용자정의페이지
-    `BKNO` ASC -- 페이지 고유번호
-  );
-
 
 >>>>>>> origin/master
 -- 회원
@@ -348,7 +341,7 @@ ALTER TABLE `WITHVIEW`
     )
     REFERENCES `CUSTBOOK` ( -- 제작동화책
       `CTNO` -- 제작동화책일련번호
-    ) ON DELETE CASCADE ON UPDATE CASCADE;
+    ) ON DELETE CASCADE ON UPDATE CASCADE; 
 
 -- 사용자정의페이지
 ALTER TABLE `CUSTPAGE`
