@@ -87,7 +87,8 @@ else if (fiPassword.val() == fiPasswordAuth.val() && authTrue == true ) {
 		'name' : fiName.val(),
 		'email': fiEmail.val(),
 		'password': fiPassword.val(),
-		'tel': fiTel.val()
+		'tel': fiTel.val(),
+		'posi':'user'
 	}, function(result) {
 		if(result.status=="success")
 		{console.log(result);
