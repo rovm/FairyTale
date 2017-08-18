@@ -87,6 +87,7 @@
     </div>
     
     <div id="video-box">
+    
     </div>
       <div id="" class="bottom-button-box clearfix">
         <button type="button" name="button" id="prev-btn" class="btn-info prev">이전</button>
@@ -144,7 +145,23 @@
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../js/together.js"></script>
 <script src="../js/login.js"></script>
-
+<script id="FairyTaleContent-template" type="text/x-handlebars-template">
+    {{#each list}}
+          <div class="content_box" >
+             <img src="{{BK_IMG}}">
+             <div class = "text_box">
+               <div class="titl">{{MBK_Titl}}</div>
+               <div class="date">{{Ct_Date}}</div>
+               <div class="cont">{{MBK_Cont}}</div>
+               <div class="like"><div class="name">{{name}}</div><div class="hart-box" data-no={{ctno}} onClick="like({{ctno}})"><a class="fa fa-heart-o hart" aria-hidden="true"></a></div>
+                                                                 <div style="display:none" data-no={{ctno}} class="hartfull-box" onClick="hate({{ctno}})"><a class="fa fa-heart hartfull" aria-hidden="true"></a></div></div>
+             </div>
+            <audio class="playREC{{bkno}}">
+              <source src="{{Cust_REC}}" type="audio/ogg">
+            </audio>
+          </div>
+    {{/each}}
+</script>
 
 </html>
 

@@ -327,3 +327,96 @@ a{
   /*border: 1px black solid;*/
   margin: 0 auto 20px auto;
 }
+
+/******************************************************/
+.content_box {
+	padding: 10px;
+	background-color: white;
+  border-radius: 20px;
+  border: 1px green solid;
+}
+.content_box img {
+	height: 200px;
+	width: 155px;
+	margin-left: 30px;
+}
+.text_box {
+	border-radius: 10px;
+	width: 600px;
+	height: 200px;
+	float: right;
+}
+
+.titl {
+	background-color: green;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.date {
+	margin-top: 5px;
+	text-align: right;
+	padding-right: 10px;
+	color: darkgray;
+	font-family: monospace;
+}
+.cont {
+	margin-top: 12px;
+	text-align: center;
+	height: 102px;
+}
+.like {
+	position: relative;
+	height: 27px;
+}
+.hart {
+	position:absolute;
+	color: red;
+	font-size: 24px;
+	top: 0;
+}
+
+.hartfull {
+	position:absolute;
+	color: red;
+	font-size: 24px;
+	top: 0;
+}
+.hart-box {
+	position:absolute;
+	/* border: 1px red solid; */
+	height: 24px;
+	width: 25px;
+	right: 0;
+	margin-right: 5.5px;
+	z-index: 100;
+}
+
+.hartfull-box {
+	position:absolute;
+	/* border: 1px red solid; */
+	height: 24px;
+	width: 25px;
+	right: 0;
+	margin-right: 5.5px;
+	z-index: 100;
+}
+
+.hart:hover {
+	cursor : pointer;
+	color: red;
+}
+.hartfull:hover {
+	cursor : pointer;
+	color: red;
+}
+.name {
+	position:absolute;
+	right:40px;
+	font-size: 17px;
+}
