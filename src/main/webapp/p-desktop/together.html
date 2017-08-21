@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/desktop/together.css">
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
-
+  
 </head>
 <body>
   <div id="container">
@@ -89,6 +89,7 @@
     <div id="video-box">
     
     </div>
+    
       <div id="" class="bottom-button-box clearfix">
         <button type="button" name="button" id="prev-btn" class="btn-info prev">이전</button>
           <a id="d">1</a>
@@ -126,12 +127,34 @@
 
 <!-- 모달폼 -->
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog" >
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content"  style="width: 600px; height: 450px;margin:170px auto;">
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+      
+      <div id="wrapper">
+   
+   	  <h1>Simple Image Slider</h1>
+        
+   	  <div id="slider-wrap">
+      	  <ul id="slider">
+          </ul>
+          
+           <!--controls-->
+          <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+          <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+          <div id="counter"></div>
+          
+          <div id="pagination-wrap">
+            <ul>
+            </ul>
+          </div>
+          <!--controls-->  
+                 
+      </div>
+  
+   </div>
       </div>
     </div>
 
@@ -146,20 +169,27 @@
 <script src="../js/together.js"></script>
 <script src="../js/login.js"></script>
 <script id="FairyTaleContent-template" type="text/x-handlebars-template">
-    {{#each list}}
-          <div class="content_box" >
-             <img src="{{BK_IMG}}">
+    {{#each TogetherList}}
+          <div class="content_box content_no{{ctno}}">
+             <img src="{{BK_IMG}}" onClick="modal({{ctno}})" style="cursor:pointer">
              <div class = "text_box">
-               <div class="titl">{{MBK_Titl}}</div>
-               <div class="date">{{Ct_Date}}</div>
-               <div class="cont">{{MBK_Cont}}</div>
-               <div class="like"><div class="name">{{name}}</div><div class="hart-box" data-no={{ctno}} onClick="like({{ctno}})"><a class="fa fa-heart-o hart" aria-hidden="true"></a></div>
-                                                                 <div style="display:none" data-no={{ctno}} class="hartfull-box" onClick="hate({{ctno}})"><a class="fa fa-heart hartfull" aria-hidden="true"></a></div></div>
+               <div class="titl" onClick="modal({{ctno}})" style="cursor:pointer">{{MBK_Titl}}</div>
+               <div class="date" onClick="modal({{ctno}})" style="cursor:pointer">{{Ct_Date}}</div>
+               <div class="cont" onClick="modal({{ctno}})" style="cursor:pointer">{{MBK_Cont}}</div>
+               <div class="like"><div class="name">{{name}}</div><div class="heart{{ctno}} hart-box" data-no={{ctno}} onClick="like({{ctno}})"><a class="fa fa-heart-o hart" aria-hidden="true"></a></div></div>
              </div>
+          </div>
+    {{/each}}
+</script>
+
+<script id="slider-template" type="text/x-handlebars-template">
+    {{#each TogetherDetail}}
+             <li>
+          	   <img alt="" src="{{bk_img}}">
+             </li>
             <audio class="playREC{{bkno}}">
               <source src="{{Cust_REC}}" type="audio/ogg">
             </audio>
-          </div>
     {{/each}}
 </script>
 

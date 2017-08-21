@@ -22,22 +22,22 @@ public class TogetherControl {
   @Autowired ServletContext servletContext;
   @Autowired TogetherService togetherService;
   
-  @RequestMapping("Together_list")
+  @RequestMapping("TogetherList")
   public JsonResult list(
       @RequestParam(defaultValue="1") int pageNo, 
       @RequestParam(defaultValue="12") int pageSize,@RequestParam int mno) throws Exception {
     
     HashMap<String,Object> dataMap = new HashMap<>();
-    dataMap.put("list", togetherService.list(pageNo, pageSize, mno));
+    dataMap.put("TogetherList", togetherService.list(pageNo, pageSize, mno));
     dataMap.put("totalCount", togetherService.getSize(mno));
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }
   
-  @RequestMapping("Together-detail")
-  public JsonResult detail(int ctno) throws Exception {
+  @RequestMapping("TogetherDetail")
+  public JsonResult detail(@RequestParam(defaultValue="1") int ctno) throws Exception {
     HashMap<String,Object> dataMap = new HashMap<>();
-    dataMap.put("list", togetherService.get(ctno));
+    dataMap.put("TogetherDetail", togetherService.get(ctno));
   
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }

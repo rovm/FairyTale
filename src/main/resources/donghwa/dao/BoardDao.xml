@@ -49,7 +49,7 @@
    
   <select id="countAll" resultType="int">
     select count(*)
-    from boardwrite
+    from boardwrite where bw_div = 'board'
   </select>
   
   <select id="suchCountAll" resultType="int" parameterType="map">
