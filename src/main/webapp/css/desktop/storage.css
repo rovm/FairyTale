@@ -463,3 +463,66 @@ a.control_next {
   right: 0;
   border-radius: 2px 0 0 2px;
 }
+/***********************************************************/
+#makePublic{
+	text-align: right;
+	padding: 20px 55px 10px 0px;
+}
+
+#me-view{
+	margin-left: -5px;
+}
+
+#playTools{
+	text-align: left;
+	height: 50px;
+	color: gray;
+	padding-left: 55px;
+}
+
+.modal-dialog{
+	width: 1100px;
+	margin: auto;
+}
+
+#myModal{
+	margin-top: 50px;
+}
+
+.modal-body{
+	margin-top: -50px;
+	padding-bottom: 50px;
+}
+
+
+.makePublicBtn{
+	width: 60px;
+	height: 35px;
+	/* background-color: #ff9869; */
+	color: white;
+	border: 1px solid white;
+}
+
+#recordPlay{
+	background-color: rgba(255, 0, 0, 0.54);
+	width: 60px;
+  height: 60px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#recordStop{
+	background-color: rgba(255, 0, 0, 0.54);
+  width: 60px;
+  height: 60px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#together-view{
+	border-radius: 5px 0 0 5px;
+}
+
+#me-view{
+	border-radius: 0 5px 5px 0;
+}

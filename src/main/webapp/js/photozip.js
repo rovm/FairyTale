@@ -203,8 +203,6 @@ var gallery = (function(){
 
 function deleteBtn() {
 	$(".deleteBtn").on("click", function() {
-		console.log("딜리트 버튼 눌렷다!")
-		console.log(jsNo)
 		$.getJSON('photozip_delete.json', {'no': jsNo}, function(result) {
       location.href = 'photozip.html'
     })

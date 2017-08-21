@@ -62,7 +62,7 @@
     from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
                  inner join custbook cb on cp.ctno = cb.ctno
                  left outer join mstbook mb on mb.mbkno = bp.mbkno
-    where cp.ctno = #{ctno} and cp.bkno=#{bkno}
+    where cp.ctno = #{ctno}
   </select>
   
   

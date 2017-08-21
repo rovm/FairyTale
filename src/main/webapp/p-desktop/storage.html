@@ -3,6 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>storage</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -55,11 +56,33 @@
   <div class="wrapper_inner">
     <!-- Gallery -->
     <section class="gallery">
-      
-      
     </section>
   </div>
 </div>
+
+<!-- 모달폼 -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="makePublic">
+	        <button type="button" class="makePublicBtn" id="together-view">공개</button> 
+	        <button type="button" class="makePublicBtn" id="me-view" >비공개</button>
+        </div>
+        <div id="playTools">
+	        <button id="recordPlay" class="playToolsBtn" type="button"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></button>
+	        <button id="recordStop" class="playToolsBtn" type="button"><i class="fa fa-pause-circle-o fa-3x" aria-hidden="true"></i></button>
+        </div>
+        <div class="modal-body">
+         <div id="slider">
+          <a class="control_next"><i class="fa fa-chevron-right"></i></a> 
+          <a class="control_prev"><i class="fa fa-chevron-left"></i></a>
+          <ul class="FairyTale_Content"></ul>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  modal end -->
 
   <br><br>
   <div class="standard-collection">
@@ -92,56 +115,41 @@
     <span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © FTBook Corp. All Rights Reserved. </font></span>
 
   </div>
+</div>
+
 
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/storage.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script id="Storage-template" type="text/x-handlebars-template">
 {{#each list}}
       <div class="gallery_item">
         <span class="gallery_item_preview">
-          <a href="#" data-js="{{ctno}}">
+          <a href="#" class="play_collection" data-js="{{ctno}}">
             <img src="{{BK_IMG}}" alt="" />
             <span><h3>{{MBK_Titl}}</h3></span>
             <p>{{Ct_Dscp}}</p>
           </a>
         </span>
-
-        <!-- Gallery  item full -->
-        <div data-lk="{{ctno}}" class="gallery_item_full">
-          <div class="box">
-            <div id="slider">
-              <a class="control_next"><i class="fa fa-chevron-right"></i></a> 
-              <a class="control_prev"><i class="fa fa-chevron-left"></i></a>
-              <ul class="FairyTale_Content{{ctno}}">
-              </ul>
-            </div>
-          
-            <h3>{{MBK_Titl}}</h3>
-            <p>{{Ct_Dscp}}</p>
-            <button id="recordPlay">재생하기</button>
-            <button id="recordStop">정지하기</button>
-            
-         </div>
-        </div>
       </div>
 {{/each}}
 </script>
 
 <script class="FairyTaleContent-template" type="text/x-handlebars-template">
-    {{#each list}}
-     <li>
-        <div class="all">
-          <div class="content_box">
-             <img src="{{BK_IMG}}">
-            <audio class="playREC{{bkno}}"  >
-              <source src="{{Cust_REC}}" type="audio/ogg">
-            </audio>
-          </div>
-        </div>
-      </li>
-    {{/each}}
+{{#each list}}
+  <li>
+  <div class="all">
+    <div class="content_box">
+      <img src="{{BK_IMG}}">
+      <audio controls="controls" class="playREC{{bkno}}">
+        <source src="{{BK_REC}}" type="audio/ogg" >
+      </audio>
+    </div>
+  </div>
+  </li>
+{{/each}}
+</script> 
 
-</script>
 </html>

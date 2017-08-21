@@ -1,5 +1,5 @@
-var jsNo,
-	mno,
+var	jsNo,
+    mno,
 	pageNoTag = $('#page-no'),
 	prevBtn = $('#prev-btn'),
 	nextBtn = $('#next-btn'),
@@ -7,7 +7,9 @@ var jsNo,
 	currPageNo = parseInt(pageNoTag.text()),
 	StartPage,
 	MovePage,
-	EndPage;
+	EndPage,
+	makePulic,
+	makeDscp;
 
 $.getJSON('userinfo.json', function(result) {
 	mno = result.data.no;
@@ -20,7 +22,7 @@ prevBtn.on('click', function() {
 })
 
 nextBtn.on('click', function() {
-  displayList(currPageNo + 1, mno)
+  displayList(currPageNo + 1, mno)	
 })
 
 var totalCount;
@@ -31,14 +33,17 @@ function displayList(pageNo, mno) {
 	var totalCount = result.data.totalCount;
 	var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
 	console.log(result)
-//    // 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
+	makePulic = result.data.list[0].Ct_public
+    // 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
     var templateFn = Handlebars.compile($('#Storage-template').text())
     var generatedHTML = templateFn(result.data)
     $(".gallery").text('') // tbody의 기존 tr 태그들을 지우고
     $(".gallery").html(generatedHTML) // 새 tr 태그들로 설정한다.
-
+		
     currPageNo = pageNo
     pageNoTag.text(currPageNo)
+    
+    collection_detail() 
 
     if (currPageNo == 1) {
       prevBtn.prop('disabled', true)
@@ -51,88 +56,44 @@ function displayList(pageNo, mno) {
     } else {
       nextBtn.prop('disabled', false)
     }
-
-    gallery.ready_();
   }) // getJSON()
 } // displayList()
 
-/******************************************************************/
-var gallery = (function(){
-	  'use strict';
-	  return {
-	    // this.js(obj)
-	    js: function(e){
-	    	no = e;
-	    	return $("[data-js="+e+"]");},
-	    // this.lk(obj)
-	    lk: function(e){
-	    	no = e;
-	    	return $("[data-lk="+e+"]");},
-	    // Ready functions
-	    ready_: function(){this.events();},
-	    //  functions
-	    events:function(){
-	      var self = this;
-	      var close = $('.gallery_item_full');
-	      // Get all data js and add clickOn function
-	      $('.gallery_item_preview a[data-js]').click(function() {
-	        jsNo = $(this).attr("data-js")
+function collection_detail() {
+	$(".play_collection").on("click", function() {
+		jsNo = $(this).attr("data-js")
+		
+	$(this).on("click", function() {
+	  $("#myModal").modal();
+    })
+		
+	$.getJSON('storage-detail.json', {'ctno': jsNo}, function(result) {
+		var data = result.data
+		console.log(data)
+		
+		var templateFn = Handlebars.compile($('.FairyTaleContent-template').text())
+	    var generatedHTML = templateFn(result.data)
+	    $(".FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
+	    $(".FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
+	    
+	    
+	    Slider()
+	    MakePublic(makePulic)
+	    console.log(result)
+	    makeDscp = data.list[0].Ct_Dscp
+	    
+	    StartPage = data.list[0].bkno;
+		MovePage = StartPage;
+		EndPage = StartPage + data.list.length -1;
 
-	        $.getJSON('storage-detail.json', {'ctno': jsNo}, function(result) {
-			  var data = result.data
-			  console.log(data)
-			  var templateFn = Handlebars.compile($('.FairyTaleContent-template').text())
-			  var generatedHTML = templateFn(result.data)
-			  console.log(templateFn)
-			  console.log(generatedHTML)
-			  console.log($(".FairyTale_Content"+jsNo))
-			  $(".FairyTale_Content"+jsNo).text('') // tbody의 기존 tr 태그들을 지우고
-		      $(".FairyTale_Content"+jsNo).html(generatedHTML) // 새 tr 태그들로 설정한다.
+		console.log("Start " + StartPage)
+		console.log("MovePage " + MovePage)
+		console.log("End " + EndPage)
+		})
+	}) 
+}
+/***********************************************************/
 
-		      StartPage = data.list[0].bkno;
-			  console.log(StartPage)
-			  MovePage = StartPage;
-			  EndPage = StartPage + data.list.length -1;
-
-			  Slider()
-
-	        })
-
-	        self.fx_in($('div[data-lk=' + jsNo + ']'));
-	        self.fx_in($('.box'));
-	      });
-
-	      // close on click
-	      $('').on("click",function(){
-	        self.fx_out($('.gallery_item_full'));
-	        self.fx_out($('.box'));
-	      });
-
-	    },
-
-	    // out function
-	    fx_out: function(el){
-	      el.addClass('efOut')
-	      .delay(500)
-	      .fadeOut('fast')
-	      .removeClass('efIn');
-	      $('body').css({overflow:'auto'});
-	      return false;
-	    },
-	    // in function
-	    fx_in: function(el){
-	      el.removeClass('efOut')
-	      .show()
-	      .addClass('efIn');
-	      $('body').css({overflow:'hidden'});
-	      return false;
-	    }
-	  };
-	})();
-// ready function of gallery
-gallery.ready_();
-
-/*********************************************************/
 function Slider(){
 	jQuery(document).ready(function ($) {
 
@@ -140,10 +101,6 @@ function Slider(){
 		var slideWidth = $('#slider ul li').width();
 		var slideHeight = $('#slider ul li').height();
 		var sliderUlWidth = slideCount * slideWidth;
-		console.log("slideCount:" + slideCount)
-		console.log("slideWidth:" + slideWidth)
-		console.log("slideHeight:" + slideHeight)
-		console.log("sliderUlWidth:" + sliderUlWidth)
 
 		$('#slider').css({ width: slideWidth, height: slideHeight });
 
@@ -169,7 +126,9 @@ function Slider(){
 			});
 		};
 
-		$('a.control_prev').click(function () {
+		$(".control_prev").unbind( "click" );
+		$(".control_next").unbind( "click" );
+		$('.control_prev').click(function () {
 			moveLeft();
 			MovePage -= 1;
 			if(MovePage < StartPage){
@@ -178,55 +137,89 @@ function Slider(){
 			console.log(MovePage)
 		});
 
-		$('a.control_next').click(function () {
+		$('.control_next').click(function () {
 			moveRight();
 			MovePage += 1;
 			if(MovePage > EndPage){
 				MovePage = StartPage;
 			}
-			console.log(MovePage)
 		});
-
+		
 		$("#recordPlay").on("click", function() {
-			  $(".playREC"+ MovePage)[0].play();
+			console.log(" 안내지!")
+			$(".playREC"+ MovePage)[0].play();
 		})
 
 		$("#recordStop").on("click", function() {
-			  $(".playREC"+ MovePage)[0].pause();
+			$(".playREC"+ MovePage)[0].pause();
 		})
 
-		  $(".playREC"+ MovePage)[0].onended = function() {
-				  console.log("Start MovePage:" + MovePage)
-				  moveRight();
-				  MovePage += 1;
-				  console.log("Next MovePage:" + MovePage)
-				  $(".playREC"+ MovePage)[0].play();
+		$(".playREC"+ MovePage).on("ended",  function() {
+			console.log("Start MovePage:" + MovePage)
+			moveRight();
+			MovePage += 1;
+			console.log("Next MovePage:" + MovePage)
+			$(".playREC"+ MovePage)[0].play();
 
-				  autoplayRecord(MovePage)
-
-		  }
+			autoplayRecord(MovePage)
+		})
+		
 
 		function autoplayRecord(MovePage) {
 			$(".playREC"+ MovePage)[0].onended = function() {
 				console.log("MovePage:" + MovePage)
-				  moveRight();
-				  MovePage += 1;
-				  console.log("Next MovePage:" + MovePage)
-				  $(".playREC"+ MovePage)[0].play();
-				  if(MovePage == EndPage){
-					  $(".playREC"+ MovePage)[0].onended = function() {
+				moveRight();
+				MovePage += 1;
+				console.log("Next MovePage:" + MovePage)
+				$(".playREC"+ MovePage)[0].play();
+				if(MovePage == EndPage){
+					$(".playREC"+ MovePage)[0].onended = function() {
 						alert("동화가 종료 되었습니다.")
 						location.href = 'storage.html'
 					}
-					  return;
-				  } else{
-					  autoplayRecord(MovePage)
-				  }
-		}
+					return;
+				} else{
+					autoplayRecord(MovePage)
+				}
+			}
 		}
 
-		$('#replay').on("click", function() {
-			MovePage = StartPage;
-		})
+
+		
 	});
 }
+/***********************************************************************/
+function MakePublic(makePulic) {
+	if(makePulic == "Yes"){
+		$("#me-view").css("background-color", "#ff9869");
+		$("#together-view").css("background-color", "#D3D3D3");
+	}
+	else{
+		$("#together-view").css("background-color", "#ff9869");
+		$("#me-view").css("background-color", "#D3D3D3");
+	}
+}
+
+$('#me-view').on('click',function() {
+	$("#me-view").css("background-color", "#ff9869");
+	$("#together-view").css("background-color", "#D3D3D3");
+	$.post('updateCustbook.json', {
+		'no': jsNo,
+		'Ct_public': "Yes",
+		'Ct_dscp': makeDscp
+	}, function(result) {
+		console.log(result)
+	}, 'json')
+});
+
+$("#together-view").on("click", function() {
+	$("#together-view").css("background-color", "#ff9869");
+	$("#me-view").css("background-color", "#D3D3D3");
+	$.post('updateCustbook.json', {
+		'no': jsNo,
+		'Ct_public': "No",
+		'Ct_dscp': makeDscp
+	}, function(result) {
+		console.log(result)
+	}, 'json')
+})
