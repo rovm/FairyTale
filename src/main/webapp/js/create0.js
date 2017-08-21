@@ -53,7 +53,7 @@ $('#yes').on('click', function(){
 
 
 	$(".record_btn").css("display", "block");
-	$("#recordControl").css("display", "block");
+
 	$("#basic_play").css("display", "block");
 	$("#basic_stop").css("display", "none");
 	$('#basic_play').on('click', function() {

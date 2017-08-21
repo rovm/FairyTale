@@ -69,10 +69,9 @@
   <!-- <button type="button" id="record-btn">녹음버튼</button> -->
 
 
-  <audio controls="controls" id="recordControl">
+  <audio controls="controls" id="recordControl"   style="display: none;">
 
   </audio>
-
 
 
 
@@ -102,6 +101,15 @@
     <div class="recorder">
       <button class="record_btn" id="button"></button>
       <p id="msg_box"></p>
+    </div>
+    <div class="recorder_play">
+      <button class="recPlay_btn" id="rec_play">
+        <i class="fa fa-play" id="fa-play"></i>
+      </button>
+      <button class="recPlay_btn" id="rec_stop">
+        <i class="fa fa-pause" id="fa-pause"></i>
+      </button>
+      <p id="msg_box_2"></p>
     </div>
   </div>
   <!-- 녹음버튼끝 -->
@@ -133,7 +141,7 @@
         </div>
       </div>
 
-        
+
       </div>
 
   </div>
@@ -186,7 +194,7 @@
      <li>
         <div class="all">
           <div class="content_box">
-<img src="{{BK_IMG}}">
+
             <audio controls="controls" class="record{{bkno}}">
               <source src="{{BK_REC}}" type="audio/ogg" >
             </audio>
