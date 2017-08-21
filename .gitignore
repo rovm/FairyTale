@@ -11,3 +11,6 @@
 **/.settings
 **/.project
 !build.gradle
+src/main/webapp/js/facebook2.js
+src/main/webapp/p-desktop/login2.html
+src/main/webapp/js/facebook3.js

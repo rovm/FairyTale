@@ -10,7 +10,9 @@
 
 
     <title>main</title>
-
+<script type="text/javascript"
+  src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+  charset="utf-8"></script>
   </head>
   <body>
     <div class="Header_container">
@@ -255,7 +257,7 @@
               <h3><a href="#">백설공주</a></h3>
 
 
-              <p class="readmore"><a href="#">More &raquo;</a></p>
+              <p class="readmore"><a href="best.html">More &raquo;</a></p>
             </div><!-- post #1 -->
 
             <div class="crsl-item">
@@ -267,7 +269,7 @@
               <h3><a href="#">아기돼지 삼형제</a></h3>
 
 
-              <p class="readmore"><a href="#">More &raquo;</a></p>
+              <p class="readmore"><a href="best.html">More &raquo;</a></p>
             </div><!-- post #2 -->
 
             <div class="crsl-item">
@@ -279,7 +281,7 @@
               <h3><a href="#">토끼와 거북이</a></h3>
 
 
-              <p class="readmore"><a href="#">More &raquo;</a></p>
+              <p class="readmore"><a href="best.html">More &raquo;</a></p>
             </div><!-- post #3 -->
 
             <div class="crsl-item">
@@ -291,7 +293,7 @@
               <h3><a href="#">신데렐라</a></h3>
 
 
-              <p class="readmore"><a href="#">More &raquo;</a></p>
+              <p class="readmore"><a href="best.html">More &raquo;</a></p>
             </div><!-- post #4 -->
 
             <div class="crsl-item">
@@ -303,7 +305,7 @@
               <h3><a href="#">흥부와 놀부</a></h3>
 
 
-              <p class="readmore"><a href="#">More &raquo;</a></p>
+              <p class="readmore"><a href="best.html">More &raquo;</a></p>
             </div><!-- post #5 -->
           </div><!-- @end .crsl-wrap -->
         </div><!-- @end .crsl-items -->
@@ -332,7 +334,7 @@
       <br><br>
     <div class="left-form">
         <span class="notic">공지사항
-          <button type="button" id="notic-btn"class="btn btn-info">더보기</button>
+          <button type="button" id="notic-btn"class="btn btn-info" >더보기</button>
         </span>
         <br>
         <br>
@@ -443,6 +445,31 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="../js/login.js"></script>
 <script src="../js/auth.js"></script>
+
+<script type="text/javascript"
+  src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+  charset="utf-8"></script>
+<script>
+
+<!-- //네이버아이디로로그인 버튼 노출 영역 -->
+
+  $('.logout-link').on('click', function() {
+	  $.getJSON('logout.json', function (result) {
+	    if (result.status != 'fail') {
+	      console.log(result)
+	      console.log(posi)
+	      $('.login-link').css('display', 'block');
+	      $('.logout-link').css('display', 'none');
+	      $('.sign-link').css('display', 'block');
+	    
+	      if(posi == 'naver'){
+	        naverlogout()
+	      } 
+	    }
+
+	  })
+	})
+</script>
     <script type="text/javascript">
     $(function(){
       $('.crsl-items').carousel({

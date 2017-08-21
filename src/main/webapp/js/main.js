@@ -112,3 +112,11 @@ $(document).ready(function(){
 	});
 	});//EOF Document.ready
 	
+$('#notic-btn').click(function(){
+	location.href = 'notice.html'
+})
+$('#book-btn').click(function(){
+	location.href = 'create.html'
+})
+
+
