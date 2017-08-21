@@ -28,8 +28,8 @@ public class Controller24 {
 
 		byte[] decoded = org.apache.commons.codec.binary.Base64.decodeBase64(UrlDecode.getBytes());
 
-		String RecordingPath = "C:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp3/wtpwebapps/FairyTale/upload/";
-		FileOutputStream fos = new FileOutputStream(RecordingPath + newFilename +".ogg", false);
+		String RecordingPath = ctx.getRealPath("/upload/" + newFilename+".ogg");
+		FileOutputStream fos = new FileOutputStream(RecordingPath, false);
 		fos.write(decoded, 0, decoded.length);
 		fos.close();
 
@@ -50,8 +50,8 @@ public class Controller24 {
 
 		byte[] decoded = org.apache.commons.codec.binary.Base64.decodeBase64(UrlDecode.getBytes());
 
-		String RecordingPath = "C:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp3/wtpwebapps/FairyTale/upload/";
-		FileOutputStream fos = new FileOutputStream(RecordingPath + newFilename +".ogg", false);
+		String RecordingPath = ctx.getRealPath("/upload/" + newFilename+".ogg");
+		FileOutputStream fos = new FileOutputStream(RecordingPath, false);
 		fos.write(decoded, 0, decoded.length);
 		fos.close();
 
