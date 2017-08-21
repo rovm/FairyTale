@@ -5,29 +5,13 @@ var no = 0,
 	MovePage,
 	EndPage,
 	CreateBook,
-	ctno;
+	ctno,
+	cust_rec,
+	UrlEncode;
 
 
 	var basic_play = $('#basic_play'),
 			basic_stop = $("#basic_stop");
-
-
-// function basic_btn() {
-// 	if(basic_play.click()){
-// 		$(".record" + MovePage)[0].play();
-// 		basic_play.css("display", "none")
-// 		basic_stop.css("display", "block")
-// 		if(basic_stop.click()){
-// 			$(".record" + MovePage)[0].pause();
-// 			basic_play.css("display", "block")
-// 			basic_stop.css("display", "none")
-// 		}
-// 	}
-// }
-
-
-
-
 
 
 
@@ -36,13 +20,21 @@ $(document).ready(function() {
 	$("#recordControl").css("display", "none");
 	$("#basic_play").css("display", "none");
 	$("#basic_stop").css("display", "none");
-  $("#myModal").modal();
+  $("#createModal").modal();
+
+	$('#close').click(function() {
+	    location.href = "bookList.html"
+	});
+
+
 
 
 $('#yes').on('click', function(){
 	CreateBook = 1;
 	console.log("yes누르고 모달창닫습니다..")
-	$('#myModal').modal('hide');
+	$('#createModal').modal('hide');
+		console.log("bkno"+MovePage);
+
 
 	$.post('addCustbook.json', {
 		'mno': mno,
@@ -52,11 +44,14 @@ $('#yes').on('click', function(){
 		ctno = result.data
 	 if(result.status=="success")
 	 {console.log("ctno"+result.data);
+	 console.log(result);
 		 // e.preventDefault();
 	 } else {
 		 console.log(result.data)
 	 }
 	}, 'json')
+
+
 	$(".record_btn").css("display", "block");
 	$("#recordControl").css("display", "block");
 	$("#basic_play").css("display", "block");
@@ -75,7 +70,8 @@ $('#yes').on('click', function(){
 $('#no').on('click', function(){
 	CreateBook = 0;
 	console.log("no누르고 모달창닫습니다..")
-	$('#myModal').modal('hide');
+
+	$('#createModal').modal('hide');
 	$(".record_btn").css("display", "none");
 	$("#recordControl").css("display", "none");
 	$("#basic_play").css("display", "none");
@@ -83,12 +79,6 @@ $('#no').on('click', function(){
 
 })
  });//ready
-
-
-
-
-
-
 
 
 
@@ -176,6 +166,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 
 	function start() {
+		if($(".record_btn"))
 		navigator.mediaDevices.getUserMedia( { 'audio': true } ).then( function ( stream ) {
 			mediaRecorder = new MediaRecorder( stream );
 			mediaRecorder.start();
@@ -195,6 +186,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 			}
 
 			mediaRecorder.onstop = function () {
+
 				stream.getTracks().forEach( function( track ) { track.stop() } );
 				recodeFile = new Blob( chunks, type );
 				var reader = new FileReader();
@@ -203,21 +195,10 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 				reader.addEventListener("loadend", function() {
 					var base64str = arrayBufferToBase64(reader.result);
-					var UrlEncode = encodeURIComponent(base64str);
+					 UrlEncode = encodeURIComponent(base64str);
 
-					//파일업로드
-					$.post('upload3.json', {
-						'UrlEncode': UrlEncode,
-						'mno' : mno,
-						'bkno': MovePage
-					}, function(result) {
-						if(result.status=="success")
-						{console.log(result);
-							// e.preventDefault();
-						} else {
-							console.log(result)
-						}
-					}, 'json')
+selectcust_rec(ctno, MovePage)
+
 				});
 
 
@@ -305,7 +286,7 @@ if(no != 0){
 
 		$("#FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
 		$("#FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
-		console.log(data)
+
 		Slider()
 		StartPage = data.list[0].bkno;
 		MovePage = StartPage;
@@ -329,6 +310,53 @@ function arrayBufferToBase64( buffer ) {
     }
     return window.btoa( binary );
 }
+
+
+function selectcust_rec(ctno, MovePage) {
+	console.log(ctno, MovePage);
+	$.getJSON('custpage_detail.json', {
+		'ctno' : ctno,
+		'bkno' : MovePage }, function(result) {
+			if(result.data == undefined) {
+				//파일업로드
+				$.post('upload3.json', {
+					'UrlEncode': UrlEncode,
+					'ctno' : ctno,
+					'bkno': MovePage
+				}, function(result) {
+					console.log(result);
+					if(result.status=="success")
+					{
+						console.log("업로드성공");
+						// e.preventDefault();
+					} else {
+						console.log(result)
+					}
+				}, 'json')
+
+			} else {
+				$.post('updateCustpage.json', {
+					'UrlEncode': UrlEncode,
+					'ctno' : ctno,
+					'bkno': MovePage
+				}, function(result) {
+					console.log(result);
+					if(result.status=="success")
+					{
+						console.log("업데이트성공...");
+						// e.preventDefault();
+					} else {
+						console.log(result)
+					}
+				}, 'json')
+
+
+
+				console.log("없당");
+			}
+	})
+}
+
 
 
 
@@ -374,6 +402,7 @@ function Slider(){
 			if(MovePage < StartPage){
 				MovePage = EndPage;
 			}
+			// selectcust_rec(ctno, MovePage);
 			console.log(MovePage)
 		});
 
@@ -400,13 +429,14 @@ function Slider(){
 						 }, function(result) {
 							 location.href = 'storage.html'
 						 }, 'json')
-							$("#myModal").modal();
+							$("#createModal").modal();
 						}
 					})
 				}
 					MovePage = StartPage;
+					// selectcust_rec(ctno, MovePage);
 					if(CreateBook == 0) {
-						$("#myModal").modal();
+						$("#createModal").modal();
 
 					}
 			}
@@ -415,6 +445,9 @@ function Slider(){
 		});
 
 	});
+
+
+
 	$("#basic_play").on('click', function () {
 		$(".record" + MovePage)[0].play();
 	})

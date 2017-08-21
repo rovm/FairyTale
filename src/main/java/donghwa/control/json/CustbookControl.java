@@ -22,7 +22,7 @@ public class CustbookControl {
 	  System.out.println("control:" +custbook);
 	  custbookService.addCustbook(custbook);
 	  int ctno = custbook.getNo();
-	  System.out.println(ctno);
+	  System.out.println("CTNO!!!!!!!!!!!!1"+ctno);
 	  
     return new JsonResult(JsonResult.SUCCESS, ctno);
   }

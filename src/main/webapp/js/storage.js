@@ -8,7 +8,7 @@ var jsNo,
 	StartPage,
 	MovePage,
 	EndPage;
-	
+
 $.getJSON('userinfo.json', function(result) {
 	mno = result.data.no;
 	console.log(mno)
@@ -20,7 +20,7 @@ prevBtn.on('click', function() {
 })
 
 nextBtn.on('click', function() {
-  displayList(currPageNo + 1, mno)	
+  displayList(currPageNo + 1, mno)
 })
 
 var totalCount;
@@ -36,7 +36,7 @@ function displayList(pageNo, mno) {
     var generatedHTML = templateFn(result.data)
     $(".gallery").text('') // tbody의 기존 tr 태그들을 지우고
     $(".gallery").html(generatedHTML) // 새 tr 태그들로 설정한다.
-		
+
     currPageNo = pageNo
     pageNoTag.text(currPageNo)
 
@@ -77,35 +77,39 @@ var gallery = (function(){
 	      // Get all data js and add clickOn function
 	      $('.gallery_item_preview a[data-js]').click(function() {
 	        jsNo = $(this).attr("data-js")
-	        
+
 	        $.getJSON('storage-detail.json', {'ctno': jsNo}, function(result) {
 			  var data = result.data
 			  console.log(data)
-			  var templateFn = Handlebars.compile($('#FairyTaleContent-template').text())
+			  var templateFn = Handlebars.compile($('.FairyTaleContent-template').text())
 			  var generatedHTML = templateFn(result.data)
-			  $("#FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
-		      $("#FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
-		      
+			  console.log(templateFn)
+			  console.log(generatedHTML)
+			  console.log($(".FairyTale_Content"+jsNo))
+			  $(".FairyTale_Content"+jsNo).text('') // tbody의 기존 tr 태그들을 지우고
+		      $(".FairyTale_Content"+jsNo).html(generatedHTML) // 새 tr 태그들로 설정한다.
+
 		      StartPage = data.list[0].bkno;
+			  console.log(StartPage)
 			  MovePage = StartPage;
 			  EndPage = StartPage + data.list.length -1;
-			  
+
 			  Slider()
-			  
+
 	        })
-	        
-	        self.fx_in($('div[data-lk=' + jsNo + ']')); 
+
+	        self.fx_in($('div[data-lk=' + jsNo + ']'));
 	        self.fx_in($('.box'));
 	      });
-	      
+
 	      // close on click
 	      $('').on("click",function(){
 	        self.fx_out($('.gallery_item_full'));
 	        self.fx_out($('.box'));
 	      });
-	  
+
 	    },
- 
+
 	    // out function
 	    fx_out: function(el){
 	      el.addClass('efOut')
@@ -114,7 +118,7 @@ var gallery = (function(){
 	      .removeClass('efIn');
 	      $('body').css({overflow:'auto'});
 	      return false;
-	    }, 
+	    },
 	    // in function
 	    fx_in: function(el){
 	      el.removeClass('efOut')
@@ -136,6 +140,10 @@ function Slider(){
 		var slideWidth = $('#slider ul li').width();
 		var slideHeight = $('#slider ul li').height();
 		var sliderUlWidth = slideCount * slideWidth;
+		console.log("slideCount:" + slideCount)
+		console.log("slideWidth:" + slideWidth)
+		console.log("slideHeight:" + slideHeight)
+		console.log("sliderUlWidth:" + sliderUlWidth)
 
 		$('#slider').css({ width: slideWidth, height: slideHeight });
 
@@ -178,11 +186,11 @@ function Slider(){
 			}
 			console.log(MovePage)
 		});
-		
+
 		$("#recordPlay").on("click", function() {
 			  $(".playREC"+ MovePage)[0].play();
 		})
-		  
+
 		$("#recordStop").on("click", function() {
 			  $(".playREC"+ MovePage)[0].pause();
 		})
@@ -193,11 +201,11 @@ function Slider(){
 				  MovePage += 1;
 				  console.log("Next MovePage:" + MovePage)
 				  $(".playREC"+ MovePage)[0].play();
-				  
+
 				  autoplayRecord(MovePage)
 
 		  }
-		
+
 		function autoplayRecord(MovePage) {
 			$(".playREC"+ MovePage)[0].onended = function() {
 				console.log("MovePage:" + MovePage)
@@ -216,11 +224,9 @@ function Slider(){
 				  }
 		}
 		}
-		
+
 		$('#replay').on("click", function() {
 			MovePage = StartPage;
 		})
 	});
 }
-
-

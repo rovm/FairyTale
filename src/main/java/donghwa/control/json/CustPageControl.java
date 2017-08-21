@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import donghwa.domain.CustPage;
 import donghwa.service.CustPageService;
 
 @RestController
@@ -26,7 +25,7 @@ public class CustPageControl {
   public JsonResult list(
       @RequestParam(defaultValue="1") int pageNo, 
       @RequestParam(defaultValue="12") int pageSize,@RequestParam int mno) throws Exception {
-    
+    System.out.println(pageNo + pageSize + mno);
     HashMap<String,Object> dataMap = new HashMap<>();
     dataMap.put("list", custPageService.list(pageNo, pageSize, mno));
     dataMap.put("totalCount", custPageService.getSize(mno));

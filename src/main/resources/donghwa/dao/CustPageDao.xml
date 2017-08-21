@@ -45,7 +45,7 @@
     from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
                      inner join custbook cb on cp.ctno = cb.ctno
                      left outer join mstbook mb on mb.mbkno = bp.mbkno
-    where mno = #{mno} and cp.bkno= 1
+    where mno = #{mno} and bp.bk_page= 1
     limit #{startIndex}, #{pageSize}
   </select>
   
@@ -62,8 +62,26 @@
     from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
                  inner join custbook cb on cp.ctno = cb.ctno
                  left outer join mstbook mb on mb.mbkno = bp.mbkno
-    where cp.ctno = 1
+    where cp.ctno = #{ctno} and cp.bkno=#{bkno}
+  </select>
+  
+  
+  <insert id="insert" parameterType="custPage" useGeneratedKeys="true" keyColumn="ctno" keyProperty="no"> 
+  insert into custpage(ctno, bkno, cust_img, cust_rec) 
+  values(#{ctno}, #{bkno}, #{Cust_IMG}, #{Cust_REC}) 
+  </insert>
+  
+  
+    <update id="update" parameterType="custpage">
+    update custpage set 
+      cust_rec = #{Cust_REC}
+    where ctno=#{ctno} and bkno=#{bkno}
+  </update>
+  
+  
+  <select id="custpage_detail" resultType="String" parameterType="map">
+    select cust_rec
+    from custpage
+    where ctno=#{ctno} and bkno=#{bkno}
   </select>
 </mapper>
-
-

@@ -68,6 +68,131 @@ h1 {
 
 
 
+
+/*모달창..*/
+#modalBody {
+  width: 600px;
+  height: 380px;
+  margin: 150px auto;
+  position: relative;
+}
+
+.text1{
+	font-weight: bold;
+  font-size: 25px;
+  color: gray;
+}
+
+.text2{
+  font-size: 17px;
+  color: gray;
+}
+
+
+
+
+#close-btn:HOVER {
+	color: #525252;
+}
+
+
+#close{
+ margin-top: 5px; 
+	margin-left: 90%; 
+	line-height: 20px;
+	border: 1px solid #fff;
+	background: #FFF;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.modal-middle{
+	margin-top:20px;
+	width: auto;
+	height: 150px;
+	text-align: center;
+}
+
+#close-btn{
+	font-size: 40px;
+	color: gray;
+}
+
+.modal-bottom{
+	width: auto;
+	height: 100px;
+	margin-top: 10px;
+}
+.modal-btn {
+	font-size: 16px;
+	font-weight: 500;
+	width:auto;
+	margin: 30px 120px;
+  position:absolute;
+}
+
+ #yes:HOVER{
+	background-color: darkorange;
+	border: 1px solid orange;
+	color: #fff;
+}
+
+
+#no:HOVER{
+  background-color: darkorange;
+  border: 1px solid orange;
+  color: #fff;
+} 
+
+
+/* 
+ #yes:HOVER{
+  background-color: orange;
+  border: 1px solid orange;
+  color: #fff;
+}
+ 
+
+
+ #no:HOVER{
+  background-color: orange;
+  border: 1px solid orange;
+  color: #fff;
+} */
+ 
+#yes {
+    width:150px;
+    height:50px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    margin-rigth: 50px;
+    line-height: 20px;
+    background: orange;
+    display: inline-block;
+    border: 1px solid orange;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#no {
+	 width:150px;
+    height:50px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    margin-left:50px;
+    line-height: 20px;
+    background: orange;
+    display: inline-block;
+    border: 3px solid orange;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
 /******************************/
 
 
@@ -304,10 +429,21 @@ h1 {
 
 
 /*==================play======================*/
-.recorder_wrapper > .play > .play_btn > i {
+/*.recorder_wrapper > .play > .play_btn > i {
+  font-size: 300%;
+  margin-left: 10px;
+}*/
+
+#fa-play {
   font-size: 300%;
   margin-left: 10px;
 }
+
+#fa-pause {
+  font-size: 300%;
+  /*margin-left: px;*/
+}
+
 
 /*.play {
     display: inline-block;
@@ -330,6 +466,9 @@ h1 {
   border: 2px solid;
   background-color: #FFF;
 }
+
+
+
 
 
 

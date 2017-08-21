@@ -69,26 +69,9 @@
   <!-- <button type="button" id="record-btn">녹음버튼</button> -->
 
 
-  <!-- <audio controls="controls" id="recordControl">
+  <audio controls="controls" id="recordControl">
 
-  </audio> -->
-
-
-
-
-
-  <!-- <div id="record-addbtn">
-    <div id="record-addbtn-wrapper">
-      녹음파일: <input id="fileupload" type="file" name="files" multiple >
-      <br>
-      <button id='upload-btn' type='button'>등록</button>
-
-    </div>
-  </div> -->
-
-
-
-
+  </audio>
 
 
 
@@ -109,10 +92,10 @@
   <div class="recorder_wrapper">
     <div class="play">
       <button class="play_btn" id="basic_play" >
-        <i class="fa fa-play"></i>
+        <i class="fa fa-play" id="fa-play"></i>
       </button>
       <button class="play_btn" id="basic_stop" >
-        <i class="fa fa-stop"></i>
+        <i class="fa fa-pause" id="fa-pause"></i>
       </button>
       <p id="msg_box_1"></p>
     </div>
@@ -124,23 +107,35 @@
   <!-- 녹음버튼끝 -->
 
 
-
-
+<!-- <i class="fa fa-sign-in" aria-hidden="true"></i>
+<i class="fa fa-eye" aria-hidden="true"></i> -->
   <!-- 모달폼 -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+  <div id="createModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
 
       <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
+      <div class="modal-content" id="modalBody">
+
+
+          <div class="modal-top">
+            <button type="button" id="close"><i class="fa fa-times" id="close-btn" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="modal-middle">
+          <div class="text1"><i class="fa fa-quote-left" aria-hidden="true"></i>
+          &nbsp;동화를 만들어요&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></div>
+          <div class="text2"><br><br>동화를 만드시려면 만들기 버튼을,<br> 동화 내용이 궁금하시면 둘러보기버튼을 눌러주세요</div>
+        </div>
+
+        <div class="modal-bottom">
+        <div class="modal-btn">
           <button type="button" id="yes">만들기</button>
           <button type="button" id="no">둘러보기</button>
-          <button type="button" id="close">X</button>
-
         </div>
       </div>
 
-    </div>
+        
+      </div>
+
   </div>
 
 
@@ -191,7 +186,7 @@
      <li>
         <div class="all">
           <div class="content_box">
-
+<img src="{{BK_IMG}}">
             <audio controls="controls" class="record{{bkno}}">
               <source src="{{BK_REC}}" type="audio/ogg" >
             </audio>
