@@ -415,6 +415,7 @@ body {
         }
       .book-form{
           margin-top: 100px;
+          margin-bottom: 95px;
           height: 400px;
         }
       .menual-form{
@@ -437,8 +438,9 @@ body {
           font-size: 33px;
           text-align: left;
           font-weight: bold;
-          color: gray;
+          color: white;
           margin-bottom: 35px;
+          
         }
       .menual {
           display: inherit;
