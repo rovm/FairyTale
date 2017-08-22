@@ -30,8 +30,8 @@ public class NoticeServiceImpl implements NoticeService {
   
   
   @Override
-  public List<Board> suchList(Map<String, String> keyword) throws Exception {
-	    return noticeDao.selectListByTitle(keyword);
+  public List<Board> noticeSuchList(Map<String, String> keyword) throws Exception {
+	    return noticeDao.noticeSelectListByTitle(keyword);
   }
   
 
@@ -43,7 +43,7 @@ public class NoticeServiceImpl implements NoticeService {
   
   
   @Override
-  public int suchGetSize(Map<String, String> keyword) throws Exception {
+  public int noticeSuchGetSize(Map<String, String> keyword) throws Exception {
   	return noticeDao.suchCountAll(keyword);
   }
   

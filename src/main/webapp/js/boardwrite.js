@@ -3,7 +3,7 @@ var Titl = $('#bw_titl'),
     Div = "board",
     mno
 
-
+    $(document).ready(function() {
 $('#conaddbtn').on('click',function() {
 	console.log('fgaf');
     $.post('conAdd.json', {
@@ -15,7 +15,6 @@ $('#conaddbtn').on('click',function() {
       location.href = 'community_boarder.html'
     }, 'json')
   })
-  
   var no = 0
   try {
 	  no = location.href.split('?')[1].split('=')[1]
@@ -60,7 +59,7 @@ $('#conaddbtn').on('click',function() {
 
   });
   
-  $(document).ready(function() {
+
   $('#fileupload').fileupload({
 	url : '/p-desktop/upload1.json', // 서버에 요청할 URL
 	dataType : 'json', // 서버가 보낸 응답이 JSON임을 지정하기
@@ -131,9 +130,8 @@ $('#conaddbtn').on('click',function() {
 			});
 		}
 	});
-  })
+
   
-  $(document).ready(function() {
   $('#fileupload2').fileupload({
 		url : '/p-desktop/upload2.json', // 서버에 요청할 URL
 		dataType : 'json', // 서버가 보낸 응답이 JSON임을 지정하기

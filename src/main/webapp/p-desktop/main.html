@@ -13,6 +13,7 @@
 <script type="text/javascript"
   src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
   charset="utf-8"></script>
+
   </head>
   <body>
     <div class="Header_container">
@@ -318,7 +319,6 @@
         </nav>
       </div><!-- @end #w -->
     </div>
-
     <br><br><br><br>
   <div class="container">
       <div class="book-form">
@@ -331,54 +331,17 @@
           <img src="../img/thumb05.jpg" width="270px" height="200px" style="cursor:pointer">
         </div>
       </div>
-      <br><br>
     <div class="left-form">
+    <div id="color" style="position:absolute;bacground-color:red; width:1000px;z-index:2000">
         <span class="notic">공지사항
           <button type="button" id="notic-btn"class="btn btn-info" >더보기</button>
         </span>
+    </div>
         <br>
         <br>
-      <table class="table table-hover" font-size="20px" id="notic-board">
-        <thead>
-          <tr class="success">
-            <td>번호</td>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>작성일</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-          <td>1</td>
-          <td>으하</td>
-          <td>으하하</td>
-          <td>9595</td>
-          </tr>
-          <tr>
-          <td>1</td>
-          <td>으하</td>
-          <td>으하하</td>
-          <td>9595</td>
-          </tr>
-          <tr>
-          <td>1</td>
-          <td>으하</td>
-          <td>으하하</td>
-          <td>9595</td>
-          </tr>
-          <tr>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-          </tr>
-          <tr>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-          </tr>
-        </tbody>
+        <table id="" class="table table-bordered" style="border: 0;">
+
+        <tbody></tbody>
       </table>
     </div>
     <div class="right-form">
@@ -440,6 +403,7 @@
 <script type="text/javascript" src="../Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/notice.js"></script>
 <script type="text/javascript" src="../js/responsiveCarousel.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -487,7 +451,17 @@
 
     </script>
 
-
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script id="tbody-template" type="text/x-handlebars-template">
+  {{#each noticeList}}
+   <tr id="trwidth"class="board" data-no ={{no}} style="border:0;">
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 70px;">{{no}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 589px;">{{bw_titl}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 127px;">{{name}}</td>
+     <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 194px;">{{bw_wdt}}</td>
+   </tr>
+  {{/each}}
+</script>
   <form>
   </form>
   </body>

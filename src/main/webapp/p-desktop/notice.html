@@ -74,7 +74,7 @@
   <div class="notice_container">
     <div class="middle-container">
       <div class="noice_search">
-        <input type="search" placeholder="검색">
+        <input type="search" id="keyword" placeholder="검색" >
       </div>
       <div class="board_button">
             <button class="btn btn-danger" id="bord-btn">+새로운게시글</button>
@@ -137,7 +137,7 @@
    </tr>
   {{/each}}
 {{#each noticeSuchList}}
-   <tr class="board" data-no ={{no}} style="border:0;">
+   <tr id="trwidth" class="board" data-no ={{no}} style="border:0;">
      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{no}}</td>
      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{bw_titl}}</td>
      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;">{{name}}</td>

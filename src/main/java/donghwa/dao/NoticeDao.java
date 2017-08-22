@@ -7,7 +7,7 @@ import donghwa.domain.Board;
 
 public interface NoticeDao {
   List<Board> noticeSelectList(Map<String,Object> valueMap);
-  List<Board> selectListByTitle(Map<String,String> valueMap);
+  List<Board> noticeSelectListByTitle(Map<String,String> valueMap);
   int countAll();
   int suchCountAll(Map<String, String> keyword);
 }

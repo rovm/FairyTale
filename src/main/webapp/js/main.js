@@ -118,5 +118,8 @@ $('#notic-btn').click(function(){
 $('#book-btn').click(function(){
 	location.href = 'create.html'
 })
-
+$(document.body).on('click', '.detail-link', function(event) {
+  location.href = 'create.html?no=' + $(this).attr('data-no') 
+  event.preventDefault()
+})
 

@@ -12,10 +12,10 @@ var mno;
 userinfo()
 
 $("#keyword").keyup(function(){
-	$.post('suchList.json', {
-		'keyword': word.val()
-	}, function(result) {
-	}, 'json')
+//	$.post('mySuchList.json', {
+//		'keyword': word.val()
+//	}, function(result) {
+//	}, 'json')
 	displayList2(1);
 })
 

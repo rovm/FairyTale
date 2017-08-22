@@ -37,8 +37,8 @@ public class NoticeControl {
       @RequestParam Map<String, String> keyword) throws Exception {
     
     HashMap<String,Object> dataMap = new HashMap<>();
-    dataMap.put("suchList", noticeService.suchList(keyword));
-    dataMap.put("totalCount", noticeService.suchGetSize(keyword));
+    dataMap.put("noticeSuchList", noticeService.noticeSuchList(keyword));
+    dataMap.put("totalCount", noticeService.noticeSuchGetSize(keyword));
     
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);

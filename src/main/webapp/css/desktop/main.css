@@ -437,7 +437,8 @@ body {
           font-size: 33px;
           text-align: left;
           font-weight: bold;
-          color: gray
+          color: gray;
+          margin-bottom: 35px;
         }
       .menual {
           display: inherit;
@@ -448,19 +449,28 @@ body {
         }
       .left-form{
         margin: auto auto;
-        width: 50%;
-        float: left;
+        width: 100%;
+        height: 400px;
         }
       .right-form{
         margin: auto auto;
-        width: 50%;
-        float: left;
+        width: 100%;
+        height: 400px;
         }
+        .board {
+          font-size: 15px;
+				  height: 40px;
+				  color: rgb(54, 121, 37);
+				}
+				.board:hover {
+				  color: green;
+				  opacity: 0.4;
+				}
       #book-btn{
         margin-right: 10px;
         }
       #notic-btn{
-        margin-right: 30px;
+        margin-right: 10px;
         }
       #notic-board{
         width: 90%;

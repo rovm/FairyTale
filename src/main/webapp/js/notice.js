@@ -6,21 +6,28 @@ var pageNoTag = $('#page-no')  // 매번 이걸 찾으면 안좋다 찾아놓은
     nextBtn = $('#next-btn'),
     currPageNo = $('#page-no'),
     pageSize = 10,
-    Div='notice'
-
+    Div='notice';
+var posi;
 var mno;
 console.log("하하")
 userinfo()
 
 $("#keyword").keyup(function(){
-	$.post('suchList.json', {
-		'keyword': word.val()
-	}, function(result) {
-	}, 'json')
 	displayList2(1);
 })
 
-
+try {
+	pagesize = location.href.split('p/')[1].split('.')[0]
+} catch (err) {}
+console.log(pagesize)
+if(pagesize == 'notice'){
+	pageSize = 10
+	console.log(pageSize)
+} else if(pagesize == 'main'){
+	pageSize = 5
+	console.log(pageSize)
+}
+displayList(1);
 function displayList2(pageNo){
 	// 서버에서 강사 목록 데이터를 받아 온다.
   $.getJSON('noticeSuchList.json', {'pageNo':pageNo, 'pageSize':pageSize , 'keyword':word.val()}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
@@ -118,15 +125,19 @@ $('#bord-btn').click(function(){
 })
 
 function userinfo() {
-	console.log("userinfo")
 		$.getJSON('userinfo.json', function(result) {
 			if(result.data != null) {
 //				console.log(result.data.no)
 				mno = result.data.no;
+				posi = result.data.posi;
+				console.log(posi)
 //				console.log(mno)
-				displayList(1)
+				if(posi == 'master') {
+	$('#bord-btn').css('display','block')
+} else {
+	$('#bord-btn').css('display','none')
+}
 			}		
 		})
 }
-
 
