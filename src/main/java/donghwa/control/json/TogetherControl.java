@@ -54,10 +54,10 @@ public class TogetherControl {
     return new JsonResult(JsonResult.SUCCESS, "ok");
   }
   
-  @RequestMapping("hartfull")
-  public JsonResult hartfull(@RequestParam int mno) throws Exception {
+  @RequestMapping("heartfull")
+  public JsonResult heartfull(@RequestParam int mno) throws Exception {
 	  HashMap<String,Object> dataMap = new HashMap<>();
-	    dataMap.put("hartfull", togetherService.getMno(mno));
+	    dataMap.put("heartfull", togetherService.getMno(mno));
 	    
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }

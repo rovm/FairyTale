@@ -1,14 +1,26 @@
 "use strict"
-var mno;
-var ctno;
-//<div style="display:none" data-no={{ctno}} class="hartfull-box" onClick="hate({{ctno}})"><a class="fa fa-heart hartfull" aria-hidden="true"></a></div></div>
+var mno,
+ctno,
+bkno,
+prevBtn = $('#prev-btn'),
+nextBtn = $('#next-btn'),
+currPageNo = $('#page-no'),
+pageSize = 5,
+pageNo = 1,
+pageNoTag = $('#page-no'),
+MovePage = 0,
+StartPage,
+EndPage;
+
+
+//<div style="display:none" data-no={{ctno}} class="heartfull-box" onClick="hate({{ctno}})"><a class="fa fa-heart heartfull" aria-hidden="true"></a></div></div>
 
  userInfo()
 
- $(document).ready(function() {
-	 $.getJSON('TogetherList.json', {'pageNo':1, 'pageSize': 5, 'mno': 1}, function(result) {
+
+	 $.getJSON('TogetherList.json', {'pageNo':1, 'pageSize': pageSize, 'mno': 1}, function(result) {
 		 var totalCount = result.data.totalCount;
-//	var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
+	     var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
 		 console.log(result)
 //    // 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
 		 var templateFn = Handlebars.compile($('#FairyTaleContent-template').text())
@@ -16,28 +28,178 @@ var ctno;
 		 $("#video-box").text('') // tbody의 기존 tr 태그들을 지우고
 		 $("#video-box").html(generatedHTML) // 새 tr 태그들로 설정한다.
 		 
-//    currPageNo = pageNo
-//    pageNoTag.text(currPageNo)
-//
-//    if (currPageNo == 1) {
-//      prevBtn.prop('disabled', true)
-//    } else {
-//      prevBtn.prop('disabled', false)
-//    }
-//
-//    if (currPageNo == lastPageNo) {
-//      nextBtn.prop('disabled', true)
-//    } else {
-//      nextBtn.prop('disabled', false)
-//    }
+		 $(".content_box").on("click", function() {
+			 ctno = $(this).attr("data-a")
+			 bkno = $(this).attr("data-b")
+		 })
+			 
+			 playModal()
+          
+		 
+    currPageNo = pageNo
+    pageNoTag.text(currPageNo)
+
+    if (currPageNo == 1) {
+      prevBtn.prop('disabled', true)
+    } else {
+      prevBtn.prop('disabled', false)
+    }
+
+    if (currPageNo == lastPageNo) {
+      nextBtn.prop('disabled', true)
+    } else {
+      nextBtn.prop('disabled', false)
+    }
 		 
 		  confirm()
 		 
 	 }) // getJSON()
- })
+	 
+ /******************************모달**************************************/
+	 function playModal() {
+		 
+	 	$(".content_box > img").on("click", function() {
+	 		Modalfunction()
+	 	})
+	 	$(".titl").on("click", function() {
+	 		Modalfunction()
+	 	})
+	 	$(".date").on("click", function() {
+	 		Modalfunction()
+	 	})
+	 	$(".cont").on("click", function() {
+	 		Modalfunction()
+	 	})
+	 }
+	 function Modalfunction() {
+		 setTimeout(() => {
+			 console.log("모달 순서 1")
+			 $("#myModal").modal();	
+			 $.getJSON('TogetherDetail.json', {'ctno': ctno}, function(result) {
+				 var totalCount = result.data.totalCount;
+				 var templateFn = Handlebars.compile($('#Slider-template').text())
+				 var generatedHTML = templateFn(result.data)
+				 $(".FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
+				 $(".FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
+				 console.log(result)
+				 StartPage = bkno;
+				 MovePage = StartPage;
+				 EndPage = parseInt(StartPage) + result.data.TogetherDetail.length -1;
+				 Slider()
+			 }) // getJSON()
+		}, 100);
+	 }
+/****************************슬라이더************************************/
+
+	 function Slider(){
+			 console.log(EndPage)		 
+			 $(".playREC"+ MovePage)[0].play();
+			 $(".playREC" + MovePage).on("ended", function() {
+				 moveRight();
+				 MovePage = parseInt(MovePage) + 1;
+				 $(".playREC"+ MovePage)[0].play();
+				 
+				 autoplayRecord(MovePage)
+//				MovePage = StartPage
+				 console.log("끝")
+			 })
+			 console.log(MovePage)
+			 var slideCount = $('#slider ul li').length;
+			 var slideWidth = $('#slider ul li').width();
+			 var slideHeight = $('#slider ul li').height();
+			 var sliderUlWidth = slideCount * slideWidth;
+			 
+			 
+			 
+			 $('#slider').css({ width: slideWidth, height: slideHeight });
+			 
+			 $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+			 
+			 $('#slider ul li:last-child').prependTo('#slider ul');
+			 
+			 
+			 
+			 function moveLeft() {
+				 $('#slider ul').animate({
+					 left: + slideWidth
+				 }, 200, function () {
+					 $('#slider ul li:last-child').prependTo('#slider ul');
+					 $('#slider ul').css('left', '');
+				 });
+			 };
+			 
+			 function moveRight() {
+				 $('#slider ul').animate({
+					 left: - slideWidth
+				 }, 200, function () {
+					 $('#slider ul li:first-child').appendTo('#slider ul');
+					 $('#slider ul').css('left', '');
+				 });
+			 };
+			 
+			 
+			 $(".control_prev").unbind( "click" );
+			 $(".control_next").unbind( "click" );
+			 $('.control_prev').click(function () {
+				 $(".playREC"+ MovePage)[0].pause();
+				 console.log("prev");
+				 moveLeft();
+				 if(MovePage <= StartPage){
+					 MovePage = EndPage;
+					 console.log(MovePage)
+				 } else {
+					 MovePage -= 1;
+					 console.log(MovePage)
+				 }
+			 });
+			 
+			 $('.control_next').click(function () {
+				 $(".playREC"+ MovePage)[0].pause();
+				 console.log("next");
+				 moveRight();
+				 if(MovePage >= EndPage){
+					 MovePage = StartPage;
+					 console.log(MovePage)
+				 }else {
+					 MovePage = parseInt(MovePage) + 1;
+					 console.log(MovePage)
+				 }
+				 $(".playREC"+ MovePage)[0].play();
+			 });
+			 
+			 $("#recordPlay").on("click", function() {
+				 console.log(" 안내지!")
+				 console.log(MovePage)
+				 $(".playREC"+ MovePage)[0].play();
+				 console.log($(".playREC"+ MovePage)[0])
+				 console.log($(".playREC"+ MovePage)[0].play())
+			 })
+			 
+			 $("#recordStop").on("click", function() {
+				 $(".playREC"+ MovePage)[0].pause();
+			 })
+			 function autoplayRecord() {
+				 $(".playREC"+ MovePage)[0].onended = function() {
+					 console.log("오토에서받는 :" + MovePage)
+					 MovePage = parseInt(MovePage) + 1;
+					 moveRight();
+					 console.log("Next MovePage:" + MovePage)
+					 $(".playREC"+ MovePage)[0].play();
+					 if(MovePage == EndPage){
+						 $(".playREC"+ MovePage)[0].onended = function() {
+							 alert("동화가 종료 되었습니다.")
+							 moveRight();
+							 MovePage = StartPage
+						 }
+						 return
+					 } else{
+						 autoplayRecord(MovePage)
+					 }
+				 }
+			 }
+            
+	 }
  
-
-
 
   function userInfo() {
 	$.getJSON('userinfo.json', function(result) {
@@ -52,29 +214,29 @@ function like(ctno) {
 	 if(mno==null) {
 		 alert('로그인을 하시옵소서')
 	 } else{
-		 console.log($(".heart" + ctno).attr("class") == "hart-box heart" + ctno)
+		 console.log($(".heart" + ctno).attr("class") == "heart-box heart" + ctno)
 		 
-         if($(".heart" + ctno).attr("class") == "heart" + ctno + " hart-box" ) {
+         if($(".heart" + ctno).attr("class") == "heart" + ctno + " heart-box" ) {
 			 console.log("성공적")
         	 
         	 $.getJSON('addLike.json', {'mno' : mno, 'ctno' : ctno}, function(result) {
-        		 $(".heart" + ctno).addClass("hartfull-box")
-        		 .removeClass("hart-box")
+        		 $(".heart" + ctno).addClass("heartfull-box")
+        		 .removeClass("heart-box")
         		 $(".heart" + ctno + "> a").removeClass("fa-heart-o")
-        		 .removeClass("hart")
+        		 .removeClass("heart")
         		 .addClass("fa-heart")
-        		 .addClass("hartfull")
+        		 .addClass("heartfull")
         		 confirm()
         	 })
          } else {
         	 $.getJSON('delLike.json', {'mno' : mno, 'ctno' : ctno}, function(result) {
         		 console.log("삭제")
-        		 $(".heart" + ctno).addClass("hart-box")
-        		 .removeClass("hartfull-box")
+        		 $(".heart" + ctno).addClass("heart-box")
+        		 .removeClass("heartfull-box")
         		 $(".heart" + ctno + "> a").removeClass("fa-heart")
-        		 .removeClass("hartfull")
+        		 .removeClass("heartfull")
         		 .addClass("fa-heart-o")
-        		 .addClass("hart")
+        		 .addClass("heart")
         		 confirm()
         	 })
          }
@@ -83,51 +245,28 @@ function like(ctno) {
 	 }
 }
 
-//function hate(ctno) {
-//	console.log(ctno)
-//	console.log(mno)
-//	$.getJSON('delLike.json', {'mno' : mno, 'ctno' : ctno}, function(result) {
-//		 console.log("성공적")
-//		 confirm()
-//	 })
-//
-//}
 var rmnd;
 function confirm() {
 	if(mno !=null) {
-		$.getJSON('hartfull.json', {'mno': mno}, function(result) {
-			console.log('hartfull', result)
-//			console.log(result.data.hartfull[0])
+		$.getJSON('heartfull.json', {'mno': mno}, function(result) {
+			console.log('heartfull', result)
 			
 			try {
-				if(result.data.hartfull[0].rmnd != null) {
-//					console.log(result.data.hartfull.length)
-					for (var i= 0; i < result.data.hartfull.length; i++) {
-						ctno = result.data.hartfull[i].ctno
-//						console.log(result)
-//						console.log(result.data.hartfull[i])
-//						console.log("ctno", ctno)
-//						console.log(i)
-//						console.log("왓",result.data.hartfull[i].ctno)
-//						console.log("이거",$('.hart-box').attr('data-no'))
-							if(result.data.hartfull[i].ctno == $('.heart'+ctno).attr('data-no')) {
+				if(result.data.heartfull[0].rmnd != null) {
+					for (var i= 0; i < result.data.heartfull.length; i++) {
+						ctno = result.data.heartfull[i].ctno
+							if(result.data.heartfull[i].ctno == $('.heart'+ctno).attr('data-no')) {
 								console.log("성공")
 								$(".heart" + ctno + " > a").removeClass("fa-heart-o")
-								                           .removeClass("hart")
+								                           .removeClass("heart")
 							                  	           .addClass("fa-heart")
-								                           .addClass("hartfull")
-								$(".heart" + ctno).addClass("hartfull-box")
-				        		              .removeClass("hart-box")
+								                           .addClass("heartfull")
+								$(".heart" + ctno).addClass("heartfull-box")
+				        		              .removeClass("heart-box")
 							}
 					}
 				}
 			} catch(exception) {
-//				$(".heart" + ctno).addClass("hart-box")
-//       		                      .removeClass("hartfull-box")
-//       	        $(".heart" + ctno + "> a").removeClass("fa-heart")
-//       		                              .removeClass("hartfull")
-//       	                                  .addClass("fa-heart-o")
-//       	                                  .addClass("hart")
 			}   
 			
 			
@@ -136,138 +275,4 @@ function confirm() {
 }
 
 
-/******************************모달**************************************/
 
-//function modal(ctno) {
-////		console.log($(".content_no" + ctno + ">" + "img").attr("src"))
-////	  var t = $(".content_no" + ctno + ">" + "img").attr("src");
-////	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
-//	  $("#myModal").modal();
-//	  $(document).ready(function() {
-//			 $.getJSON('TogetherDetail.json', {'ctno': 1}, function(result) {
-//				 var totalCount = result.data.totalCount;
-//				 console.log(result)
-//				 var templateFn = Handlebars.compile($('#slider-template').text())
-//				 var generatedHTML = templateFn(result.data)
-//				 $("#slider").text('') // tbody의 기존 tr 태그들을 지우고
-//				 $("#slider").html(generatedHTML) // 새 tr 태그들로 설정한다.
-//				 
-//				 confirm()
-//				 
-//			 }) // getJSON()
-//		 })
-//}
-
-
-
-
- /****************************슬라이더************************************/
- 
-//current position
-var pos = 0;
-//number of slides
-var totalSlides = $('#slider-wrap ul li').length;
-//get the slide width
-var sliderWidth = $('#slider-wrap').width();
-
-
-$(document).ready(function(){
-	
-	
-	/*****************
-	 BUILD THE SLIDER
-	*****************/
-	//set width to be 'x' times the number of slides
-	$('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
-	
-    //next slide 	
-	$('#next').click(function(){
-		slideRight();
-	});
-	
-	//previous slide
-	$('#previous').click(function(){
-		slideLeft();
-	});
-	
-	
-	
-	/*************************
-	 //*> OPTIONAL SETTINGS
-	************************/
-	//automatic slider
-	var autoSlider = setInterval(slideRight, 3000);
-	
-	//for each slide 
-	$.each($('#slider-wrap ul li'), function() { 
-	   //set its color
-	   var c = $(this).attr("data-color");
-	   $(this).css("background",c);
-	   
-	   //create a pagination
-	   var li = document.createElement('li');
-	   $('#pagination-wrap ul').append(li);	   
-	});
-	
-	//counter
-	countSlides();
-	
-	//pagination
-	pagination();
-	
-	//hide/show controls/btns when hover
-	//pause automatic slide when hover
-	$('#slider-wrap').hover(
-	  function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
-	  function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
-	);
-	
-	
-
-});//DOCUMENT READY
-	
-
-
-/***********
- SLIDE LEFT
-************/
-function slideLeft(){
-	pos--;
-	if(pos==-1){ pos = totalSlides-1; }
-	$('#slider-wrap ul#slider').css('left', -(sliderWidth*pos)); 	
-	
-	//*> optional
-	countSlides();
-	pagination();
-}
-
-
-/************
- SLIDE RIGHT
-*************/
-function slideRight(){
-	pos++;
-	if(pos==totalSlides){ pos = 0; }
-	$('#slider-wrap ul#slider').css('left', -(sliderWidth*pos)); 
-	
-	//*> optional 
-	countSlides();
-	pagination();
-}
-
-
-
-	
-/************************
- //*> OPTIONAL SETTINGS
-************************/
-function countSlides(){
-	$('#counter').html(pos+1 + ' / ' + totalSlides);
-}
-
-function pagination(){
-	$('#pagination-wrap ul li').removeClass('active');
-	$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
-}
-		
-	
