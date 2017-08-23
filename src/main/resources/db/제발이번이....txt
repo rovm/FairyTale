@@ -1,431 +1,432 @@
--- 1´ë1¹®ÀÇ
+-- 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE `QNA` (
-  `BWNO`  INTEGER     NOT NULL COMMENT '°Ô½Ã±Û¹øÈ£', -- °Ô½Ã±Û¹øÈ£
-  `Q_DIV` VARCHAR(50) NOT NULL COMMENT '¹®ÀÇºÐ·ù', -- ¹®ÀÇºÐ·ù
-  `Q_ANS` TEXT        NULL     COMMENT '´äº¯³»¿ë' -- ´äº¯³»¿ë
+  `BWNO`  INTEGER     NOT NULL COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£', -- ï¿½Ô½Ã±Û¹ï¿½È£
+  `Q_DIV` VARCHAR(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ÇºÐ·ï¿½', -- ï¿½ï¿½ï¿½ÇºÐ·ï¿½
+  `Q_ANS` TEXT        NULL     COMMENT 'ï¿½äº¯ï¿½ï¿½ï¿½ï¿½' -- ï¿½äº¯ï¿½ï¿½ï¿½ï¿½
 )
-COMMENT '1´ë1¹®ÀÇ';
+COMMENT '1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½';
 
--- 1´ë1¹®ÀÇ
+-- 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `QNA`
-  ADD CONSTRAINT `PK_QNA` -- 1´ë1¹®ÀÇ ±âº»Å°
+  ADD CONSTRAINT `PK_QNA` -- 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     );
 
--- 1´ë1¹®ÀÇ ÀÎµ¦½º
+-- 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 CREATE INDEX `IX_QNA`
-  ON `QNA`( -- 1´ë1¹®ÀÇ
-    `Q_DIV` ASC -- ¹®ÀÇºÐ·ù
+  ON `QNA`( -- 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
+    `Q_DIV` ASC -- ï¿½ï¿½ï¿½ÇºÐ·ï¿½
   );
 
 ALTER TABLE `QNA`
-  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '°Ô½Ã±Û¹øÈ£';
+  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£';
 
--- ÀÚÁÖ¹¯´ÂÁú¹®
+-- ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE `FAQ` (
-  `BWNO`    INTEGER     NOT NULL COMMENT '°Ô½Ã±Û¹øÈ£', -- °Ô½Ã±Û¹øÈ£
-  `ANS_DIV` VARCHAR(50) NULL     COMMENT '´äº¯³»¿ë' -- ´äº¯³»¿ë
+  `BWNO`    INTEGER     NOT NULL COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£', -- ï¿½Ô½Ã±Û¹ï¿½È£
+  `ANS_DIV` VARCHAR(50) NULL     COMMENT 'ï¿½äº¯ï¿½ï¿½ï¿½ï¿½' -- ï¿½äº¯ï¿½ï¿½ï¿½ï¿½
 )
-COMMENT 'ÀÚÁÖ¹¯´ÂÁú¹®';
+COMMENT 'ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
--- ÀÚÁÖ¹¯´ÂÁú¹®
+-- ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `FAQ`
-  ADD CONSTRAINT `PK_FAQ` -- ÀÚÁÖ¹¯´ÂÁú¹® ±âº»Å°
+  ADD CONSTRAINT `PK_FAQ` -- ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     );
 
 ALTER TABLE `FAQ`
-  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '°Ô½Ã±Û¹øÈ£';
+  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£';
 
--- ¸í¿¹ÀÇÀü´ç°Ô½Ã¹°
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½
 CREATE TABLE `HoF` (
-  `HOFNO`    INTEGER NOT NULL COMMENT '¸í¿¹ÀÇÀü´ç°íÀ¯¹øÈ£', -- ¸í¿¹ÀÇÀü´ç°íÀ¯¹øÈ£
-  `HOF_PERI` DATE    NOT NULL COMMENT '¸í¿¹ÀÇÀü´ç³â¿ù', -- ¸í¿¹ÀÇÀü´ç³â¿ù
-  `HOF_RANK` INTEGER NOT NULL COMMENT '¼øÀ§', -- ¼øÀ§
-  `MNO`      INTEGER NOT NULL COMMENT 'È¸¿ø¹øÈ£', -- È¸¿ø¹øÈ£
-  `CTNO`     INTEGER NULL     COMMENT 'Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£' -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
+  `HOFNO`    INTEGER NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+  `HOF_PERI` DATE    NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  `HOF_RANK` INTEGER NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½
+  `MNO`      INTEGER NOT NULL COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£', -- È¸ï¿½ï¿½ï¿½ï¿½È£
+  `CTNO`     INTEGER NULL     COMMENT 'ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£' -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
 )
-COMMENT '¸í¿¹ÀÇÀü´ç°Ô½Ã¹°';
+COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½';
 
--- ¸í¿¹ÀÇÀü´ç°Ô½Ã¹°
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½
 ALTER TABLE `HoF`
-  ADD CONSTRAINT `PK_HoF` -- ¸í¿¹ÀÇÀü´ç°Ô½Ã¹° Primary key
+  ADD CONSTRAINT `PK_HoF` -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ Primary key
     PRIMARY KEY (
-      `HOFNO` -- ¸í¿¹ÀÇÀü´ç°íÀ¯¹øÈ£
+      `HOFNO` -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
     );
 
--- ¸í¿¹ÀÇÀü´ç°Ô½Ã¹° Index
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ Index
 CREATE INDEX `IX_HoF`
-  ON `HoF`( -- ¸í¿¹ÀÇÀü´ç°Ô½Ã¹°
-    `HOF_PERI` ASC -- ¸í¿¹ÀÇÀü´ç³â¿ù
+  ON `HoF`( -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½
+    `HOF_PERI` ASC -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   );
 
 ALTER TABLE `HoF`
-  MODIFY COLUMN `HOFNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '¸í¿¹ÀÇÀü´ç°íÀ¯¹øÈ£';
+  MODIFY COLUMN `HOFNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£';
 
--- ÃßÃµ°Ô½Ã±Û
+-- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
 CREATE TABLE `WITHVIEW` (
-  `MNO`  INTEGER NOT NULL COMMENT 'È¸¿ø¹øÈ£', -- È¸¿ø¹øÈ£
-  `CTNO` INTEGER NOT NULL COMMENT 'Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£', -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-  `RMND` INTEGER NOT NULL COMMENT 'ÃßÃµÀÏ' -- ÃßÃµÀÏ
+  `MNO`  INTEGER NOT NULL COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£', -- È¸ï¿½ï¿½ï¿½ï¿½È£
+  `CTNO` INTEGER NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£', -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+  `RMND` DATE NOT NULL COMMENT 'ï¿½ï¿½Ãµï¿½ï¿½' -- ï¿½ï¿½Ãµï¿½ï¿½
 )
-COMMENT 'ÃßÃµ°Ô½Ã±Û';
+COMMENT 'ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½';
 
--- ÃßÃµ°Ô½Ã±Û
+-- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
 ALTER TABLE `WITHVIEW`
-  ADD CONSTRAINT `PK_WITHVIEW` -- ÃßÃµ°Ô½Ã±Û Primary key
+  ADD CONSTRAINT `PK_WITHVIEW` -- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½ Primary key
     PRIMARY KEY (
-      `MNO`,  -- È¸¿ø¹øÈ£
-      `CTNO`  -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
+      `MNO`,  -- È¸ï¿½ï¿½ï¿½ï¿½È£
+      `CTNO`  -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
     );
 
--- ¸Þ´º¾ó
+-- ï¿½Þ´ï¿½ï¿½ï¿½
 CREATE TABLE `MENUAL` (
-  `MENO`       INTEGER      NOT NULL COMMENT '¹øÈ£', -- ¹øÈ£
-  `MENU_VEDIO` VARCHAR(255) NOT NULL COMMENT 'µ¿¿µ»ó', -- µ¿¿µ»ó
-  `MENU_TITL`  VARCHAR(40)  NULL     COMMENT 'Á¦¸ñ', -- Á¦¸ñ
-  `MENU_CONT`  TEXT         NULL     COMMENT '³»¿ë', -- ³»¿ë
-  `MENU_DIV`   VARCHAR(50)  NULL     COMMENT 'ºÐ·ù' -- ºÐ·ù
+  `MENO`       INTEGER      NOT NULL COMMENT 'ï¿½ï¿½È£', -- ï¿½ï¿½È£
+  `MENU_VEDIO` VARCHAR(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  `MENU_TITL`  VARCHAR(40)  NULL     COMMENT 'ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½
+  `MENU_CONT`  TEXT         NULL     COMMENT 'ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½
+  `MENU_DIV`   VARCHAR(50)  NULL     COMMENT 'ï¿½Ð·ï¿½' -- ï¿½Ð·ï¿½
 )
-COMMENT '¸Þ´º¾ó';
+COMMENT 'ï¿½Þ´ï¿½ï¿½ï¿½';
 
--- ¸Þ´º¾ó
+-- ï¿½Þ´ï¿½ï¿½ï¿½
 ALTER TABLE `MENUAL`
-  ADD CONSTRAINT `PK_MENUAL` -- ¸Þ´º¾ó ±âº»Å°
+  ADD CONSTRAINT `PK_MENUAL` -- ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `MENO` -- ¹øÈ£
+      `MENO` -- ï¿½ï¿½È£
     );
 
 ALTER TABLE `MENUAL`
-  MODIFY COLUMN `MENO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '¹øÈ£';
+  MODIFY COLUMN `MENO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½ï¿½È£';
 
--- »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE `CUSTPAGE` (
-  `CTNO`     INTEGER      NOT NULL COMMENT 'Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£', -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-  `BKNO`     INTEGER      NOT NULL COMMENT 'ÆäÀÌÁö °íÀ¯¹øÈ£', -- ÆäÀÌÁö °íÀ¯¹øÈ£
-  `CUST_IMG` VARCHAR(255) NULL     COMMENT 'ÀÌ¹ÌÁöÆÄÀÏ°æ·Î', -- ÀÌ¹ÌÁöÆÄÀÏ°æ·Î
-  `CUST_REC` VARCHAR(255) NULL     COMMENT '³ìÀ½ÆÄÀÏ°æ·Î' -- ³ìÀ½ÆÄÀÏ°æ·Î
+  `CTNO`     INTEGER      NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£', -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+  `BKNO`     INTEGER      NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+  `CUST_IMG` VARCHAR(255) NULL     COMMENT 'ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½', -- ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
+  `CUST_REC` VARCHAR(255) NULL     COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½' -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
 )
-COMMENT '»ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö';
+COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
--- »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `CUSTPAGE`
-  ADD CONSTRAINT `PK_CUSTPAGE` -- »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö ±âº»Å°
+  ADD CONSTRAINT `PK_CUSTPAGE` -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `CTNO`, -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-      `BKNO`  -- ÆäÀÌÁö °íÀ¯¹øÈ£
+      `CTNO`, -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+      `BKNO`  -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
     );
 
--- È¸¿ø
+-- È¸ï¿½ï¿½
 CREATE TABLE `MEMBER` (
-  `MNO`   INTEGER     NOT NULL COMMENT 'È¸¿ø¹øÈ£', -- È¸¿ø¹øÈ£
-  `EMAIL` VARCHAR(40) NOT NULL COMMENT 'ÀÌ¸ÞÀÏ', -- ÀÌ¸ÞÀÏ
-  `PASS`  VARCHAR(50) NOT NULL COMMENT 'ºñ¹Ð¹øÈ£', -- ºñ¹Ð¹øÈ£
-  `POSI`  VARCHAR(50) NOT NULL COMMENT '»ç¿ëÀÚ', -- »ç¿ëÀÚ
-  `NAME`  VARCHAR(50) NOT NULL COMMENT 'ÀÌ¸§', -- ÀÌ¸§
-  `TEL`   VARCHAR(30) NOT NULL COMMENT 'ÈÞ´ëÆù¹øÈ£' -- ÈÞ´ëÆù¹øÈ£
+  `MNO`   INTEGER     NOT NULL COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£', -- È¸ï¿½ï¿½ï¿½ï¿½È£
+  `EMAIL` VARCHAR(40) NOT NULL COMMENT 'ï¿½Ì¸ï¿½ï¿½ï¿½', -- ï¿½Ì¸ï¿½ï¿½ï¿½
+  `PASS`  VARCHAR(50) NOT NULL COMMENT 'ï¿½ï¿½Ð¹ï¿½È£', -- ï¿½ï¿½Ð¹ï¿½È£
+  `POSI`  VARCHAR(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½
+  `NAME`  VARCHAR(50) NOT NULL COMMENT 'ï¿½Ì¸ï¿½', -- ï¿½Ì¸ï¿½
+  `TEL`   VARCHAR(30) NOT NULL COMMENT 'ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½È£' -- ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½È£
 )
-COMMENT 'È¸¿ø';
+COMMENT 'È¸ï¿½ï¿½';
 
--- È¸¿ø
+-- È¸ï¿½ï¿½
 ALTER TABLE `MEMBER`
-  ADD CONSTRAINT `PK_MEMBER` -- È¸¿ø ±âº»Å°
+  ADD CONSTRAINT `PK_MEMBER` -- È¸ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `MNO` -- È¸¿ø¹øÈ£
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
     );
 
--- È¸¿ø À¯´ÏÅ© ÀÎµ¦½º
+-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å© ï¿½Îµï¿½ï¿½ï¿½
 CREATE UNIQUE INDEX `UIX_MEMBER`
-  ON `MEMBER` ( -- È¸¿ø
-    `EMAIL` ASC, -- ÀÌ¸ÞÀÏ
-    `TEL` ASC    -- ÈÞ´ëÆù¹øÈ£
+  ON `MEMBER` ( -- È¸ï¿½ï¿½
+    `EMAIL` ASC, -- ï¿½Ì¸ï¿½ï¿½ï¿½
+    `TEL` ASC    -- ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½È£
   );
 
 ALTER TABLE `MEMBER`
-  MODIFY COLUMN `MNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'È¸¿ø¹øÈ£';
+  MODIFY COLUMN `MNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£';
 
--- °Ô½Ã±Û
+-- ï¿½Ô½Ã±ï¿½
 CREATE TABLE `BOARDWRITE` (
-  `BWNO`    INTEGER     NOT NULL COMMENT '°Ô½Ã±Û¹øÈ£', -- °Ô½Ã±Û¹øÈ£
-  `MNO`     INTEGER     NOT NULL COMMENT 'È¸¿ø¹øÈ£', -- È¸¿ø¹øÈ£
-  `BW_TITL` VARCHAR(50) NOT NULL COMMENT '°Ô½Ã±ÛÁ¦¸ñ', -- °Ô½Ã±ÛÁ¦¸ñ
-  `BW_CON`  TEXT        NOT NULL COMMENT '°Ô½Ã±Û³»¿ë', -- °Ô½Ã±Û³»¿ë
-  `BW_WDT`  DATE        NOT NULL COMMENT 'µî·ÏÀÏÀÚ', -- µî·ÏÀÏÀÚ
-  `BW_EDT`  DATE        NULL     COMMENT '¼öÁ¤ÀÏÀÚ', -- ¼öÁ¤ÀÏÀÚ
-  `BW_HITS` INTEGER     NULL     COMMENT 'Á¶È¸¼ö', -- Á¶È¸¼ö
-  `BW_DIV`  VARCHAR(50) NOT NULL COMMENT '°Ô½ÃÆÇÀ¯Çü' -- °Ô½ÃÆÇÀ¯Çü
+  `BWNO`    INTEGER     NOT NULL COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£', -- ï¿½Ô½Ã±Û¹ï¿½È£
+  `MNO`     INTEGER     NOT NULL COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£', -- È¸ï¿½ï¿½ï¿½ï¿½È£
+  `BW_TITL` VARCHAR(50) NOT NULL COMMENT 'ï¿½Ô½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½Ô½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½
+  `BW_CON`  TEXT        NOT NULL COMMENT 'ï¿½Ô½Ã±Û³ï¿½ï¿½ï¿½', -- ï¿½Ô½Ã±Û³ï¿½ï¿½ï¿½
+  `BW_WDT`  DATE        NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  `BW_EDT`  DATE        NULL     COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  `BW_HITS` INTEGER     NULL     COMMENT 'ï¿½ï¿½È¸ï¿½ï¿½', -- ï¿½ï¿½È¸ï¿½ï¿½
+  `BW_DIV`  VARCHAR(50) NOT NULL COMMENT 'ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' -- ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 )
-COMMENT '°Ô½Ã±Û';
+COMMENT 'ï¿½Ô½Ã±ï¿½';
 
--- °Ô½Ã±Û
+-- ï¿½Ô½Ã±ï¿½
 ALTER TABLE `BOARDWRITE`
-  ADD CONSTRAINT `PK_BOARDWRITE` -- °Ô½Ã±Û ±âº»Å°
+  ADD CONSTRAINT `PK_BOARDWRITE` -- ï¿½Ô½Ã±ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     );
 
--- °Ô½Ã±Û ÀÎµ¦½º
+-- ï¿½Ô½Ã±ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 CREATE INDEX `IX_BOARDWRITE`
-  ON `BOARDWRITE`( -- °Ô½Ã±Û
-    `BW_TITL` ASC, -- °Ô½Ã±ÛÁ¦¸ñ
-    `BW_DIV` ASC   -- °Ô½ÃÆÇÀ¯Çü
+  ON `BOARDWRITE`( -- ï¿½Ô½Ã±ï¿½
+    `BW_TITL` ASC, -- ï¿½Ô½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½
+    `BW_DIV` ASC   -- ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   );
 
 ALTER TABLE `BOARDWRITE`
-  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '°Ô½Ã±Û¹øÈ£';
+  MODIFY COLUMN `BWNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£';
 
--- °Ô½ÃÆÇ Ã·ºÎ ÆÄÀÏ
+-- ï¿½Ô½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE `BOARDFILE` (
-  `BFNO`     INTEGER      NOT NULL COMMENT 'ÆÄÀÏ¹øÈ£', -- ÆÄÀÏ¹øÈ£
-  `BWNO`     INTEGER      NOT NULL COMMENT '°Ô½Ã±Û¹øÈ£', -- °Ô½Ã±Û¹øÈ£
-  `FILEPATH` VARCHAR(255) NOT NULL COMMENT 'ÆÄÀÏ°æ·Î', -- ÆÄÀÏ°æ·Î
-  `FILENAME` VARCHAR(50)  NOT NULL COMMENT 'ÆÄÀÏÀÌ¸§' -- ÆÄÀÏÀÌ¸§
+  `BFNO`     INTEGER      NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ï¹ï¿½È£', -- ï¿½ï¿½ï¿½Ï¹ï¿½È£
+  `BWNO`     INTEGER      NOT NULL COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£', -- ï¿½Ô½Ã±Û¹ï¿½È£
+  `FILEPATH` VARCHAR(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ï°ï¿½ï¿½', -- ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
+  `FILENAME` VARCHAR(50)  NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½' -- ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½
 )
-COMMENT '°Ô½ÃÆÇ Ã·ºÎ ÆÄÀÏ';
+COMMENT 'ï¿½Ô½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½';
 
--- °Ô½ÃÆÇ Ã·ºÎ ÆÄÀÏ
+-- ï¿½Ô½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `BOARDFILE`
-  ADD CONSTRAINT `PK_BOARDFILE` -- °Ô½ÃÆÇ Ã·ºÎ ÆÄÀÏ ±âº»Å°
+  ADD CONSTRAINT `PK_BOARDFILE` -- ï¿½Ô½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `BFNO` -- ÆÄÀÏ¹øÈ£
+      `BFNO` -- ï¿½ï¿½ï¿½Ï¹ï¿½È£
     );
 
 ALTER TABLE `BOARDFILE`
-  MODIFY COLUMN `BFNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ÆÄÀÏ¹øÈ£';
+  MODIFY COLUMN `BFNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½ï¿½ï¿½Ï¹ï¿½È£';
 
--- ÄÚ¸àÆ®
+-- ï¿½Ú¸ï¿½Æ®
 CREATE TABLE `COMMENT` (
-  `CNO`   INTEGER      NOT NULL COMMENT 'ÄÚ¸àÆ®¹øÈ£', -- ÄÚ¸àÆ®¹øÈ£
-  `MNO`   INTEGER      NOT NULL COMMENT 'È¸¿ø¹øÈ£', -- È¸¿ø¹øÈ£
-  `BWNO`  INTEGER      NOT NULL COMMENT '°Ô½Ã±Û¹øÈ£', -- °Ô½Ã±Û¹øÈ£
-  `C_WDT` DATE         NOT NULL COMMENT 'ÄÚ¸àÆ®µî·Ï³¯Â¥', -- ÄÚ¸àÆ®µî·Ï³¯Â¥
-  `C_CON` VARCHAR(255) NOT NULL COMMENT 'ÄÚ¸àÆ®³»¿ë' -- ÄÚ¸àÆ®³»¿ë
+  `CNO`   INTEGER      NOT NULL COMMENT 'ï¿½Ú¸ï¿½Æ®ï¿½ï¿½È£', -- ï¿½Ú¸ï¿½Æ®ï¿½ï¿½È£
+  `MNO`   INTEGER      NOT NULL COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£', -- È¸ï¿½ï¿½ï¿½ï¿½È£
+  `BWNO`  INTEGER      NOT NULL COMMENT 'ï¿½Ô½Ã±Û¹ï¿½È£', -- ï¿½Ô½Ã±Û¹ï¿½È£
+  `C_WDT` DATE         NOT NULL COMMENT 'ï¿½Ú¸ï¿½Æ®ï¿½ï¿½Ï³ï¿½Â¥', -- ï¿½Ú¸ï¿½Æ®ï¿½ï¿½Ï³ï¿½Â¥
+  `C_CON` VARCHAR(255) NOT NULL COMMENT 'ï¿½Ú¸ï¿½Æ®ï¿½ï¿½ï¿½ï¿½' -- ï¿½Ú¸ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
 )
-COMMENT 'ÄÚ¸àÆ®';
+COMMENT 'ï¿½Ú¸ï¿½Æ®';
 
--- ÄÚ¸àÆ®
+-- ï¿½Ú¸ï¿½Æ®
 ALTER TABLE `COMMENT`
-  ADD CONSTRAINT `PK_COMMENT` -- ÄÚ¸àÆ® ±âº»Å°
+  ADD CONSTRAINT `PK_COMMENT` -- ï¿½Ú¸ï¿½Æ® ï¿½âº»Å°
     PRIMARY KEY (
-      `CNO` -- ÄÚ¸àÆ®¹øÈ£
+      `CNO` -- ï¿½Ú¸ï¿½Æ®ï¿½ï¿½È£
     );
 
 ALTER TABLE `COMMENT`
-  MODIFY COLUMN `CNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ÄÚ¸àÆ®¹øÈ£';
+  MODIFY COLUMN `CNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½Ú¸ï¿½Æ®ï¿½ï¿½È£';
 
--- µ¿È­Ã¥
+-- ï¿½ï¿½È­Ã¥
 CREATE TABLE `MSTBOOK` (
-  `MBKNO`    INTEGER     NOT NULL COMMENT 'µ¿È­Ã¥¹øÈ£', -- µ¿È­Ã¥¹øÈ£
-  `MBK_TITL` VARCHAR(40) NOT NULL COMMENT 'Á¦¸ñ', -- Á¦¸ñ
-  `MBK_CONT` TEXT        NOT NULL COMMENT 'Ã¥¼Ò°³', -- Ã¥¼Ò°³
-  `MBK_DIV`  VARCHAR(50) NOT NULL COMMENT 'µ¿È­Ã¥ºÐ·ù' -- µ¿È­Ã¥ºÐ·ù
+  `MBKNO`    INTEGER     NOT NULL COMMENT 'ï¿½ï¿½È­Ã¥ï¿½ï¿½È£', -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
+  `MBK_TITL` VARCHAR(40) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½
+  `MBK_CONT` TEXT        NOT NULL COMMENT 'Ã¥ï¿½Ò°ï¿½', -- Ã¥ï¿½Ò°ï¿½
+  `MBK_DIV`  VARCHAR(50) NOT NULL COMMENT 'ï¿½ï¿½È­Ã¥ï¿½Ð·ï¿½' -- ï¿½ï¿½È­Ã¥ï¿½Ð·ï¿½
 )
-COMMENT 'µ¿È­Ã¥';
+COMMENT 'ï¿½ï¿½È­Ã¥';
 
--- µ¿È­Ã¥
+-- ï¿½ï¿½È­Ã¥
 ALTER TABLE `MSTBOOK`
-  ADD CONSTRAINT `PK_MSTBOOK` -- µ¿È­Ã¥ ±âº»Å°
+  ADD CONSTRAINT `PK_MSTBOOK` -- ï¿½ï¿½È­Ã¥ ï¿½âº»Å°
     PRIMARY KEY (
-      `MBKNO` -- µ¿È­Ã¥¹øÈ£
+      `MBKNO` -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
     );
 
--- µ¿È­Ã¥ À¯´ÏÅ© ÀÎµ¦½º
+-- ï¿½ï¿½È­Ã¥ ï¿½ï¿½ï¿½ï¿½Å© ï¿½Îµï¿½ï¿½ï¿½
 CREATE UNIQUE INDEX `UIX_MSTBOOK`
-  ON `MSTBOOK` ( -- µ¿È­Ã¥
+  ON `MSTBOOK` ( -- ï¿½ï¿½È­Ã¥
   );
 
--- µ¿È­Ã¥ ÀÎµ¦½º
+-- ï¿½ï¿½È­Ã¥ ï¿½Îµï¿½ï¿½ï¿½
 CREATE INDEX `IX_MSTBOOK`
-  ON `MSTBOOK`( -- µ¿È­Ã¥
-    `MBK_TITL` ASC, -- Á¦¸ñ
-    `MBK_DIV` ASC   -- µ¿È­Ã¥ºÐ·ù
+  ON `MSTBOOK`( -- ï¿½ï¿½È­Ã¥
+    `MBK_TITL` ASC, -- ï¿½ï¿½ï¿½ï¿½
+    `MBK_DIV` ASC   -- ï¿½ï¿½È­Ã¥ï¿½Ð·ï¿½
   );
 
 ALTER TABLE `MSTBOOK`
-  MODIFY COLUMN `MBKNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'µ¿È­Ã¥¹øÈ£';
+  MODIFY COLUMN `MBKNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½ï¿½È­Ã¥ï¿½ï¿½È£';
 
--- ±âº»ÆäÀÌÁö
+-- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE `BKPAGE` (
-  `BKNO`    INTEGER      NOT NULL COMMENT 'ÆäÀÌÁö °íÀ¯¹øÈ£', -- ÆäÀÌÁö °íÀ¯¹øÈ£
-  `MBKNO`   INTEGER      NOT NULL COMMENT 'µ¿È­Ã¥¹øÈ£', -- µ¿È­Ã¥¹øÈ£
-  `BK_PAGE` INTEGER      NOT NULL COMMENT 'ÆäÀÌÁö¹øÈ£', -- ÆäÀÌÁö¹øÈ£
-  `BK_CONT` TEXT         NOT NULL COMMENT 'ÆäÀÌÁö³»¿ë', -- ÆäÀÌÁö³»¿ë
-  `BK_IMG`  VARCHAR(255) NOT NULL COMMENT '±âº»ÀÌ¹ÌÁöÆÄÀÏ°æ·Î', -- ±âº»ÀÌ¹ÌÁöÆÄÀÏ°æ·Î
-  `BK_REC`  VARCHAR(255) NOT NULL COMMENT '±âº»À½¼ºÆÄÀÏ°æ·Î' -- ±âº»À½¼ºÆÄÀÏ°æ·Î
+  `BKNO`    INTEGER      NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+  `MBKNO`   INTEGER      NOT NULL COMMENT 'ï¿½ï¿½È­Ã¥ï¿½ï¿½È£', -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
+  `BK_PAGE` INTEGER      NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+  `BK_CONT` TEXT         NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  `BK_IMG`  VARCHAR(255) NOT NULL COMMENT 'ï¿½âº»ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½', -- ï¿½âº»ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
+  `BK_REC`  VARCHAR(255) NOT NULL COMMENT 'ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½' -- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
 )
-COMMENT '±âº»ÆäÀÌÁö';
+COMMENT 'ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
--- ±âº»ÆäÀÌÁö
+-- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `BKPAGE`
-  ADD CONSTRAINT `PK_BKPAGE` -- ±âº»ÆäÀÌÁö ±âº»Å°
+  ADD CONSTRAINT `PK_BKPAGE` -- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»Å°
     PRIMARY KEY (
-      `BKNO` -- ÆäÀÌÁö °íÀ¯¹øÈ£
+      `BKNO` -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
     );
 
 ALTER TABLE `BKPAGE`
-  MODIFY COLUMN `BKNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ÆäÀÌÁö °íÀ¯¹øÈ£';
+  MODIFY COLUMN `BKNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£';
 
--- Á¦ÀÛµ¿È­Ã¥
+-- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
 CREATE TABLE `CUSTBOOK` (
-  `CTNO`      INTEGER     NOT NULL COMMENT 'Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£', -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-  `MBKNO`     INTEGER     NOT NULL COMMENT 'µ¿È­Ã¥¹øÈ£', -- µ¿È­Ã¥¹øÈ£
-  `MNO`       INTEGER     NOT NULL COMMENT 'È¸¿ø¹øÈ£', -- È¸¿ø¹øÈ£
-  `CT_DSCP`   TEXT        NOT NULL COMMENT '¼³¸í', -- ¼³¸í
-  `CT_DATE`   DATE        NOT NULL COMMENT 'µî·ÏÀÏ', -- µî·ÏÀÏ
-  `CT_PUBLIC` VARCHAR(40) NOT NULL COMMENT '°ø°³¿©ºÎ' -- °ø°³¿©ºÎ
+  `CTNO`      INTEGER     NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£', -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+  `MBKNO`     INTEGER     NOT NULL COMMENT 'ï¿½ï¿½È­Ã¥ï¿½ï¿½È£', -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
+  `MNO`       INTEGER     NOT NULL COMMENT 'È¸ï¿½ï¿½ï¿½ï¿½È£', -- È¸ï¿½ï¿½ï¿½ï¿½È£
+  `CT_DSCP`   TEXT        NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½
+  `CT_DATE`   DATE        NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½', -- ï¿½ï¿½ï¿½ï¿½ï¿½
+  `CT_PUBLIC` VARCHAR(40) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 )
-COMMENT 'Á¦ÀÛµ¿È­Ã¥';
+COMMENT 'ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥';
 
--- Á¦ÀÛµ¿È­Ã¥
+-- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
 ALTER TABLE `CUSTBOOK`
-  ADD CONSTRAINT `PK_CUSTBOOK` -- Á¦ÀÛµ¿È­Ã¥ ±âº»Å°
+  ADD CONSTRAINT `PK_CUSTBOOK` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ ï¿½âº»Å°
     PRIMARY KEY (
-      `CTNO` -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
+      `CTNO` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
     );
 
 ALTER TABLE `CUSTBOOK`
-  MODIFY COLUMN `CTNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£';
+  MODIFY COLUMN `CTNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£';
 
--- 1´ë1¹®ÀÇ
+-- 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `QNA`
-  ADD CONSTRAINT `FK_BOARDWRITE_TO_QNA` -- °Ô½Ã±Û -> 1´ë1¹®ÀÇ
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_QNA` -- ï¿½Ô½Ã±ï¿½ -> 1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
     FOREIGN KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     )
-    REFERENCES `BOARDWRITE` ( -- °Ô½Ã±Û
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
-    );
+    REFERENCES `BOARDWRITE` ( -- ï¿½Ô½Ã±ï¿½
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ÀÚÁÖ¹¯´ÂÁú¹®
+-- ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `FAQ`
-  ADD CONSTRAINT `FK_BOARDWRITE_TO_FAQ` -- °Ô½Ã±Û -> ÀÚÁÖ¹¯´ÂÁú¹®
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_FAQ` -- ï¿½Ô½Ã±ï¿½ -> ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     FOREIGN KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     )
-    REFERENCES `BOARDWRITE` ( -- °Ô½Ã±Û
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
-    );
+    REFERENCES `BOARDWRITE` ( -- ï¿½Ô½Ã±ï¿½
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ¸í¿¹ÀÇÀü´ç°Ô½Ã¹°
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½
 ALTER TABLE `HoF`
-  ADD CONSTRAINT `FK_WITHVIEW_TO_HoF` -- ÃßÃµ°Ô½Ã±Û -> ¸í¿¹ÀÇÀü´ç°Ô½Ã¹°
+  ADD CONSTRAINT `FK_WITHVIEW_TO_HoF` -- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½
     FOREIGN KEY (
-      `MNO`,  -- È¸¿ø¹øÈ£
-      `CTNO`  -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
+      `MNO`,  -- È¸ï¿½ï¿½ï¿½ï¿½È£
+      `CTNO`  -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
     )
-    REFERENCES `WITHVIEW` ( -- ÃßÃµ°Ô½Ã±Û
-      `MNO`,  -- È¸¿ø¹øÈ£
-      `CTNO`  -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-    );
+    REFERENCES `WITHVIEW` ( -- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
+      `MNO`,  -- È¸ï¿½ï¿½ï¿½ï¿½È£
+      `CTNO`  -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ÃßÃµ°Ô½Ã±Û
+-- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
 ALTER TABLE `WITHVIEW`
-  ADD CONSTRAINT `FK_MEMBER_TO_WITHVIEW` -- È¸¿ø -> ÃßÃµ°Ô½Ã±Û
+  ADD CONSTRAINT `FK_MEMBER_TO_WITHVIEW` -- È¸ï¿½ï¿½ -> ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
     FOREIGN KEY (
-      `MNO` -- È¸¿ø¹øÈ£
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
     )
-    REFERENCES `MEMBER` ( -- È¸¿ø
-      `MNO` -- È¸¿ø¹øÈ£
-    );
+    REFERENCES `MEMBER` ( -- È¸ï¿½ï¿½
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ÃßÃµ°Ô½Ã±Û
+-- ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
 ALTER TABLE `WITHVIEW`
-  ADD CONSTRAINT `FK_CUSTBOOK_TO_WITHVIEW` -- Á¦ÀÛµ¿È­Ã¥ -> ÃßÃµ°Ô½Ã±Û
+  ADD CONSTRAINT `FK_CUSTBOOK_TO_WITHVIEW` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ -> ï¿½ï¿½Ãµï¿½Ô½Ã±ï¿½
     FOREIGN KEY (
-      `CTNO` -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
+      `CTNO` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
     )
-    REFERENCES `CUSTBOOK` ( -- Á¦ÀÛµ¿È­Ã¥
-      `CTNO` -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-    );
+    REFERENCES `CUSTBOOK` ( -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
+      `CTNO` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `CUSTPAGE`
-  ADD CONSTRAINT `FK_BKPAGE_TO_CUSTPAGE` -- ±âº»ÆäÀÌÁö -> »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö
+  ADD CONSTRAINT `FK_BKPAGE_TO_CUSTPAGE` -- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     FOREIGN KEY (
-      `BKNO` -- ÆäÀÌÁö °íÀ¯¹øÈ£
+      `BKNO` -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
     )
-    REFERENCES `BKPAGE` ( -- ±âº»ÆäÀÌÁö
-      `BKNO` -- ÆäÀÌÁö °íÀ¯¹øÈ£
-    );
+    REFERENCES `BKPAGE` ( -- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      `BKNO` -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `CUSTPAGE`
-  ADD CONSTRAINT `FK_CUSTBOOK_TO_CUSTPAGE` -- Á¦ÀÛµ¿È­Ã¥ -> »ç¿ëÀÚÁ¤ÀÇÆäÀÌÁö
+  ADD CONSTRAINT `FK_CUSTBOOK_TO_CUSTPAGE` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     FOREIGN KEY (
-      `CTNO` -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
+      `CTNO` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
     )
-    REFERENCES `CUSTBOOK` ( -- Á¦ÀÛµ¿È­Ã¥
-      `CTNO` -- Á¦ÀÛµ¿È­Ã¥ÀÏ·Ã¹øÈ£
-    );
+    REFERENCES `CUSTBOOK` ( -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
+      `CTNO` -- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥ï¿½Ï·Ã¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- °Ô½Ã±Û
+-- ï¿½Ô½Ã±ï¿½
 ALTER TABLE `BOARDWRITE`
-  ADD CONSTRAINT `FK_MEMBER_TO_BOARDWRITE` -- È¸¿ø -> °Ô½Ã±Û
+  ADD CONSTRAINT `FK_MEMBER_TO_BOARDWRITE` -- È¸ï¿½ï¿½ -> ï¿½Ô½Ã±ï¿½
     FOREIGN KEY (
-      `MNO` -- È¸¿ø¹øÈ£
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
     )
-    REFERENCES `MEMBER` ( -- È¸¿ø
-      `MNO` -- È¸¿ø¹øÈ£
-    );
+    REFERENCES `MEMBER` ( -- È¸ï¿½ï¿½
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- °Ô½ÃÆÇ Ã·ºÎ ÆÄÀÏ
+-- ï¿½Ô½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `BOARDFILE`
-  ADD CONSTRAINT `FK_BOARDWRITE_TO_BOARDFILE` -- °Ô½Ã±Û -> °Ô½ÃÆÇ Ã·ºÎ ÆÄÀÏ
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_BOARDFILE` -- ï¿½Ô½Ã±ï¿½ -> ï¿½Ô½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     FOREIGN KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     )
-    REFERENCES `BOARDWRITE` ( -- °Ô½Ã±Û
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
-    );
+    REFERENCES `BOARDWRITE` ( -- ï¿½Ô½Ã±ï¿½
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ÄÚ¸àÆ®
+-- ï¿½Ú¸ï¿½Æ®
 ALTER TABLE `COMMENT`
-  ADD CONSTRAINT `FK_MEMBER_TO_COMMENT` -- È¸¿ø -> ÄÚ¸àÆ®
+  ADD CONSTRAINT `FK_MEMBER_TO_COMMENT` -- È¸ï¿½ï¿½ -> ï¿½Ú¸ï¿½Æ®
     FOREIGN KEY (
-      `MNO` -- È¸¿ø¹øÈ£
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
     )
-    REFERENCES `MEMBER` ( -- È¸¿ø
-      `MNO` -- È¸¿ø¹øÈ£
-    );
+    REFERENCES `MEMBER` ( -- È¸ï¿½ï¿½
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ÄÚ¸àÆ®
+-- ï¿½Ú¸ï¿½Æ®
 ALTER TABLE `COMMENT`
-  ADD CONSTRAINT `FK_BOARDWRITE_TO_COMMENT` -- °Ô½Ã±Û -> ÄÚ¸àÆ®
+  ADD CONSTRAINT `FK_BOARDWRITE_TO_COMMENT` -- ï¿½Ô½Ã±ï¿½ -> ï¿½Ú¸ï¿½Æ®
     FOREIGN KEY (
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
     )
-    REFERENCES `BOARDWRITE` ( -- °Ô½Ã±Û
-      `BWNO` -- °Ô½Ã±Û¹øÈ£
-    );
+    REFERENCES `BOARDWRITE` ( -- ï¿½Ô½Ã±ï¿½
+      `BWNO` -- ï¿½Ô½Ã±Û¹ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- ±âº»ÆäÀÌÁö
+-- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `BKPAGE`
-  ADD CONSTRAINT `FK_MSTBOOK_TO_BKPAGE` -- µ¿È­Ã¥ -> ±âº»ÆäÀÌÁö
+  ADD CONSTRAINT `FK_MSTBOOK_TO_BKPAGE` -- ï¿½ï¿½È­Ã¥ -> ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     FOREIGN KEY (
-      `MBKNO` -- µ¿È­Ã¥¹øÈ£
+      `MBKNO` -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
     )
-    REFERENCES `MSTBOOK` ( -- µ¿È­Ã¥
-      `MBKNO` -- µ¿È­Ã¥¹øÈ£
-    );
+    REFERENCES `MSTBOOK` ( -- ï¿½ï¿½È­Ã¥
+      `MBKNO` -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- Á¦ÀÛµ¿È­Ã¥
+-- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
 ALTER TABLE `CUSTBOOK`
-  ADD CONSTRAINT `FK_MSTBOOK_TO_CUSTBOOK` -- µ¿È­Ã¥ -> Á¦ÀÛµ¿È­Ã¥
+  ADD CONSTRAINT `FK_MSTBOOK_TO_CUSTBOOK` -- ï¿½ï¿½È­Ã¥ -> ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
     FOREIGN KEY (
-      `MBKNO` -- µ¿È­Ã¥¹øÈ£
+      `MBKNO` -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
     )
-    REFERENCES `MSTBOOK` ( -- µ¿È­Ã¥
-      `MBKNO` -- µ¿È­Ã¥¹øÈ£
-    );
+    REFERENCES `MSTBOOK` ( -- ï¿½ï¿½È­Ã¥
+      `MBKNO` -- ï¿½ï¿½È­Ã¥ï¿½ï¿½È£
+    )ON DELETE CASCADE ON UPDATE CASCADE;
 
--- Á¦ÀÛµ¿È­Ã¥
+-- ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
 ALTER TABLE `CUSTBOOK`
-  ADD CONSTRAINT `FK_MEMBER_TO_CUSTBOOK` -- È¸¿ø -> Á¦ÀÛµ¿È­Ã¥
+  ADD CONSTRAINT `FK_MEMBER_TO_CUSTBOOK` -- È¸ï¿½ï¿½ -> ï¿½ï¿½ï¿½Ûµï¿½È­Ã¥
     FOREIGN KEY (
-      `MNO` -- È¸¿ø¹øÈ£
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
     )
-    REFERENCES `MEMBER` ( -- È¸¿ø
-      `MNO` -- È¸¿ø¹øÈ£
-    );
+    REFERENCES `MEMBER` ( -- È¸ï¿½ï¿½
+      `MNO` -- È¸ï¿½ï¿½ï¿½ï¿½È£
+    )
+    ON DELETE CASCADE ON UPDATE CASCADE;

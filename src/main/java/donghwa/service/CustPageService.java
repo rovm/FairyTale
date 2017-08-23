@@ -12,6 +12,7 @@ public interface CustPageService {
   void add(CustPage custPage) throws Exception;
   void update(CustPage custPage) throws Exception;
   String custpage_detail(int ctno, int bkno) throws Exception;
+  void remove(int no) throws Exception;
   
 }
 

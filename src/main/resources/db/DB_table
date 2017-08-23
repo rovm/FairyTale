@@ -118,9 +118,6 @@ ALTER TABLE `CUSTPAGE`
       `BKNO`  -- 페이지 고유번호
     );
 
-<<<<<<< HEAD
-
->>>>>>> origin/master
 -- 회원
 CREATE TABLE `MEMBER` (
   `MNO`   INTEGER     NOT NULL COMMENT '회원번호', -- 회원번호

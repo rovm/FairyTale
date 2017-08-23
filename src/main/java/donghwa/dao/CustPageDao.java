@@ -13,4 +13,6 @@ public interface CustPageDao {
   void update(CustPage custPage);
   CustPage list0(int ctno);
   String custpage_detail(Map<String,Object> valueMap);
+  int delete(int no);
+  int delete2(int no);
 }

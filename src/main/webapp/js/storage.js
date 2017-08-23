@@ -146,11 +146,14 @@ function Slider(){
 		});
 		
 		$("#recordPlay").on("click", function() {
-			console.log(" 안내지!")
+			$("#recordPlay").css("background-color","rgba(255, 0, 0, 0.54)")
+			$("#recordStop").css("background-color","rgb(211, 211, 211)")
 			$(".playREC"+ MovePage)[0].play();
 		})
 
 		$("#recordStop").on("click", function() {
+			$("#recordStop").css("background-color","rgba(255, 0, 0, 0.54)")
+			$("#recordPlay").css("background-color","rgb(211, 211, 211)")
 			$(".playREC"+ MovePage)[0].pause();
 		})
 
@@ -190,13 +193,14 @@ function Slider(){
 }
 /***********************************************************************/
 function MakePublic(makePulic) {
+	console.log("makePulic"+makePulic)
 	if(makePulic == "Yes"){
-		$("#me-view").css("background-color", "#ff9869");
-		$("#together-view").css("background-color", "#D3D3D3");
-	}
-	else{
 		$("#together-view").css("background-color", "#ff9869");
 		$("#me-view").css("background-color", "#D3D3D3");
+	}
+	else{
+		$("#me-view").css("background-color", "#ff9869");
+		$("#together-view").css("background-color", "#D3D3D3");
 	}
 }
 
@@ -205,7 +209,7 @@ $('#me-view').on('click',function() {
 	$("#together-view").css("background-color", "#D3D3D3");
 	$.post('updateCustbook.json', {
 		'no': jsNo,
-		'Ct_public': "Yes",
+		'Ct_public': "No",
 		'Ct_dscp': makeDscp
 	}, function(result) {
 		console.log(result)
@@ -217,9 +221,15 @@ $("#together-view").on("click", function() {
 	$("#me-view").css("background-color", "#D3D3D3");
 	$.post('updateCustbook.json', {
 		'no': jsNo,
-		'Ct_public': "No",
+		'Ct_public': "Yes",
 		'Ct_dscp': makeDscp
 	}, function(result) {
 		console.log(result)
 	}, 'json')
+})
+
+$("#deleteWork").on("click", function() {
+	$.getJSON('storage_delete.json', {'no': jsNo}, function(result) {
+	  location.href = 'storage.html'
+	})
 })

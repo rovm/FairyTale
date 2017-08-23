@@ -39,18 +39,24 @@ public class CustPageServiceImpl implements CustPageService {
   public void update(CustPage custPage) throws Exception {
 	  custPageDao.update(custPage);
 	  }
+  
+  public void remove(int no) throws Exception {
+    int count = custPageDao.delete(no);
+        count = custPageDao.delete2(no);
+    if (count < 1) {
+      throw new Exception(no + "번 게시글을 찾을 수 없습니다.");
+    }
+  }
 
-
-
-@Override
-public String custpage_detail(int ctno, int bkno) throws Exception {
-	System.out.printf("서비스왔음",ctno, bkno);
-	HashMap<String,Object> valueMap = new HashMap<>();
-	valueMap.put("ctno", ctno);
-	valueMap.put("bkno", bkno);
-	
-	 return custPageDao.custpage_detail(valueMap);
-}
+  @Override
+  public String custpage_detail(int ctno, int bkno) throws Exception {
+  	System.out.printf("서비스왔음",ctno, bkno);
+  	HashMap<String,Object> valueMap = new HashMap<>();
+  	valueMap.put("ctno", ctno);
+  	valueMap.put("bkno", bkno);
+  	
+  	 return custPageDao.custpage_detail(valueMap);
+  }
 
 }
 

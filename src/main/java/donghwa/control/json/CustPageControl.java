@@ -41,4 +41,10 @@ public class CustPageControl {
   
     return new JsonResult(JsonResult.SUCCESS, dataMap);
 }
+  
+  @RequestMapping("storage_delete")
+  public JsonResult delete(int no) throws Exception {
+    custPageService.remove(no);
+    return new JsonResult(JsonResult.SUCCESS, "ok");
+  }  
 }

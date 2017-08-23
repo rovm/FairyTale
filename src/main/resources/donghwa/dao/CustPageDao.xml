@@ -84,4 +84,12 @@
     from custpage
     where ctno=#{ctno} and bkno=#{bkno}
   </select>
+  
+  <delete id="delete" parameterType="int">
+    delete from custpage where ctno=#{no}
+  </delete>
+  
+  <delete id="delete2" parameterType="int">
+    delete from custbook where ctno=#{no}
+  </delete>
 </mapper>

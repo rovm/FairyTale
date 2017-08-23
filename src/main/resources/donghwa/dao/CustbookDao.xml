@@ -26,6 +26,8 @@
     update custbook set 
       ct_dscp = #{ct_dscp},
       ct_date = curdate()
+      <if test="ct_public == 'Yes'">, ct_public = "Yes"</if>
+      <if test="ct_public == 'No'">, ct_public = "No"</if>
     where ctno=#{no}
   </update>
   
