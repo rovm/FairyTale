@@ -1,13 +1,9 @@
-.btn-primary:hover {
+.btn:hover {
     color: #fff;
     background-color: #7665d6;
     border-color: #7665d6;
 }
-.btn-primary.active:hover {
-    color: #fff;
-    background-color: #7665CD;
-    border-color: #7665CD;
-}
+.btn
 body {
   padding: 0;
   /*border: solid 2px black;*/
@@ -222,12 +218,12 @@ p {
   border-bottom: 1px lightgray solid;
   border-radius: 4px;
 }
-.btn-primary {
+.btn{
     color: #fff;
     background-color: #7665d6;
     border-color: #7665d6;
 }
-.btn-primary.active{
+.btn{
     color: #fff;
     background-color: #7665CD;
     border-color: #7665CD;
@@ -292,28 +288,51 @@ td {
   height: 20px;
 }
 
+#com-somenu {
+  margin: 0 auto;
+  width: 980px;
+  height: 95px;
+  text-align: center;
+}
 
-#next-btn {
-	background-color: rgb(150 , 119 , 237 );
-	border-radius: 50px 10px 50px 30px;
-	color: white;
-	outline: 0;
-	font-size: 12px;
+#com-titl-best {
+  margin: 10px auto 0 auto;
+  width: 300px;
+  height: 80px;
+  color: white;
+}
+
+  #next-btn {
+  background-color: rgb(150 , 119 , 237 );
+  border-radius: 50px 0px 50px 30px;
+  color: white;
+  outline: 0;
+  font-size: 12px;
 }
 .block:hover {
-	box-shadow: 0 0 11px rebeccapurple;
+  box-shadow: 0 0 11px rebeccapurple;
 } 
 
 .disable:hover {
-	box-shadow: 0 0 0 rebeccapurple;
+  box-shadow: 0 0 0 rebeccapurple;
 }
 
 #prev-btn {
-  border-radius: 10px 50px 30px 50px;
-	background-color: rgb(150 , 119 , 237 );
-	color: white;
-	outline: 0;
-	font-size: 12px;
+  border-radius: 0px 50px 30px 50px;
+  background-color: rgb(150 , 119 , 237 );
+  color: white;
+  outline: 0;
+  font-size: 12px;
+} 
+.page-btn {
+  margin-top: 50px;
+  text-align: center;
 }
 
-
+.btnForm {
+  background-color: rgb(150 , 119 , 237 );
+  border: 1px solid rgb(150 , 119 , 237 );
+  color: #fff;
+  width: 50px;
+  height: 30px;
+}

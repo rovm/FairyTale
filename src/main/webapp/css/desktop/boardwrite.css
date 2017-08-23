@@ -169,6 +169,11 @@ a{
   margin-left: 26px;
   width:930px;
 }
+.btn-success {
+    color: #fff;
+    background-color: #7665d6;
+    border-color: #7665d6;
+}
 .btn-box button {
   padding: 5px 10px;
   background-color:#7665d6;

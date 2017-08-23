@@ -63,7 +63,6 @@ function comDel(cno) {
 
 
 $('#c-addbtn').on('click',function() {
-	$(document).ready(function() {
 		if(mno != null){
 			$.post('comAdd.json', {
 				'mno':mno,
@@ -78,7 +77,6 @@ $('#c-addbtn').on('click',function() {
 			location.href = 'login.html'
 
 		}
-	})
 
   })
   
@@ -95,6 +93,7 @@ prevBtn.click(function() {
 })
 
 nextBtn.click(function() {
+	console.log('하하');
   displayList(currPageNo + 1)
 })
 
@@ -104,7 +103,6 @@ displayList(1)
 function displayList(pageNo){
 	
 	// 서버에서 강사 목록 데이터를 받아 온다.
-	$(document).ready(function() {
 		$.getJSON('comList.json', {'pageNo':pageNo, 'pageSize':pageSize, 'bwnoNo':no, 'mno':mno}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
 			var totalCount = result.data.totalCount
 			var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1: 0)
@@ -144,7 +142,6 @@ function displayList(pageNo){
 
 		})
 		
-	})
 }
 
 function userInfo() {

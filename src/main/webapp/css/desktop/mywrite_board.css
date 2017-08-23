@@ -67,10 +67,23 @@ div {
   /*border-radius: 10;*/
 }
 
-a:hover {
-  /*text-decoration: none;*/
-
+#com-bord-s>a:hover{
+  transition: 0.25s;
+  color:#3f54b0;
 }
+#com-together-s>a:hover{
+  transition: 0.25s;
+  color:#3f54b0;
+}
+#com-king-s>a:hover{
+  transition: 0.25s;
+  color:#3f54b0;
+}
+a:hover {
+  text-decoration: none;
+  color:white;
+}
+
 a{
   color: white;
 }
@@ -278,4 +291,38 @@ th, td {
 .top-font{
   font-size: 40px;
   font-weight: bold;
+}
+  #next-btn {
+  background-color: #3f54b0;
+  border-radius: 50px 0px 50px 30px;
+  color: white;
+  outline: 0;
+  font-size: 12px;
+}
+.block:hover {
+  box-shadow: 0 0 11px rebeccapurple;
+} 
+
+.disable:hover {
+  box-shadow: 0 0 0 rebeccapurple;
+}
+
+#prev-btn {
+  border-radius: 0px 50px 30px 50px;
+  background-color: #3f54b0;
+  color: white;
+  outline: 0;
+  font-size: 12px;
+} 
+.page-btn {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btnForm {
+  background-color: rgb(150 , 119 , 237 );
+  border: 1px solid rgb(150 , 119 , 237 );
+  color: #fff;
+  width: 60px;
+  height: 40px;
 }

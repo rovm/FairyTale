@@ -1,17 +1,10 @@
-.btn-danger {
+.btn {
     color: #fff;
     background-color: purple;
     border-color: purple;
 }
-.btn-danger:hover {
+.btn:hover {
     color: #fff;
-    background-color: purple;
-    border-color: purple;
-}
-.btn-danger:active {
-    color: #fff;
-    background-color: purple;
-    border-color: purple;
 }
 input {
   outline: none;
@@ -263,7 +256,7 @@ th, td {
     border-radius: 55px;
 }
 
-.standard-collection {
+/* .standard-collection {
   font-weight: bold;
   color: black;
   text-align: left;
@@ -276,7 +269,13 @@ th, td {
 }
 #page-no {
   width: 20px;
-}
+} */
+
+
+
+
+
+
 .fa {
   font-size: 50px;
 }
@@ -347,9 +346,9 @@ th, td {
   color: white;
 }
 
-#next-btn {
+  #next-btn {
 	background-color: rgb(150 , 119 , 237 );
-	border-radius: 50px 10px 50px 30px;
+	border-radius: 50px 0px 50px 30px;
 	color: white;
 	outline: 0;
 	font-size: 12px;
@@ -363,11 +362,22 @@ th, td {
 }
 
 #prev-btn {
-  border-radius: 10px 50px 30px 50px;
+  border-radius: 0px 50px 30px 50px;
 	background-color: rgb(150 , 119 , 237 );
 	color: white;
 	outline: 0;
 	font-size: 12px;
+} 
+.page-btn {
+  margin-top: 50px;
+  text-align: center;
 }
- 
+
+.btnForm {
+  background-color: rgb(150 , 119 , 237 );
+  border: 1px solid rgb(150 , 119 , 237 );
+  color: #fff;
+  width: 60px;
+  height: 40px;
+}
 

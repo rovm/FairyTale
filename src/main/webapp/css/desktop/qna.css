@@ -123,6 +123,7 @@ a {
 
 a:hover {
 	text-decoration: none;
+	color: white;
 }
 
 #img {
@@ -211,4 +212,51 @@ a:hover {
 
 .footer_menu {
 	margin-left: 20px;
+}
+.com-font {
+  color: black;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+#com-somenu {
+  margin: 20px auto;
+  width: 980px;
+  height: 95px;
+  text-align: center;
+}
+.com-somenu {
+     width: 90px;
+    height: 90px;
+    float: right;
+    margin: 2px 3px 0 10px;
+    border-radius: 50px;
+}
+
+#com-together {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 54px;
+
+  width: 980px;
+  height: auto;
+  border-radius: 30px;
+  border: 1px darkgrey solid;
+  /*box-shadow: 10px 10px 20px grey;*/
+  background-color: antiquewhite;
+}
+
+#com-bord-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}
+#com-together-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}
+#com-king-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
 }

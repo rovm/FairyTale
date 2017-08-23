@@ -16,13 +16,13 @@ body {
 
 
 a:hover {
-  /*text-decoration: none;*/
-
+  text-decoration: none;
+  color:white;
 }
+
 a{
   color: white;
 }
-
 
 .clearfix::after {
   display: block;
@@ -197,20 +197,18 @@ p {
 }
 .top_bar {
   height: 40px;
-  background-color: #7665d6;
+  background-color: #9acd32;;
   border-top: 1px lightgray solid;
   border-bottom: 1px lightgray solid;
   border-radius: 4px;
 }
-.btn-primary {
+.btn{
     color: #fff;
-    background-color: #7665d6;
-    border-color: #7665d6;
+    background-color: #9acd32;
+    border-color: #9acd32;
 }
-.btn-primary.active{
+.btn:hover{
     color: #fff;
-    background-color: #7665CD;
-    border-color: #7665CD;
 }
 .comment {
     background-color: lavender;
@@ -270,4 +268,50 @@ td {
 
 #com-img {
   height: 20px;
+}
+  #next-btn {
+  background-color: yellowgreen;
+  border-radius: 50px 0px 50px 30px;
+  color: white;
+  outline: 0;
+  font-size: 12px;
+}
+.block:hover {
+  box-shadow: 0 0 11px rebeccapurple;
+} 
+
+.disable:hover {
+  box-shadow: 0 0 0 rebeccapurple;
+}
+
+#prev-btn {
+  border-radius: 0px 50px 30px 50px;
+  background-color: yellowgreen;
+  color: white;
+  outline: 0;
+  font-size: 12px;
+} 
+.page-btn {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btnForm {
+  background-color: rgb(150 , 119 , 237 );
+  border: 1px solid yellowgreen;
+  color: #fff;
+  width: 60px;
+  height: 40px;
+}
+#com-bord-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}
+#com-together-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}
+#com-king-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
 }

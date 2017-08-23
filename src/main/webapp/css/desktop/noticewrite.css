@@ -7,6 +7,7 @@ body {
 
 a:hover {
   text-decoration: none;
+  color:white;
 }
 
 a{
@@ -252,4 +253,15 @@ button {
   display: none;
 }
 
-
+#com-bord-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}
+#com-together-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}
+#com-king-s>a:hover{
+  transition: 0.25s;
+  color:yellowgreen;
+}

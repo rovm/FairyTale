@@ -5,8 +5,21 @@ body {
   height: auto;
 }
 
+#com-bord-s>a:hover{
+  transition: 0.25s;
+  color:#3f54b0;
+}
+#com-together-s>a:hover{
+  transition: 0.25s;
+  color:#3f54b0;
+}
+#com-king-s>a:hover{
+  transition: 0.25s;
+  color:#3f54b0;
+}
 a:hover {
   text-decoration: none;
+  color:white;
 }
 
 a{
@@ -94,7 +107,7 @@ a{
 .write-title {
   position: relative;
   padding-top: 20px;
-  background-color: lavender;
+  background-color: rgba(143, 164, 255, 0.55);
   padding-bottom: 20px;
   padding-right: 20px;
   margin-bottom: 80px;
@@ -149,12 +162,17 @@ a{
 }
 .btn-box button {
   padding: 5px 10px;
-  background-color:#7665d6;
+  background-color:#3f54b0;
   color:white;
   border-radius:10px;
   float: right;
   font-size:15px;
   font-weight:bold;
+}
+.btn-success {
+    color: #fff;
+    background-color: #3f54b0;
+    border-color: #3f54b0;
 }
 .btn-box input {
   float: left;
@@ -253,3 +271,14 @@ button {
 }
 
 
+#file-select{
+  position:absolute;
+  margin-left: 1px; 
+  }
+.btn-box input {
+     width: 84px;
+    height: 30px;
+    float: left;
+    opacity: 0;
+    z-index: 500;
+}
