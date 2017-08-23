@@ -98,8 +98,8 @@ h1 {
 
 
 #close{
- margin-top: 5px; 
-	margin-left: 90%; 
+ margin-top: 5px;
+	margin-left: 90%;
 	line-height: 20px;
 	border: 1px solid #fff;
 	background: #FFF;
@@ -143,16 +143,16 @@ h1 {
   background-color: darkorange;
   border: 1px solid orange;
   color: #fff;
-} 
+}
 
 
-/* 
+/*
  #yes:HOVER{
   background-color: orange;
   border: 1px solid orange;
   color: #fff;
 }
- 
+
 
 
  #no:HOVER{
@@ -160,7 +160,7 @@ h1 {
   border: 1px solid orange;
   color: #fff;
 } */
- 
+
 #yes {
     width:150px;
     height:50px;
@@ -289,17 +289,18 @@ h1 {
 .recorder_wrapper {
 
   /*text-align: right;*/
-    width: 68%;
-    height: 250px;
-    margin: 0px auto;
+    width: 960px;
+    height: 220px;
+    /* margin-left: 45%; */
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
     /*align-items: center;*/
-    padding-left: 50%;
+/*     padding-left: 50%; */
     /*justify-content: ;*/
+    margin: 15px auto 25px ;
 
 }
 
@@ -363,18 +364,7 @@ h1 {
     /*margin-top: 10px;*/
 }
 
-.recording:before {
-    content: '';
-    display: inline-block;
-    top: 50%;
-    left: 50%;
-    width: 0px;
-    height: 0px;
-    margin: 0px;
-    border-radius: 50%;
-    background: rgba( 0, 0, 0, 0.05 );
-    animation: recording_before 2s infinite ease-in-out;
-}
+
 
 @keyframes recording {
     from {
@@ -424,29 +414,10 @@ h1 {
   padding: 0;
   -webkit-tap-highlight-color: transparent; }
 
-/*#msg_box {
-  width: 93px;
-}*/
-
-
-/*==================play======================*/
-/*.recorder_wrapper > .play > .play_btn > i {
-  font-size: 300%;
-  margin-left: 10px;
-}*/
-
-#fa-play {
-  font-size: 300%;
-  margin-left: 10px;
-}
-
-#fa-pause {
-  font-size: 300%;
-  /*margin-left: px;*/
-}
 
 
 
+/*******기본재생*******/
 .play_btn {
   margin-top: 20px;
   margin-right: 20px;
@@ -458,27 +429,87 @@ h1 {
   border: 2px solid;
   background-color: #FFF;
 }
-
-.recPlay_btn{
-	margin-top: 20px;
-  margin-right: 5spx;
-  width: 100px;
-  height: 100px;
-  bottom: 0px;
-  right: 0px;
-  border-radius: 50px;
-  border: 2px solid;
-  background-color: #FFF;
+#fa-play {
+  font-size: 300%;
+  margin-left: 10px;
 }
-
-
-
-
+#fa-pause {
+  font-size: 300%;
+  /*margin-left: px;*/
+}
 .play_btn:hover {
     transition: 0.15s linear;
     transform: scale( 1.05 );
 }
 
+.basic-text{
+  margin: 10px;
+  width: 80px;
+  height: 35px;
+  background-color: #333333;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 30px;
+}
+
+
+/*******녹음재생*******/
+.recPlay_btn{
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 100px;
+  height: 100px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 50px;
+  border: #E74C3C 2px solid;
+  background-color: #FFF;
+}
+
+#rec-fa-play {
+  font-size: 300%;
+  margin-left: 10px;
+  color: #E74C3C;
+}
+#rec-fa-pause {
+  font-size: 300%;
+  color: #E74C3C;
+}
+
+.recPlay_btn:hover {
+    transition: 0.15s linear;
+    transform: scale( 1.05 );
+}
+
+.rec-text{
+  margin: 10px 10px 10px 20px;
+  width: 80px;
+  height: 35px;
+  background-color: #E74C3C;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 30px;
+}
+
+.record-text{
+	margin: 10px 10px 10px 10px;
+  width: 80px;
+  height: 35px;
+  background-color: #E74C3C;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 30px;
+}
+
+.recorder_play{
+	margin-left: auto;
+}
+.recorder{
+	margin-left: 65%;
+}
 
 
 

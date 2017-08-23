@@ -33,6 +33,43 @@
     height: 40px;
   }
 
+  .page-btn {
+  	margin-top: 50px;
+  	text-align: center;
+  }
+
+  .btnForm {
+  	background-color: #FFA500;
+  	border: 1px solid #FFA500;
+    color: #fff;
+  	width: 60px;
+  	height: 40px;
+  }
+  
+  
+  
+   #next-btn {
+  border-radius: 50px 0px 50px 30px;
+  color: #fff;
+  outline: 0;
+  font-size: 12px;
+}
+.block:hover {
+  box-shadow: 0 0 11px rebeccapurple;
+} 
+
+.disable:hover {
+  box-shadow: 0 0 0 rebeccapurple;
+}
+
+#prev-btn {
+  border-radius: 0px 50px 30px 50px;
+  color: #fff;
+  outline: 0;
+  font-size: 12px;
+} 
+  
+
   .standard-collection{
     width: 870px;
     margin: auto;
@@ -225,5 +262,3 @@ a > span {
 .ie8 .photo-stack:after {
   display: none;
 }
-
-

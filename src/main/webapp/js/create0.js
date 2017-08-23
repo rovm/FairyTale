@@ -1,26 +1,25 @@
 var no = 0,
 	mno,
+	ctno,
 	mbkno,
 	StartPage,
 	MovePage,
 	EndPage,
 	CreateBook,
-	ctno,
 	cust_rec,
-	UrlEncode;
+	UrlEncode,
+	RecordAraay = new Array(),
+	recAudio;
 
 
-	var basic_play = $('#basic_play'),
-			basic_stop = $("#basic_stop");
 
 
 
 $(document).ready(function() {
-	$(".record_btn").css("display", "none");
-	$("#recordControl").css("display", "none");
-	$("#basic_play").css("display", "none");
-	$("#basic_stop").css("display", "none");
-  $("#createModal").modal();
+	$(".recorder").css("display", "none");
+	$(".play").css("display", "none")
+	$(".recorder_play").css("display", "none")
+	$("#createModal").modal();
 
 	$('#close').click(function() {
 	    location.href = "bookList.html"
@@ -31,31 +30,31 @@ $(document).ready(function() {
 
 $('#yes').on('click', function(){
 	CreateBook = 1;
-	console.log("yes누르고 모달창닫습니다..")
 	$('#createModal').modal('hide');
 		console.log("bkno"+MovePage);
-
 
 	$.post('addCustbook.json', {
 		'mno': mno,
 		'mbkno': no
-
 	}, function(result) {
 		ctno = result.data
 	 if(result.status=="success")
-	 {console.log("ctno"+result.data);
-	 console.log(result);
-		 // e.preventDefault();
+	 {
+		 console.log("ctno"+result.data);
 	 } else {
-		 console.log(result.data)
+		 console.log(error)
 	 }
 	}, 'json')
 
 
-	$(".record_btn").css("display", "block");
-
-	$("#basic_play").css("display", "block");
+	$(".recorder").css("display", "block");
+	$(".play").css("display", "block")
 	$("#basic_stop").css("display", "none");
+	$(".recorder_play").css("display", "block");
+	$("#rec_stop").css("display", "none");
+
+
+
 	$('#basic_play').on('click', function() {
 		$("#basic_stop").css("display", "block");
 		$("#basic_play").css("display", "none");
@@ -65,6 +64,8 @@ $('#yes').on('click', function(){
 		$("#basic_play").css("display", "block");
 		$("#basic_stop").css("display", "none");
 	})
+
+
 })
 
 $('#no').on('click', function(){
@@ -72,11 +73,9 @@ $('#no').on('click', function(){
 	console.log("no누르고 모달창닫습니다..")
 
 	$('#createModal').modal('hide');
-	$(".record_btn").css("display", "none");
-	$("#recordControl").css("display", "none");
-	$("#basic_play").css("display", "none");
-	$("#basic_stop").css("display", "none");
-
+	$(".recorder").css("display", "none");
+	$(".play").css("display", "none")
+	$(".recorder_play").css("display", "none")
 })
  });//ready
 
@@ -109,7 +108,6 @@ lang = {
 time;
 
 
-msg_box.innerHTML = lang.press_to_start;
 
 if ( navigator.mediaDevices === undefined ) {
 	navigator.mediaDevices = {};
@@ -174,7 +172,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 			button.classList.add( 'recording' );
 			btn_status = 'recording';
 
-			msg_box.innerHTML = lang.recording;
+			
 
 			if ( navigator.vibrate ) navigator.vibrate( 150 );
 
@@ -197,15 +195,17 @@ if ( navigator.mediaDevices.getUserMedia ) {
 					var base64str = arrayBufferToBase64(reader.result);
 					 UrlEncode = encodeURIComponent(base64str);
 
-selectcust_rec(ctno, MovePage)
+					 selectcust_rec(ctno, MovePage)
 
 				});
 
 
 				audioSrc = window.URL.createObjectURL( recodeFile );
 				audio.src = audioSrc;
-				$('<source id="oggFile" src="' + audioSrc + '" type="audio/ogg"/>').appendTo(
-					'#recordControl')
+
+			  RecordAraay[MovePage-StartPage] = audioSrc
+				recAudio = new Audio(RecordAraay[MovePage-StartPage])
+
 				console.log("audioSrc:", audioSrc);
 				chunks = [];
 			}
@@ -233,37 +233,28 @@ selectcust_rec(ctno, MovePage)
 
 		var t = parseTime( now - time );
 
-		msg_box.innerHTML = '<a href="#" onclick="play(); return false;" class="txt_btn">' + lang.play + ' (' + t + 's)</a><br>' +
-		'<a href="#" onclick="save(); return false;" class="txt_btn" >' + lang.download + '</a>'
-	}
 
 
 
-	function play() {
-		audio.play();
-		msg_box.innerHTML = '<a href="#" onclick="pause(); return false;" class="txt_btn">' + lang.stop + '</a><br>' +
-		'<a href="#" onclick="save(); return false;" class="txt_btn">' + lang.download + '</a>';
-	}
 
-	function pause() {
-		audio.pause();
-		audio.currentTime = 0;
-		msg_box.innerHTML = '<a href="#" onclick="play(); return false;" class="txt_btn">' + lang.play + '</a><br>' +
-		'<a href="#" onclick="save(); return false;" class="txt_btn">' + lang.download + '</a>'
-	}
+$('#rec_play').on('click', function() {
+	recAudio.play()
+	console.log(RecordAraay);
+	$("#rec_stop").css("display", "block");
+	$("#rec_play").css("display", "none");
+})
 
 
+$('#rec_stop').on('click', function() {
+	recAudio.pause()
+	console.log(RecordAraay);
+	$("#rec_play").css("display", "block");
+	$("#rec_stop").css("display", "none");
+})
 
-	var a = document.createElement( 'a' );
-	function save() {
 
-		a.download = 'record.ogg';
-		a.href = audioSrc;
-		console.log(audioSrc);
-		document.body.appendChild( a );
-		a.click();
-		document.body.removeChild( a );
-	}
+}
+
 
 
 
@@ -314,6 +305,8 @@ function arrayBufferToBase64( buffer ) {
 
 function selectcust_rec(ctno, MovePage) {
 	console.log(ctno, MovePage);
+
+
 	$.getJSON('custpage_detail.json', {
 		'ctno' : ctno,
 		'bkno' : MovePage }, function(result) {
@@ -328,6 +321,7 @@ function selectcust_rec(ctno, MovePage) {
 					if(result.status=="success")
 					{
 						console.log("업로드성공");
+
 						// e.preventDefault();
 					} else {
 						console.log(result)
@@ -349,6 +343,8 @@ function selectcust_rec(ctno, MovePage) {
 						console.log(result)
 					}
 				}, 'json')
+
+
 
 
 

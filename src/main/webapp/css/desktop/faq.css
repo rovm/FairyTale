@@ -72,10 +72,11 @@
 }
 
 .btnForm {
-	background-color: #fff;
-	border: 1px solid #c1c1c1;
+	background-color: #9ACD32;
+	border: 1px solid #9ACD32;
 	width: 60px;
 	height: 40px;
+	color: #fff;
 }
 
 #plus-btn{
@@ -84,6 +85,33 @@
 	height: 40px;
 
 }
+
+
+ #next-btn {
+  border-radius: 50px 0px 50px 30px;
+  color: #fff;
+  outline: 0;
+  font-size: 12px;
+}
+.block:hover {
+  box-shadow: 0 0 11px rebeccapurple;
+} 
+
+.disable:hover {
+  box-shadow: 0 0 0 rebeccapurple;
+}
+
+#pre-btn {
+  border-radius: 0px 50px 30px 50px;
+  color: #fff;
+  outline: 0;
+  font-size: 12px;
+} 
+
+
+
+
+
 
 /*헤더*/
 h1 {
