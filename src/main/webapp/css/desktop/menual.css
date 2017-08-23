@@ -126,11 +126,28 @@ font-weight: bold;
 color: dimgray;
 }
 
-#menual-btn{
-float: right;
+#menual-btn {
+    float: right;
 width: 400px;
 height: 62px;
 margin-right: -25px;
+margin-top :7px;
+font-size: 16px
+  }
+
+  .menualBtn {
+    background-color: lightcoral;
+    border: 1px solid lightcoral;
+    color: #fff;
+    width: 106px;
+    height: 46px;
+    border-radius: 10px;
+  }
+
+ .menualBtn:HOVER{
+  background-color: #ea5151;
+  border: 1px solid #ea5151;
+  color: #fff;
 }
 
 button{

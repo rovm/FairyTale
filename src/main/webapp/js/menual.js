@@ -17,5 +17,5 @@ $("#Story_Making_Way").on("click", function() {
 $("#Work_Appreciation").on("click", function() {
 	$("#Photo_Menual").text('');
 	MenuTitl.text("작품감상");
-	$("<img class='Menual_img' src='../img/thumb03.jpg'>").appendTo( $( "#Photo_Menual" ) );
+	$("<img class='Menual_img' src='../img/작품감상.png'>").appendTo( $( "#Photo_Menual" ) );
 })
