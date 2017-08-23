@@ -114,7 +114,7 @@ body {
 }
 
 a:hover {
-	transition: 0.5s;
+	color: white;
   text-decoration: none;
 }
 
@@ -193,6 +193,10 @@ a{
   font-weight: bold;
 }
 
+
+#logout {
+	margin-left: 100px;
+}
 .page {
   width: 10px;
   height: 10px;
@@ -622,6 +626,21 @@ a.control_next {
   border-bottom-left-radius: 0;
   outline: none;
 }
+
+#recordClose{
+	  width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    outline: none;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    z-index: 1;
+    color: white;
+    cursor: pointer;
+}
+
 
 #together-view{
 	border-radius: 5px 0 0 5px;

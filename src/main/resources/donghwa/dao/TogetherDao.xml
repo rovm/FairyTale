@@ -41,7 +41,7 @@
                      inner join custbook cb on cp.ctno = cb.ctno
                      left outer join mstbook mb on mb.mbkno = bp.mbkno
                      left outer join member m on cb.mno = m.mno
-    where cb.ct_public="no" and bp.bk_page= 1
+    where cb.ct_public="yes" and bp.bk_page= 1
     limit #{startIndex}, #{pageSize}
   </select>
   
@@ -51,8 +51,11 @@
   
   <select id="countAll" resultType="int" parameterType="int">
     select count(*)
-    from custbook
-    where mno = #{mno}
+    from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
+                     inner join custbook cb on cp.ctno = cb.ctno
+                     left outer join mstbook mb on mb.mbkno = bp.mbkno
+                     left outer join member m on cb.mno = m.mno
+    where cb.ct_public="yes" and bp.bk_page= 1
   </select>
   
   <select id="selectOne" resultMap="togetherMap" parameterType="map">
