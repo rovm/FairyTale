@@ -241,21 +241,37 @@ a{
 }
 
 #next-btn {
-	background-color: green;
-	border-radius: 50px 10px 50px 30px;
+	width:60px;
+	height:40px;
+	background-color: rgb(100, 180, 90);
+	border-radius: 50px 0px 50px 30px;
+	border: 1px solid rgb(100, 180, 90);
 	color: white;
 	outline: 0;
 	font-size: 12px;
 }
 
 #prev-btn {
-  border-radius: 10px 50px 30px 50px;
-	background-color: green;
+	width:60px;
+	height:40px;
+  border-radius: 0px 50px 30px 50px;
+	background-color: rgb(100, 180, 90);
+	border: 1px solid rgb(100, 180, 90);
 	color: white;
 	outline: 0;
 	font-size: 12px;
 }
-
+.standard-collection{
+	text-align: center;
+}
+.block:hover {
+	cursor:pointer;
+	box-shadow: 0 0 11px green;
+}
+.disable:hover {
+	box-shadow: 0 0 0 rebeccapurple;
+	cursor: default;
+}
 #bord-btn{
   height: 40px;
   margin-bottom: 4px;
@@ -512,8 +528,7 @@ a.control_next {
 	text-align: left;
 	height: 50px;
 	color: gray;
-	padding-left: 55px;
-	margin-top: 30px;
+	margin-top: -57px;
 }
 
 .modal-dialog{
@@ -540,19 +555,25 @@ a.control_next {
 }
 
 #recordPlay{
-	background-color: rgba(255, 0, 0, 0.54);
+	display:none;
+	background-color: white;
 	width: 60px;
   height: 60px;
   border: 1px solid white;
   border-radius: 5px;
+  border-bottom-left-radius: 0;
+  outline: none;
 }
 
 #recordStop{
-	background-color: rgba(255, 0, 0, 0.54);
+	display:block;
+	background-color: white;
   width: 60px;
   height: 60px;
   border: 1px solid white;
   border-radius: 5px;
+  border-bottom-left-radius: 0;
+  outline: none;
 }
 
 #together-view{

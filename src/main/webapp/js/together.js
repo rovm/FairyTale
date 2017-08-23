@@ -41,14 +41,18 @@ EndPage;
 
     if (currPageNo == 1) {
       prevBtn.prop('disabled', true)
+      prevBtn.addClass("disable")
     } else {
       prevBtn.prop('disabled', false)
+      prevBtn.removeClass("disable")
     }
 
     if (currPageNo == lastPageNo) {
       nextBtn.prop('disabled', true)
+      nextBtn.addClass("disable")
     } else {
       nextBtn.prop('disabled', false)
+      nextBtn.removeClass("disable")
     }
 		 
 		  confirm()
@@ -168,15 +172,21 @@ EndPage;
 			 });
 			 
 			 $("#recordPlay").on("click", function() {
+				 
 				 console.log(" 안내지!")
 				 console.log(MovePage)
 				 $(".playREC"+ MovePage)[0].play();
 				 console.log($(".playREC"+ MovePage)[0])
 				 console.log($(".playREC"+ MovePage)[0].play())
+				 $("#recordPlay").css("display", "none")
+				 $("#recordStop").css("display", "block")
 			 })
 			 
 			 $("#recordStop").on("click", function() {
 				 $(".playREC"+ MovePage)[0].pause();
+				 $("#recordStop").css("display", "none")
+				 $("#recordPlay").css("display", "block")
+				 
 			 })
 			 function autoplayRecord() {
 				 $(".playREC"+ MovePage)[0].onended = function() {
