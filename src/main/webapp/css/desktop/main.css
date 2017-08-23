@@ -1,4 +1,9 @@
  /*ggggggggggg*/
+ a:hover {
+   text-decoration: none;
+   color: white;
+ }
+ 
  body {
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    font-size: 62.5%;
@@ -412,11 +417,12 @@ body {
           background-position: center top;
           background-color: white;
           margin-top: 580px;
+          margin-bottom: 60px;
         }
       .book-form{
           margin-top: 100px;
-          margin-bottom: 95px;
-          height: 400px;
+          margin-bottom: 45px;
+          height: 650px;
         }
       .menual-form{
           margin: auto auto;
@@ -425,13 +431,19 @@ body {
       .btn {
           float: right;
           margin: 0 0 0 5px;
+          color: white;
+          font-size: 17px;
+          font-weight: bold;
         }
+      .btn:hover {
+        color:white;
+      }
       .book {
           display: inherit;
           font-size: 33px;
           text-align: left;
           font-weight: bold;
-          color: gray;
+          color: white;
         }
       .notic {
           display: inherit;
@@ -442,17 +454,28 @@ body {
           margin-bottom: 35px;
           
         }
+        
+      .line-color  {
+					width: 100%;
+					background-color: yellowgreen;
+					height: 60px;
+					padding-top: 13.5px;
+					left: 0;
+					margin-top: -85px;
+					position: absolute;
+      }
+        
       .menual {
           display: inherit;
           font-size: 33px;
           text-align: left;
           font-weight: bold;
-          color: gray
+          color: white;
         }
       .left-form{
         margin: auto auto;
         width: 100%;
-        height: 400px;
+        height: 605px;
         }
       .right-form{
         margin: auto auto;

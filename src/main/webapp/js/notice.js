@@ -24,7 +24,7 @@ if(pagesize == 'notice'){
 	pageSize = 10
 	console.log(pageSize)
 } else if(pagesize == 'main'){
-	pageSize = 5
+	pageSize = 9
 	console.log(pageSize)
 }
 displayList(1);
