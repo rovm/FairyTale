@@ -430,7 +430,7 @@ body {
         }
       .btn {
           float: right;
-          margin: 0 0 0 5px;
+          margin: 9px 0 0 5px;
           color: white;
           font-size: 17px;
           font-weight: bold;
@@ -458,11 +458,12 @@ body {
       .line-color  {
 					width: 100%;
 					background-color: yellowgreen;
-					height: 60px;
+					height: 80px;
 					padding-top: 13.5px;
 					left: 0;
 					margin-top: -85px;
 					position: absolute;
+					line-height: 50px;
       }
         
       .menual {

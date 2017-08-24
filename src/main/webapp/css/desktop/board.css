@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 body {
-font-family: 'Jeju Gothic', serif;
+font-family: 'Noto Sans KR', sans-serif;
 }
 #logo a {
   font-size:27px;
@@ -82,7 +82,7 @@ div {
 
 
 a:hover {
-	transition: 0.25s;
+	color: white;
   text-decoration: none;
 }
 
@@ -178,7 +178,7 @@ th, td {
 .menu {
   top: 15px;
   height: 24px;
-  margin-left: 30px;
+  margin-left: 34px;
   float: left;
   text-align: center;
   color: white;

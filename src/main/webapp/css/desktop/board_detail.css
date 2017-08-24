@@ -1,18 +1,19 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+font-family: 'Noto Sans KR', sans-serif;
+}
+
 .btn:hover {
     color: #fff;
     background-color: #7665d6;
     border-color: #7665d6;
 }
 .btn
-body {
-  padding: 0;
-  /*border: solid 2px black;*/
-  height: auto;
-}
 
 
 a:hover {
-  transition: 0.25s;
+  color: white;
   text-decoration: none;
 }
 a{
@@ -67,7 +68,9 @@ th, td {
   height: 150px;
   background-image: url("../../img/456.png");
 }
-
+#logo a {
+	font-size: 27px;
+}
 #logo {
   margin-top: -7px;
   margin-left: 0px;
@@ -115,7 +118,7 @@ th, td {
 .menu {
   top: 15px;
   height: 24px;
-  margin-left: 30px;
+  margin-left: 34px;
   float: left;
   text-align: center;
   color: white;

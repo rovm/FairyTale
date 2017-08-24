@@ -43,7 +43,7 @@ function comDel(cno) {
   $('#board-delete').click(function(){
 	  if (mno != null) {
 		  $.getJSON('delete.json', {'no': no}, function(result) {
-			  location.href = 'community_boarder.html'
+			  location.href = 'board.html'
 		  })	
 	  } else {
 		  alert("로그인하시옵소서")

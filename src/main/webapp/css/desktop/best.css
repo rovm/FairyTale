@@ -281,13 +281,9 @@
   color: red;
 }
 
-body {
-  padding: 0;
-  /*border: solid 2px black;*/
-  height: auto;
-}
 
 a:hover {
+	color: white;
   text-decoration: none;
 }
 
@@ -412,6 +408,11 @@ th, td {
     float: right;
     margin: 2px 3px 0 10px;
     border-radius: 55px;
+}
+
+.com-somenu a:hover {
+	color: skyblue;
+	transition: 0.2s;
 }
 
 .fa {

@@ -12,7 +12,7 @@ $('#conaddbtn').on('click',function() {
       'bw_con': Con.val(),
       'bw_div': Div
     }, function(result) {
-      location.href = 'community_boarder.html'
+      location.href = 'board.html'
     }, 'json')
   })
   var no = 0
@@ -54,7 +54,7 @@ $('#conaddbtn').on('click',function() {
 		  'no': no,
 		  'bw_div': Div
 	  }, function(result) {
-		  location.href = 'community_boarder.html'
+		  location.href = 'board.html'
 	  }, 'json')
 
   });
@@ -114,7 +114,7 @@ $('#conaddbtn').on('click',function() {
 				bw_div: Div
 		};
 		
-		location.href = 'community_boarder.html'
+		location.href = 'board.html'
 	},
 	
 	
@@ -188,7 +188,7 @@ $('#conaddbtn').on('click',function() {
 					bw_div: Div
 			};
 //			console.log(no)
-			location.href = 'community_boarder.html'
+			location.href = 'board.html'
 		},
 		
 		
