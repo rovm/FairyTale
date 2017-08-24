@@ -1,7 +1,9 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
-font-family: 'Jeju Gothic', serif;
+font-family: 'Noto Sans KR', sans-serif;
 }
  @media ( min-width : 100px) {
 	.omb_row-sm-offset-3 div:first-child[class*="col-"] {
@@ -13,7 +15,10 @@ font-family: 'Jeju Gothic', serif;
 	margin: 0 auto;
 	width: 980px;
 }
-
+#login-password {
+    font-family: -webkit-pictograph;
+    font-weight: bold;
+}
 .omb_login .omb_authTitle {
 	text-align: center;
 	line-height: 300%;
@@ -240,7 +245,7 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: #2F1716;
+	color: white;
 }
 
 

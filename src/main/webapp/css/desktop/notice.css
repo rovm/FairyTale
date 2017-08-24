@@ -1,7 +1,6 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
-font-family: 'Jeju Gothic', serif;
+font-family: 'Noto Sans KR', sans-serif;
 }
 .notice_search {
 	float: right;
@@ -198,6 +197,7 @@ th, td {
 #bord-btn {
 	height: 40px;
 	margin-bottom: 4px;
+	display: none;
 }
 
 .com-somenu {

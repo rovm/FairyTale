@@ -11,7 +11,6 @@ var posi;
 var mno;
 console.log("하하")
 userinfo()
-
 $("#keyword").keyup(function(){
 	displayList2(1);
 })
@@ -123,7 +122,6 @@ $('#bord-btn').click(function(){
 	  location.href = 'login.html'
 	}
 })
-
 function userinfo() {
 		$.getJSON('userinfo.json', function(result) {
 			if(result.data != null) {
@@ -133,10 +131,10 @@ function userinfo() {
 				console.log(posi)
 //				console.log(mno)
 				if(posi == 'master') {
-	$('#bord-btn').css('display','block')
-} else {
-	$('#bord-btn').css('display','none')
-}
+					$('#bord-btn').css('display','block')
+				} else {
+					$('#bord-btn').css('display','none')
+				}
 			}		
 		})
 }

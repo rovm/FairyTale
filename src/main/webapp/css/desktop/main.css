@@ -1,16 +1,22 @@
+ @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+font-family: 'Noto Sans KR', sans-serif;
+}
+ 
+ 
  /*ggggggggggg*/
  a:hover {
    text-decoration: none;
    color: white;
  }
  
- body {
+/*  body {
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    font-size: 62.5%;
    line-height: 1;
-   /*padding: 25px 0;*/
-   /*background: #e5e5e5 url('../img/brushed.png'); /*http://subtlepatterns.com/white-brushed/ */*/
- }
+   padding: 25px 0;
+   background: #e5e5e5 url('../img/brushed.png'); /*http://subtlepatterns.com/white-brushed/*/
+ */
  
 #gallery{
   -webkit-column-count:4;
@@ -430,7 +436,7 @@ body {
         }
       .btn {
           float: right;
-          margin: 9px 0 0 5px;
+          margin: 0 0 0 5px;
           color: white;
           font-size: 17px;
           font-weight: bold;
@@ -458,12 +464,11 @@ body {
       .line-color  {
 					width: 100%;
 					background-color: yellowgreen;
-					height: 80px;
+					height: 60px;
 					padding-top: 13.5px;
 					left: 0;
 					margin-top: -85px;
 					position: absolute;
-					line-height: 50px;
       }
         
       .menual {
