@@ -1,14 +1,17 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
-font-family: 'Jeju Gothic', serif;
+font-family: 'Noto Sans KR', sans-serif;
 }
+
 @media all and (width:980px) , ( width :1024px) {
 	.faq_container {
 		width: 100%;
 	}
 }
-
+#logout {
+  margin-left:100px;
+  display:none;
+}
 .faq_container {
 	width: 100%;
 	margin: 0px auto;
@@ -148,6 +151,9 @@ a:hover {
 	height: 36px;
 	line-height: 36px;
 }
+#logo a {
+	font-size:27px;
+}
 
 #box {
 	border: 0px;
@@ -183,16 +189,17 @@ a:hover {
 }
 
 .menu {
-	width: 80px;
 	top: 15px;
 	height: 24px;
-	margin-left: 4px;
+	margin-left: 34px;
 	float: left;
 	text-align: center;
 	color: white;
 	font-weight: bold;
 }
-
+.menual {
+	margin-left: 33px;
+}
 .page {
 	width: 10px;
 	height: 10px;

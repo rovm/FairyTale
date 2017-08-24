@@ -6,6 +6,10 @@ font-family: 'Noto Sans KR', sans-serif;
 	float: right;
 	margin-bottom: 80px;
 }
+#logout {
+	margin-left:100px;
+	display:none;
+}
 
 input {
 	outline: none;
@@ -108,7 +112,9 @@ th, td {
 	height: 36px;
 	line-height: 36px;
 }
-
+#logo a {
+	font-size:27px;
+}
 #box {
 	border: 0px;
 	width: 980px;
@@ -150,16 +156,17 @@ th, td {
 }
 
 .menu {
-	width: 80px;
 	top: 15px;
 	height: 24px;
-	margin-left: 4px;
+	margin-left: 34px;
 	float: left;
 	text-align: center;
 	color: white;
 	font-weight: bold;
 }
-
+#menual {
+	margin-left: 33px;
+}
 .page {
 	width: 10px;
 	height: 10px;
