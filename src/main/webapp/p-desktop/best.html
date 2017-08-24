@@ -35,14 +35,17 @@
       <div id="camera" class="menu">
         <a href="photozip.html">사진첩</a>
       </div>
-      <div id="login" class="menu">
-        <a href="login.html">로그인</a>
-      </div>
-      <div id="sign" class="menu">
-        <a href="join.html">회원가입</a>
-      </div>
       <div id="qna" class="menu">
         <a href="notice.html">고객센터</a>
+      </div>
+      <div id="login" class="menu login-link">
+        <a href="login.html">로그인</a>
+      </div>
+      <div id="logout" class="menu logout-link">
+        <a href="login.html">로그아웃</a>
+      </div>
+      <div id="sign" class="menu sign-link">
+        <a href="join.html">회원가입</a>
       </div>
     </div>
 		<div id="box">
@@ -83,46 +86,14 @@
 				2017<br>제3회 명예의전당
 			</h1>
 		</div>
-		<div class="slider-content">
-
-			<div class="slider-single">
-				<img class="slider-single-image" style="cursor:pointer"
-				src="../img/video.JPG"	alt="1"/>
-				<h1 class="slider-single-title">
-					Through the Mountains
-				</h1>
-			</div>
-
-			<div class="slider-single">
-				<img class="slider-single-image" style="cursor:pointer"
-					src="../img/thumb01.jpg" alt="2"/>
-				<h1 class="slider-single-title">
-					Through the Mountains
-				</h1>
-			</div>
-
-			<div class="slider-single">
-				<img class="slider-single-image" style="cursor:pointer"
-					src="../img/thumb02.jpg" alt="3"/>
-				<h1 class="slider-single-title">
-					Through the Mountains
-				</h1>
-			</div>
-
-
-			<div class="slider-single">
-				<img class="slider-single-image" style="cursor:pointer"
-					src="../img/thumb03.jpg" alt="4" />
-				<h1 class="slider-single-title">
-					Through the Mountains
-				</h1>
-
-			</div>
-
+	  
+	  <div class="slider-content">
+		</div>
+		
+		<div id="btn-control">
 			<a class="slider-left" href="javascript:void(0);"><i
 				class="fa fa-arrow-left"></i></a> <a class="slider-right"
 				href="javascript:void(0);"><i class="fa fa-arrow-right"></i></a>
-
 		</div>
 	</div>
 
@@ -202,12 +173,22 @@
 
 <!-- 모달폼 -->
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog" >
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content"  style="width: 1000px; height: 665px;margin:270px auto;">
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+      
+        <div id="playTools">
+	        <button id="recordPlay" class="playToolsBtn" type="button"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></button>
+	        <button id="recordStop" class="playToolsBtn" type="button"><i class="fa fa-pause-circle-o fa-3x" aria-hidden="true"></i></button>
+	        <a id="recordClose" class="playToolsBtn" ><i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+        <div class="modal-body">
+         <div id="slider">
+          <ul class="FairyTale_Content"></ul>
+         </div>
+        </div>
       </div>
     </div>
 
@@ -216,7 +197,34 @@
 
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<script src="../js/index.js"></script>
+
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../js/best.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../js/login.js"></script>
+<script id="Best-template" type="text/x-handlebars-template">
+    {{#each BestLastList}}
+      <div class="slider-single">
+				<img class="slider-single-image" styles="cursor:pointer"
+				src="{{BK_IMG}}" data-a ={{ctno}} data-b={{bkno}}>
+				<h1 class="slider-single-title">
+					{{MBK_Titl}}
+				</h1>
+			</div>
+    {{/each}}
+</script>
+
+<script id="BestSlider-template" type="text/x-handlebars-template">
+{{#each TogetherDetail}}
+  <li>
+  <div class="all">
+    <div class="slider_box">
+      <img src="{{BK_IMG}}">
+      <audio controls="controls" class="playREC{{bkno}}" >
+        <source src="{{Cust_REC}}"  type="audio/ogg" >
+      </audio>
+  </div>
+  </li>
+{{/each}}
+</script> 
 </html>

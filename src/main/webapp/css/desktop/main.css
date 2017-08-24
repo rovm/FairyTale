@@ -1,6 +1,6 @@
  @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
-font-family: 'Noto Sans KR', sans-serif;
+
 }
  
  
@@ -382,7 +382,7 @@ body {
         width: 100%;
         z-index: 1001;
         position: absolute;
-
+        font-family: 'Noto Sans KR', sans-serif;
       }
     .Heder_fform{
       width: 950px;
@@ -410,7 +410,7 @@ body {
         
         top: 15px;
         height: 30px;
-        margin-left: 25px;
+        margin-left: 29px;
         float: left;
         font-size: 15px;
         color: white;
@@ -454,6 +454,7 @@ body {
           text-align: left;
           font-weight: bold;
           color: white;
+          margin-left: 62px;
         }
       .notic {
           display: inherit;
@@ -462,7 +463,7 @@ body {
           font-weight: bold;
           color: white;
           margin-bottom: 35px;
-          
+          margin-left: 62px;
         }
         
       .line-color  {
@@ -481,6 +482,7 @@ body {
           text-align: left;
           font-weight: bold;
           color: white;
+          margin-left: 62px;
         }
       .left-form{
         margin: auto auto;

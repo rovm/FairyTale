@@ -56,7 +56,7 @@ function comDel(cno) {
 })
 
  $('#board-list').click(function(){
-	location.href = 'community_boarder.html'
+	location.href = 'board.html'
 })
 
 

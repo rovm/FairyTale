@@ -1,13 +1,17 @@
-$(document).on('ready', function() {
+
+	
   var slide = $('.slider-single');
   var slideTotal = slide.length - 1;
   var slideCurrent = -1;
 
+  
+  slideInitial();
+  
   function slideInitial() {
     slide.addClass('proactivede');
-    setTimeout(function() {
-      slideRight();
-    }, 500);
+    setInterval(() => {
+    	slideRight();
+	}, 3000);
   }
 
   function slideRight() {
@@ -75,6 +79,8 @@ $(document).on('ready', function() {
     activeSlide.removeClass('preactivede preactive proactive proactivede').addClass('active');
     proactiveSlide.removeClass('preactivede preactive active proactivede').addClass('proactive');
   }
+  
+  
   var left = $('.slider-left');
   var right = $('.slider-right');
   left.on('click', function() {
@@ -83,5 +89,6 @@ $(document).on('ready', function() {
   right.on('click', function() {
     slideRight();
   });
-  slideInitial();
-});
+  
+  
+  
