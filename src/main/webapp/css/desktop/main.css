@@ -77,6 +77,10 @@ font-family: 'Noto Sans KR', sans-serif;
 body {
   text-align: center;
 }
+
+#Header_logo {
+	font-size: 27px;
+}
 .Header_animal {
 
   position: relative;
@@ -406,7 +410,7 @@ body {
         
         top: 15px;
         height: 30px;
-        margin-left: 30px;
+        margin-left: 25px;
         float: left;
         font-size: 15px;
         color: white;
