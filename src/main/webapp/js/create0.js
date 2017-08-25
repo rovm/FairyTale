@@ -1,16 +1,16 @@
 var no = 0,
-	mno,
-	ctno,
-	mbkno,
-	StartPage,
-	MovePage,
-	EndPage,
-	CreateBook,
-	cust_rec,
-	UrlEncode,
-	RecordArray = new Array(),
-	recAudio,
-	recAudioSrc;
+mno,
+ctno,
+mbkno,
+StartPage,
+MovePage,
+EndPage,
+CreateBook,
+cust_rec,
+UrlEncode,
+RecordArray = new Array(),
+recAudio,
+recAudioSrc;
 
 a()
 
@@ -21,79 +21,81 @@ function a() {
 		$(".play").css("display", "none")
 		$(".recorder_play").css("display", "none")
 		$("#text-stop").css("display","none")
+		$(".loginCheck").css("display", "none")
 		$("#createModal").modal();
 
 		$('#close').click(function() {
-		    location.href = "bookList.html"
+			location.href = "bookList.html"
 		});
 
 
+		$('#yes').on('click', function(){
+			if (mno == null) {
+				$(".loginCheck").css("display", "block")
+
+			} else {
+				CreateBook = 1;
+				$('#createModal').modal('hide');
+				console.log("bkno"+MovePage);
+
+				$.post('addCustbook.json', {
+					'mno': mno,
+					'mbkno': no
+				}, function(result) {
+					ctno = result.data
+					if(result.status=="success")
+					{
+						console.log("ctno"+result.data);
+					} else {
+						console.log(error)
+					}
+				}, 'json')
+			}
 
 
-	$('#yes').on('click', function(){
-		CreateBook = 1;
-		$('#createModal').modal('hide');
-			console.log("bkno"+MovePage);
-
-		$.post('addCustbook.json', {
-			'mno': mno,
-			'mbkno': no
-		}, function(result) {
-			ctno = result.data
-		 if(result.status=="success")
-		 {
-			 console.log("ctno"+result.data);
-		 } else {
-			 console.log(error)
-		 }
-		}, 'json')
-
-
-
-
-		$(".recorder").css("display", "block");
-		$(".play").css("display", "block")
-		$("#basic_stop").css("display", "none");
-		$(".recorder_play").css("display", "block");
-		$("#rec_stop").css("display", "none");
-	//$("#start-stop").css("display","none")
-
-
-		$('#basic_play').on('click', function() {
-			$("#basic_stop").css("display", "block");
-			$("#basic_play").css("display", "none");
-			$(".basic-text").text("일시정지")
-		})
-
-
-		$(".record" + MovePage).on("ended", function() {
-			$("#basic_play").css("display", "block");
+			$(".recorder").css("display", "block");
+			$(".play").css("display", "block")
 			$("#basic_stop").css("display", "none");
-			$(".basic-text").text("기본재생")
+			$(".recorder_play").css("display", "block");
+			$("#rec_stop").css("display", "none");
+			//$("#start-stop").css("display","none")
+
+
+			$('#basic_play').on('click', function() {
+				$("#basic_stop").css("display", "block");
+				$("#basic_play").css("display", "none");
+				$(".basic-text").text("일시정지")
+			})
+
+
+			$(".record" + MovePage).on("ended", function() {
+				$("#basic_play").css("display", "block");
+				$("#basic_stop").css("display", "none");
+				$(".basic-text").text("기본재생")
+			})
+
+
+
+			$('#basic_stop').on('click', function() {
+				$(".record" + MovePage)[0].pause();
+				$("#basic_play").css("display", "block");
+				$("#basic_stop").css("display", "none");
+				$(".basic-text").text("기본재생")
+			})
+
+
 		})
 
+		$('#no').on('click', function(){
+			CreateBook = 0;
+			console.log("no누르고 모달창닫습니다..")
 
-
-		$('#basic_stop').on('click', function() {
-			$(".record" + MovePage)[0].pause();
-			$("#basic_play").css("display", "block");
-			$("#basic_stop").css("display", "none");
-			$(".basic-text").text("기본재생")
+			$('#createModal').modal('hide');
+			$(".recorder").css("display", "none");
+			$(".play").css("display", "none")
+			$(".recorder_play").css("display", "none")
 		})
-
-
-	})
-
-	$('#no').on('click', function(){
-		CreateBook = 0;
-		console.log("no누르고 모달창닫습니다..")
-
-		$('#createModal').modal('hide');
-		$(".recorder").css("display", "none");
-		$(".play").css("display", "none")
-		$(".recorder_play").css("display", "none")
-	})
-	 });//ready
+	});//ready
 }
 
 
@@ -142,7 +144,7 @@ if ( navigator.mediaDevices.getUserMedia === undefined ) {
 		return new Promise( function( resolve, reject ) {
 			getUserMedia.call( navigator, constrains, resolve, reject );
 		}
-	);
+		);
 	}
 }
 
@@ -187,70 +189,58 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 	function start() {
 		if($(".record_btn"))
-		navigator.mediaDevices.getUserMedia( { 'audio': true } ).then( function ( stream ) {
-			mediaRecorder = new MediaRecorder( stream );
-			mediaRecorder.start();
+			navigator.mediaDevices.getUserMedia( { 'audio': true } ).then( function ( stream ) {
+				mediaRecorder = new MediaRecorder( stream );
+				mediaRecorder.start();
 
-			button.classList.add( 'recording' );
-			btn_status = 'recording';
-
-
-
-			if ( navigator.vibrate ) navigator.vibrate( 150 );
-
-			time = Math.ceil( new Date().getTime() / 1000 );
-
-
-			mediaRecorder.ondataavailable = function ( event ) {
-				chunks.push( event.data );
-			}
-
-			mediaRecorder.onstop = function () {
-
-				stream.getTracks().forEach( function( track ) { track.stop() } );
-				recodeFile = new Blob( chunks, type );
-				var reader = new FileReader();
-
-
-				reader.readAsArrayBuffer(recodeFile);
-
-
-				reader.addEventListener("loadend", function() {
-					var base64str = arrayBufferToBase64(reader.result);
-					 UrlEncode = encodeURIComponent(base64str);
-
-					 selectcust_rec(ctno, MovePage)
-
-				});
-
-
-				audioSrc = window.URL.createObjectURL( recodeFile );
-				audio.src = audioSrc;
+				button.classList.add( 'recording' );
+				btn_status = 'recording';
 
 
 
+				if ( navigator.vibrate ) navigator.vibrate( 150 );
+
+				time = Math.ceil( new Date().getTime() / 1000 );
 
 
+				mediaRecorder.ondataavailable = function ( event ) {
+					chunks.push( event.data );
+				}
 
+				mediaRecorder.onstop = function () {
 
-			  RecordArray[MovePage-StartPage] = audioSrc
-				recAudio = new Audio(RecordArray[MovePage-StartPage])
+					stream.getTracks().forEach( function( track ) { track.stop() } );
+					recodeFile = new Blob( chunks, type );
+					var reader = new FileReader();
 
+					reader.readAsArrayBuffer(recodeFile);
 
-				console.log("audioSrc:", audioSrc);
-				chunks = [];
-			}
+					reader.addEventListener("loadend", function() {
+						var base64str = arrayBufferToBase64(reader.result);
+						UrlEncode = encodeURIComponent(base64str);
 
+						selectcust_rec(ctno, MovePage)
 
+					});
 
-		} ).catch( function ( error ) {
-			if ( location.protocol != 'http:' ) {
-				msg_box.innerHTML = lang.mic_error;
-			} else {
-				msg_box.innerHTML = lang.mic_error;
-			}
-			button.disabled = true;
-		});
+					audioSrc = window.URL.createObjectURL( recodeFile );
+					audio.src = audioSrc;
+
+					RecordArray[MovePage-StartPage] = audioSrc
+					recAudio = new Audio(RecordArray[MovePage-StartPage])
+
+					console.log("audioSrc:", audioSrc);
+					chunks = [];
+				}
+
+			} ).catch( function ( error ) {
+				if ( location.protocol != 'http:' ) {
+					msg_box.innerHTML = lang.mic_error;
+				} else {
+					msg_box.innerHTML = lang.mic_error;
+				}
+				button.disabled = true;
+			});
 	}
 
 	function stop() {
@@ -268,33 +258,33 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 
 
-$('#rec_play').on('click', function() {
-	recAudio.play()
-	$(recAudio).bind("ended", function () {
-		console.log("끝내주세용...");
-		$("#rec_play").css("display", "block");
-		$("#rec_stop").css("display", "none");
-		$(".rec-text").text("녹음재생")
-	})
-	$("#rec_stop").css("display", "block");
-	$("#rec_play").css("display", "none");
-	$(".rec-text").text("일시정지")
-})
+		$('#rec_play').on('click', function() {
+			recAudio.play()
+			$(recAudio).bind("ended", function () {
+				console.log("끝내주세용...");
+				$("#rec_play").css("display", "block");
+				$("#rec_stop").css("display", "none");
+				$(".rec-text").text("녹음재생")
+			})
+			$("#rec_stop").css("display", "block");
+			$("#rec_play").css("display", "none");
+			$(".rec-text").text("일시정지")
+		})
 
 
 
 
 
-$('#rec_stop').on('click', function() {
-	recAudio.pause()
-	console.log(RecordArray);
-	$("#rec_play").css("display", "block");
-	$("#rec_stop").css("display", "none");
-	$(".rec-text").text("녹음재생")
-})
+		$('#rec_stop').on('click', function() {
+			recAudio.pause()
+			console.log(RecordArray);
+			$("#rec_play").css("display", "block");
+			$("#rec_stop").css("display", "none");
+			$(".rec-text").text("녹음재생")
+		})
 
 
-}
+	}
 
 
 
@@ -334,13 +324,13 @@ if(no != 0){
 
 
 function arrayBufferToBase64( buffer ) {
-    var binary = '';
-    var bytes = new Uint8Array( buffer );
-    var len = bytes.byteLength;
-    for (var i = 0; i < len; i++) {
-        binary += String.fromCharCode( bytes[ i ] );
-    }
-    return window.btoa( binary );
+	var binary = '';
+	var bytes = new Uint8Array( buffer );
+	var len = bytes.byteLength;
+	for (var i = 0; i < len; i++) {
+		binary += String.fromCharCode( bytes[ i ] );
+	}
+	return window.btoa( binary );
 }
 
 
@@ -386,7 +376,7 @@ function selectcust_rec(ctno, MovePage) {
 				}, 'json')
 
 			}
-	})
+		})
 }
 
 
@@ -439,42 +429,46 @@ function Slider(){
 		});
 
 		$('a.control_next').click(function () {
-			moveRight();
-			MovePage += 1;
-
-
-
-			if(MovePage > EndPage){
-				if(CreateBook == 1) {
+			if(RecordArray[MovePage-StartPage] == undefined) {
 				swal({
-					  title: "저장하시겠습니까?",
-					  text: "<textarea id='savetext' style='resize:none;' placeholder='동화책에 대한 설명을 적어주세요~'></textarea>",
-						confirmButtonColor: "#FFA500",
-						showCancelButton: true,
-						confirmButtonText: "Yes",
-						html: true
+					title: "녹음 파일이 없습니다",
+					confirmButtonColor: "#FFA500",
+					confirmButtonText: "OK",
+					html: true
+				});
+			} else{
+				moveRight();
+				MovePage += 1;
+				if(MovePage > EndPage){
+					if(CreateBook == 1) {
+						swal({
+							title: "저장하시겠습니까?",
+							text: "<textarea id='savetext' style='resize:none;' placeholder='동화책에 대한 설명을 적어주세요~'></textarea>",
+							confirmButtonColor: "#FFA500",
+							showCancelButton: true,
+							confirmButtonText: "Yes",
+							html: true
 
-					}, function(isConfirm) {
-						if(isConfirm == true){
-							console.log($('#savetext').val());
-							$.post('updateCustbook.json', {
-								'no': ctno,
-							 'ct_dscp': $('#savetext').val()
-						 }, function(result) {
-							 location.href = 'storage.html'
-						 }, 'json')
-							$("#createModal").modal();
-						}
-					})
-				}
+						}, function(isConfirm) {
+							if(isConfirm == true){
+								console.log($('#savetext').val());
+								$.post('updateCustbook.json', {
+									'no': ctno,
+									'ct_dscp': $('#savetext').val()
+								}, function(result) {
+									location.href = 'storage.html'
+								}, 'json')
+								$("#createModal").modal();
+							}
+						})
+					}
 					MovePage = StartPage;
 					// selectcust_rec(ctno, MovePage);
 					if(CreateBook == 0) {
 						$("#createModal").modal();
-
 					}
+				}
 			}
-
 			console.log(MovePage)
 		});
 

@@ -28,6 +28,7 @@
         </otherwise>
       </choose>
     </where>
+    order by mst.mbkno desc
     limit #{startIndex}, #{pageSize}
   </select>
   

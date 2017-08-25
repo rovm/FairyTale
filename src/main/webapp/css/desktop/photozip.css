@@ -211,6 +211,7 @@ a{
 }
 a:hover{
   text-decoration:none;
+  color: #fff;
 }
 a:focus{
   outline:0;
