@@ -11,7 +11,7 @@ year = dt.getFullYear(),
 month = dt.getMonth() +1;
 
 var oldyear = dt.getFullYear(),
-    oldmonth = dt.getMonth()
+oldmonth = dt.getMonth()
 if(month == 1) {
 	oldyear = dt.getFullYear() -1
 }
@@ -22,13 +22,11 @@ $("#m" + oldmonth).attr('selected', 'selected')
 
 
 $("#year>.drop").on("change", function() {
-	console.log("??")
 	oldyear = $("#year .drop").val()
 	displayList2()
 })
 
 $("#month>.drop").on("change", function() {
-	console.log($("#month .drop").val())
 	oldmonth = $("#month .drop").val()
 	displayList2()
 })
@@ -37,11 +35,13 @@ $("#month>.drop").on("change", function() {
 /*********************리스트 뿌려주기**********************/
 displayList()
 displayList2()
+
 function displayList() {
+
 	$.getJSON('BestList.json', {'year': year, 'month': month}, function(result) {
-		
+
 		$("#com-titl-best").html("<br><h1>"+ year +"<br>제"+ month +	"회 명예의전당</h1>")
-		
+
 		var templateFn = Handlebars.compile($('#Best-template').text())
 		var generatedHTML = templateFn(result.data)
 		$(".slider-content").text('') // tbody의 기존 tr 태그들을 지우고
@@ -49,45 +49,47 @@ function displayList() {
 		modalStart()
 		slideStart()
 	}) // getJSON()
+
 }
 
 function displayList2() {
-		
-		$.getJSON('BestList.json', {'year': oldyear, 'month': oldmonth}, function(result) {
-			
-			$(".com-titl-box").html("제" + oldmonth + "회 명예의전당")
-			
-			var templateFn = Handlebars.compile($('#BestOld-template').text())
-			var generatedHTML = templateFn(result.data)
-			$(".com-oldbest").text('') // tbody의 기존 tr 태그들을 지우고
-			$(".com-oldbest").html(generatedHTML) // 새 tr 태그들로 설정한다.
-			console.log(result.data)
-			if(result.data.BestLastList.length == 0) {
-//				alert("데이터가 존재하지 않습니다")
-//				location.href = "best.html"
-			} 
-		}) // getJSON()
-	}
+
+	$.getJSON('BestList.json', {'year': oldyear, 'month': oldmonth}, function(result) {
+
+		if(result.data.BestLastList.length == 0) {
+			$(".com-oldbest-box").css("display", "none")
+		} else {
+			$(".com-oldbest-box").css("display", "block")
+			$(".com-oldbest-box").html("<div class='com-oldbest-standard'>" +
+					"<div class='com-titl-box'>" +
+					"제 " + oldmonth + "명예의전당" +
+					"</div><div class='com-oldbest'>" +
+			"</div></div>")
+		}
+
+		var templateFn = Handlebars.compile($('#BestOld-template').text())
+		var generatedHTML = templateFn(result.data)
+		$(".com-oldbest").text('') // tbody의 기존 tr 태그들을 지우고
+		$(".com-oldbest").html(generatedHTML) // 새 tr 태그들로 설정한다.
+
+	}) // getJSON()
+}
 /*********************리스트 뿌려주기 끝**********************/
 
 /*******************모달**********************/
 function modalStart() {
+
 	$("img").click(function(){
-//		console.log(ctno = $(this).attr("data-a"))
-//		console.log("이거",bkno)
 		bkno = $(this).attr("data-b")
 		ctno = $(this).attr("data-a")
 		Modalfunction();
 	});
+
 }
+
 function Modalfunction() {
 
 	setTimeout(() => {
-
-
-
-		console.log("?")
-//		console.log("모달 순서 1")
 		$("#myModal").modal({backdrop: 'static', keyboard: false});	
 
 		$.getJSON('TogetherDetail.json', {'ctno': ctno}, function(result) {
@@ -99,24 +101,15 @@ function Modalfunction() {
 			StartPage = bkno;
 			MovePage = StartPage;
 			EndPage = parseInt(StartPage) + result.data.TogetherDetail.length -1;
-//			console.log("디테일",result)
-//			console.log(EndPage)
-//			console.log("무브",MovePage)
 			Slider()
-
-
-
 		}) // getJSON()
 	}, 100);
+
 }
+
 function Slider(){
 
-	console.log("시작은 돼?")
-
 	setTimeout(() => {
-		console.log("으아")
-//		console.log("0번방",$(".playREC"+ MovePage))
-//		console.log(MovePage)
 		$(".playREC"+ MovePage)[0].play();
 		$(".playREC" + MovePage).on("ended", function() {
 			moveRight();
@@ -124,10 +117,7 @@ function Slider(){
 			$(".playREC"+ MovePage)[0].play();
 
 			autoplayRecord(MovePage)
-//			MovePage = StartPage
-//			console.log("끝")
 		})
-//		console.log(MovePage)
 		var slideCount = $('#slider ul li').length;
 		var slideWidth = $('#slider ul li').width();
 		var slideHeight = $('#slider ul li').height();
@@ -166,38 +156,28 @@ function Slider(){
 		$(".control_next").unbind( "click" );
 		$('.control_prev').click(function () {
 			$(".playREC"+ MovePage)[0].pause();
-//			console.log("prev");
 			moveLeft();
 			if(MovePage <= StartPage){
 				MovePage = EndPage;
-				console.log(MovePage)
 			} else {
 				MovePage -= 1;
-				console.log(MovePage)
 			}
 		});
 
 		$('.control_next').click(function () {
 			$(".playREC"+ MovePage)[0].pause();
-//			console.log("next");
 			moveRight();
 			if(MovePage >= EndPage){
 				MovePage = StartPage;
-//				console.log(MovePage)
 			}else {
 				MovePage = parseInt(MovePage) + 1;
-//				console.log(MovePage)
 			}
 			$(".playREC"+ MovePage)[0].play();
 		});
 
 		$("#recordPlay").on("click", function() {
 
-//			console.log(" 안내지!")
-//			console.log(MovePage)
 			$(".playREC"+ MovePage)[0].play();
-//			console.log($(".playREC"+ MovePage)[0])
-//			console.log($(".playREC"+ MovePage)[0].play())
 			$("#recordPlay").css("display", "none")
 			$("#recordStop").css("display", "block")
 		})
@@ -214,10 +194,8 @@ function Slider(){
 		})
 		function autoplayRecord() {
 			$(".playREC"+ MovePage)[0].onended = function() {
-//				console.log("오토에서받는 :" + MovePage)
 				MovePage = parseInt(MovePage) + 1;
 				moveRight();
-//				console.log("Next MovePage:" + MovePage)
 				$(".playREC"+ MovePage)[0].play();
 				if(MovePage == EndPage){
 					$(".playREC"+ MovePage)[0].onended = function() {
@@ -254,9 +232,6 @@ function slideStart() {
 	function slideInitial() {
 		slide.addClass('proactivede');
 		slideRight();
-//		setInterval(() => {
-//		slideRight();
-//		}, 3000);
 	}
 
 	function slideRight() {

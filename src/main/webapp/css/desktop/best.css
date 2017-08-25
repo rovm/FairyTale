@@ -4,6 +4,9 @@ body {
 font-family: 'Noto Sans KR', sans-serif;
 }
 
+img{
+	cursor:pointer;
+}
 #gallery{
   -webkit-column-count:4;
   -moz-column-count:4;
