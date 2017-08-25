@@ -1,3 +1,8 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+#container {
+font-family: 'Noto Sans KR', sans-serif;
+}
+
 #img {
 	border: 0;
 	width: 300px;
@@ -14,7 +19,10 @@
 	height: 36px;
 	line-height: 36px;
 }
-
+  #logout {
+    margin-left: 100px;
+    display: none;
+  }
 #box {
 	border: 0px;
 	width: 980px;
@@ -100,16 +108,17 @@
 }
 
 .menu {
-	width: 80px;
 	top: 15px;
 	height: 24px;
-	margin-left: 4px;
+	margin-left: 34px;
 	float: left;
 	text-align: center;
 	color: white;
 	font-weight: bold;
 }
-
+.menual {
+	margin-left: 33px;
+}
 .page {
 	width: 10px;
 	height: 10px;
@@ -207,12 +216,12 @@ html, body {
 
 /* === Links Styles === */
 a {
-	transition: 0.25s;
-	backface-visibility: hidden;
+	color:white;
 }
 
 a:hover {
 	text-decoration: none;
+	color:white;
 }
 
 a:focus {
@@ -227,7 +236,7 @@ body {
 	background: #ECECEC;
 	overflow-X: hidden;
 	font-size: 14px;
-	font-family: 'Metrophobic', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 400;
 }
 
@@ -294,7 +303,7 @@ body {
 }
 
 .gallery_item_preview a h3 {
-	font-family: 'Leckerli One', cursive;
+font-family: 'Noto Sans KR', sans-serif;
 }
 
 .gallery_item_preview a img {
@@ -343,7 +352,7 @@ body {
 }
 
 .box h3 {
-	font-family: 'Leckerli One', cursive;
+font-family: 'Noto Sans KR', sans-serif;
 	color: #F88484;
 }
 

@@ -1,8 +1,6 @@
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons|Roboto';
-
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
-  background: #fff;
-  font-family: 'Roboto Light';
+font-family: 'Noto Sans KR', sans-serif;
 }
 
 #savetext{
@@ -28,6 +26,7 @@ html {
 a:hover {
 	color:#fff;
   text-decoration: none;
+  color: white;
 }
 
 a{
