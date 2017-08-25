@@ -63,8 +63,8 @@ function displayList2() {
 			$(".com-oldbest").html(generatedHTML) // 새 tr 태그들로 설정한다.
 			console.log(result.data)
 			if(result.data.BestLastList.length == 0) {
-				alert("데이터가 존재하지 않습니다")
-				location.href = "best.html"
+//				alert("데이터가 존재하지 않습니다")
+//				location.href = "best.html"
 			} 
 		}) // getJSON()
 	}

@@ -1,12 +1,15 @@
+
 $(document).ready(function(){
 	Kakao.init('eaeddfa1ade8ed3a16075bd54bb6f4b6');
 })
-
+try {
 $(window).on("load", function() {
 	FB.getLoginStatus(function(response) {
-		statusChangeCallback(response);
 	});
 })
+} catch(e) {
+	functionToHandleError(e);
+}
 
 
 
