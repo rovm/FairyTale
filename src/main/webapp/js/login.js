@@ -93,12 +93,15 @@ function enter(){
 }
 var posi;
 $.getJSON('userinfo.json', function (result) {
-	console.log(result)
-	if(result.data.no != null){
-		$('.login-link').css('display', 'none');
-		$('.logout-link').css('display', 'block');
-		$('.sign-link').css('display', 'none');
-		posi = result.data.posi;
+	try {
+		if(result.data.no != null){
+			$('.login-link').css('display', 'none');
+			$('.logout-link').css('display', 'block');
+			$('.sign-link').css('display', 'none');
+			posi = result.data.posi;
+		} 
+	} catch(exception) {
+		
 	}
 })
 $('.logout-link').on('click', function() {
