@@ -26,6 +26,7 @@ html {
 }
 
 a:hover {
+	color:#fff;
   text-decoration: none;
 }
 
@@ -212,7 +213,10 @@ h1 {
     height: 36px;
     line-height: 36px;
   }
-
+  #logout {
+  	margin-left: 100px;
+  	display: none;
+  }
   #box {
     border: 0px;
     width: 980px;
@@ -250,16 +254,17 @@ h1 {
 
 
 .menu {
-  width: 80px;
   top: 15px;
   height: 24px;
-  margin-left: 4px;
+  margin-left: 34px;
   float: left;
   text-align: center;
   color: white;
   font-weight: bold;
 }
-
+.menual {
+  margin-left: 33px;
+}
 
 .footer_container {
   width: 100%;

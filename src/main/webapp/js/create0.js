@@ -8,76 +8,94 @@ var no = 0,
 	CreateBook,
 	cust_rec,
 	UrlEncode,
-	RecordAraay = new Array(),
-	recAudio;
+	RecordArray = new Array(),
+	recAudio,
+	recAudioSrc;
+
+a()
+
+
+function a() {
+	$(document).ready(function() {
+		$(".recorder").css("display", "none");
+		$(".play").css("display", "none")
+		$(".recorder_play").css("display", "none")
+		$("#text-stop").css("display","none")
+		$("#createModal").modal();
+
+		$('#close').click(function() {
+		    location.href = "bookList.html"
+		});
 
 
 
 
+	$('#yes').on('click', function(){
+		CreateBook = 1;
+		$('#createModal').modal('hide');
+			console.log("bkno"+MovePage);
 
-$(document).ready(function() {
-	$(".recorder").css("display", "none");
-	$(".play").css("display", "none")
-	$(".recorder_play").css("display", "none")
-	$("#createModal").modal();
-
-	$('#close').click(function() {
-	    location.href = "bookList.html"
-	});
-
-
-
-
-$('#yes').on('click', function(){
-	CreateBook = 1;
-	$('#createModal').modal('hide');
-		console.log("bkno"+MovePage);
-
-	$.post('addCustbook.json', {
-		'mno': mno,
-		'mbkno': no
-	}, function(result) {
-		ctno = result.data
-	 if(result.status=="success")
-	 {
-		 console.log("ctno"+result.data);
-	 } else {
-		 console.log(error)
-	 }
-	}, 'json')
-
-
-	$(".recorder").css("display", "block");
-	$(".play").css("display", "block")
-	$("#basic_stop").css("display", "none");
-	$(".recorder_play").css("display", "block");
-	$("#rec_stop").css("display", "none");
+		$.post('addCustbook.json', {
+			'mno': mno,
+			'mbkno': no
+		}, function(result) {
+			ctno = result.data
+		 if(result.status=="success")
+		 {
+			 console.log("ctno"+result.data);
+		 } else {
+			 console.log(error)
+		 }
+		}, 'json')
 
 
 
-	$('#basic_play').on('click', function() {
-		$("#basic_stop").css("display", "block");
-		$("#basic_play").css("display", "none");
-	})
-	$('#basic_stop').on('click', function() {
-		$(".record" + MovePage)[0].pause();
-		$("#basic_play").css("display", "block");
+
+		$(".recorder").css("display", "block");
+		$(".play").css("display", "block")
 		$("#basic_stop").css("display", "none");
+		$(".recorder_play").css("display", "block");
+		$("#rec_stop").css("display", "none");
+	//$("#start-stop").css("display","none")
+
+
+		$('#basic_play').on('click', function() {
+			$("#basic_stop").css("display", "block");
+			$("#basic_play").css("display", "none");
+			$(".basic-text").text("일시정지")
+		})
+
+
+		$(".record" + MovePage).on("ended", function() {
+			$("#basic_play").css("display", "block");
+			$("#basic_stop").css("display", "none");
+			$(".basic-text").text("기본재생")
+		})
+
+
+
+		$('#basic_stop').on('click', function() {
+			$(".record" + MovePage)[0].pause();
+			$("#basic_play").css("display", "block");
+			$("#basic_stop").css("display", "none");
+			$(".basic-text").text("기본재생")
+		})
+
+
 	})
 
+	$('#no').on('click', function(){
+		CreateBook = 0;
+		console.log("no누르고 모달창닫습니다..")
 
-})
+		$('#createModal').modal('hide');
+		$(".recorder").css("display", "none");
+		$(".play").css("display", "none")
+		$(".recorder_play").css("display", "none")
+	})
+	 });//ready
+}
 
-$('#no').on('click', function(){
-	CreateBook = 0;
-	console.log("no누르고 모달창닫습니다..")
-
-	$('#createModal').modal('hide');
-	$(".recorder").css("display", "none");
-	$(".play").css("display", "none")
-	$(".recorder_play").css("display", "none")
-})
- });//ready
 
 
 
@@ -90,7 +108,7 @@ try {
 
 $.getJSON('userinfo.json', function(result) {
 	mno = result.data.no;
-	console.log(mno)
+	console.log("mno"+mno)
 })
 
 var msg_box = document.getElementById( 'msg_box' ),
@@ -146,8 +164,12 @@ if ( navigator.mediaDevices.getUserMedia ) {
 	$('.record_btn').click(function () {
 		if ( btn_status == 'inactive' ) {
 			start();
+			$("#text-start").css("display","none")
+			$("#text-stop").css("display","block")
 		} else if ( btn_status == 'recording' ) {
 			stop();
+			$("#text-start").css("display","block")
+			$("#text-stop").css("display","none")
 		}
 	})
 
@@ -172,7 +194,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 			button.classList.add( 'recording' );
 			btn_status = 'recording';
 
-			
+
 
 			if ( navigator.vibrate ) navigator.vibrate( 150 );
 
@@ -189,7 +211,9 @@ if ( navigator.mediaDevices.getUserMedia ) {
 				recodeFile = new Blob( chunks, type );
 				var reader = new FileReader();
 
+
 				reader.readAsArrayBuffer(recodeFile);
+
 
 				reader.addEventListener("loadend", function() {
 					var base64str = arrayBufferToBase64(reader.result);
@@ -203,8 +227,15 @@ if ( navigator.mediaDevices.getUserMedia ) {
 				audioSrc = window.URL.createObjectURL( recodeFile );
 				audio.src = audioSrc;
 
-			  RecordAraay[MovePage-StartPage] = audioSrc
-				recAudio = new Audio(RecordAraay[MovePage-StartPage])
+
+
+
+
+
+
+			  RecordArray[MovePage-StartPage] = audioSrc
+				recAudio = new Audio(RecordArray[MovePage-StartPage])
+
 
 				console.log("audioSrc:", audioSrc);
 				chunks = [];
@@ -239,17 +270,27 @@ if ( navigator.mediaDevices.getUserMedia ) {
 
 $('#rec_play').on('click', function() {
 	recAudio.play()
-	console.log(RecordAraay);
+	$(recAudio).bind("ended", function () {
+		console.log("끝내주세용...");
+		$("#rec_play").css("display", "block");
+		$("#rec_stop").css("display", "none");
+		$(".rec-text").text("녹음재생")
+	})
 	$("#rec_stop").css("display", "block");
 	$("#rec_play").css("display", "none");
+	$(".rec-text").text("일시정지")
 })
+
+
+
 
 
 $('#rec_stop').on('click', function() {
 	recAudio.pause()
-	console.log(RecordAraay);
+	console.log(RecordArray);
 	$("#rec_play").css("display", "block");
 	$("#rec_stop").css("display", "none");
+	$(".rec-text").text("녹음재생")
 })
 
 
@@ -344,11 +385,6 @@ function selectcust_rec(ctno, MovePage) {
 					}
 				}, 'json')
 
-
-
-
-
-				console.log("없당");
 			}
 	})
 }
@@ -405,6 +441,13 @@ function Slider(){
 		$('a.control_next').click(function () {
 			moveRight();
 			MovePage += 1;
+
+			selectcust_rec(ctno, MovePage)
+			
+			
+			console.log("MoveMove", MovePage);
+			console.log("Cust", custRec)
+
 
 			if(MovePage > EndPage){
 				if(CreateBook == 1) {

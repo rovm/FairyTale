@@ -1,8 +1,9 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-body {
-font-family: 'Jeju Gothic', serif;
+body{
+  font-family: 'Noto Sans KR', sans-serif;
 }
+
   #img {
     border: 0;
     width: 400px;
@@ -17,6 +18,11 @@ font-family: 'Jeju Gothic', serif;
     width: 178px;
     height: 36px;
     line-height: 36px;
+  }
+
+  #logout{
+    margin-left: 100px;
+    display: none;
   }
 
   #box {
@@ -49,9 +55,9 @@ font-family: 'Jeju Gothic', serif;
   	width: 60px;
   	height: 40px;
   }
-  
-  
-  
+
+
+
    #next-btn {
   border-radius: 50px 0px 50px 30px;
   color: #fff;
@@ -60,7 +66,7 @@ font-family: 'Jeju Gothic', serif;
 }
 .block:hover {
   box-shadow: 0 0 11px rebeccapurple;
-} 
+}
 
 .disable:hover {
   box-shadow: 0 0 0 rebeccapurple;
@@ -71,8 +77,8 @@ font-family: 'Jeju Gothic', serif;
   color: #fff;
   outline: 0;
   font-size: 12px;
-} 
-  
+}
+
 
   .standard-collection{
     width: 870px;
@@ -117,14 +123,17 @@ font-family: 'Jeju Gothic', serif;
   }
 
   .menu {
-    width: 80px;
     top: 15px;
     height: 24px;
-    margin-left: 4px;
+    margin-left: 34px;
     float: left;
     text-align: center;
     color: white;
     font-weight: bold;
+  }
+
+  .menual{
+    margin-left: 33px;
   }
 
   .page {

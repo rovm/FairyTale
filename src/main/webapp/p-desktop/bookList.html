@@ -16,7 +16,7 @@
 	<div id="container">
 		<div class="form">
       <div id="logo" class="menu">
-        <a href="main.html">동화와만나요</a>
+        <a href="main.html"><img src="../img/logo.png" style="height: 70px; margin-top: -8px; margin-left: -20px;"></a>
       </div>
       <div id="menual" class="menu">
         <a href="menual.html">메뉴얼</a>
@@ -36,14 +36,17 @@
       <div id="camera" class="menu">
         <a href="photozip.html">사진첩</a>
       </div>
-      <div id="login" class="menu">
+			<div id="qna" class="menu">
+        <a href="notice.html">고객센터</a>
+      </div>
+      <div id="login" class="menu login-link">
         <a href="login.html">로그인</a>
       </div>
-      <div id="sign" class="menu">
-        <a href="join.html">회원가입</a>
+      <div id="logout" class="menu logout-link">
+        <a href="login.html">로그아웃</a>
       </div>
-      <div id="qna" class="menu">
-        <a href="notice.html">고객센터</a>
+      <div id="sign" class="menu sign-link">
+        <a href="join.html">회원가입</a>
       </div>
     </div>
 		<div id="box">
@@ -107,8 +110,11 @@
 	</div>
 </body>
 <script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script type="text/javascript" src="../js/bookList.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+<script type="text/javascript" src="../js/kakaotalk2.js"></script>
 <script id="BookList-template" type="text/x-handlebars-template">
         {{#each list}}
           <li><a class="detail-link" href="#" data-no='{{no}}'>

@@ -1,16 +1,15 @@
-$(document).ready(function() {
+$(document).ready(function(){
 	Kakao.init('eaeddfa1ade8ed3a16075bd54bb6f4b6');
- 
 })
- 
+
 $(window).on("load", function() {
 	FB.getLoginStatus(function(response) {
 		statusChangeCallback(response);
 	});
 })
- 
- 
- 
+
+
+
 function facebooklogin() {
 	FB.login(function(response) {
 		FB.api('/me?fields=id,name,email', function (response) {
@@ -23,7 +22,7 @@ function facebooklogin() {
 				console.log('login2')
 				if(result.status=="success")
 					location.href = 'main.html'
- 
+
 						else{
 							$.post('add2.json', {
 								'name' : response.name,
@@ -31,7 +30,7 @@ function facebooklogin() {
 								'password': response.email,
 								'tel': response.email,
 								'posi': 'facebook'
- 
+
 							}, function(result) {
 								console.log('login2')
 								$.post('login2.json', {
@@ -40,16 +39,16 @@ function facebooklogin() {
 								})
 								if(result.status=="success")
 									location.href = 'main.html'
- 
+
 							}, 'json') // add.json
 						}
- 
+
 			}, 'json');
 		}, {scope: 'public_profile,email'});
 	})
 }
- 
- 
+
+
 $('#login-btn').on('click',function(e) {
 	$.post('login2.json', {
 		'email': $('#login-email').val(),
@@ -61,7 +60,7 @@ $('#login-btn').on('click',function(e) {
 			location.href = 'main.html'
 				$('.login-link').css('display', 'none');
 			$('.logout-link').css('display', 'block');
- 
+
 			// e.preventDefault();
 		} else {
 			console.log(result.data)
@@ -69,7 +68,7 @@ $('#login-btn').on('click',function(e) {
 	}, 'json')
 	// e.preventDefault();
 })
- 
+
 function enter(){
 	$.post('login2.json', {
 		'email': $('#login-email').val(),
@@ -81,7 +80,7 @@ function enter(){
 			location.href = 'main.html'
 				$('.login-link').css('display', 'none');
 			$('.logout-link').css('display', 'block');
- 
+
 			// e.preventDefault();
 		} else {
 			console.log(result.data)
@@ -112,13 +111,13 @@ $('.logout-link').on('click', function() {
 			else if(posi == 'facebook'){
 				fbLogout()
 			}
-			
+
 		}
- 
+
 	})
 })
- 
- 
+
+
 function fbLogout(){
  FB.getLoginStatus(function(ret) {
     if(ret.authResponse) {
@@ -126,12 +125,12 @@ function fbLogout(){
         });
     }
 });
- } 
- 
- 
- 
- 
- 
+ }
+
+
+
+
+
 ////<![CDATA[
 //function kakaoLogin() {
 ////사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -149,23 +148,23 @@ function fbLogout(){
 //}
 //]]>
 ////////////////////////////////카카오//////////////////////////////////////
- 
+
 function logoutWithKakao(){
 	Kakao.Auth.logout();
 	alert('카카오 로그아웃 완료!');
 	deleteCookie( "kakao_login" );
 }
- 
+
 ///////////////////////////////페이스북//////////////////////////////////
 //function loguotWithfacebook(){
- 
+
 //}
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
 window.fbAsyncInit = function() {
 	  FB.init({
 	    appId : '650173568510994',
@@ -175,7 +174,7 @@ window.fbAsyncInit = function() {
 	  });
 	  FB.AppEvents.logPageView();
 	};
- 
+
 	(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id))
@@ -185,19 +184,19 @@ window.fbAsyncInit = function() {
 	  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10&appId=784647978380545";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
- 
-	
-	
+
+
+
 ////////////////////////////////////////naver/////////////////////////////////////////////////
-	
-	
+
+
 	  // 접근 토큰 값 출력
 	//  alert(naver_id_login.oauthParams.access_token);
 	  // 네이버 사용자 프로필 조회
 	  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
- 
+
 	  function naverSignInCallback() {
-	   
+
 	    /* window.close(); */
 	    $.post('add2.json', {
 	      'name' : naver_id_login.getProfileData('name'),
@@ -220,15 +219,15 @@ window.fbAsyncInit = function() {
 		        } else {
 		        }
 		        }, 'json')
- 
+
 	        // e.preventDefault();
 	      } else {
 	      }
 	    }, 'json')
 	  }
-	  
- 
-	  
+
+
+
 	  function onKeyDown()
 	  {
 	       if(event.keyCode == 13)

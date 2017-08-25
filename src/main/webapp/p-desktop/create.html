@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/desktop/create.css">
 <link rel="stylesheet" type="text/css" href="../node_modules/sweetalert/dist/sweetalert.css">
-<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
 
 </head>
@@ -16,7 +15,7 @@
   <div id="container">
     <div class="form">
       <div id="logo" class="menu">
-        <a href="main.html">동화와만나요</a>
+          <a href="main.html"><img src="../img/logo.png" style="height: 70px; margin-top: -8px; margin-left: -20px;"></a>
       </div>
       <div id="menual" class="menu">
         <a href="menual.html">메뉴얼</a>
@@ -36,14 +35,17 @@
       <div id="camera" class="menu">
         <a href="photozip.html">사진첩</a>
       </div>
-      <div id="login" class="menu">
-        <a href="login.html">로그인</a>
-      </div>
-      <div id="sign" class="menu">
-        <a href="join.html">회원가입</a>
-      </div>
       <div id="qna" class="menu">
         <a href="notice.html">고객센터</a>
+      </div>
+      <div id="login" class="menu login-link">
+        <a href="login.html">로그인</a>
+      </div>
+      <div id="logout" class="menu logout-link">
+        <a href="login.html">로그아웃</a>
+      </div>
+      <div id="sign" class="menu sign-link">
+        <a href="join.html">회원가입</a>
       </div>
     </div>
     <div id="box">
@@ -80,12 +82,16 @@
     </div>
 
 
+
+
+
 <!-- 녹음 -->
     <div class="recorder">
       <button class="record_btn" id="button"></button>
-      <div class="record-text">녹음</div>
-      <div class="record-text" id="rec-stop">중지</div>
+      <div class="record-text" id="text-start">녹음</div>
+      <div class="record-text" id="text-stop">중지</div>
       <p id="msg_box"></p>
+
     </div>
 <!-- 녹음재생 -->
     <div class="recorder_play">
@@ -101,9 +107,6 @@
   </div>
   <!-- 녹음버튼끝 -->
 
-
-<!-- <i class="fa fa-sign-in" aria-hidden="true"></i>
-<i class="fa fa-eye" aria-hidden="true"></i> -->
   <!-- 모달폼 -->
   <div id="createModal" class="modal fade" role="dialog"  data-backdrop="static" data-keyboard="false">
 
@@ -163,6 +166,8 @@
 
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="../js/login.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
@@ -173,8 +178,9 @@
 <script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
 <script src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
 <script src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-<script src="../js/create0.js"></script>
 
+
+<script src="../js/create0.js"></script>
 <!--  <img src="{{BK_IMG}}">-->
 <script id="FairyTaleContent-template" type="text/x-handlebars-template">
     {{#each list}}

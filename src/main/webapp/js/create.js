@@ -58,8 +58,10 @@ if ( navigator.mediaDevices.getUserMedia ) {
 	button.onclick = function () {
 		if ( btn_status == 'inactive' ) {
 			start();
+			$('#rec-stop').css("display", "block")
 		} else if ( btn_status == 'recording' ) {
 			stop();
+			$('#rec-stop').css("display", "none")
 		}
 	}
 
@@ -84,6 +86,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 			btn_status = 'recording';
 
 			msg_box.innerHTML = lang.recording;
+
 
 			if ( navigator.vibrate ) navigator.vibrate( 150 );
 

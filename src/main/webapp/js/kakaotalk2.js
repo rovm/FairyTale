@@ -1,5 +1,6 @@
     function loginWithKakao() {
       // 로그인 창을 띄웁니다.
+
       Kakao.Auth.login({
         success: function(authObj) {
           Kakao.API.request({
@@ -11,7 +12,7 @@
         		  },function(result) {
         			if(result.data == 'ok')
         				location.href = 'main.html'
-        				
+
         			else{
                       $.post('add2.json', {
         			  'name' : res.properties.nickname,
@@ -40,13 +41,3 @@
         }
       })
     }
-
-
-    $('#Header_logout').on("click", function(){
-    function logoutWithKakao(){
-    Kakao.Auth.logout();
-	alert('카카오 로그아웃 완료!');
-	deleteCookie( "kakao_login" );
-	createLoginKakao();
-    }
-    });

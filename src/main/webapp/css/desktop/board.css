@@ -1,11 +1,3 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-body {
-font-family: 'Noto Sans KR', sans-serif;
-}
-#logo a {
-  font-size:27px;
-}
 .btn {
     color: #fff;
     background-color: purple;
@@ -82,7 +74,7 @@ div {
 
 
 a:hover {
-	color: white;
+	transition: 0.25s;
   text-decoration: none;
 }
 
@@ -112,7 +104,7 @@ th, td {
   text-align: center;
   vertical-align: middle;
   height: 30px;
-  
+
 }
 
 
@@ -178,7 +170,7 @@ th, td {
 .menu {
   top: 15px;
   height: 24px;
-  margin-left: 34px;
+  margin-left: 30px;
   float: left;
   text-align: center;
   color: white;
@@ -363,7 +355,7 @@ th, td {
 }
 .block:hover {
 	box-shadow: 0 0 11px rebeccapurple;
-} 
+}
 
 .disable:hover {
 	box-shadow: 0 0 0 rebeccapurple;
@@ -375,7 +367,7 @@ th, td {
 	color: white;
 	outline: 0;
 	font-size: 12px;
-} 
+}
 .page-btn {
   margin-top: 50px;
   text-align: center;
@@ -388,4 +380,3 @@ th, td {
   width: 60px;
   height: 40px;
 }
-

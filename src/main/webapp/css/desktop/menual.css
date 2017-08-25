@@ -1,4 +1,8 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+}
   #img {
     border: 0;
     width: 160px;
@@ -16,6 +20,7 @@
     height: 36px;
     line-height: 36px;
   }
+
 
   #box {
     border: 0px;
@@ -67,14 +72,22 @@
   }
 
   .menu {
-    width: 80px;
     top: 15px;
     height: 24px;
-    margin-left: 4px;
+    margin-left: 34px;
     float: left;
     text-align: center;
     color: white;
     font-weight: bold;
+  }
+
+  .menual{
+    margin-left: 33px;
+  }
+
+  #logout{
+    margin-left: 100px;
+    display: none;
   }
 
   .page {
@@ -110,8 +123,11 @@
    margin-left: 20px;
  }
 
-
 a{
+  color: white;
+  text-decoration:none;
+}
+a:hover{
   color: white;
   text-decoration:none;
 }

@@ -18,7 +18,7 @@
 	<div id="container">
 		<div class="form">
 			<div id="logo" class="menu">
-				<a href="main.html">동화와만나요</a>
+				<a href="main.html"><img src="../img/logo.png" style="height: 70px; margin-top: -8px; margin-left: -20px;"></a>
 			</div>
 			<div id="menual" class="menu">
 				<a href="menual.html">메뉴얼</a>
@@ -38,15 +38,18 @@
 			<div id="camera" class="menu">
 				<a href="photozip.html">사진첩</a>
 			</div>
-			<div id="login" class="menu">
-				<a href="login.html">로그인</a>
-			</div>
-			<div id="sign" class="menu">
-				<a href="join.html">회원가입</a>
-			</div>
 			<div id="qna" class="menu">
-				<a href="notice.html">고객센터</a>
-			</div>
+        <a href="notice.html">고객센터</a>
+      </div>
+      <div id="login" class="menu login-link">
+        <a href="login.html">로그인</a>
+      </div>
+      <div id="logout" class="menu logout-link">
+        <a href="login.html">로그아웃</a>
+      </div>
+      <div id="sign" class="menu sign-link">
+        <a href="join.html">회원가입</a>
+      </div>
 		</div>
 		<div id="box">
 			<div id="img"></div>
@@ -72,14 +75,14 @@
 	<div class="footer_container">
 		<div class="footer_domain-form">
 
-			<span id="footer_a" class="menu"> </span> 
-			<span id="footer_b" class="footer_menu">이용약관 </span> 
-			<span id="footer_c" class="footer_menu">운영원칙 </span> 
-			<span id="footer_d" class="footer_menu">개인정보 처리방침 </span> 
-			<span id="footer_e" class="footer_menu">책임의 한계와 법적고지 </span> 
-			<span id="footer_f" class="footer_menu">고객센터 </span> 
-			<span id="footer_g" class="footer_menu">제휴제안 </span> 
-			<span id="footer_h" class="footer_menu">정보보호인증사이트 </span><br> 
+			<span id="footer_a" class="menu"> </span>
+			<span id="footer_b" class="footer_menu">이용약관 </span>
+			<span id="footer_c" class="footer_menu">운영원칙 </span>
+			<span id="footer_d" class="footer_menu">개인정보 처리방침 </span>
+			<span id="footer_e" class="footer_menu">책임의 한계와 법적고지 </span>
+			<span id="footer_f" class="footer_menu">고객센터 </span>
+			<span id="footer_g" class="footer_menu">제휴제안 </span>
+			<span id="footer_h" class="footer_menu">정보보호인증사이트 </span><br>
 			<span class="footer_use"><font color="gray" face="serif">본
 					콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font></span><br>
 			<span class="footer_use"><font color="gray" face="serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
@@ -90,6 +93,7 @@
 </body>
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script type="text/javascript" src="../js/menual.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
 <script>
       jQuery( document ).ready( function( $ ) {
         $( 'iframe[src^="https://www.youtube.com/"]' ).wrap( '<div class="youtubeWrap"></div>' );

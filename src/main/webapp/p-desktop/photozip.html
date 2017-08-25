@@ -51,18 +51,18 @@
 			<div id="menual-Name">사진첩</div>
 		</div>
 	</div>
-	
-<!-- modal -->	
+
+<!-- modal -->
 	<div id="photo-upload-form">
-		<button type="button" name="button" class="btn btn-success" id="photo-upload">사진올리기</button>
+		<button type="button" class="photoBtn" id="photo-upload">사진올리기</button>
 	</div>
-  
+
     <div id="mask"></div>
     <div class="window">
-      <div class="uploadform"> 
+      <div class="uploadform">
         <div id="manager-addbtn">
           <div id="manager-addbtn-wrapper">
-          
+
           <div class="input-group">
               <span class="input-group-addon">제목</span>
               <input type="text" id="upload-titl" class="form-control input-input">
@@ -73,19 +73,19 @@
              <span class="input-group-addon">내용</span>
              <input id="upload-description" class="form-control input-input">
            </div>
-            
-            
-            <div id="manager-addbtn-photo"> 
-              <button id="file-select" class="btn btn-success"> 파일선택</button>
-              <input id="fileupload" type="file" name="files" multiple>
+
+
+            <div id="manager-addbtn-photo">
+              <button id="file-select" class="photoBtn"> <input id="fileupload" type="file" name="files" multiple> 파일선택</button>
+
             </div>
             <div id="images-div"> 사진을 올려주세요</div><br>
-            <div id="manager-upload-btn"><button id="upload-btn" class="btn btn-success" type='button'>등록</button></div>
+            <div id="manager-upload-btn"><button id="upload-btn" class="photoBtn" type='button'>등록</button></div>
           </div>
         </div>
       </div>
     </div>
-  <!-- modal -->  
+  <!-- modal -->
 
 	<link
 		href='https://fonts.googleapis.com/css?family=Leckerli+One|Metrophobic'
@@ -95,18 +95,18 @@
 		<div class="wrapper_inner">
 			<!-- Gallery -->
 			<section class="gallery">
-				
+
 			</section>
 		</div>
 	</div>
 
-	<div class="standard-collection">
-		<button type="button" name="button" class="btn btn-success" id="prev-btn">이전</button>
-		<span id="page-no">1</span>
-		<button type="button" name="button" class="btn btn-success" id="next-btn">다음</button>
+	<div class="page-btn">
+		<button type="button" class="btnForm" id="prev-btn">이전</button>
+		&nbsp;&nbsp;<span id="page-no"></span>&nbsp;&nbsp;
+		<button type="button" class="btnForm" id="next-btn">다음</button>
 	</div>
 	<br><br><br>
-	
+
 	<div class="footer_container">
 		<div class="footer_domain-form">
 

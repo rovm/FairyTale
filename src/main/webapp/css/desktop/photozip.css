@@ -1,8 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
-body {
-font-family: 'Jeju Gothic', serif;
-}
   #img {
     border: 0;
     width: 400px;
@@ -27,11 +23,45 @@ font-family: 'Jeju Gothic', serif;
     position: relative;
   }
 
-  .standard-collection{
+
+
+
+  .page-btn {
     width: 980px;
     margin: auto;
     text-align: center;
   }
+
+  .btnForm {
+  	background-color: #FF69B4;
+  	border: 1px solid #FF69B4;
+    color: #fff;
+  	width: 60px;
+  	height: 40px;
+  }
+
+
+   #next-btn {
+  border-radius: 50px 0px 50px 30px;
+  color: #fff;
+  outline: 0;
+  font-size: 12px;
+}
+.block:hover {
+  box-shadow: 0 0 11px rebeccapurple;
+}
+
+.disable:hover {
+  box-shadow: 0 0 0 rebeccapurple;
+}
+
+#prev-btn {
+  border-radius: 0px 50px 30px 50px;
+  color: #fff;
+  outline: 0;
+  font-size: 12px;
+}
+
 
   .standard-collection > h1{
     font-weight: bold;
@@ -423,27 +453,59 @@ body{
 }
 
 #photo-upload-form{
-	width: 980px;
+  width: 980px;
 	margin: 30px auto 0px;
-	height: 30px;
 	padding-right:20px;
 	text-align: right;
 }
 
+.photoBtn{
+  background-color: #FF69B4;
+  border: 1px solid #FF69B4;
+  color: #fff;
+  width: 106px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.photoBtn:HOVER{
+ background-color: #f42a8f;
+ border: 1px solid #f42a8f;
+ color: #fff;
+}
+
+ .window  .photoBtn {
+   background-color: #f37f96;
+   border: 1px solid #f37f96;
+   color: #fff;
+   width: 106px;
+   height: 40px;
+   border-radius: 10px;
+ }
+
+.window .photoBtn:HOVER{
+ background-color: #f35a78;
+ border: 1px solid #f35a78;
+ color: #fff;
+}
+
+
+
+
 /********************modal**************************/
 
-  #mask {  
-    position:absolute;  
-    z-index:9000;  
-    background-color:#000;  
-    display:none;  
+  #mask {
+    position:absolute;
+    z-index:9000;
+    background-color:#000;
+    display:none;
     left:0;
     top:0;
   }
 
   .window{
     display: none;
-    position:absolute;  
+    position:absolute;
     left:100px;
     top:100px;
     z-index:10000;
@@ -451,11 +513,11 @@ body{
   }
 
   .uploadform{
-    width: 400px;
+    width: 550px;
     height: 540px;;
     background-color: white;
-    border-radius: 10px;
-    text-align: center; 
+    border-radius: 3px;
+    text-align: center;
   }
 
   #manager-addbtn-photo{
@@ -465,19 +527,19 @@ body{
   }
 
   #manager-addbtn-wrapper{
-    padding: 15px;
+    padding: 30px;
   }
 
 .gallery_item_preview a{
-  border: 0.5px dotted darkgray;  
+  border: 0.5px dotted darkgray;
   border-radius: 3px;
 }
 
 #images-div{
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 70px;
+	margin-left: -3px;
 	height: 270px;
-	width: 370px;
+	width: 500px;
 	text-align: center;
 	line-height: 270px;
  	border: 1px dotted gray;
@@ -489,14 +551,16 @@ body{
 }
 
 #file-select{
-  margin-left: -290px; 
+  float: right;
 	}
 
 #fileupload{
   opacity: 0;
-  div: 1px black;
   position: absolute;
-  margin-top: -25px;
+  margin-top: -8px;
+  width: 100px;
+  height: 37px;
+  float: right;
 }
 
 .deleteBtn{
