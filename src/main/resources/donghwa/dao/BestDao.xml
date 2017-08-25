@@ -34,11 +34,11 @@
 											 inner join custbook cb on cp.ctno = cb.ctno
 										   left outer join mstbook mb on mb.mbkno = bp.mbkno
 										   left outer join member m on cb.mno = m.mno
-										   left outer join (select count(ctno) as likeNo,ctno
+										   left outer join (select count(ctno) as likeNo, ctno
 																				from withview
 																				group by ctno) wv on wv.ctno=cp.ctno
-			where cb.ct_public="yes" and bp.bk_page= 1
-			order by wv.likeNo desc
+			where cb.ct_public="yes" and bp.bk_page= 1 and ct_date between concat(#{year}, '-' ,#{month}, '-01') and concat(#{year}, '-' ,#{month}, '-31')
+			order by wv.likeNo desc 
 			limit 3;
   </select>
   

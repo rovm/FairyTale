@@ -435,18 +435,26 @@ th, td {
   width: 100%;
   height: 355px;
 }
-
+#drop-container {
+	margin: 0 auto;
+	width: 800px;
+	height: 50px;
+	position: relative;
+}
 .drop-box {
   text-align: right;
-  line-height: 170px;
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  height: 100px;
-  width: 975px;
-  position: relative;
+  width: 100px;
+  position: absolute;
+  top: 5px;
 }
-
+#year {
+	right: 102px;
+}
+#month {
+	right: 0;
+}
 .drop {
   border: 2px black solid;
   height: 40px;
@@ -454,7 +462,6 @@ th, td {
   outline: none;
   background-color: skyblue;
   border-radius: 50px;
-  position: absolute;
   right: 40px;
   bottom: 26px;
   font-weight: bold;

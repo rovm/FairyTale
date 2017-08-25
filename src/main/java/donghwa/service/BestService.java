@@ -6,7 +6,7 @@ import donghwa.domain.Together;
 
 
 public interface BestService {
-  List<Together> list() throws Exception;
+  List<Together> list(int year, int month) throws Exception;
 }
 
 

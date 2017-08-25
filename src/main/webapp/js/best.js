@@ -10,18 +10,38 @@ var dt = new Date(),
 year = dt.getFullYear(),
 month = dt.getMonth() +1;
 
-//$("#com-titl-best").html("<br><h1>"   + year + 
-//"<br>제"
-//+ month + 
-//"회 명예의전당</h1>")
+var oldyear = dt.getFullYear(),
+    oldmonth = dt.getMonth()
+if(month == 1) {
+	oldyear = dt.getFullYear() -1
+}
+
+
+$("#y" + oldyear).attr('selected', 'selected')
+$("#m" + oldmonth).attr('selected', 'selected')
+
+
+$("#year>.drop").on("change", function() {
+	console.log("??")
+	oldyear = $("#year .drop").val()
+	displayList2()
+})
+
+$("#month>.drop").on("change", function() {
+	console.log($("#month .drop").val())
+	oldmonth = $("#month .drop").val()
+	displayList2()
+})
+
 
 /*********************리스트 뿌려주기**********************/
 displayList()
-
+displayList2()
 function displayList() {
-
-	$.getJSON('BestList.json', function(result) {
-		console.log(result)
+	$.getJSON('BestList.json', {'year': year, 'month': month}, function(result) {
+		
+		$("#com-titl-best").html("<br><h1>"+ year +"<br>제"+ month +	"회 명예의전당</h1>")
+		
 		var templateFn = Handlebars.compile($('#Best-template').text())
 		var generatedHTML = templateFn(result.data)
 		$(".slider-content").text('') // tbody의 기존 tr 태그들을 지우고
@@ -30,6 +50,24 @@ function displayList() {
 		slideStart()
 	}) // getJSON()
 }
+
+function displayList2() {
+		
+		$.getJSON('BestList.json', {'year': oldyear, 'month': oldmonth}, function(result) {
+			
+			$(".com-titl-box").html("제" + oldmonth + "회 명예의전당")
+			
+			var templateFn = Handlebars.compile($('#BestOld-template').text())
+			var generatedHTML = templateFn(result.data)
+			$(".com-oldbest").text('') // tbody의 기존 tr 태그들을 지우고
+			$(".com-oldbest").html(generatedHTML) // 새 tr 태그들로 설정한다.
+			console.log(result.data)
+			if(result.data.BestLastList.length == 0) {
+				alert("데이터가 존재하지 않습니다")
+				location.href = "best.html"
+			} 
+		}) // getJSON()
+	}
 /*********************리스트 뿌려주기 끝**********************/
 
 /*******************모달**********************/

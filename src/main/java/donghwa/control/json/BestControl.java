@@ -9,6 +9,7 @@ import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import donghwa.service.BestService;
@@ -21,10 +22,12 @@ public class BestControl {
   @Autowired BestService bestService;
   
   @RequestMapping("BestList")
-  public JsonResult list() throws Exception {
+  /*이 맵은 핸들바스에서 쓰는 맵, {{each BestLastList}} 이 부분*/
+  public JsonResult list(@RequestParam int year,
+		                 @RequestParam int month) throws Exception {
     
     HashMap<String,Object> dataMap = new HashMap<>();
-    dataMap.put("BestLastList", bestService.list());
+    dataMap.put("BestLastList", bestService.list(year, month));
     
     return new JsonResult(JsonResult.SUCCESS, dataMap);
   }

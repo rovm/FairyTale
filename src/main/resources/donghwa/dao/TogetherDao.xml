@@ -42,7 +42,8 @@
                      left outer join mstbook mb on mb.mbkno = bp.mbkno
                      left outer join member m on cb.mno = m.mno
     where cb.ct_public="yes" and bp.bk_page= 1
-    limit #{startIndex}, #{pageSize}
+    order by ctno desc
+    limit #{startIndex}, #{pageSize} 
   </select>
   
   <select id="likeConfirm" resultMap="togetherMap" parameterType="map">

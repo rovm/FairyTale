@@ -15,8 +15,11 @@ import donghwa.service.BestService;
 public class BestServiceImpl implements BestService {
   @Autowired BestDao bestDao;
   
-  public List<Together> list() throws Exception {
+  /*이 맵은 마이바티스에서 쓰는 맵, #{year} 이부분*/
+  public List<Together> list(int year, int month) throws Exception {
     HashMap<String,Object> valueMap = new HashMap<>();
+    valueMap.put("year", year);
+    valueMap.put("month", month);
     return bestDao.selectList(valueMap);
   }
   
