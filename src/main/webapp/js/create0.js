@@ -442,9 +442,6 @@ function Slider(){
 			moveRight();
 			MovePage += 1;
 
-			selectcust_rec(ctno, MovePage)
-
-
 
 
 			if(MovePage > EndPage){

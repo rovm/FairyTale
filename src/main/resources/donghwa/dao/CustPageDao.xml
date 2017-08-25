@@ -58,7 +58,7 @@
   <select id="selectOne" resultMap="custPageMap" parameterType="int">
     select cp.ctno, cp.bkno, cp.cust_img, cp.cust_rec,
        bp.bk_page, bp.bk_cont, bp.bk_img, bp.bk_rec,
-       cb.ct_dscp, mb.mbk_titl
+       cb.ct_dscp, cb.ct_public, mb.mbk_titl
     from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
                  inner join custbook cb on cp.ctno = cb.ctno
                  left outer join mstbook mb on mb.mbkno = bp.mbkno

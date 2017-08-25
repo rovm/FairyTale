@@ -13,7 +13,6 @@ var	jsNo,
 
 $.getJSON('userinfo.json', function(result) {
 	mno = result.data.no;
-	console.log(mno)
 	displayList(1, mno)
 })
 
@@ -32,8 +31,6 @@ function displayList(pageNo, mno) {
   $.getJSON('CustPage_list.json', {'pageNo':pageNo, 'pageSize': pageSize, 'mno': mno}, function(result) {
 	var totalCount = result.data.totalCount;
 	var lastPageNo = parseInt(totalCount / pageSize) + (totalCount % pageSize > 0 ? 1 : 0)
-	console.log(result)
-	makePulic = result.data.list[0].Ct_public
     // 템플릿 소스를 가지고 템플릿을 처리할 함수를 얻는다.
     var templateFn = Handlebars.compile($('#Storage-template').text())
     var generatedHTML = templateFn(result.data)
@@ -60,6 +57,7 @@ function displayList(pageNo, mno) {
 } // displayList()
 
 function collection_detail() {
+	
 	$(".play_collection").on("click", function() {
 		jsNo = $(this).attr("data-js")
 		
@@ -70,25 +68,22 @@ function collection_detail() {
 	$.getJSON('storage-detail.json', {'ctno': jsNo}, function(result) {
 		var data = result.data
 		console.log(data)
-		
 		var templateFn = Handlebars.compile($('.FairyTaleContent-template').text())
 	    var generatedHTML = templateFn(result.data)
 	    $(".FairyTale_Content").text('') // tbody의 기존 tr 태그들을 지우고
 	    $(".FairyTale_Content").html(generatedHTML) // 새 tr 태그들로 설정한다.
 	    
-	    
 	    Slider()
+	    makePulic = result.data.list[0].Ct_public
 	    MakePublic(makePulic)
-	    console.log(result)
 	    makeDscp = data.list[0].Ct_Dscp
 	    
 	    StartPage = data.list[0].bkno;
 		MovePage = StartPage;
 		EndPage = StartPage + data.list.length -1;
 
-		console.log("Start " + StartPage)
-		console.log("MovePage " + MovePage)
-		console.log("End " + EndPage)
+		$("#recordStop").css("background-color","rgb(211, 211, 211)")
+		$("#recordPlay").css("background-color","rgb(211, 211, 211)")	
 		})
 	}) 
 }
@@ -96,7 +91,7 @@ function collection_detail() {
 
 function Slider(){
 	jQuery(document).ready(function ($) {
-
+		
 		var slideCount = $('#slider ul li').length;
 		var slideWidth = $('#slider ul li').width();
 		var slideHeight = $('#slider ul li').height();
@@ -134,7 +129,6 @@ function Slider(){
 			if(MovePage < StartPage){
 				MovePage = EndPage;
 			}
-			console.log(MovePage)
 		});
 
 		$('.control_next').click(function () {
@@ -145,35 +139,38 @@ function Slider(){
 			}
 		});
 		
+		
+		$("#recordPlay").unbind("click");
 		$("#recordPlay").on("click", function() {
+			console.log("재생 버튼 눌렷어요!")
 			$("#recordPlay").css("background-color","rgba(255, 0, 0, 0.54)")
 			$("#recordStop").css("background-color","rgb(211, 211, 211)")
 			$(".playREC"+ MovePage)[0].play();
+			$(".playREC"+ MovePage).bind("ended", function() {
+				console.log("ended가 시작되었습니다.!")
+				moveRight();
+				MovePage += 1;
+				$(".playREC"+ MovePage)[0].play();
+				autoplayRecord(MovePage)
+			})
 		})
-
+		
+		$("#recordStop").unbind("click");
 		$("#recordStop").on("click", function() {
 			$("#recordStop").css("background-color","rgba(255, 0, 0, 0.54)")
 			$("#recordPlay").css("background-color","rgb(211, 211, 211)")
 			$(".playREC"+ MovePage)[0].pause();
 		})
-
-		$(".playREC"+ MovePage).on("ended",  function() {
-			console.log("Start MovePage:" + MovePage)
-			moveRight();
-			MovePage += 1;
-			console.log("Next MovePage:" + MovePage)
-			$(".playREC"+ MovePage)[0].play();
-
-			autoplayRecord(MovePage)
+		
+		$('#myModal').on('hidden.bs.modal', function () {
+			$(".playREC"+ MovePage)[0].pause();
+			$(".playREC"+ MovePage)[0].currentTime = 0;
 		})
 		
-
 		function autoplayRecord(MovePage) {
 			$(".playREC"+ MovePage)[0].onended = function() {
-				console.log("MovePage:" + MovePage)
 				moveRight();
 				MovePage += 1;
-				console.log("Next MovePage:" + MovePage)
 				$(".playREC"+ MovePage)[0].play();
 				if(MovePage == EndPage){
 					$(".playREC"+ MovePage)[0].onended = function() {
@@ -186,14 +183,11 @@ function Slider(){
 				}
 			}
 		}
-
-
-		
 	});
 }
 /***********************************************************************/
 function MakePublic(makePulic) {
-	console.log("makePulic"+makePulic)
+	
 	if(makePulic == "Yes"){
 		$("#together-view").css("background-color", "#ff9869");
 		$("#me-view").css("background-color", "#D3D3D3");
