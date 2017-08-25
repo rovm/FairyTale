@@ -443,10 +443,8 @@ function Slider(){
 			MovePage += 1;
 
 			selectcust_rec(ctno, MovePage)
-			
-			
-			console.log("MoveMove", MovePage);
-			console.log("Cust", custRec)
+
+
 
 
 			if(MovePage > EndPage){
