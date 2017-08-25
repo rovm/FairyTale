@@ -125,6 +125,10 @@
 
 	<div class="com-oldbest-box">
 	</div>
+	
+	<div style="height: 100px">
+	
+	</div>
 
 	<div class="footer_container">
 		<div class="footer_domain-form">
@@ -182,7 +186,7 @@
 				<img class="slider-single-image" styles="cursor:pointer"
 				src="{{BK_IMG}}" data-a ={{ctno}} data-b={{bkno}}>
 				<h1 class="slider-single-title">
-					{{MBK_Titl}}
+					작성자 : {{name}}
 				</h1>
 			</div>
     {{/each}}
@@ -192,7 +196,7 @@
     {{#each BestLastList}}
       <div class="best">
 					<img src="{{BK_IMG}}" data-a ={{ctno}} data-b={{bkno}} class="old-best"></img><br><br>
-					{{MBK_Titl}}
+					작성자 : {{name}}
 				</div>
     {{/each}}
 </script>

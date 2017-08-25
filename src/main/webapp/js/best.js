@@ -61,6 +61,7 @@ function displayList2() {
 		} else {
 			$(".com-oldbest-box").css("display", "block")
 			$(".com-oldbest-box").html("<div class='com-oldbest-standard'>" +
+					"<div id = 'ranking'><div id='gold' class='rank'><img src='../img/gold.png'></div><div id='silver' class='rank'><img src='../img/silver.png'></div><div id='bronz' class='rank'><img src='../img/bronze.png'></div></div>" +
 					"<div class='com-titl-box'>" +
 					"제 " + oldmonth + "명예의전당" +
 					"</div><div class='com-oldbest'>" +

@@ -1,65 +1,10 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 
 body {
 font-family: 'Noto Sans KR', sans-serif;
 }
-/*******검색버튼***********/
-.notice_search {
-	float: right;
-	margin-bottom: 80px;
-}
-
-input {
-	outline: none;
-}
-
-input[type=search] {
-	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	font-family: inherit;
-	font-size: 100%;
-}
-
-input::-webkit-search-decoration, input::-webkit-search-cancel-button {
-	display: none;
-}
-
-input[type=search] {
-	float: right;
-	background: #ededed
-		url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png)
-		no-repeat 9px center;
-	border: solid 1px #ccc;
-	padding: 9px 10px 9px 32px;
-	width: 55px;
-	-webkit-border-radius: 10em;
-	-moz-border-radius: 10em;
-	border-radius: 10em;
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
-	background-color: #fff;
-}
-
-input[type=search]:focus {
-	width: 130px;
-	background-color: #fff;
-	border-color: yellowgreen;
-
-	/*-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	box-shadow: 0 0 5px rgba(109,207,246,.5);*/
-}
-
-input:-moz-placeholder {
-	color: #999;
-}
-
-input::-webkit-input-placeholder {
-	color: #999;
-}
-
-/*********검색버튼끝***********/
 
 
 /*여기부터 모달 */
@@ -113,8 +58,6 @@ input::-webkit-input-placeholder {
 
 body {
   padding: 0;
-  background-color: ivory;
-  /*border: solid 2px black;*/
   height: auto;
 }
 
@@ -282,10 +225,6 @@ a{
   text-align: left;
 }
 
-.bord-button {
-  margin-bottom: 20px;
-}
-
 .bottom-button-box {
   text-align: center;
   /*border: 1px black solid;*/
@@ -394,13 +333,23 @@ a{
   margin-top: 10px;
   margin-bottom: 50px;
   padding: 54px;
-
+  padding-top: 20px;
+  padding-bottom: 40px;
   width: 980px;
   height: auto;
   border-radius: 30px;
   border: 1px darkgrey solid;
-  /*box-shadow: 10px 10px 20px grey;*/
   background-color: rgb(205, 245, 195);
+}
+
+#com-titl-bord {
+	font-size: 50px;
+	text-align: left;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: white;
+	text-shadow: 2px 2px green;
+	font-family: 'Nanum Brush Script', serif;
 }
 
 #video-box {
