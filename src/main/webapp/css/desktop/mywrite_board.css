@@ -333,7 +333,7 @@ th, td {
 
 .btnForm {
   background-color: rgb(150 , 119 , 237 );
-  border: 1px solid rgb(150 , 119 , 237 );
+  border: 1px solid #3f54b0;
   color: #fff;
   width: 60px;
   height: 40px;
