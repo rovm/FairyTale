@@ -84,6 +84,13 @@ body{
   .menual{
     margin-left: 33px;
   }
+  
+  .menuLogo{
+    width: 250px;
+    margin-bottom: -40px;
+    margin-right: -50px;
+    
+  }
 
   #logout{
     margin-left: 100px;
