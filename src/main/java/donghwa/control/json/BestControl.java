@@ -22,7 +22,7 @@ public class BestControl {
   @Autowired BestService bestService;
   
   @RequestMapping("BestList")
-  /*이 맵은 핸들바스에서 쓰는 맵, {{each BestLastList}} 이 부분*/
+  /*이 맵은 핸들바스에서 쓰는 맵, {{each BestLastList}} 이 부분 혹은 데이터 가져올때  result.data.BestLastList*/
   public JsonResult list(@RequestParam int year,
 		                 @RequestParam int month) throws Exception {
     

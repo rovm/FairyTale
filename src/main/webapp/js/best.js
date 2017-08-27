@@ -55,7 +55,7 @@ function displayList() {
 function displayList2() {
 
 	$.getJSON('BestList.json', {'year': oldyear, 'month': oldmonth}, function(result) {
-
+        console.log(result)
 		if(result.data.BestLastList.length == 0) {
 			$(".com-oldbest-box").css("display", "none")
 		} else {

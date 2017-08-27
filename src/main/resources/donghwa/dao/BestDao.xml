@@ -41,6 +41,11 @@
 			order by wv.likeNo desc 
 			limit 3;
   </select>
+  <!-- 이거 가상으로 테이블 하나 만들어주는거 아주 유용 다만, 도메인에 컬럼 추가 안해주면 result.data 에 정보 안들어감 
+  left outer join (select count(ctno) as likeNo, ctno
+																				from withview
+																				group by ctno) wv on wv.ctno=cp.ctno
+        -->
   
 </mapper>
 

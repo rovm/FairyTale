@@ -22,6 +22,7 @@
     <result column="Ct_public" property="Ct_public"/>
     <result column="MBK_Cont" property="MBK_Cont"/>
     <result column="MBK_Titl" property="MBK_Titl"/>
+    <result column="likeCount" property="likeCount"/>
   </resultMap>
   
    <insert id="likeInsert">
@@ -36,11 +37,14 @@
     select cp.ctno, cp.bkno, cp.cust_img, cp.cust_rec, m.name,
            bp.mbkno, bp.bk_page, bp.bk_cont, bp.bk_img, bp.bk_rec,
            cb.mno, cb.ct_dscp, cb.ct_date, cb.ct_public,
-           mb.mbk_titl, mb.mbk_cont
+           mb.mbk_titl, mb.mbk_cont, wv.likeCount
     from custpage cp inner join bkpage bp on cp.bkno = bp.bkno 
                      inner join custbook cb on cp.ctno = cb.ctno
                      left outer join mstbook mb on mb.mbkno = bp.mbkno
                      left outer join member m on cb.mno = m.mno
+                     left outer join (select count(*) as likeCount,ctno
+																				from withview
+																				group by ctno) wv on wv.ctno=cp.ctno
     where cb.ct_public="yes" and bp.bk_page= 1
     order by ctno desc
     limit #{startIndex}, #{pageSize} 

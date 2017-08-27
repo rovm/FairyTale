@@ -164,7 +164,7 @@
                <div class="titl"  style="cursor:pointer">{{MBK_Titl}}</div>
                <div class="date"  style="cursor:pointer">{{Ct_Date}}</div>
                <div class="cont"  style="cursor:pointer">{{Ct_Dscp}}</div>
-               <div class="like"><div class="name">{{name}}</div><div class="heart{{ctno}} heart-box" data-no={{ctno}} onClick="like({{ctno}})"><a class="fa fa-heart-o heart" aria-hidden="true"></a></div></div>
+               <div class="like"><div class="name">작성자: {{name}}</div><div class="heart{{ctno}} heart-box" data-no={{ctno}} onClick="like({{ctno}})"><a class="fa fa-heart-o heart" aria-hidden="true"></a><div class ="like_count like_count_no{{ctno}}">{{likeCount}}</div></div></div>
              </div>
           </div>
     {{/each}}
