@@ -32,6 +32,9 @@ function a() {
 		$('#yes').on('click', function(){
 			if (mno == null) {
 				$(".loginCheck").css("display", "block")
+				$(".recorder").css("display", "none");
+		$(".play").css("display", "none")
+		$(".recorder_play").css("display", "none")
 
 			} else {
 				CreateBook = 1;
@@ -429,7 +432,7 @@ function Slider(){
 		});
 
 		$('a.control_next').click(function () {
-			if(RecordArray[MovePage-StartPage] == undefined) {
+			if(RecordArray[MovePage-StartPage] == undefined && mno != null) {
 				swal({
 					title: "녹음 파일이 없습니다",
 					confirmButtonColor: "#FFA500",

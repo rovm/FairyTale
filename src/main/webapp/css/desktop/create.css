@@ -1,8 +1,8 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons|Roboto';
 
 body {
-  background: #fff;
-  font-family: 'Roboto Light';
+font-family: 'Noto Sans KR', sans-serif;
 }
 
 #savetext{

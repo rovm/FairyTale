@@ -211,7 +211,7 @@ img{
 }
 
 .slider-container .slider-left:hover {
-  color: red;
+  color: #5A5A5A;
 }
 #btn-control {
 	position: relative;
@@ -235,7 +235,7 @@ img{
 }
 
 .slider-container .slider-right:hover {
-  color: red;
+  color: #5A5A5A;
 }
 
 
@@ -466,7 +466,7 @@ th, td {
 }
 #drop-container {
 	margin: 0 auto;
-	width: 800px;
+	width: 1200px;
 	height: 50px;
 	position: relative;
 	margin-bottom: 30px;
@@ -486,15 +486,16 @@ th, td {
 	right: 0;
 }
 .drop {
-  border: 2px black solid;
+  border: 2px #40C1C0 solid;
   height: 40px;
   width: 100px;
   outline: none;
-  background-color: skyblue;
-  border-radius: 50px;
+  background-color: #fff;
+  /*border-radius: 50px;*/
   right: 40px;
   bottom: 26px;
   font-weight: bold;
+	color: #5A5A5A;
   padding-left: 17px;
 }
 
@@ -533,6 +534,7 @@ th, td {
 }
 
 /*************슬라이더*************/
+
 
 .all{
   width: 960px;

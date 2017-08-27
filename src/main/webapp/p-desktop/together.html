@@ -6,9 +6,10 @@
   <title>together</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/sweetalert/dist/sweetalert.css">
   <link rel="stylesheet" href="../css/desktop/together.css">
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
-    
+
 </head>
 <body>
   <div id="container">
@@ -77,15 +78,15 @@
     </div>
 
   <div id="com-together">
-   
+
      <div id="com-titl-bord" class="bord-top">
           우리들의 이야기 공간
     </div>
-    
+
     <div id="video-box">
-    
+
     </div>
-    
+
       <div class="standard-collection">
         <button id="prev-btn" class="block" type="button" name="button" >이전</button>
         &nbsp;<span id="page-no"></span>&nbsp;
@@ -128,7 +129,7 @@
     <!-- Modal content-->
     <div class="modal-content"  style="width: 1000px; height: 665px;margin:270px auto;">
       <div class="modal-body">
-      
+
         <div id="playTools">
 	        <button id="recordPlay" class="playToolsBtn" type="button"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></button>
 	        <button id="recordStop" class="playToolsBtn" type="button"><i class="fa fa-pause-circle-o fa-3x" aria-hidden="true"></i></button>
@@ -151,6 +152,8 @@
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../js/loginCheck.js"></script>
 <script src="../js/together.js"></script>
 <script src="../js/login.js"></script>
 <script id="FairyTaleContent-template" type="text/x-handlebars-template">
@@ -180,13 +183,6 @@
   </div>
   </li>
 {{/each}}
-</script> 
+</script>
 
 </html>
-
-
-
-
-
-
-

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="author" content="Jake Rocheleau">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/sweetalert/dist/sweetalert.css">
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/main.css">
-    <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="../css/desktop/logout.css">
 
 
@@ -20,7 +20,7 @@
       <div class="Heder_fform">
       <div class="Header_form">
         <!-- <div calss= -->
-        <a href="main.html"><img src="../img/logo.png" style="height: 70px; margin-top: -20px; margin-left: 20px; float: left;"></a>
+        <a href="main.html"><img src="../img/logo.png" style="height: 70px; margin-top: -20px; margin-left: 10px; float: left;"></a>
         </a>
         <a id="Header_menual" class="Header_menu" href="menual.html" style="margin-left: 10px;">메뉴얼
         </a>
@@ -245,79 +245,14 @@
     <div class="top">
 
     <div id="w">
-        <h1>명예의 전당</h1>
-
-        <div class="crsl-items" data-navigation="navbtns">
-          <div class="crsl-wrap">
-            <div class="crsl-item">
-              <div class="thumbnail">
-                <img src="../img/thumb01.jpg" alt="nyc subway">
-                <span class="photobest">BEST!</span>
-              </div>
-
-              <h3><a href="#">백설공주</a></h3>
-
-
-              <p class="readmore"><a href="best.html">More &raquo;</a></p>
-            </div><!-- post #1 -->
-
-            <div class="crsl-item">
-              <div class="thumbnail">
-                <img src="../img/thumb02.jpg" alt="danny antonucci">
-                <span class="photobest">BEST!</span>
-              </div>
-
-              <h3><a href="#">아기돼지 삼형제</a></h3>
-
-
-              <p class="readmore"><a href="best.html">More &raquo;</a></p>
-            </div><!-- post #2 -->
-
-            <div class="crsl-item">
-              <div class="thumbnail">
-                <img src="../img/thumb03.jpg" alt="watercolor paints">
-                <span class="photobest">BEST!</span>
-              </div>
-
-              <h3><a href="#">토끼와 거북이</a></h3>
-
-
-              <p class="readmore"><a href="best.html">More &raquo;</a></p>
-            </div><!-- post #3 -->
-
-            <div class="crsl-item">
-              <div class="thumbnail">
-                <img src="../img/thumb04.jpg" alt="apple ipod classic photo">
-                <span class="photobest">BEST!</span>
-              </div>
-
-              <h3><a href="#">신데렐라</a></h3>
-
-
-              <p class="readmore"><a href="best.html">More &raquo;</a></p>
-            </div><!-- post #4 -->
-
-            <div class="crsl-item">
-              <div class="thumbnail">
-                <img src="../img/thumb05.jpg" alt="web design magazines">
-                <span class="photobest">BEST!</span>
-              </div>
-
-              <h3><a href="#">흥부와 놀부</a></h3>
-
-
-              <p class="readmore"><a href="best.html">More &raquo;</a></p>
-            </div><!-- post #5 -->
-          </div><!-- @end .crsl-wrap -->
-        </div><!-- @end .crsl-items -->
-
-        <nav class="slidernav">
-          <div id="navbtns" class="clearfix">
-            <a href="#" class="previous">이전</a>
-            <a href="#" class="next">다음</a>
-          </div>
-        </nav>
-      </div><!-- @end #w -->
+	    <div id="mainbest-titl">
+	        명예의 전당
+	    </div>
+        <div class="img-container">
+        <div class="img-box" data-navigation="navbtns">
+        </div>
+        </div>
+      </div>
     </div>
     <br><br><br><br>
   <div class="container">
@@ -365,11 +300,6 @@
       <br>
       <br>
       <img src="../img/video.JPG" width="500px" height="270px" style="cursor:pointer">
-      <!-- <video width="320" height="240" controls>
-    <source src="movie.mp4" type="video/mp4">
-    <source src="movie.ogg" type="video/ogg">
-  Your browser does not support the video tag.
-  </video> -->
     </div>
 
   </div>
@@ -415,13 +345,14 @@
 <script type="text/javascript" src="../Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../js/loginCheck.js"></script>
 <script type="text/javascript" src="../js/notice.js"></script>
 <script type="text/javascript" src="../js/responsiveCarousel.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="../js/login.js"></script>
 <script src="../js/auth.js"></script>
-
 <script type="text/javascript"
   src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
   charset="utf-8"></script>
@@ -473,6 +404,15 @@
      <td style="border:0;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray; width: 194px;">{{bw_wdt}}</td>
    </tr>
   {{/each}}
+</script>
+
+<script id="MainBest-template" type="text/x-handlebars-template">
+    {{#each BestLastList}}
+      <div class="best">
+          <img src="{{BK_IMG}}" data-a ={{ctno}} data-b={{bkno}} class="old-best"></img><br><br>
+          작성자 : {{name}}
+      </div>
+    {{/each}}
 </script>
   <form>
   </form>

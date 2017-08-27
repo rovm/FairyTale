@@ -247,7 +247,13 @@ function userInfo() {
 function like(ctno) {
 
 	if(mno==null) {
-		alert('로그인을 하시옵소서')
+		swal({
+			  title: "로그인이 필요합니다",
+			  text: "서비스를 이용하시려면 로그인이 필요합니다.",
+			  confirmButtonText: "확인",
+				confirmButtonColor: "#6384E1",
+				html: true
+			})
 	} else{
 		console.log($(".heart" + ctno).attr("class") == "heart-box heart" + ctno)
 

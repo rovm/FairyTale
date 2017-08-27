@@ -1,8 +1,26 @@
-
+var dt = new Date(),
+year = dt.getFullYear(),
+month = dt.getMonth() +1;
 
 
 
 $(document).ready(function(){
+	displayList()
+	function displayList() {
+
+		$.getJSON('BestList.json', {'year': year, 'month': month}, function(result) {
+
+
+			var templateFn = Handlebars.compile($('#MainBest-template').text())
+			var generatedHTML = templateFn(result.data)
+			$(".img-box").text('') // tbody의 기존 tr 태그들을 지우고
+			$(".img-box").html(generatedHTML) // 새 tr 태그들로 설정한다.
+		}) // getJSON()
+
+	}
+	
+	
+	
 
 	function animateSVG(section, dashedId, normalId, totalLengthTimes, totalLengthDivision) {
 

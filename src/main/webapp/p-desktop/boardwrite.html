@@ -6,6 +6,7 @@
   <title>boardwrite</title>
   <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/sweetalert/dist/sweetalert.css">
   <link rel="stylesheet" href="../css/desktop/boardwrite.css">
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
@@ -82,19 +83,19 @@
       <input name="titl" id="bw_titl" >
       <div id="title-box">&nbsp;&nbsp;제 목</div>
       </div>
-    
+
       <div class="cont-input"><textarea name="content" id="bw_con" placeholder="내용을 입력하세요...."></textarea>
       </div>
-      
+
       <div class="btn-box clearfix">
         <button id="updatebtn">변경</button>
         <button id="conupdatebtn">변경</button>
         <button id="addbtn" style="margin-right: 10px;">올리기</button>
         <button id="conaddbtn" style="margin-right: 10px;">올리기</button>
         <div id="images-div"></div>
-        
-        
-        
+
+
+
         <button id="file-select" class="btn btn-success"> 파일선택</button>
           <input id="fileupload" type="file" name="files" multiple>
           <input id="fileupload2" type="file" name="files" multiple>
@@ -126,6 +127,8 @@
 
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../js/loginCheck.js"></script>
 <script src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
 <script src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
 <script src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>

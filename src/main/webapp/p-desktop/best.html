@@ -6,9 +6,9 @@
 <title>community</title>
 <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/sweetalert/dist/sweetalert.css">
 <link rel="stylesheet" href="../css/desktop/best.css">
-<link href='https://fonts.googleapis.com/css?family=Karla'
-	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -86,14 +86,14 @@
 				2017<br>제3회 명예의전당
 			</h1>
 		</div>
-	  
+
 	  <div class="slider-content">
 		</div>
-		
+
 		<div id="btn-control">
 			<a class="slider-left" href="javascript:void(0);"><i
-				class="fa fa-arrow-left"></i></a> <a class="slider-right"
-				href="javascript:void(0);"><i class="fa fa-arrow-right"></i></a>
+				class="fa fa-arrow-left" id="bestLeft"></i></a> <a class="slider-right"
+				href="javascript:void(0);"><i class="fa fa-arrow-right" id="bestRight"></i></a>
 		</div>
 	</div>
 
@@ -104,7 +104,7 @@
 	  		<option id="y2017" value="2017">2017년</option>
 	    </select>
   </div>
-  
+
   <div id="month" class="drop-box">
 	  <select class="drop">
 		  <option id="m1" value="1">1월</option>
@@ -125,9 +125,9 @@
 
 	<div class="com-oldbest-box">
 	</div>
-	
-	<div style="height: 100px">
-	
+
+	<div style="height: 300px">
+
 	</div>
 
 	<div class="footer_container">
@@ -156,7 +156,7 @@
     <!-- Modal content-->
     <div class="modal-content"  style="width: 1000px; height: 665px;margin:270px auto;">
       <div class="modal-body">
-      
+
         <div id="playTools">
 	        <button id="recordPlay" class="playToolsBtn" type="button"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></button>
 	        <button id="recordStop" class="playToolsBtn" type="button"><i class="fa fa-pause-circle-o fa-3x" aria-hidden="true"></i></button>
@@ -177,9 +177,11 @@
 <script src='../node_modules/jquery/dist/jquery.min.js'></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../js/loginCheck.js"></script>
 <script src="../js/best.js"></script>
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script src="../js/login.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script id="Best-template" type="text/x-handlebars-template">
     {{#each BestLastList}}
       <div class="slider-single">
@@ -213,5 +215,5 @@
   </div>
   </li>
 {{/each}}
-</script> 
+</script>
 </html>

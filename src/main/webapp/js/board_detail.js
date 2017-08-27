@@ -35,8 +35,13 @@ function comDel(cno) {
 	    	location.href = 'board_detail.html?no=' + no
 	    })	
 	} else {
-		alert("로그인하시옵소서")
-		location.href = 'login.html'
+		swal({
+			  title: "로그인이 필요합니다",
+			  text: "서비스를 이용하시려면 로그인이 필요합니다.",
+			  confirmButtonText: "확인",
+				confirmButtonColor: "#6384E1",
+				html: true
+			})
 	}
 }
   
@@ -46,8 +51,13 @@ function comDel(cno) {
 			  location.href = 'board.html'
 		  })	
 	  } else {
-		  alert("로그인하시옵소서")
-		  location.href = 'login.html'
+		  swal({
+			  title: "로그인이 필요합니다",
+			  text: "서비스를 이용하시려면 로그인이 필요합니다.",
+			  confirmButtonText: "확인",
+				confirmButtonColor: "#6384E1",
+				html: true
+			})
 		 
 	  }
 })
@@ -73,8 +83,13 @@ $('#c-addbtn').on('click',function() {
 				location.href = 'board_detail.html?no='+no
 			}, 'json')
 		} else {
-			alert("로그인하시옵소서")
-			location.href = 'login.html'
+			swal({
+				  title: "로그인이 필요합니다",
+				  text: "서비스를 이용하시려면 로그인이 필요합니다.",
+				  confirmButtonText: "확인",
+					confirmButtonColor: "#6384E1",
+					html: true
+				})
 
 		}
 
