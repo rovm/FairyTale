@@ -21,6 +21,11 @@ body {
  height: 400px;
  margin: 0 auto;
  }
+ 
+ .best:hover {
+   cursor: pointer;
+ }
+ 
  /*****마무리합시다*********/
  
  
@@ -462,12 +467,18 @@ body {
         }
       #mainbest-titl {
           margin-bottom: 37px;
-          margin-left: 166px;
+          width:100%;
           font-size: 33px;
 		      text-align: left;
 		      font-weight: bold;
 		      color: gray;
       }
+      
+      #titl-box {
+      width: 971px;
+      margin: 0 auto;
+      }
+      
       .menual-form{
           margin: auto auto;
           height: 400px;

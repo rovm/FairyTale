@@ -4,8 +4,11 @@ month = dt.getMonth() +1;
 
 
 
+
+
 $(document).ready(function(){
 	displayList()
+	
 	function displayList() {
 
 		$.getJSON('BestList.json', {'year': year, 'month': month}, function(result) {
@@ -114,30 +117,12 @@ $(document).ready(function(){
 
 });
 
-/* 모달  시작*/
-$(document).ready(function(){
-	  $("img").click(function(){
-	  var t = $(this).attr("src");
-	  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
-	  $("#myModal").modal();
-	});
-
-	$("video").click(function(){
-	  var v = $("video > source");
-	  var t = v.attr("src");
-	  $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
-	  $("#myModal").mosssdal();  
-	});
-	});//EOF Document.ready
-	
-$('#notic-btn').click(function(){
-	location.href = 'notice.html'
-})
-$('#book-btn').click(function(){
-	location.href = 'create.html'
-})
-$(document.body).on('click', '.detail-link', function(event) {
-  location.href = 'create.html?no=' + $(this).attr('data-no') 
+$(document.body).on('click', '.best', function(event) {
+  location.href = 'best.html' 
   event.preventDefault()
 })
 
+$(document.body).on('click', '.booklist', function(event) {
+  location.href = 'bookList.html' 
+  event.preventDefault()
+})
