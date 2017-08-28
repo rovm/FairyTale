@@ -21,7 +21,10 @@ body {
   /*border: solid 2px black;*/
   height: auto;
 }
-
+#bw_con {
+   background-color: white;
+   border: 0px;
+}
 
 a:hover {
   text-decoration: none;

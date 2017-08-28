@@ -173,6 +173,5 @@ function userInfo() {
 		}		
 	})
 }
-
-	
+$('#bw_con').css("overflow","hidden")
 

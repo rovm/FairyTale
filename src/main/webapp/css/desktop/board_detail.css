@@ -153,6 +153,10 @@ th, td {
   margin-left: 15px;
   height: 40px;
 }
+#bw_con {
+	 background-color: white;
+   border: 0px;
+}
 
 #date {
   line-height:40px;
