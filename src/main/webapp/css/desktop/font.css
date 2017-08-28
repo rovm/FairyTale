@@ -1,0 +1,15 @@
+@font-face{
+  font-family: "logoFont";
+  src: url("../../font/DXPOP-KSCPC-EUC-H.TTF")  format('truetype');
+}
+
+  #menual-Name {
+    font-family: "logoFont";
+    font-size: 350%;
+    text-shadow: 2px 2px #414141;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    margin-right: 18px;
+  }

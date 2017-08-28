@@ -76,15 +76,6 @@ font-family: 'Noto Sans KR', sans-serif;
     text-align: left;
   }
 
-  #menual-Name {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    font-size: 300%;
-    font-weight: bold;
-    color: white;
-    margin-right: 18px;
-  }
   .flip-3d{
     width: 375px;
     height: 365px;

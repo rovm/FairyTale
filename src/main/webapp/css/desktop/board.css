@@ -145,17 +145,6 @@ th, td {
   position: relative;
 }
 
-#menual-Name {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  font-size: 300%;
-  font-weight: bold;
-  color: white;
-  margin-right: 18px;
-}
-
-
 #container {
   padding: 15px;
   margin-top: 0;
