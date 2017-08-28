@@ -10,7 +10,7 @@ font-family: 'Noto Sans KR', sans-serif;
 
 .omb_login {
 	margin: 0 auto;
-	width: 980px;
+	width: 100%;
 }
 #login-password {
     font-family: -webkit-pictograph;
