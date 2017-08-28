@@ -2,6 +2,29 @@
   font-family: "logoFont";
   src: url("../../font/DXPOP-KSCPC-EUC-H.TTF")  format('truetype');
 }
+@font-face{
+  font-family: "titlFont";
+  src: url("../../font/HOONWHITECATR.TTF")  format('truetype');
+}
+
+@font-face {
+  font-family: "titlFont2";
+  src: url("../../font/210 OHNEULBAM R.TTF") format('truetype');
+}
+
+@font-face {
+  font-family: "titlFont3";
+  src: url("../../font/210 썬플라워R.TTF") format('truetype');
+}
+
+@font-face{
+  font-family: "titlFont4";
+  src: url("../../font/HOONJUMBOMAMBOB.TTF")  format('truetype');
+}
+
+
+
+
 
   #menual-Name {
     font-family: "logoFont";

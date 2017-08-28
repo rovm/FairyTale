@@ -126,13 +126,13 @@ a:hover{
 }
 
 #menual-title{
-
-font-size: 300%;
+font-family: "titlFont";
+font-size: 450%;
 float: left;
 margin-left: 25px;
 height: 62px;
 font-weight: bold;
-color: dimgray;
+color: #808080;
 }
 
 #menual-btn {

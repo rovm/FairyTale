@@ -1,31 +1,44 @@
+
  @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
+ 
+}
 
+#Ft_pic{
+	margin: 0 auto;
+	width: 1600px;
+	position: relative;
+}
+
+#rabbit{
+  float: left;
+  margin-top: -400px;
+}
+
+#whilechich{
+	float: right;
+	margin-top: -400px;
 }
 /***여기부터********/
 .img-container {
-	width: 100%;
+  width: 100%;
  height: 400px;
+ margin-bottom: -65px;
 }
 .best {
-	width: 280px;
-	float:left;
-	margin-left: 37px;
+  width: 280px;
+  float:left;
+  margin-left: 37px;
 }
 .best img {
-	width:280px;
-	height:250px;
+  width:280px;
+  height:250px;
 }
  .img-box {
  width: 1000px;
  height: 400px;
  margin: 0 auto;
  }
- 
- .best:hover {
-   cursor: pointer;
- }
- 
  /*****마무리합시다*********/
  
  
@@ -47,7 +60,7 @@ body {
   -webkit-column-count:4;
   -moz-column-count:4;
   column-count:4;
-
+ 
   -webkit-column-gap:20px;
   -moz-column-gap:20px;
   column-gap:20px;
@@ -57,7 +70,7 @@ body {
   -webkit-column-count:3;
   -moz-column-count:3;
   column-count:3;
-
+ 
   -webkit-column-gap:20px;
   -moz-column-gap:20px;
   column-gap:20px;
@@ -68,7 +81,7 @@ body {
   -webkit-column-count:2;
   -moz-column-count:2;
   column-count:2;
-
+ 
   -webkit-column-gap:20px;
   -moz-column-gap:20px;
   column-gap:20px;
@@ -81,7 +94,7 @@ body {
   column-count:1;
 }
 }
-
+ 
 .modal-img,.model-vid{
   width:110%;
   height:auto;
@@ -89,25 +102,25 @@ body {
 .modal-body{
   padding:0px;
 }
-
-/*������ ��ġ ����*/
+ 
+/* ġ */
 .modal-content {
-	margin-top: 40%;
-	margin-left: -70px;
+  margin-top: 40%;
+  margin-left: -70px;
 }
-
-/*�������  ���*/
-
-
+ 
+/*   */
+ 
+ 
 body {
   text-align: center;
 }
-
+ 
 #Header_logo {
-	font-size: 27px;
+  font-size: 27px;
 }
 .Header_animal {
-
+ 
   position: relative;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
@@ -118,7 +131,7 @@ body {
   color: #ffffff;
   margin: auto;
   overflow: hidden; }
-
+ 
 .section {
   top: 0;
   left: 0;
@@ -127,58 +140,58 @@ body {
   position: absolute;
   display: table;
   text-align: center; }
-
+ 
 .section--first {
   background-color: #e74c3c;
   z-index: 5; }
-
+ 
 .section--second {
   background-color: #344bc4;
   z-index: 4; }
-
+ 
 .section--third {
   background-color: #f0d74c;
   z-index: 3; }
-
+ 
 .section--forth {
   background-color: #00a6a8;
   z-index: 2; }
-
+ 
 .section--fifth {
   background-color: #8703cc; }
-
+ 
 .wrapper {
   display: table-cell;
   vertical-align: middle;
   padding: 10px 30px 10px 30px;
   height: 100px;
  }
-
+ 
 /*fighting*/
 .animal {
   margin: 0 auto;
   max-width: 800px;
   position: relative; }
-
+ 
 .animal-svg--dashed {
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto; }
-
+ 
 .animal-svg {
   max-width: 30%; }
-
+ 
 .description {
   margin-top: 30px;
   font-size: 20px;
   font-weight: 800;
   letter-spacing: 20px;
   opacity: 0; }
-
+ 
 #lion-dashed, #lion {
   opacity: 0; }
-
+ 
 /*.restart {
   z-index: 6;
   position: absolute;
@@ -190,19 +203,19 @@ body {
   transition: all 1s ease-in-out;
   display: none;
   cursor: pointer; }*/
-
-
+ 
+ 
 .restart:hover {
   color: #4f0079; }
-
+ 
 .patient {
   pointer-events: none; }
-
+ 
 /* media queries */
 @media (max-width: 768px) {
   .description {
     font-size: 20px; }
-
+ 
   .animal-svg {
     max-width: 20%; } }
 @media (max-height: 800px) {
@@ -240,7 +253,7 @@ body {
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode: forwards;
   /*IE 10+*/ }
-
+ 
 @keyframes fadeInUpc {
   0% {
     opacity: 0;
@@ -302,7 +315,7 @@ body {
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode: forwards;
   /*IE 10+*/ }
-
+ 
 @keyframes fadeOutDownc {
   0% {
     opacity: 1;
@@ -364,7 +377,7 @@ body {
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode: forwards;
   /*IE 10+*/ }
-
+ 
 @keyframes fadeOutUpc {
   0% {
     opacity: 1;
@@ -400,8 +413,8 @@ body {
   100% {
     opacity: 0;
     -ms-transform: translate(0px, -35px); } }
-
-
+ 
+ 
     .Header_container {
         height: 500px;
         width: 100%;
@@ -419,7 +432,7 @@ body {
         height: 24px;
         margin-top: 28px;
         ;
-
+ 
         text-align: center;
         /*position: relative;*/
         /*padding-left: 25%;
@@ -452,6 +465,7 @@ body {
       .bookimg {
         margin: 10px;
       }
+      
       .top{
           background-image: url("../../img/main.png");
           background-repeat: no-repeat;
@@ -466,19 +480,17 @@ body {
           height: 650px;
         }
       #mainbest-titl {
-          margin-bottom: 37px;
-          width:100%;
-          font-size: 33px;
-		      text-align: left;
-		      font-weight: bold;
-		      color: gray;
+      font-family:"titlFont4";
+      font-weight: bold;
+          
+          text-shadow: 2px 2px #c0c0c0;
+          color: gray;
       }
-      
-      #titl-box {
-      width: 971px;
-      margin: 0 auto;
+      #titl-box{
+      font-size: 330%;
+      width:100%;
+      margin-bottom: 37px;
       }
-      
       .menual-form{
           margin: auto auto;
           height: 400px;
@@ -494,12 +506,13 @@ body {
         color:white;
       }
       .book {
+      font-family:"titlFont4";
+      margin-top: -6px;
           display: inherit;
           font-size: 33px;
           text-align: left;
           font-weight: bold;
           color: white;
-          margin-left: -19px;
         }
         .book-form img {
         margin: 10px;
@@ -507,21 +520,22 @@ body {
         }
         .name-form {
         height: 35px;
-		    line-height: 25px;
-		    font-size: 16px;
-		    font-weight: bold;
-		    margin: 21px auto;
-		    font-family: 'Noto Sans KR', sans-serif;
-		    color: #524128;
+        line-height: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 21px auto;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #524128;
         }
       .notic {
+      font-family:"titlFont4";
+      margin-top: -6px;
           display: inherit;
           font-size: 33px;
           text-align: left;
           font-weight: bold;
           color: white;
           margin-bottom: 35px;
-          margin-left: -19px;
           
         }
       .table {
@@ -531,13 +545,13 @@ body {
        margin-bottom: 20px;
       }
       .line-color  {
-					width: 100%;
-					background-color: yellowgreen;
-					height: 60px;
-					padding-top: 13.5px;
-					left: 0;
-					margin-top: -85px;
-					position: absolute;
+          width: 100%;
+          background-color: yellowgreen;
+          height: 60px;
+          padding-top: 13.5px;
+          left: 0;
+          margin-top: -85px;
+          position: absolute;
       }
         
       .menual {
@@ -564,13 +578,13 @@ body {
         }
         .board {
           font-size: 15px;
-				  height: 40px;
-				  color: rgb(54, 121, 37);
-				}
-				.board:hover {
-				  color: green;
-				  opacity: 0.4;
-				}
+          height: 40px;
+          color: rgb(54, 121, 37);
+        }
+        .board:hover {
+          color: green;
+          opacity: 0.4;
+        }
       #book-btn{
         margin-right: 10px;
         }
@@ -603,5 +617,7 @@ body {
         color: gray;
         float :left;
       }
-
+ 
 /*# sourceMappingURL=main.css.map */
+
+

@@ -63,12 +63,19 @@ body {
   /*border: solid 2px black;*/
   height: auto;
 }
-strong{
-  font-size: 35px;
+
+#bord-titl{
+  font-family: "titlFont";
+  text-shadow: 2px 2px #d1d1d1;
+  font-size: 320%;
   font-weight: bold;
   margin-right: 221px;
+  margin-bottom: 30px;
   color: darkblue;
 }
+
+
+
 div {
   /*border: solid 1px red;*/
   /*border-radius: 10;*/

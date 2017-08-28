@@ -65,12 +65,17 @@ body {
   /*border: solid 2px black;*/
   height: auto;
 }
-strong{
-  font-size: 35px;
-  font-weight: bold;
+
+#bord-titl{
+  font-family: "titlFont2";
+  text-shadow: 2px 2px #a5a5a5;
+  font-size: 350%;
   margin-right: 221px;
+  margin-bottom: 30px;
   color: #7665d6;
 }
+
+
 div {
   /*border: solid 1px red;*/
   /*border-radius: 10;*/
