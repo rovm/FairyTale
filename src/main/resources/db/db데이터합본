@@ -68,7 +68,9 @@ insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div)
 values (1, "회원가입은 어떻게 하나요?", "상단메뉴의 회원가입을 클릭하거나, 로그인창에서 회원가입 할 수 있습니다~", curdate(), "faq");
 
 insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
-values (1, "로그인 방법은 어떻게 되나요?", "홈페이지 회원가입을통한 로그인과, 카카오톡, 페이스북, 구글계정으로 로그인 할 수 있습니다.", curdate(), "faq");
+values (1, "로그인 방법은 어떻게 되나요?", "홈페이지 회원가입을통한 로그인과, 카카오톡, 페이스북, 구글계정으로 로그인 할 수 있습니다.", 
+
+curdate(), "faq");
 
 insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
 values (1, "회원가입할 때 필요한 정보는 무엇인가요?", "메일주소, 이름, 전화번호 정보만 필요로 합니다.", curdate(), "faq");
@@ -759,18 +761,20 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 근데 너무 슬프네요 흑 ㅜ", '2017-08-18', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(1, 13, "정말...공감가는 말입니다", '2017-08-18');
+    values(23, 13, "정말...공감가는 말입니다", '2017-08-18');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(1, 11, "그니까요...저는 장자못 처음 보는데, 생각보다 너무 슬펐어요....", '2017-08-18');
+    values(23, 11, "그니까요...저는 장자못 처음 보는데, 생각보다 너무 슬펐어요....", '2017-08-18');
 
 
 
 insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
-    values(12, "피곤한 월요일 아침, 힘들지만 기운내세요~", "모두가 피곤한 월요일이 찾아왔습니다.\r\n 그렇지만 모두 힘내서 화이팅 하다보면, 주말이 또 찾아오겠죠~!\r\n 화이팅입니다 여러분!", '2017-08-18', 'board');
+    values(12, "피곤한 월요일 아침, 힘들지만 기운내세요~", "모두가 피곤한 월요일이 찾아왔습니다.\r\n 그렇지만 모두 힘내서 화이팅 하다보면, 주
+
+말이 또 찾아오겠죠~!\r\n 화이팅입니다 여러분!", '2017-08-18', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(2, 14, "화이팅입니다! 아자아자!", '2017-08-18');
+    values(24, 14, "화이팅입니다! 아자아자!", '2017-08-18');
 
 
 
@@ -779,13 +783,13 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 혹시 아나운서세요?" , '2017-08-19', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(3, 11, "해설자분 목소리가 느리긴 한데 뭐, 꽤 괞찮았던듯", '2017-08-19');
+    values(25, 11, "해설자분 목소리가 느리긴 한데 뭐, 꽤 괞찮았던듯", '2017-08-19');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(3, 12, "와 근데 저거 녹음하신분들 대단하신듯....", '2017-08-19');
+    values(25, 12, "와 근데 저거 녹음하신분들 대단하신듯....", '2017-08-19');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(3, 13, "그러게요 저는 듣기만해도 오글거려서 ㄷㄷ", '2017-08-19');
+    values(25, 13, "그러게요 저는 듣기만해도 오글거려서 ㄷㄷ", '2017-08-19');
 
 
 
@@ -793,16 +797,16 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(11, "아기고양이 냥이 너무 귀엽당 ㅎㅎ", "나도 저런 고양이 안생기나? ", '2017-08-20', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(4, 14, "냥이 귀요미!", '2017-08-20');
+    values(26, 14, "냥이 귀요미!", '2017-08-20');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(4, 15, "여자목소리 녹음하신분 찾습니다.", '2017-08-20');
+    values(26, 15, "여자목소리 녹음하신분 찾습니다.", '2017-08-20');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(4, 11, "왜 찾으시나요 ㅋㅋ", '2017-08-21');
+    values(26, 11, "왜 찾으시나요 ㅋㅋ", '2017-08-21');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(4, 15, "ㅎㅎ", '2017-08-20');
+    values(26, 15, "ㅎㅎ", '2017-08-20');
 
 
 insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
@@ -810,7 +814,7 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 힘들어서 죽는줄 알았어요 응슷응", '2017-08-21', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(5, 21, "아 ㅋㅋ 저도 너무 힘들었어요! 그래도 만든 보람이 있었죠 ㅎㅎ", '2017-08-21');
+    values(27, 21, "아 ㅋㅋ 저도 너무 힘들었어요! 그래도 만든 보람이 있었죠 ㅎㅎ", '2017-08-21');
 
 
 
@@ -818,10 +822,10 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(14, "미니언즈 왜 귀엽다고 이해못했는데", "애니메이션보니깐 엄청웃기고 졸귀네요 ㅎㅎ", '2017-08-21', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(6, 19, "그렇죠...미니언즈 넘나 귀여운 것 ㅋ", '2017-08-21');
+    values(28, 19, "그렇죠...미니언즈 넘나 귀여운 것 ㅋ", '2017-08-21');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(6, 20, "뿌찌빠찌뽀찌--!!", '2017-08-22');
+    values(28, 20, "뿌찌빠찌뽀찌--!!", '2017-08-22');
 
 
 
@@ -831,25 +835,27 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 꼭 한번 녹음해주고 싶어요...', '2017-08-23', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(7, 17, "오... 브렘웰 음악단 오랜만에 듣는걸요?", '2017-08-23');
+    values(29, 17, "오... 브렘웰 음악단 오랜만에 듣는걸요?", '2017-08-23');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(7, 16, "앗 이거! 저도 옛날에 보았던 기억이 있네요 ㅎㅎ", '2017-08-23');
+    values(29, 16, "앗 이거! 저도 옛날에 보았던 기억이 있네요 ㅎㅎ", '2017-08-23');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(7, 14, "모르는 동화책이네요. 검색해도 안나오는데....?", '2017-08-24');
+    values(29, 14, "모르는 동화책이네요. 검색해도 안나오는데....?", '2017-08-24');
 
 
 
 
 insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
-    values(16, "가끔 생각하는데, 중간에 저장 할 수 있었으면 좋겠어요.", "그냥 중간에 저장 할 수 없는게 좀 뭔가 불편하네요. 딱히 그럴일이 생기진 않지만요", '2017-08-23', 'board');
+    values(16, "가끔 생각하는데, 중간에 저장 할 수 있었으면 좋겠어요.", "그냥 중간에 저장 할 수 없는게 좀 뭔가 불편하네요. 딱히 그럴일이 생기
+
+진 않지만요", '2017-08-23', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(8, 17, "그러게요 좀 있었으면 좋겟네...", '2017-08-23');
+    values(30, 17, "그러게요 좀 있었으면 좋겟네...", '2017-08-23');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(8, 16, "공감합니다. 딱히 없어도 상관없는데 뭔가 불편하달까요.", '2017-08-23');
+    values(30, 16, "공감합니다. 딱히 없어도 상관없는데 뭔가 불편하달까요.", '2017-08-23');
 
 
 insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
@@ -864,7 +870,7 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 농담인거 아시쥬?", '2017-08-25', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(10, 16, "녹음은 장자못이 가장 괞찮다고 생각합니다", '2017-08-25');
+    values(32, 16, "녹음은 장자못이 가장 괞찮다고 생각합니다", '2017-08-25');
 
 
 
@@ -872,10 +878,10 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(17, "게시판에서 아돼삼이 자주 보이는데 아돼삼이 뭔가요?","정말 궁금해요 ㅎㅎ", '2017-08-25', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(11, 14, "아....돼....삼.....?", '2017-08-25');
+    values(33, 14, "아....돼....삼.....?", '2017-08-25');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(11, 19, "아기돼지 삼형제입니다 ㅋㅋ", '2017-08-25');
+    values(33, 19, "아기돼지 삼형제입니다 ㅋㅋ", '2017-08-25');
 
 
 
@@ -885,7 +891,7 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(11, "녹음할때 이어폰 마이크 너무 작던데 잘돼시나요?", "저만 안돼는건가요 너무 소리가 작던데...", '2017-08-26', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(12, 11, "아니요 저도 작게 들려요!! 이어폰 마이크로는 한계가 있는듯 해요", '2017-08-26');
+    values(34, 11, "아니요 저도 작게 들려요!! 이어폰 마이크로는 한계가 있는듯 해요", '2017-08-26');
 
 
 
@@ -894,16 +900,16 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(16, "저 아돼삼 녹음했는데 추천좀....", "명전 가고싶어요!", '2017-08-26', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(13, 14, "여기서 구걸은 좀.....", '2017-08-26');
+    values(35, 14, "여기서 구걸은 좀.....", '2017-08-26');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(13, 19, "애들도 보는 곳인데 여기서 이러지 맙시다. 어른들이 애들의 표본이 되어야죠", '2017-08-26');
+    values(35, 19, "애들도 보는 곳인데 여기서 이러지 맙시다. 어른들이 애들의 표본이 되어야죠", '2017-08-26');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(13, 16, "저 애 인데요?", '2017-08-27');
+    values(35, 16, "저 애 인데요?", '2017-08-27');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(13, 19, "헉...!", '2017-08-27');
+    values(35, 19, "헉...!", '2017-08-27');
 
 
 
@@ -917,20 +923,20 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(14, "님들은 동화책 어디서 사요?", "저는 강남교보문구에서 사는데 동화책 매우 많거든요", '2017-08-28', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(15, 21, "저는 작은데서 삽니다. 그런데가 뭔가 보물찾는 느낌이 들거든요 ㅎㅎ", '2017-08-28');
+    values(37, 21, "저는 작은데서 삽니다. 그런데가 뭔가 보물찾는 느낌이 들거든요 ㅎㅎ", '2017-08-28');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(15, 14, "오... 그런것도 한번 고려해봐야겠네요", '2017-08-28');
+    values(37, 14, "오... 그런것도 한번 고려해봐야겠네요", '2017-08-28');
 
 
 insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
     values(17, "이거 핸드폰으로도 가능한가요?", "가능한지 궁금합니다", '2017-08-28', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(16, 13, "모바일 기능 개발중이라고 합니다", '2017-08-28');
+    values(38, 13, "모바일 기능 개발중이라고 합니다", '2017-08-28');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(16, 17, "어서 나왔으면 좋겠네요", '2017-08-29');
+    values(38, 17, "어서 나왔으면 좋겠네요", '2017-08-29');
 
 
 
@@ -947,13 +953,13 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(19, "제 애기한테도 녹음한번 시켜봐야겠어요", "귀여울듯 한데요 ㅎㅎ", '2017-08-28', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(18, 17, "오 애기가 몇살이죠?", '2017-08-29');
+    values(40, 17, "오 애기가 몇살이죠?", '2017-08-29');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(18, 19, "올해로 6살입니다 ㅎㅎ", '2017-08-29');
+    values(40, 19, "올해로 6살입니다 ㅎㅎ", '2017-08-29');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(18, 17, "우리 애기한테도 녹음시켜봤는데 너무 귀엽드라구욬ㅋ", '2017-08-29');
+    values(40, 17, "우리 애기한테도 녹음시켜봤는데 너무 귀엽드라구욬ㅋ", '2017-08-29');
 
 
 
@@ -964,10 +970,10 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 기꺼이 내드리지요 ", '2017-08-28', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(19, 20, "살신성인의 자세 캬~~!", '2017-08-29');
+    values(41, 20, "살신성인의 자세 캬~~!", '2017-08-29');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(19, 21, "그렇죠.,, 내 한몸쯤이야!!", '2017-08-29');
+    values(41, 21, "그렇죠.,, 내 한몸쯤이야!!", '2017-08-29');
 
 
 
@@ -976,7 +982,7 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(20, "페북같은데에 공유 하지 못하나요?", "저는 많은 사람들이 봤으면 좋겠네요", '2017-08-30', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(20, 12, "글쎄요 한번 faq에 물어보셔야 할듯한데요?", '2017-08-30');
+    values(42, 12, "글쎄요 한번 faq에 물어보셔야 할듯한데요?", '2017-08-30');
 
 
 
@@ -985,7 +991,7 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(14, "오늘 비가 많이 오네요", "날이 좋아서 날이 좋지않아서 날이 적당해서 모든날이 좋았다", '2017-08-30', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(21, 21, "바로 올게 첫눈으로 올게 그것만은 해달라고 신께 빌어볼게...!", '2017-08-30');
+    values(43, 21, "바로 올게 첫눈으로 올게 그것만은 해달라고 신께 빌어볼게...!", '2017-08-30');
 
 
 
@@ -994,7 +1000,7 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
     values(16, "녹음하다가 컴퓨터가 꺼졌어요 ㅜㅜㅜㅜ 이 망할놈의 컴퓨터!", "바꾸던가 해야지 흑흑 ㅠ", '2017-08-31', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(22, 18, "요즘 삼성에서 컴퓨터 잘 나오던데요 한번 알아 보시길", '2017-08-31');
+    values(44, 18, "요즘 삼성에서 컴퓨터 잘 나오던데요 한번 알아 보시길", '2017-08-31');
 
 
 
@@ -1004,13 +1010,15 @@ insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
 
 
 insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
-    values(16, "아기돼지 삼형제 너무 재밌어요! 추천추천!", "아 제글 말구요 ㅎㅎ 명전에 등록된거 너무 재밌어서요 추천 꾹 누르고 갑니다~", '2017-08-31', 'board');
+    values(16, "아기돼지 삼형제 너무 재밌어요! 추천추천!", "아 제글 말구요 ㅎㅎ 명전에 등록된거 너무 재밌어서요 추천 꾹 누르고 갑니다~", 
+
+'2017-08-31', 'board');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(24, 11, "그쵸, 너무 재밌는거 있죠 ㅎㅎ 저도 추천누르고 왔어요", '2017-08-31');
+    values(46, 11, "그쵸, 너무 재밌는거 있죠 ㅎㅎ 저도 추천누르고 왔어요", '2017-08-31');
 
 insert into comment(bwno, mno, c_con, c_wdt) 
-    values(24, 12, "추천을 한번 밖에 못하는게 아쉬울정도...! 짱입니다요!", '2017-08-29');
+    values(46, 12, "추천을 한번 밖에 못하는게 아쉬울정도...! 짱입니다요!", '2017-08-29');
 
 
 
