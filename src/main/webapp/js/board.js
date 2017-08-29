@@ -15,6 +15,9 @@ $("#keyword").keyup(function(){
 //	}, function(result) {
 //	}, 'json')
 	displayList2(1);
+	if(word.val() == "") {
+		displayList(1);
+	}
 })
 
 displayList(1);
@@ -58,14 +61,28 @@ $('#bord-btn').click(function(){
 	  location.href = 'boardwrite.html'
 	} else {
 		swal({
-			  title: "로그인이 필요합니다",
-			  text: "서비스를 이용하시려면 로그인이 필요합니다.",
-			  confirmButtonText: "확인",
-				confirmButtonColor: "#6384E1",
-				html: true
-			})
+			title: "로그인이 필요합니다",
+			text: "서비스를 이용하시려면 로그인이 필요합니다.",
+			confirmButtonText: "확인",
+			confirmButtonColor: "#6384E1",
+			html: true
+		}, function(isConfirm){
+			console.log("isConfirm!!!!!1",isConfirm)
+			if(isConfirm == true){
+				location.href = "board.html"
+			}
+		})
+			
 	}
 })
+
+
+
+
+
+
+
+
 
 /******************************************************/
 

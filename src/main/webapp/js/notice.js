@@ -12,6 +12,9 @@ var mno;
 userinfo()
 $("#keyword").keyup(function(){
 	displayList2(1);
+	if(word.val() == "") {
+		displayList(1);
+	}
 })
 
 try {

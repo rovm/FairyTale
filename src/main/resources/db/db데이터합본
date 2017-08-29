@@ -1,0 +1,1020 @@
+/******************************MEMBER DB추가****************************************************/
+insert into member (mno, email, pass, posi, name, tel) values(1, "master1@test.com", password("1111"), "master", "관리자", "1111-1111");
+insert into member (mno, email, pass, posi, name, tel) values(2, "master2@test.com", password("1111"), "master", "관리자", "1111-2222");
+insert into member (mno, email, pass, posi, name, tel) values(3, "master3@test.com", password("1111"), "master", "관리자", "1111-3333");
+insert into member (mno, email, pass, posi, name, tel) values(4, "master4@test.com", password("1111"), "master", "관리자", "1111-4444");
+insert into member (mno, email, pass, posi, name, tel) values(5, "master5@test.com", password("1111"), "master", "관리자", "1111-5555");
+insert into member (mno, email, pass, posi, name, tel) values(6, "master6@test.com", password("1111"), "master", "관리자", "1111-6666");
+insert into member (mno, email, pass, posi, name, tel) values(7, "master7@test.com", password("1111"), "master", "관리자", "1111-7777");
+insert into member (mno, email, pass, posi, name, tel) values(8, "master8@test.com", password("1111"), "master", "관리자", "1111-8888");
+insert into member (mno, email, pass, posi, name, tel) values(9, "master9@test.com", password("1111"), "master", "관리자", "1111-9999");
+insert into member (mno, email, pass, posi, name, tel) values(10, "master10@test.com", password("1111"), "master", "관리자", "1111-0000");
+
+
+
+/*****user*****/
+insert into member (mno, email, pass, posi, name, tel) values(11, "user1@test.com", password("1111"), "user", "김정준", "2222-1111");
+insert into member (mno, email, pass, posi, name, tel) values(12, "user2@test.com", password("1111"), "user", "김승원", "2222-2222");
+insert into member (mno, email, pass, posi, name, tel) values(13, "user3@test.com", password("1111"), "user", "송수정", "2222-3333");
+insert into member (mno, email, pass, posi, name, tel) values(14, "user4@test.com", password("1111"), "user", "조성규", "2222-4444");
+insert into member (mno, email, pass, posi, name, tel) values(15, "user5@test.com", password("1111"), "user", "김승민", "2222-5555");
+insert into member (mno, email, pass, posi, name, tel) values(16, "user6@test.com", password("1111"), "user", "노완진", "2222-6666");
+insert into member (mno, email, pass, posi, name, tel) values(17, "user7@test.com", password("1111"), "user", "박규호", "2222-7777");
+insert into member (mno, email, pass, posi, name, tel) values(18, "user8@test.com", password("1111"), "user", "서흥원", "2222-8888");
+insert into member (mno, email, pass, posi, name, tel) values(19, "user9@test.com", password("1111"), "user", "권봉수", "2222-9999");
+insert into member (mno, email, pass, posi, name, tel) values(20, "user10@test.com", password("1111"), "user", "이윤민", "2222-0000");
+insert into member (mno, email, pass, posi, name, tel) values(21, "user11@test.com", password("1111"), "user", "양승열", "3333-1111");
+insert into member (mno, email, pass, posi, name, tel) values(22, "user12@test.com", password("1111"), "user", "홍순민", "3333-2222");
+insert into member (mno, email, pass, posi, name, tel) values(23, "user13@test.com", password("1111"), "user", "이유운", "3333-3333");
+insert into member (mno, email, pass, posi, name, tel) values(24, "user14@test.com", password("1111"), "user", "김미연", "3333-4444");
+insert into member (mno, email, pass, posi, name, tel) values(25, "user15@test.com", password("1111"), "user", "신선아", "3333-5555");
+insert into member (mno, email, pass, posi, name, tel) values(26, "user16@test.com", password("1111"), "user", "이수은", "3333-6666");
+insert into member (mno, email, pass, posi, name, tel) values(27, "user17@test.com", password("1111"), "user", "고진서", "3333-7777");
+insert into member (mno, email, pass, posi, name, tel) values(28, "user18@test.com", password("1111"), "user", "우인재", "3333-8888");
+insert into member (mno, email, pass, posi, name, tel) values(29, "user19@test.com", password("1111"), "user", "김민섭", "3333-9999");
+insert into member (mno, email, pass, posi, name, tel) values(30, "user20@test.com", password("1111"), "user", "홍효선", "3333-0000");
+insert into member (mno, email, pass, posi, name, tel) values(31, "user21@test.com", password("1111"), "user", "김대연", "4444-1111");
+insert into member (mno, email, pass, posi, name, tel) values(32, "user22@test.com", password("1111"), "user", "신용주", "4444-2222");
+insert into member (mno, email, pass, posi, name, tel) values(33, "user23@test.com", password("1111"), "user", "정성룡", "4444-3333");
+insert into member (mno, email, pass, posi, name, tel) values(34, "user24@test.com", password("1111"), "user", "엄진영", "4444-4444");
+
+/******************************FAQ DB추가****************************************************/
+
+/*사용방법*/
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "녹음기능은 어떻게 사용하는 건가요?", "마이크 설치 후 녹음 버튼을 눌러주시면 됩니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "명예의 전당은 어떻게 올라가나요?", "일정기간동안에 가장 높은 추천수를 받은 회원이 올라가게 됩니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "동화책은 언제 추가 되나요?", "관리자 마음대로 추가됩니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "동화책은 어떻게 만드나요?", "상단 메뉴의 메뉴얼 버튼을 눌러 확인해주세요~", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "제가 만든 동화책은 어디서 확인하나요?", "로그인 후 작품보관함에서 확인 가능합니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "마이크가 필요한가요?", "네, 녹음기능을 사용하시려면 마이크가 필요합니다^^", curdate(), "faq");
+
+
+/*회원가입*/
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "녹음 기능은 회원만 사용할 수 있나요?", "네, 회원가입 후 사용 가능합니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "회원가입은 어떻게 하나요?", "상단메뉴의 회원가입을 클릭하거나, 로그인창에서 회원가입 할 수 있습니다~", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "로그인 방법은 어떻게 되나요?", "홈페이지 회원가입을통한 로그인과, 카카오톡, 페이스북, 구글계정으로 로그인 할 수 있습니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "회원가입할 때 필요한 정보는 무엇인가요?", "메일주소, 이름, 전화번호 정보만 필요로 합니다.", curdate(), "faq");
+
+insert into boardwrite (mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values (1, "아이디를 잃어버리면 어떻게 하나요?", "아이디/비밀번호 찾기에서 찾을 수 있습니다.", curdate(), "faq");
+
+
+
+
+/*****************FAQ 문의분류 추가********************/
+
+/*사용방법*/
+insert into faq(bwno, ans_div)
+values(1, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(2, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(3, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(4, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(5, "사용방법");
+
+insert into faq(bwno, ans_div)
+values(6, "사용방법");
+
+
+/*회원가입*/
+insert into faq(bwno, ans_div)
+values(7, "회원가입");
+
+insert into faq(bwno, ans_div)
+values(8, "회원가입");
+
+insert into faq(bwno, ans_div)
+values(9, "회원가입");
+
+
+/*********************공지사항 추가*****************************/
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'4월 신규가입이벤트 당첨 발표',
+'짝짝짝! 당첨을 축하드립니다!
+ 
+동화와만나요 북스토어 신규회원 가입해주신
+모든 분들께 감사드립니다. 
+앞으로 다양한 이벤트 준비되어 있으니
+많은 참여 부탁드립니다. 
+ 
+당첨선물 스타벅스 카라멜 프라푸치노 기프티콘
+발송안내 5월 2일(목) 오후 6시 30분 이후 
+※ 신규회원 가입 시 기재해주신 번호로 전송됩니다. 
+유의사항
+ - 기프티콘은 재전송이 불가능하오니, 기프티콘 메시지 삭제 또는 기간 경과, 휴대폰 초기화 등에 주의를 부탁드립니다.
+ - 신규 회원 가입시 기재해주신 휴대폰 번호로만 발송됨에 따라, 번호 오기재 또는 번호 변경 등에 대해 도움을 드리기
+   어려운 점 양해를 부탁드립니다.
+ - 기프티콘 발송 업체의 사정상 다른 상품으로 변경되어 발송될 수 있습니다.
+※ 기타 문의사항에 대해서는 동화와만나요 북스토어 홈페이지 하단의 [문의하기]로 말씀해주세요.
+ 
+다시 한 번 당첨을 진심으로 축하드립니다!
+ 
+[당첨자 발표]  
+wh***lxogus@naver.com 0923
+tw***ceyy@naver.com 8528
+ki***j@nate.com 3896
+ll***ayoull@naver.com 1802
+je***mots@naver.com 2261', '2017-04-13', 'notice');
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(1, '★동화와만나요 공개 오디션★ 나도 동화만나요 스타',
+    '전 세계 1억 명의 어린이들의 꿈과 함께하는 동화와만나요 에서 교육 영상에 출연할 "나래이션 언니"를 찾습니다.
+ 
+영상 촬영은 내년 상반기부터 시작될 예정이며, 추후 시즌제로 꾸준히 제작할 예정입니다.
+[상세 내용]
+- 지원 기간: 2017년 4월 27일 (목) ~ 4월 25일 (금)
+- 프로그램: 영유아를 위한 동화와만나요 교육 영상
+- 역할: 전세계 유아, 어린이들의 친구 동화와만나요 를 발랄하고 활기차게 알리기
+- 모델료: 협의 
+- 촬영 일자: 2017년 5월 예정
+ 
+[우대 사항]
+- 우는 아이도 활짝 웃게 만드는 매력의 소유자 
+- 동화와만나요 처럼 발랄한 흥 부자
+- 율동과 노래, 연기가 다 되는 능력자 
+ 
+간단한 프로필과 자신을 표현하는 짧은 영상을 
+rlatmd717@nate.com 로 보내 주세요!
+ 
+합격 여부는 12월 중 개인 메일로 연락 드립니다.
+구체적인 모델료 및 그 밖의 문의 사항은 위의 메일로 연락 주세요.
+ 
+많은 관심과 지원 부탁드립니다.
+감사합니다. ','2017-04-23', 'notice');
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'동화와만나요 가족 사생대회! 팬아트 공모전',
+'동화와만나요 가족
+사생대회
+뚜루루뚜루♪♬ 
+ 
+누구나 참여하고 상금 받아가요!
+ 
+1.기간▶ 5월 9일(수)~15일(화)
+2.참가대상▶ 누구나
+3.시상내역 (총 상금 100만원) 
+▶상어상상어상 10명 문화상품권 5만원 
+▶뚜루루뚜루상 50명 문화상품권 1만원
+ 
+4.수상작 발표▶6월 1일(금) 동화와만나요 북스토어 공지사항
+ 
+5.내용
+▶동화와만나요 가족이 함께 나오는 그림을 그려
+   #동화와만나요 해시태그 2개를 달아
+   SNS에 올려주세요. 
+▶중복 응모 가능, 자유 형식!
+ 
+6.SNS별 응모방법
+▶페이스북
+1) 동화와만나요 페이지의 "동화와만나요 사생대회" 이벤트 게시글에 댓글로 그림을 올리거나 또는 
+2)  본인계정에 올리고  #동화와만나요 해시태그 단 후, 해당 게시물의 url주소를 이벤트 게시글 댓글로 달아주세요.
+(네이버 블로그, 트위터, 인스타그램에 올리신 경우, 해당 주소를 올려주시면 됩니다.)
+* 페이스북 <동화와만나요 사생대회>
+  바로 응모하기 Go!
+ 
+▶인스타그램, 트위터, 카카오스토리 
+동화와만나요 그림을 본인 계정에 올리고, 
+#동화와만나요 해시태그 2개 달면 응모완료! 
+(비공개 계정의 경우, 당선에서 제외될 수 있습니다.)
+ 
+8. 수상작 선정 기준
+▶내부 심사 
+ 
+9.기타 유의 사항 
+▶본 이벤트는 스마트스터디(주)의 이벤트 약관에 따라 진행됩니다.
+(이벤트 약관: http://i.sstudy.kr/L/272)
+▶수상작 경품은 기프티콘으로 제공됩니다. 
+▶수상한 분들께 경품 지급을 위해 일부 개인정보를 문의할 수 있으며
+ 개인정보 제공에 동의하지 않을 경우, 수상이 취소됩니다.','2017-05-05', 'notice');
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'5월 23일 고객센터 운영 안내',
+'
+안녕하세요?  동화와만나요 입니다. 
+ 
+ 
+ 
+내부적인 사정으로, 고객센터 운영이 5월 23일 (수요일) 하루 중단됩니다. 
+ 
+ 
+ 
+동화와만나요 북스토어 이용에 불편을 드리게 되었습니다. 
+ 
+이 부분 고객님의 너른 양해 부탁 드립니다. 
+ 
+ 
+ 
+문의사항에 대해서는
+ 
+[문의하기] 로 남겨주시면 5월 24일 (목요일) 부터 빠르게 확인하여 안내 드리도록 하겠습니다. 
+ 
+ 
+ 
+다시 한번 동화와만나요 이용에 불편을 드리게 된 점 양해의 말씀 드립니다. 
+ 
+ 
+ 
+고맙습니다. 
+ 
+', '2017-05-20', 'notice');
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'동화와만나요 북스토어 5월 신규회원가입 이벤트 당첨자 발표',
+'짝짝짝! 당첨을 축하드립니다!
+ 
+동화와만나요 북스토어 6월달 신규회원 가입해주신
+모든 분들께 감사드립니다. 
+앞으로 다양한 이벤트 준비되어 있으니
+많은 참여 부탁드립니다. 
+ 
+당첨선물 스타벅스 아이스 아메리카노 기프티콘
+발송안내 7월 15일(금) 오후 1시 이후  
+※ 신규회원 가입 시 기재해주신 번호로 전송됩니다. 
+ 
+유의사항
+ - 기프티콘은 재전송이 불가능하오니, 기프티콘 메시지 삭제 또는 기간 경과, 휴대폰 초기화 등에 주의를 부탁드립니다.
+ - 신규 회원 가입시 기재해주신 휴대폰 번호로만 발송됨에 따라
+   번호 오기재 또는 번호 변경 등에 대해 도움을 드리기 어려운 점 양해를 부탁드립니다.
+ - 기프티콘 발송 업체의 사정상 다른 상품으로 변경되어 발송될 수 있습니다.
+※ 기타 문의사항에 대해서는 동화와만나요 북스토어 홈페이지 하단의 [문의하기]로 말씀해주세요.
+ 
+다시 한 번 당첨을 진심으로 축하드립니다!
+ 
+[당첨자 발표] 
+ji***3428@hanmail.net 0713
+me***lki@gmail.com 9211
+mi***andi@naver.com 1326
+mi***889@nate.com 0369
+er***3715@hanmail.net 8252
+lo***e0_0a@naver.com 0060
+im***jo@gmail.com 5924
+28***2867@qq.com 3726
+jh***79@naver.com 6827
+hl***@naver.com 5587
+hz***ve@naver.com 2529
+ka***rism@hanmail.net 0283
+th***anic@naver.com 5709
+dl***skfo0@naver.com 1140', '2017-05-13', 'notice');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'동화와만나요 체조 모델 닉네임 짓기 이벤트 당첨자 발표!',
+'안녕하세요! 
+ 
+동화와만나요 체조 모델 닉네임 짓기 이벤트 당첨을 진심으로 축하드립니다! 
+ 
+응모해주신 많은 분들께 감사드려요~
+ 
+앞으로도 더 많은 이벤트가 준비되어 있으니 많은 관심과 사랑 부탁드려요! 
+ 
+ 
+ 
+당첨자 발표 
+ 
+동화와만나요 후드 타올 (5명) 
+ 
+임서현님 
+ 
+떳다그녀님 
+ 
+킴아님 
+ 
+이은헌님 
+ 
+한여사님 
+ 
+ 
+ 
+ 
+[안내]
+ 
+-당첨 선물 배송은 5월 29일(월) 이후 순차배송 예정입니다. 
+ 
+-당첨자분들께 응모해주신 페이스북 및 카카오스토리 개인 계정으로 개별 연락드릴 예정입니다. 
+ 
+-당첨 선물 배송을 위해 일부 개인정보 활용 동의를 요청드릴 수 있으며, 미동의시 당첨이 취소됩니다. 
+ 
+-당첨자 선정은 내부 심사 진행하였고, 채널별 응모자 비율에 맞춰 선정하였습니다. 
+ 
+', '2017-05-25', 'notice');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'동화와만나요 유교전 이벤트 당첨자 발표!',
+'동화와만나요 교전 방문인증샷 이벤트
+ 
+당첨자를 발표합니다. 
+ 
+ 
+ 
+이벤트 응모해주신 모든 분들께 진심으로 감사합니다.
+ 
+ 
+ 
+[당첨자] 
+ 
+카카오스토리 까꼼앨리스♥홍수진
+ 
+인스타그램 puppy.kim 
+ 
+ 
+ 
+[당첨자 선물] 
+ 
+동화와만나요 빔 그림자놀이 에디션
+ 
+ 
+ 
+* 6월 19일(월) 이후 배송 예정입니다. 
+ 
+* 당첨되신 분들께 개별 연락 예정입니다. 
+ 
+* 당첨자 제세공과금은 (주)스마트스터디에서 부담합니다.
+ 
+*당첨자 분들께 당첨선물 배송을 위해 일부 개인정보 활용 동의를 요청할 수 있으며, 미동의시 당첨이 취소됩니다. 
+', '2017-06-01', 'notice');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'동화와만나요 설문 이벤트 당첨자 발표',
+'
+동화와만나요 고객 설문조사 당첨자를 발표합니다. 
+설문에 참여해 주신 모든 분들께 진심으로 감사합니다. 
+ 
+[ 사은품 안내 ]
+설문 참여자 전원: 마이쮸 기프티콘 발송  
+당첨자(10명): 동화와만나요 사운드북 1권 배송 
+ 
+동화와만나요 사운드북 당첨자 발표(10명)
+NO
+이름
+핸드폰 번호 뒤 4자리
+1
+유*희
+3162
+2
+방*리
+0727
+3
+소*영
+5368
+4
+김*미
+1976
+5
+김*선
+0927
+6
+정*진
+0503
+7
+방*영
+1727
+8
+김*서
+3286
+9
+이*진
+5664
+10
+김*경
+9290
+ 
+ 
+ [안내] 
+모바일 기프티콘(마이쮸)은 설문조사 시 기입해 주신 핸드폰 번호로 MMS 형태로 전송됩니다.
+(핸드폰 번호 입력 오류 시 발송이 불가한 점 양해 부탁드립니다.)  
+사용자 부주의로 인해 사용하신 기프티콘은 다시 재전송되지 않습니다. 
+사용 전 모바일 기프티콘 MMS 문자를 분실하셨을 경우, 동화와만나요 북스토어 홈페이지 하단의 [문의하기]로 문의 부탁드립니다. 
+전송받은 모바일 기프티콘 MMS 보관에 유의 부탁드립니다. 
+동화와만나요 사은드북은 6월 19일(수) 이후 배송 예정입니다. 
+당첨 되신 분들께 개별 연락 예정입니다.  
+ 
+', '2017-06-09', 'notice');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'롯데월드 앵콜 이벤트 당첨자 발표',
+'
+안녕하세요? 동화와만나요 입니다.  
+ 
+롯데월드 앵콜 이벤트! 그 행운의 주인공을 발표합니다.  
+ 
+  
+ 
+6월 1일부터 15일까지 총 구매자 중 행운의 15분을 추첨하였습니다.   
+ 
+당첨자분들께는 2장의 무료초대권이 우편으로 발송됩니다.  
+ 
+  
+ 
+당첨자명  이메일
+ 
+백*원 _ji***@naver.com
+ 
+김*주 skk****@hanmail.net
+ 
+권*혜 akh******@gmail.com
+ 
+김*서 ddb*****@naver.com
+ 
+강*호 duk*****@samil.com
+ 
+윤*지 che********@gmail.com
+ 
+정*라 sor***@hanmail.net
+ 
+전*진 mag******@naver.com
+ 
+정*화 jkh***@daum.net
+ 
+김*별 626****@naver.com
+ 
+오*아 hat******@naver.com
+ 
+임*희 mhd*******@nate.com
+ 
+최*희 coo*****@naver.com
+ 
+황*화 haw******@naver.com
+ 
+김*경 arw****@naver.com
+ 
+  
+ 
+*당첨된 무료 초대권의 자세한 안내 사항은 금주 중으로 동화와만나요 고객센터를 통해 전달 드리도록 하겠습니다. 
+ 
+**전화상으로 본인 및 수령주소 확인이 안될 경우 당첨이 취소되며,
+이벤트수령을 포기하실 경우로 인해 당첨자숫자가 변경될 수 있습니다. 
+ 
+  
+ 
+앞으로도 행운을 드리는 동화와만나요 가 되겠습니다.  
+ 
+고맙습니다.  
+ 
+', '2017-06-20', 'notice');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'6월 23일 고객센터 운영 안내',
+'
+안녕하세요?  동화와만나요 입니다. 
+ 
+ 
+ 
+내부적인 사정으로, 고객센터 운영이 6월 23일 (수요일) 하루 중단됩니다. 
+ 
+ 
+ 
+동화와만나요 북스토어 이용에 불편을 드리게 되었습니다. 
+ 
+이 부분 고객님의 너른 양해 부탁 드립니다. 
+ 
+ 
+ 
+문의사항에 대해서는
+ 
+[문의하기] 로 남겨주시면 6월 24일 (목요일) 부터 빠르게 확인하여 안내 드리도록 하겠습니다. 
+ 
+ 
+ 
+다시 한번 동화와만나요 이용에 불편을 드리게 된 점 양해의 말씀 드립니다. 
+ 
+ 
+ 
+고맙습니다. 
+ 
+', '2017-06-22', 'notice');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+values(1,'동화와만나요 서포터즈 1기 발표',
+'
+안녕하세요? 동화와만나요 운영자입니다.
+ 
+동화와만나요 서포터즈 1기에 지원해 주신 모든 분들께 감사드립니다.
+ 
+ 
+ 
+많은 분들이 지원해 주셔서 선발하는데 어려움이 있었습니다.
+ 
+아쉽게도 함께 하지 못한 분들은 다음 모집때 만나뵐 수 있었으면 좋겠습니다.
+ 
+ 
+ 
+동화와만나요 서포터즈 1기로 선정된 분들은 다음과 같습니다.
+ 
+김*음 010-6***-5955
+ 
+이*순 010-4***-0320
+ 
+김*샘 010-8***-2530
+ 
+윤*화 010-3***-3622
+ 
+석*선 010-4***-1575
+ 
+이*소 010-4***-9242
+ 
+하*진 010-4***-5549
+ 
+신*지 010-7***-1052
+ 
+김*민 010-8***-2396
+ 
+권*리 010-4***-0645
+ 
+서*름 010-9***-9359
+ 
+최*옥 010-5***-8465
+ 
+양*라 010-6***-2875
+ 
+한*숙 010-8***-8708
+ 
+윤*현 010-3***-2174
+ 
+양*인 010-9***-6032
+ 
+차*주 010-2***-8299
+ 
+구*람 010-7***-6369
+ 
+박*주 010-2***-7739
+ 
+이*정 010-9***-4453
+ 
+박*례 010-4***-9379
+ 
+신*경 010-3***-1052
+ 
+ 
+ 
+선정된 분들께는 금주 중으로 연락 드려 서포터즈 활동에 대해 안내 드리겠습니다.
+ 
+감사합니다. 
+ 
+', '2017-07-22', 'notice');
+
+
+/*********************************동화책 목록******************************************/
+
+insert into mstbook values (1, "잭과콩나무", "공백", "명작동화");
+insert into bkpage values (1, 1, 1, "공백", "/upload/잭과콩나무.jpg", "/upload/record01.ogg");
+
+insert into mstbook values (2, "토끼와거북이", "공백", "이솝우화");
+insert into bkpage values (2, 2, 1, "공백", "/upload/토끼와거북이.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (3, "백설공주", "공백", "명작동화");
+insert into bkpage values (3, 3, 1, "공백", "/upload/백설공주.jpg", "/upload/record01.ogg");
+
+insert into mstbook values (4, "여우와황새", "공백", "이솝우화");
+insert into bkpage values (4, 4, 1, "공백", "/upload/여우와황새.jpg", "/upload/record01.ogg");
+
+insert into mstbook values (5, "인어공주", "공백", "명작동화");
+insert into bkpage values (5, 5, 1, "공백", "/upload/인어공주.jpg", "/upload/record01.ogg");
+
+insert into mstbook values (6, "호랑이와곶감", "공백", "전래동화");
+insert into bkpage values (6, 6, 1, "공백", "/upload/호랑이와곶감.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (7, "흥부와놀부", "공백", "전래동화");
+insert into bkpage values (7, 7, 1, "공백", "/upload/흥부와놀부.JPG", "/upload/record01.ogg");
+ 
+insert into mstbook values (8, "해와바람", "공백", "이솝우화");
+insert into bkpage values (8, 8, 1, "공백", "/upload/해와바람.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (9, "은혜갚은까치", "공백", "전래동화");
+insert into bkpage values (9, 9, 1, "공백", "/upload/은혜갚은까치.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (10, "미운오리새끼", "공백", "명작동화");
+insert into bkpage values (10, 10, 1, "공백", "/upload/미운오리새끼.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (11, "성냥팔이소녀", "공백", "명작동화");
+insert into bkpage values (11, 11, 1, "공백", "/upload/성냥팔이소녀.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (12, "플랜더스의개", "공백", "명작동화");
+insert into bkpage values (12, 12, 1, "공백", "/upload/플랜더스의개.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (13, "콩쥐팥쥐", "공백", "명작동화");
+insert into bkpage values (13, 13, 1, "공백", "/upload/콩쥐팥쥐.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (14, "아기돼지삼형제", "공백", "명작동화");
+insert into bkpage values (14, 14, 1, "공백", "/upload/아기돼지삼형제.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (15, "양치기소년", "공백", "전래동화");
+insert into bkpage values (15, 15, 1, "공백", "/upload/양치기소년.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (16, "개미와베짱이", "공백", "전래동화");
+insert into bkpage values (16, 16, 1, "공백", "/upload/개미와베짱이.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (17, "요건내떡", "공백", "생활동화");
+insert into bkpage values (17, 17, 1, "공백", "/upload/요건내떡.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (18, "코딱지코지", "공백", "창작동화");
+insert into bkpage values (18, 18, 1, "공백", "/upload/코딱지코지.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (19, "달이네추석맞이", "공백", "학습동화");
+insert into bkpage values (19, 19, 1, "공백", "/upload/달이네추석맞이.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (20, "왜띄어써야돼", "공백", "학습동화");
+insert into bkpage values (20, 20, 1, "공백", "/upload/왜띄어써야돼.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (21, "난책이좋아요", "공백", "창작동화");
+insert into bkpage values (21, 21, 1, "공백", "/upload/난책이좋아요.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (22, "엄마는회사에서내생각해", "공백", "생활동화");
+insert into bkpage values (22, 22, 1, "공백", "/upload/엄마는회사에서내생각해.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (23, "엄지공주", "공백", "명작동화");
+insert into bkpage values (23, 23, 1, "공백", "/upload/엄지공주.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (24, "헨젤과그레텔", "공백", "명작동화");
+insert into bkpage values (24, 24, 1, "공백", "/upload/헨젤과그레텔.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (25, "잠자는숲속의공주", "공백", "명작동화");
+insert into bkpage values (25, 25, 1, "공백", "/upload/잠자는숲속의공주.JPG", "/upload/record01.ogg") ;
+
+insert into mstbook values (26, "뮬란", "공백", "명작동화");
+insert into bkpage values (26, 26, 1, "공백", "/upload/뮬란.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (27, "해님달님", "공백", "전래동화");
+insert into bkpage values (27, 27, 1, "공백", "/upload/해님달님.JPG", "/upload/record01.ogg");
+
+insert into mstbook values (28, "장자못이야기", "공백", "전래동화");
+insert into bkpage values (28, 28, 1, "공백", "/upload/장자못이야기.jpg", "/upload/장자못이야기.ogg");
+insert into bkpage values (29, 28, 2, "공백", "/upload/장자못이야기2.jpg", "/upload/장자못이야기1.ogg");
+insert into bkpage values (30, 28, 3, "공백", "/upload/장자못이야기3.jpg", "/upload/장자못이야기2.ogg");
+insert into bkpage values (31, 28, 4, "공백", "/upload/장자못이야기4.jpg", "/upload/장자못이야기3.ogg");
+insert into bkpage values (32, 28, 5, "공백", "/upload/장자못이야기5.jpg", "/upload/장자못이야기4.ogg");
+insert into bkpage values (33, 28, 6, "공백", "/upload/장자못이야기6.jpg", "/upload/장자못이야기5.ogg");
+insert into bkpage values (34, 28, 7, "공백", "/upload/장자못이야기7.jpg", "/upload/장자못이야기6.ogg");
+insert into bkpage values (35, 28, 8, "공백", "/upload/장자못이야기8.jpg", "/upload/장자못이야기7.ogg");
+insert into bkpage values (36, 28, 9, "공백", "/upload/장자못이야기9.jpg", "/upload/장자못이야기8.ogg");
+insert into bkpage values (37, 28, 10, "공백", "/upload/장자못이야기10.jpg", "/upload/장자못이야기9.ogg");
+insert into bkpage values (38, 28, 11, "공백", "/upload/장자못이야기11.jpg", "/upload/장자못이야기10.ogg");
+insert into bkpage values (39, 28, 12, "공백", "/upload/장자못이야기12.jpg", "/upload/장자못이야기11.ogg");
+insert into bkpage values (40, 28, 13, "공백", "/upload/장자못이야기13.jpg", "/upload/장자못이야기12.ogg");
+
+insert into mstbook values (29, "아기고양이냥이", "공백", "창작동화");
+insert into bkpage values (41, 29, 1, "공백", "/upload/아기고양이냥이.PNG", "/upload/아기고양이냥이.ogg");
+insert into bkpage values (42, 29, 2, "공백", "/upload/아기고양이냥이2.PNG", "/upload/아기고양이냥이1.ogg");
+insert into bkpage values (43, 29, 3, "공백", "/upload/아기고양이냥이3.PNG", "/upload/아기고양이냥이2.ogg");
+insert into bkpage values (44, 29, 4, "공백", "/upload/아기고양이냥이4.PNG", "/upload/아기고양이냥이3.ogg");
+insert into bkpage values (45, 29, 5, "공백", "/upload/아기고양이냥이5.PNG", "/upload/아기고양이냥이4.ogg");
+insert into bkpage values (46, 29, 6, "공백", "/upload/아기고양이냥이6.PNG", "/upload/아기고양이냥이5.ogg");
+insert into bkpage values (47, 29, 7, "공백", "/upload/아기고양이냥이7.PNG", "/upload/아기고양이냥이6.ogg");
+insert into bkpage values (48, 29, 8, "공백", "/upload/아기고양이냥이8.PNG", "/upload/아기고양이냥이7.ogg");
+insert into bkpage values (49, 29, 9, "공백", "/upload/아기고양이냥이9.PNG", "/upload/아기고양이냥이8.ogg");
+insert into bkpage values (50, 29, 10, "공백", "/upload/아기고양이냥이10.PNG", "/upload/아기고양이냥이9.ogg");
+insert into bkpage values (51, 29, 11, "공백", "/upload/아기고양이냥이11.PNG", "/upload/아기고양이냥이10.ogg");
+insert into bkpage values (52, 29, 12, "공백", "/upload/아기고양이냥이12.PNG", "/upload/아기고양이냥이11.ogg");
+insert into bkpage values (53, 29, 13, "공백", "/upload/아기고양이냥이13.PNG", "/upload/아기고양이냥이12.ogg");
+insert into bkpage values (54, 29, 14, "공백", "/upload/아기고양이냥이14.PNG", "/upload/아기고양이냥이13.ogg");
+insert into bkpage values (55, 29, 15, "공백", "/upload/아기고양이냥이15.PNG", "/upload/아기고양이냥이14.ogg");
+insert into bkpage values (56, 29, 16, "공백", "/upload/아기고양이냥이16.png", "/upload/아기고양이냥이15.ogg");
+
+
+
+
+/*********************************자유게시판 추가****************************************/
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(11, "장자못 이야기말인데요 너무 슬프지 않나요 ㅠㅜ?", "사람은 항상 인덕을 쌓아야 한다는걸 이 책을 보면서 느끼게 되었어요...
+근데 너무 슬프네요 흑 ㅜ", '2017-08-18', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(1, 13, "정말...공감가는 말입니다", '2017-08-18');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(1, 11, "그니까요...저는 장자못 처음 보는데, 생각보다 너무 슬펐어요....", '2017-08-18');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
+    values(12, "피곤한 월요일 아침, 힘들지만 기운내세요~", "모두가 피곤한 월요일이 찾아왔습니다.\r\n 그렇지만 모두 힘내서 화이팅 하다보면, 주말이 또 찾아오겠죠~!\r\n 화이팅입니다 여러분!", '2017-08-18', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(2, 14, "화이팅입니다! 아자아자!", '2017-08-18');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div)
+    values(13, "장자못 이야기 기본 녹음하신분 누구시죠? 행방을 찾습니다!", "목소리 정말 아나운서같아요~!
+혹시 아나운서세요?" , '2017-08-19', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(3, 11, "해설자분 목소리가 느리긴 한데 뭐, 꽤 괞찮았던듯", '2017-08-19');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(3, 12, "와 근데 저거 녹음하신분들 대단하신듯....", '2017-08-19');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(3, 13, "그러게요 저는 듣기만해도 오글거려서 ㄷㄷ", '2017-08-19');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(11, "아기고양이 냥이 너무 귀엽당 ㅎㅎ", "나도 저런 고양이 안생기나? ", '2017-08-20', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(4, 14, "냥이 귀요미!", '2017-08-20');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(4, 15, "여자목소리 녹음하신분 찾습니다.", '2017-08-20');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(4, 11, "왜 찾으시나요 ㅋㅋ", '2017-08-21');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(4, 15, "ㅎㅎ", '2017-08-20');
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(13, "장자못 이야기 다좋은데 너무 긴 것같지 않아요?", "녹음을하는데 왜 도대체 언제끝나니!! 
+힘들어서 죽는줄 알았어요 응슷응", '2017-08-21', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(5, 21, "아 ㅋㅋ 저도 너무 힘들었어요! 그래도 만든 보람이 있었죠 ㅎㅎ", '2017-08-21');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(14, "미니언즈 왜 귀엽다고 이해못했는데", "애니메이션보니깐 엄청웃기고 졸귀네요 ㅎㅎ", '2017-08-21', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(6, 19, "그렇죠...미니언즈 넘나 귀여운 것 ㅋ", '2017-08-21');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(6, 20, "뿌찌빠찌뽀찌--!!", '2017-08-22');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(15, "브렘웰 음악단 동화책 올려주실 수 있나요?", '우리애기가 이 동화책 너무 좋아해서요
+꼭 한번 녹음해주고 싶어요...', '2017-08-23', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(7, 17, "오... 브렘웰 음악단 오랜만에 듣는걸요?", '2017-08-23');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(7, 16, "앗 이거! 저도 옛날에 보았던 기억이 있네요 ㅎㅎ", '2017-08-23');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(7, 14, "모르는 동화책이네요. 검색해도 안나오는데....?", '2017-08-24');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(16, "가끔 생각하는데, 중간에 저장 할 수 있었으면 좋겠어요.", "그냥 중간에 저장 할 수 없는게 좀 뭔가 불편하네요. 딱히 그럴일이 생기진 않지만요", '2017-08-23', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(8, 17, "그러게요 좀 있었으면 좋겟네...", '2017-08-23');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(8, 16, "공감합니다. 딱히 없어도 상관없는데 뭔가 불편하달까요.", '2017-08-23');
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(17, "비오는 날엔 김첨지가 생각납니다. 덤으로 부침개도!", "우리의 영원한 김첨지~!", '2017-08-23', 'board');
+
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(14, "아 녹음 너무 어렵네요.근데 기본녹음도 별로인듯..", "흠.... 저나 기본녹음이나 서로 실력은 뭐 용호쌍박 인듯 ㅎㅎ 죄송합니다아
+농담인거 아시쥬?", '2017-08-25', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(10, 16, "녹음은 장자못이 가장 괞찮다고 생각합니다", '2017-08-25');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(17, "게시판에서 아돼삼이 자주 보이는데 아돼삼이 뭔가요?","정말 궁금해요 ㅎㅎ", '2017-08-25', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(11, 14, "아....돼....삼.....?", '2017-08-25');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(11, 19, "아기돼지 삼형제입니다 ㅋㅋ", '2017-08-25');
+
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(11, "녹음할때 이어폰 마이크 너무 작던데 잘돼시나요?", "저만 안돼는건가요 너무 소리가 작던데...", '2017-08-26', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(12, 11, "아니요 저도 작게 들려요!! 이어폰 마이크로는 한계가 있는듯 해요", '2017-08-26');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(16, "저 아돼삼 녹음했는데 추천좀....", "명전 가고싶어요!", '2017-08-26', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(13, 14, "여기서 구걸은 좀.....", '2017-08-26');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(13, 19, "애들도 보는 곳인데 여기서 이러지 맙시다. 어른들이 애들의 표본이 되어야죠", '2017-08-26');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(13, 16, "저 애 인데요?", '2017-08-27');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(13, 19, "헉...!", '2017-08-27');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(18, "사이트가 유튜브보다 좋은듯 ㅎㅎ", "맘에 쏙 드는 사이트!", '2017-08-27', 'board');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(14, "님들은 동화책 어디서 사요?", "저는 강남교보문구에서 사는데 동화책 매우 많거든요", '2017-08-28', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(15, 21, "저는 작은데서 삽니다. 그런데가 뭔가 보물찾는 느낌이 들거든요 ㅎㅎ", '2017-08-28');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(15, 14, "오... 그런것도 한번 고려해봐야겠네요", '2017-08-28');
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(17, "이거 핸드폰으로도 가능한가요?", "가능한지 궁금합니다", '2017-08-28', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(16, 13, "모바일 기능 개발중이라고 합니다", '2017-08-28');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(16, 17, "어서 나왔으면 좋겠네요", '2017-08-29');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(16, "가끔 길냥인데 강아지같은애들이 있네여", "공원산책가서 벤치같은데 앉아서 뭐 먹고있으면 발아래서 애교떠는 애들이 가끔있어여
+이런애들은 사람이 기르다 버린걸까여? 
+ 
+보통 동네길냥이들은 인기척만 들려도 도망가고 그러던데 말이져 ", '2017-08-28', 'board');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(19, "제 애기한테도 녹음한번 시켜봐야겠어요", "귀여울듯 한데요 ㅎㅎ", '2017-08-28', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(18, 17, "오 애기가 몇살이죠?", '2017-08-29');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(18, 19, "올해로 6살입니다 ㅎㅎ", '2017-08-29');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(18, 17, "우리 애기한테도 녹음시켜봤는데 너무 귀엽드라구욬ㅋ", '2017-08-29');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(18, "어우 오랜만에 신경써서 말을 했더니 목이 아프네요", "이 한몸 희생해서 
+우리애기가 즐겁다면야...!
+기꺼이 내드리지요 ", '2017-08-28', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(19, 20, "살신성인의 자세 캬~~!", '2017-08-29');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(19, 21, "그렇죠.,, 내 한몸쯤이야!!", '2017-08-29');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(20, "페북같은데에 공유 하지 못하나요?", "저는 많은 사람들이 봤으면 좋겠네요", '2017-08-30', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(20, 12, "글쎄요 한번 faq에 물어보셔야 할듯한데요?", '2017-08-30');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(14, "오늘 비가 많이 오네요", "날이 좋아서 날이 좋지않아서 날이 적당해서 모든날이 좋았다", '2017-08-30', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(21, 21, "바로 올게 첫눈으로 올게 그것만은 해달라고 신께 빌어볼게...!", '2017-08-30');
+
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(16, "녹음하다가 컴퓨터가 꺼졌어요 ㅜㅜㅜㅜ 이 망할놈의 컴퓨터!", "바꾸던가 해야지 흑흑 ㅠ", '2017-08-31', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(22, 18, "요즘 삼성에서 컴퓨터 잘 나오던데요 한번 알아 보시길", '2017-08-31');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(15, "녹음하다가 중독되겠어요", "하다보니 재밌네요 ㅎㅎ", '2017-08-31', 'board');
+
+
+
+insert into boardwrite(mno, bw_titl, bw_con, bw_wdt, bw_div) 
+    values(16, "아기돼지 삼형제 너무 재밌어요! 추천추천!", "아 제글 말구요 ㅎㅎ 명전에 등록된거 너무 재밌어서요 추천 꾹 누르고 갑니다~", '2017-08-31', 'board');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(24, 11, "그쵸, 너무 재밌는거 있죠 ㅎㅎ 저도 추천누르고 왔어요", '2017-08-31');
+
+insert into comment(bwno, mno, c_con, c_wdt) 
+    values(24, 12, "추천을 한번 밖에 못하는게 아쉬울정도...! 짱입니다요!", '2017-08-29');
+
+
+
+
+
+
+

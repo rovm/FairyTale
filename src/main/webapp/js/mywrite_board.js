@@ -17,6 +17,9 @@ $("#keyword").keyup(function(){
 //	}, function(result) {
 //	}, 'json')
 	displayList2(1);
+	if(word.val() == "") {
+		displayList(1);
+	}
 })
 
 
