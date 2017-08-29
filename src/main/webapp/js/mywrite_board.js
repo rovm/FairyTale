@@ -71,8 +71,8 @@ nextBtn.click(function() {
 
 
 function displayList(pageNo){
-	console.log("여기",mno)
 	// 서버에서 강사 목록 데이터를 받아 온다.
+		setTimeout(() => {
   $.getJSON('myList.json', {'pageNo':pageNo, 'pageSize':pageSize ,'memberNo':mno}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
 
 	  var totalCount = result.data.totalCount
@@ -98,6 +98,7 @@ function displayList(pageNo){
       nextBtn.prop('disabled', false)
     }
   })
+		},1)
 }
 
 

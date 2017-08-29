@@ -15,7 +15,9 @@ $("#keyword").keyup(function(){
 //	}, function(result) {
 //	}, 'json')
 	displayList2(1);
-	if(word.val() == "") {
+	console.log(word.val())
+	if(word.val().length == 0) {
+	
 		displayList(1);
 	}
 })
@@ -104,6 +106,8 @@ nextBtn.click(function() {
 
 function displayList(pageNo){
 	// 서버에서 강사 목록 데이터를 받아 온다.
+	setTimeout(() => {
+		
   $.getJSON('list.json', {'pageNo':pageNo, 'pageSize':pageSize}, function(result) {// url, 서버에 보낼 데이터, 서버에서 받을 함수 비동기 방식
 
 	  var totalCount = result.data.totalCount
@@ -134,6 +138,7 @@ function displayList(pageNo){
     }
     
   })
+	}, 1);
 }
 //displayList(1)
 

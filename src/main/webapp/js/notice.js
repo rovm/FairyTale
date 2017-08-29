@@ -98,7 +98,7 @@ setTimeout(() => {
       nextBtn.prop('disabled', false)
     }
   })
-}, 100);
+}, 1);
 }
 
 
