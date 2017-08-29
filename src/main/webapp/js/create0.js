@@ -10,12 +10,13 @@ cust_rec,
 UrlEncode,
 RecordArray = new Array(),
 recAudio,
-recAudioSrc;
+recAudioSrc,
+makeBook = 0;
 
-a()
+readyCreate()
 
 
-function a() {
+function readyCreate() {
 	$(document).ready(function() {
 		$(".recorder").css("display", "none");
 		$(".play").css("display", "none")
@@ -30,11 +31,12 @@ function a() {
 
 
 		$('#yes').on('click', function(){
+			makeBook = 1;
 			if (mno == null) {
 				$(".loginCheck").css("display", "block")
 				$(".recorder").css("display", "none");
-		$(".play").css("display", "none")
-		$(".recorder_play").css("display", "none")
+				$(".play").css("display", "none")
+				$(".recorder_play").css("display", "none")
 
 			} else {
 				CreateBook = 1;
@@ -61,35 +63,14 @@ function a() {
 			$("#basic_stop").css("display", "none");
 			$(".recorder_play").css("display", "block");
 			$("#rec_stop").css("display", "none");
-			//$("#start-stop").css("display","none")
 
 
-			$('#basic_play').on('click', function() {
-				$("#basic_stop").css("display", "block");
-				$("#basic_play").css("display", "none");
-				$(".basic-text").text("일시정지")
-			})
-
-
-			$(".record" + MovePage).on("ended", function() {
-				$("#basic_play").css("display", "block");
-				$("#basic_stop").css("display", "none");
-				$(".basic-text").text("기본재생")
-			})
-
-
-
-			$('#basic_stop').on('click', function() {
-				$(".record" + MovePage)[0].pause();
-				$("#basic_play").css("display", "block");
-				$("#basic_stop").css("display", "none");
-				$(".basic-text").text("기본재생")
-			})
 
 
 		})
 
 		$('#no').on('click', function(){
+			makeBook = 0;
 			CreateBook = 0;
 			console.log("no누르고 모달창닫습니다..")
 
@@ -126,7 +107,6 @@ lang = {
 	'play': '시작',
 	'stop': '정지',
 	'download': 'Download'
-		// 'use_https': 'This application in not working over insecure connection. Try to use HTTPS'
 },
 time;
 
@@ -169,12 +149,10 @@ if ( navigator.mediaDevices.getUserMedia ) {
 	$('.record_btn').click(function () {
 		if ( btn_status == 'inactive' ) {
 			start();
-			$("#text-start").css("display","none")
-			$("#text-stop").css("display","block")
+			$(".record-text").text("중지")
 		} else if ( btn_status == 'recording' ) {
 			stop();
-			$("#text-start").css("display","block")
-			$("#text-stop").css("display","none")
+			$(".record-text").text("다시녹음")
 		}
 	})
 
@@ -275,9 +253,6 @@ if ( navigator.mediaDevices.getUserMedia ) {
 		})
 
 
-
-
-
 		$('#rec_stop').on('click', function() {
 			recAudio.pause()
 			console.log(RecordArray);
@@ -285,11 +260,7 @@ if ( navigator.mediaDevices.getUserMedia ) {
 			$("#rec_stop").css("display", "none");
 			$(".rec-text").text("녹음재생")
 		})
-
-
 	}
-
-
 
 
 } else {
@@ -354,8 +325,8 @@ function selectcust_rec(ctno, MovePage) {
 					console.log(result);
 					if(result.status=="success")
 					{
+						$(".record-text").text("다시녹음")
 						console.log("업로드성공");
-
 						// e.preventDefault();
 					} else {
 						console.log(result)
@@ -363,15 +334,18 @@ function selectcust_rec(ctno, MovePage) {
 				}, 'json')
 
 			} else {
+
 				$.post('updateCustpage.json', {
 					'UrlEncode': UrlEncode,
 					'ctno' : ctno,
 					'bkno': MovePage
 				}, function(result) {
+
 					console.log(result);
 					if(result.status=="success")
 					{
 						console.log("업데이트성공...");
+
 						// e.preventDefault();
 					} else {
 						console.log(result)
@@ -381,8 +355,6 @@ function selectcust_rec(ctno, MovePage) {
 			}
 		})
 }
-
-
 
 
 
@@ -413,6 +385,7 @@ function Slider(){
 		};
 
 		function moveRight() {
+			$(".record-text").text("녹음")
 			$('#slider ul').animate({
 				left: - slideWidth
 			}, 200, function () {
@@ -427,12 +400,12 @@ function Slider(){
 			if(MovePage < StartPage){
 				MovePage = EndPage;
 			}
-			// selectcust_rec(ctno, MovePage);
 			console.log(MovePage)
 		});
 
 		$('a.control_next').click(function () {
-			if(RecordArray[MovePage-StartPage] == undefined && mno != null) {
+
+			if(RecordArray[MovePage-StartPage] == undefined && mno != null && makeBook != 0) {
 				swal({
 					title: "녹음 파일이 없습니다",
 					confirmButtonColor: "#FFA500",
@@ -478,10 +451,32 @@ function Slider(){
 	});
 
 
-
-	$("#basic_play").on('click', function () {
+	// $("#basic_play").on('click', function () {
+	// 	$(".record" + MovePage)[0].play();
+	// })
+	$('#basic_play').on('click', function() {
 		$(".record" + MovePage)[0].play();
+		$(".record" + MovePage).bind("ended", function () {
+			$("#basic_play").css("display", "block");
+			$("#basic_stop").css("display", "none");
+			$(".basic-text").text("기본재생")
+		})
+		$("#basic_stop").css("display", "block");
+		$("#basic_play").css("display", "none");
+		$(".basic-text").text("일시정지")
+		
 	})
+
+
+	$('#basic_stop').on('click', function() {
+		$(".record" + MovePage)[0].pause();
+		$("#basic_play").css("display", "block");
+		$("#basic_stop").css("display", "none");
+		$(".basic-text").text("기본재생")
+	})
+
+
+
 }
 
 $("#pre_btn").on("click", function(){

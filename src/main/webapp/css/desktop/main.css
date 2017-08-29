@@ -30,6 +30,9 @@ body {
   float:left;
   margin-left: 37px;
 }
+.best:HOVER{
+	cursor: pointer;
+}
 .best img {
   width:280px;
   height:250px;

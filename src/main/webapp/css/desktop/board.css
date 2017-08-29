@@ -206,6 +206,10 @@ th, td {
   margin: 0 auto;
 }
 
+.table:HOVER{
+	cursor: pointer;
+	
+}
 .bord-container {
   width:980px;
   margin:0 auto;
